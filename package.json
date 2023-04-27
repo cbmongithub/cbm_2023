@@ -1,0 +1,28 @@
+{
+  "name": "christianbmartinez",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.65.5",
+    "@react-three/fiber": "^8.12.2",
+    "@tailwindcss/typography": "^0.5.9",
+    "gray-matter": "^4.0.3",
+    "next": "^13.3.1",
+    "next-mdx-remote": "^4.4.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.39.0",
+    "eslint-config-next": "^13.3.1",
+    "next-transpile-modules": "^10.0.0",
+    "postcss": "^8.4.23",
+    "tailwindcss": "^3.3.1"
+  }
+}
