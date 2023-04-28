@@ -7,12 +7,13 @@ const Navbar = () => {
 
   const handleNav = () => {
     setNav(!nav)
+    document.querySelector('body').style.overflow = nav ? 'auto' : 'hidden'
   }
 
   return (
     <>
       <nav>
-        <div className='flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-black'>
+        <div className='flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-black overflow-hidden'>
           <div className='flex flex-row items-center justify-center p-4'>
             <Link href='/'>
               <svg
@@ -52,8 +53,8 @@ const Navbar = () => {
           <ul
             className={
               nav
-                ? 'fixed flex flex-col justify-center items-center left-0 top-0 w-[100%] h-full border-r border-r-gray-900 bg-white ease-in-out duration-500'
-                : 'fixed flex flex-col justify-center items-center left-[-100%] top-0 w-[100%] h-full border-r border-r-gray-900 bg-white ease-in-out duration-500'
+                ? 'fixed z-40 flex flex-col justify-center items-center left-0 top-0 w-full h-screen bg-white ease-in-out duration-500'
+                : 'fixed z-40 flex flex-col justify-center items-center left-[-100%] top-0 w-full h-screen bg-white ease-in-out duration-500'
             }
           >
             <div className='flex flex-row items-center justify-center p-4'>
@@ -72,19 +73,19 @@ const Navbar = () => {
                 </svg>
               </Link>
             </div>
-            <li className='p-4 border-b'>
+            <li className='text-black hover:opacity-75 w-full text-center p-4 border-b'>
               <Link href='/'>Home</Link>
             </li>
-            <li className='p-4 border-b'>
+            <li className='text-black hover:opacity-75 w-full text-center p-4 border-b'>
               <Link href='/about'>About</Link>
             </li>
-            <li className='p-4 border-b'>
+            <li className='text-black hover:opacity-75 w-full text-center p-4 border-b'>
               <Link href='/portfolio'>Portfolio</Link>
             </li>
-            <li className='p-4 border-b'>
+            <li className='text-black hover:opacity-75 w-full text-center p-4 border-b'>
               <Link href='/blog'>Blog</Link>
             </li>
-            <li className='p-4 border-b'>
+            <li className='text-black hover:opacity-75 w-full text-center p-4 border-b'>
               <Link href='/contact'>Contact</Link>
             </li>
           </ul>
