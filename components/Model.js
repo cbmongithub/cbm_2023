@@ -7,7 +7,8 @@ const Model = () => {
     <Canvas
       style={{
         width: '100%',
-        height: '100vh',
+        height: '80vh',
+        zIndex: '0',
       }}
       shadows
       camera={{ position: [0, 0, 10], fov: 4 }}
