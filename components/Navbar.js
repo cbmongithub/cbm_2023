@@ -9,6 +9,7 @@ const Navbar = () => {
   const handleNav = () => {
     setNav(!nav)
     document.querySelector('body').style.overflow = nav ? 'auto' : 'hidden'
+    console.log('Handled nav.')
   }
 
   return (
@@ -41,6 +42,7 @@ const Navbar = () => {
             <li className='p-4'>
               <Link href='/portfolio'>Portfolio</Link>
             </li>
+
             <li className='p-4'>
               <Link href='/blog'>Blog</Link>
             </li>
@@ -48,7 +50,10 @@ const Navbar = () => {
               <Link href='/contact'>Contact</Link>
             </li>
           </ul>
-          <div onClick={handleNav} className='block md:hidden z-50'>
+          <div
+            onClick={handleNav}
+            className='block md:hidden z-50 cursor-pointer'
+          >
             {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
           </div>
           <ul
@@ -75,19 +80,29 @@ const Navbar = () => {
               </Link>
             </div>
             <li className='text-black text-2xl hover:opacity-75 w-full text-center p-4'>
-              <Link href='/'>Home</Link>
+              <Link href='/' onClick={handleNav}>
+                Home
+              </Link>
             </li>
             <li className='text-black text-2xl hover:opacity-75 w-full text-center p-4'>
-              <Link href='/about'>About</Link>
+              <Link href='/about' onClick={handleNav}>
+                About
+              </Link>
             </li>
             <li className='text-black text-2xl hover:opacity-75 w-full text-center p-4 '>
-              <Link href='/portfolio'>Portfolio</Link>
+              <Link href='/portfolio' onClick={handleNav}>
+                Portfolio
+              </Link>
             </li>
             <li className='text-black text-2xl hover:opacity-75 w-full text-center p-4'>
-              <Link href='/blog'>Blog</Link>
+              <Link href='/blog' onClick={handleNav}>
+                Blog
+              </Link>
             </li>
             <li className='text-black text-2xl hover:opacity-75 w-full text-center p-4'>
-              <Link href='/contact'>Contact</Link>
+              <Link href='/contact' onClick={handleNav}>
+                Contact
+              </Link>
             </li>
             <Socials style={'inline-flex fixed bottom-20'} />
           </ul>
