@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
+import Socials from './Socials'
 import Link from 'next/link'
 
 const Navbar = () => {
@@ -53,11 +54,11 @@ const Navbar = () => {
           <ul
             className={
               nav
-                ? 'fixed z-40 flex flex-col justify-center items-center left-0 top-0 w-full h-screen bg-white ease-in-out duration-500'
-                : 'fixed z-40 flex flex-col justify-center items-center left-[-100%] top-0 w-full h-screen bg-white ease-in-out duration-500'
+                ? 'fixed z-40 flex flex-col justify-center items-center left-0 top-0 w-full h-screen border-r border-r-gray-900 bg-white ease-in-out duration-500'
+                : 'fixed z-40 flex flex-col justify-center items-center left-[-100%] top-0 w-full h-screen border-r border-r-gray-900 bg-white ease-in-out duration-500'
             }
           >
-            <div className='flex flex-row items-center justify-center p-4'>
+            <div className='inline-flex fixed top-20 p-4'>
               <Link href='/'>
                 <svg
                   width='60'
@@ -73,21 +74,22 @@ const Navbar = () => {
                 </svg>
               </Link>
             </div>
-            <li className='text-black hover:opacity-75 w-full text-center p-4 border-b'>
+            <li className='text-black text-2xl hover:opacity-75 w-full text-center p-4'>
               <Link href='/'>Home</Link>
             </li>
-            <li className='text-black hover:opacity-75 w-full text-center p-4 border-b'>
+            <li className='text-black text-2xl hover:opacity-75 w-full text-center p-4'>
               <Link href='/about'>About</Link>
             </li>
-            <li className='text-black hover:opacity-75 w-full text-center p-4 border-b'>
+            <li className='text-black text-2xl hover:opacity-75 w-full text-center p-4 '>
               <Link href='/portfolio'>Portfolio</Link>
             </li>
-            <li className='text-black hover:opacity-75 w-full text-center p-4 border-b'>
+            <li className='text-black text-2xl hover:opacity-75 w-full text-center p-4'>
               <Link href='/blog'>Blog</Link>
             </li>
-            <li className='text-black hover:opacity-75 w-full text-center p-4 border-b'>
+            <li className='text-black text-2xl hover:opacity-75 w-full text-center p-4'>
               <Link href='/contact'>Contact</Link>
             </li>
+            <Socials style={'inline-flex fixed bottom-20'} />
           </ul>
         </div>
       </nav>

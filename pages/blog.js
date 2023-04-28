@@ -10,12 +10,12 @@ const Blog = ({ posts }) => {
         <title>Blog</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <section className='bg-white dark:bg-gray-900'>
+      <section>
+        <Heading
+          title='Blog'
+          paragraph='Browse through my most recent articles'
+        />
         <div className='py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6'>
-          <Heading
-            title='Blog'
-            paragraph='Browse through my most recent articles'
-          />
           <div className='grid gap-8 lg:grid-cols-2'>
             {posts.map((post) => (
               <PostCard
