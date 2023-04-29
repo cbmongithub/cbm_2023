@@ -8,8 +8,6 @@
     "start": "next start"
   },
   "dependencies": {
-    "@react-three/drei": "^9.65.5",
-    "@react-three/fiber": "^8.12.2",
     "@tailwindcss/typography": "^0.5.9",
     "framer-motion": "^10.12.4",
     "gray-matter": "^4.0.3",
