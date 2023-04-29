@@ -15,8 +15,8 @@ const Navbar = () => {
   return (
     <>
       <nav>
-        <div className='flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-black overflow-hidden'>
-          <div className='flex flex-row items-center justify-center p-4'>
+        <div className='z-40 flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-black bg-white'>
+          <div className='z-40 flex flex-row items-center justify-center p-4'>
             <Link href='/'>
               <svg
                 width='60'
@@ -32,7 +32,7 @@ const Navbar = () => {
               </svg>
             </Link>
           </div>
-          <ul className='hidden md:flex'>
+          <ul className='hidden md:flex z-40'>
             <li className='p-4 font-medium hover:opacity-75 transition duration-150 ease-in-out'>
               <Link href='/'>Home</Link>
             </li>

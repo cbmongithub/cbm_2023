@@ -21,6 +21,7 @@ body {
   overflow-x: hidden !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
 }
 
 body::-webkit-scrollbar {
@@ -43,6 +44,12 @@ a:focus {
 .prose {
   width: 100%;
   max-width: 80ch;
+}
+
+#tsparticles {
+  width: inherit;
+  height: inherit;
+  z-index: -1;
 }
 
 .prevent-select {

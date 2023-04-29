@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 import { TypeAnimation } from 'react-type-animation'
+import Background from '../components/Background'
 
 const Index = () => {
   return (
@@ -10,28 +11,21 @@ const Index = () => {
         <title>Home | Christian B. Martinez</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <section className='mb-40'>
-        <div className='px-6 py-12 md:px-12 text-gray-800 text-center lg:text-left'>
+      <section>
+        <div className='absolute top-0 flex flex-row justify-center items-center w-full h-full bg-transparent z-30 px-6 py-12 md:px-12 text-gray-800 text-center lg:text-left'>
           <div className='container mx-auto xl:px-32'>
             <div className='grid lg:grid-cols-2 gap-12 items-center'>
               <div className='mt-12 lg:mt-0'>
-                <h1 className='text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12'>
+                <h1 className='text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-12'>
                   I&apos;m Christian
                   <br />I build
                   <span className='text-purple-600'>
                     <TypeAnimation
-                      sequence={[
-                        'Websites',
-                        1000,
-                        'Apps',
-                        1000,
-                        'Friendships',
-                        1000,
-                      ]}
+                      sequence={['Websites', 2000, 'Apps', 2000, 'Tools', 2000]}
                       wrapper='span'
                       cursor={false}
                       repeat={Infinity}
-                      className='ml-3 text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight'
+                      className='ml-3 text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight'
                     />
                   </span>
                 </h1>
@@ -58,14 +52,15 @@ const Index = () => {
                 <Image
                   src='http://localhost:3000/img/me.jpg'
                   alt='Image of me'
-                  width={500}
-                  height={500}
-                  className='rounded-lg shadow-md hover:shadow-2xl transition duration-150 ease-in-out'
+                  width={400}
+                  height={400}
+                  className='rounded-full shadow-md hover:shadow-2xl transition duration-150 ease-in-out'
                 />
               </div>
             </div>
           </div>
         </div>
+        <Background />
       </section>
     </>
   )
