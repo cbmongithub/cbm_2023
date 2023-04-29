@@ -16,14 +16,23 @@ const Blog = ({ posts }) => {
           title='Blog'
           paragraph='Browse through my most recent articles'
         />
-        <motion.div
-          initial={{ y: 100, opacity: 0, duration: 1 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ type: 'spring', stiffness: 100, delay: 1 }}
-        >
-          <div className='py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6'>
-            <div className='grid gap-8 lg:grid-cols-2'>
-              {posts.map((post) => (
+        <div className='py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6'>
+          <div className='grid gap-8 lg:grid-cols-2'>
+            {posts.map((post, i) => (
+              <motion.div
+                key={post.slug}
+                initial={{
+                  opacity: 0,
+                  translateY: -100,
+                }}
+                animate={{ opacity: 1, translateY: 0 }}
+                transition={{
+                  type: 'spring',
+                  stiffness: 100,
+                  duration: 1.5,
+                  delay: 0.5 * i,
+                }}
+              >
                 <PostCard
                   key={post.slug}
                   title={post.data.title}
@@ -33,10 +42,10 @@ const Blog = ({ posts }) => {
                   type={post.data.type}
                   slug={post.slug}
                 />
-              ))}
-            </div>
+              </motion.div>
+            ))}
           </div>
-        </motion.div>
+        </div>
       </section>
     </>
   )

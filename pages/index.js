@@ -18,8 +18,8 @@ const Index = () => {
             <div className='grid lg:grid-cols-2 gap-12 items-center'>
               <div className='mt-12 lg:mt-0'>
                 <motion.div
-                  initial={{ y: -100, opacity: 0, duration: 1 }}
-                  animate={{ y: 0, opacity: 1 }}
+                  initial={{ x: -100, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
                   transition={{ type: 'spring', stiffness: 100 }}
                 >
                   <h1 className='text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12'>
@@ -28,11 +28,11 @@ const Index = () => {
                     <span className='text-purple-600'>
                       <TypeAnimation
                         sequence={[
-                          'Websites',
+                          'websites',
                           2000,
-                          'Apps',
+                          'apps',
                           2000,
-                          'Tools',
+                          'tools',
                           2000,
                         ]}
                         wrapper='span'
@@ -44,7 +44,7 @@ const Index = () => {
                   </h1>
                 </motion.div>
                 <motion.div
-                  initial={{ y: 100, opacity: 0, duration: 1 }}
+                  initial={{ y: 100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ type: 'spring', stiffness: 100, delay: 0.5 }}
                 >
@@ -70,17 +70,17 @@ const Index = () => {
               </div>
               <div className='mb-12 lg:mb-0 flex flex-col justify-center items-center'>
                 <motion.div
-                  initial={{ y: -100, opacity: 0, duration: 1 }}
-                  animate={{ y: 0, opacity: 1 }}
+                  initial={{ x: 100, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
                   transition={{ type: 'spring', stiffness: 100, delay: 1 }}
                 >
                   <Image
                     src='http://localhost:3000/img/me.jpg'
                     priority
-                    alt='Image of me'
+                    alt='Image of Christian B. Martinez'
                     width={400}
                     height={400}
-                    className='rounded-full shadow-md hover:shadow-2xl transition duration-150 ease-in-out'
+                    className='border-solid border-4 opacity-95 border-purple-600 rounded-full mx-auto w-1/2 h-1/2 md:w-2/3 md:h-2/3 shadow-md hover:shadow-2xl transition duration-150 ease-in-out'
                   />
                 </motion.div>
               </div>
@@ -88,7 +88,7 @@ const Index = () => {
           </div>
         </div>
         <motion.div
-          initial={{ opacity: 0, duration: 1 }}
+          initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
         >

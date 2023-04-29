@@ -6,6 +6,7 @@ import Heading from '../components/Heading'
 import Image from 'next/image'
 import Socials from '../components/Socials'
 import { motion } from 'framer-motion'
+
 const Post = ({ data, content }) => {
   return (
     <>

@@ -4,7 +4,7 @@ const Heading = ({ title, paragraph }) => {
   return (
     <div className='mx-auto text-center my-20'>
       <motion.div
-        initial={{ x: 100, opacity: 0, duration: 1 }}
+        initial={{ x: 100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ type: 'spring', stiffness: 100 }}
       >
@@ -14,7 +14,7 @@ const Heading = ({ title, paragraph }) => {
       </motion.div>
       {paragraph ? (
         <motion.div
-          initial={{ x: -100, opacity: 0, duration: 1 }}
+          initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ type: 'spring', stiffness: 100, delay: 0.5 }}
         >
