@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['flowbite.s3.amazonaws.com', 'localhost'],
+    domains: ['localhost'],
   },
 }
 

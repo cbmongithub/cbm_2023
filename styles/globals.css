@@ -37,6 +37,12 @@ body::-webkit-scrollbar-thumb {
   border-radius: 0.5rem;
 }
 
+h1 {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 a:focus {
   outline: none;
 }
@@ -50,12 +56,6 @@ a:focus {
   width: inherit;
   height: inherit;
   z-index: -1;
-}
-
-.prevent-select {
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
 }
 
 @media only screen and (min-width: 768px) {

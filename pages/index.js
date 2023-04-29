@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { TypeAnimation } from 'react-type-animation'
 import Background from '../components/Background'
+import { motion } from 'framer-motion'
 
 const Index = () => {
   return (
@@ -16,51 +17,83 @@ const Index = () => {
           <div className='container mx-auto xl:px-32'>
             <div className='grid lg:grid-cols-2 gap-12 items-center'>
               <div className='mt-12 lg:mt-0'>
-                <h1 className='text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-12'>
-                  I&apos;m Christian
-                  <br />I build
-                  <span className='text-purple-600'>
-                    <TypeAnimation
-                      sequence={['Websites', 2000, 'Apps', 2000, 'Tools', 2000]}
-                      wrapper='span'
-                      cursor={false}
-                      repeat={Infinity}
-                      className='ml-3 text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight'
-                    />
-                  </span>
-                </h1>
-                <Link
-                  className='inline-block px-7 py-3 mr-2 bg-purple-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out'
-                  data-mdb-ripple='true'
-                  data-mdb-ripple-color='light'
-                  href='#!'
-                  role='button'
+                <motion.div
+                  initial={{ y: -100, opacity: 0, duration: 1 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ type: 'spring', stiffness: 100 }}
                 >
-                  ABOUT ME
-                </Link>
-                <Link
-                  className='inline-block px-7 py-3 bg-transparent text-purple-600 font-medium text-sm leading-snug uppercase rounded hover:text-purple-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out'
-                  data-mdb-ripple='true'
-                  data-mdb-ripple-color='light'
-                  href='#!'
-                  role='button'
+                  <h1 className='text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12'>
+                    I&apos;m Christian
+                    <br />I build
+                    <span className='text-purple-600'>
+                      <TypeAnimation
+                        sequence={[
+                          'Websites',
+                          2000,
+                          'Apps',
+                          2000,
+                          'Tools',
+                          2000,
+                        ]}
+                        wrapper='span'
+                        cursor={false}
+                        repeat={Infinity}
+                        className='ml-3 text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight'
+                      />
+                    </span>
+                  </h1>
+                </motion.div>
+                <motion.div
+                  initial={{ y: 100, opacity: 0, duration: 1 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ type: 'spring', stiffness: 100, delay: 0.5 }}
                 >
-                  PORTFOLIO
-                </Link>
+                  <Link
+                    className='inline-block px-7 py-3 mr-2 bg-purple-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out'
+                    data-mdb-ripple='true'
+                    data-mdb-ripple-color='light'
+                    href='/about'
+                    role='button'
+                  >
+                    ABOUT ME
+                  </Link>
+                  <Link
+                    className='inline-block px-7 py-3 bg-transparent text-purple-600 font-medium text-sm leading-snug uppercase rounded hover:text-purple-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out'
+                    data-mdb-ripple='true'
+                    data-mdb-ripple-color='light'
+                    href='/portfolio'
+                    role='button'
+                  >
+                    PORTFOLIO
+                  </Link>
+                </motion.div>
               </div>
               <div className='mb-12 lg:mb-0 flex flex-col justify-center items-center'>
-                <Image
-                  src='http://localhost:3000/img/me.jpg'
-                  alt='Image of me'
-                  width={400}
-                  height={400}
-                  className='rounded-full shadow-md hover:shadow-2xl transition duration-150 ease-in-out'
-                />
+                <motion.div
+                  initial={{ y: -100, opacity: 0, duration: 1 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ type: 'spring', stiffness: 100, delay: 1 }}
+                >
+                  <Image
+                    src='http://localhost:3000/img/me.jpg'
+                    priority
+                    alt='Image of me'
+                    width={400}
+                    height={400}
+                    className='rounded-full shadow-md hover:shadow-2xl transition duration-150 ease-in-out'
+                  />
+                </motion.div>
               </div>
             </div>
           </div>
         </div>
-        <Background />
+        <motion.div
+          initial={{ opacity: 0, duration: 1 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5 }}
+        >
+          <Background />
+        </motion.div>
       </section>
     </>
   )

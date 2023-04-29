@@ -15,7 +15,7 @@ const Navbar = () => {
   return (
     <>
       <nav>
-        <div className='z-40 flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-black bg-white'>
+        <div className='flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-black bg-white overflow-hidden'>
           <div className='z-40 flex flex-row items-center justify-center p-4'>
             <Link href='/'>
               <svg
