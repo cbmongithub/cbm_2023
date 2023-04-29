@@ -53,8 +53,8 @@ const Post = ({ data, content }) => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ type: 'spring', stiffness: 100, delay: 1 }}
       >
-        <div className='w-full xl p-4 flex items-center text-left justify-center'>
-          <div className='prose mt-12'>
+        <div className='w-full flex flex-row justify-center items-center my-20'>
+          <div className='flex flex-col prose p-4'>
             <MDXRemote {...content} />
           </div>
         </div>

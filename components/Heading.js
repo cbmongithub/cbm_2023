@@ -12,15 +12,19 @@ const Heading = ({ title, paragraph }) => {
           {title}
         </h1>
       </motion.div>
-      <motion.div
-        initial={{ x: -100, opacity: 0, duration: 1 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ type: 'spring', stiffness: 100, delay: 0.5 }}
-      >
-        <p className='font-light text-gray-800 text-xl dark:text-gray-400'>
-          {paragraph ? paragraph : ''}
-        </p>
-      </motion.div>
+      {paragraph ? (
+        <motion.div
+          initial={{ x: -100, opacity: 0, duration: 1 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ type: 'spring', stiffness: 100, delay: 0.5 }}
+        >
+          <p className='font-light text-gray-800 text-xl dark:text-gray-400'>
+            {paragraph}
+          </p>
+        </motion.div>
+      ) : (
+        ''
+      )}
     </div>
   )
 }
