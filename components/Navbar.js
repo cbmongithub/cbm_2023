@@ -124,20 +124,20 @@ const Navbar = () => {
             </Link>
           </div>
           <ul className='hidden md:flex z-40'>
-            <li className='p-4 font-medium hover:opacity-75 transition duration-150 ease-in-out'>
+            <li className='p-4 font-medium hover:text-purple-600 transition duration-150 ease-in-out'>
               <Link href='/'>Home</Link>
             </li>
-            <li className='p-4 font-medium hover:opacity-75 transition duration-150 ease-in-out'>
+            <li className='p-4 font-medium hover:text-purple-600 transition duration-150 ease-in-out'>
               <Link href='/about'>About</Link>
             </li>
-            <li className='p-4 font-medium hover:opacity-75 transition duration-150 ease-in-out'>
+            <li className='p-4 font-medium hover:text-purple-600 transition duration-150 ease-in-out'>
               <Link href='/portfolio'>Portfolio</Link>
             </li>
 
-            <li className='p-4 font-medium hover:opacity-75 transition duration-150 ease-in-out'>
+            <li className='p-4 font-medium hover:text-purple-600 transition duration-150 ease-in-out'>
               <Link href='/blog'>Blog</Link>
             </li>
-            <li className='p-4 font-medium hover:opacity-75 transition duration-150 ease-in-out'>
+            <li className='p-4 font-medium hover:text-purple-600 transition duration-150 ease-in-out'>
               <Link href='/contact'>Contact</Link>
             </li>
           </ul>
@@ -151,10 +151,10 @@ const Navbar = () => {
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ type: 'spring', stiffness: 100, delay: 1 }}
               >
-                <AiOutlineClose size={20} />
+                <AiOutlineClose size={20} className='hover:text-purple-600' />
               </motion.div>
             ) : (
-              <AiOutlineMenu size={20} />
+              <AiOutlineMenu size={20} className='hover:text-purple-600' />
             )}
           </div>
           <ul
@@ -185,7 +185,7 @@ const Navbar = () => {
                 </Link>
               </motion.div>
             </div>
-            <li className='text-black text-2xl hover:opacity-75 w-full text-center p-4'>
+            <li className='text-black text-2xl hover:text-purple-600 w-full text-center p-4'>
               <motion.div
                 animate={nav ? 'open' : 'closed'}
                 variants={secondVariant}
@@ -195,7 +195,7 @@ const Navbar = () => {
                 </Link>
               </motion.div>
             </li>
-            <li className='text-black text-2xl hover:opacity-75 w-full text-center p-4'>
+            <li className='text-black text-2xl hover:text-purple-600 w-full text-center p-4'>
               <motion.div
                 animate={nav ? 'open' : 'closed'}
                 variants={thirdVariant}
@@ -205,7 +205,7 @@ const Navbar = () => {
                 </Link>
               </motion.div>
             </li>
-            <li className='text-black text-2xl hover:opacity-75 w-full text-center p-4'>
+            <li className='text-black text-2xl hover:text-purple-600 w-full text-center p-4'>
               <motion.div
                 animate={nav ? 'open' : 'closed'}
                 variants={fourthVariant}
@@ -215,7 +215,7 @@ const Navbar = () => {
                 </Link>
               </motion.div>
             </li>
-            <li className='text-black text-2xl hover:opacity-75 w-full text-center p-4'>
+            <li className='text-black text-2xl hover:text-purple-600 w-full text-center p-4'>
               <motion.div
                 animate={nav ? 'open' : 'closed'}
                 variants={fifthVariant}
@@ -225,7 +225,7 @@ const Navbar = () => {
                 </Link>
               </motion.div>
             </li>
-            <li className='text-black text-2xl hover:opacity-75 w-full text-center'>
+            <li className='text-black text-2xl hover:text-purple-600 w-full text-center'>
               <motion.div
                 animate={nav ? 'open' : 'closed'}
                 variants={sixthVariant}

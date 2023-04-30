@@ -12,7 +12,7 @@ const socialLinks = {
 
 const Socials = ({ style }) => {
   return (
-    <div className={style}>
+    <div className={`${style} text-purple-600`}>
       <li className='px-5'>
         <Link
           href={socialLinks.github}
