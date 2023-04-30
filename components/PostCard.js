@@ -14,7 +14,7 @@ const PostCard = ({ title, date, description, author, type, slug }) => {
       <div className='flex justify-between items-center mb-5 text-gray-500'>
         {type === 'Tutorial' ? (
           <>
-            <span className='bg-gradient-to-r from-orange-500 to-pink-500 text-white text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800'>
+            <span className='bg-gradient-to-r from-purple-600 to-pink-500 text-white text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800'>
               <svg
                 className='mr-1 w-3 h-3'
                 fill='currentColor'

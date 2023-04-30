@@ -149,7 +149,7 @@ const Navbar = () => {
               <motion.div
                 initial={{ x: -100, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
-                transition={{ type: 'spring', stiffness: 100, delay: 1 }}
+                transition={{ type: 'spring', stiffness: 100, delay: 0.5 }}
               >
                 <AiOutlineClose size={20} className='hover:text-purple-600' />
               </motion.div>
@@ -160,8 +160,8 @@ const Navbar = () => {
           <ul
             className={
               nav
-                ? 'fixed z-40 flex flex-col justify-center items-center left-0 top-0 w-full h-screen border-r border-r-gray-900 bg-white ease-in-out duration-1000'
-                : 'fixed z-40 flex flex-col justify-center items-center left-[-100%] top-0 w-full h-screen border-r border-r-gray-900 bg-white ease-in-out duration-1000'
+                ? 'fixed z-40 flex flex-col justify-center items-center left-0 top-0 w-full h-screen border-r border-r-gray-900 bg-white ease-in-out duration-500'
+                : 'fixed z-40 flex flex-col justify-center items-center left-[-100%] top-0 w-full h-screen border-r border-r-gray-900 bg-white ease-in-out duration-500'
             }
           >
             <div className='inline-flex fixed top-20 p-4'>
