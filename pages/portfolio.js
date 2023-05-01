@@ -34,11 +34,36 @@ const Portfolio = () => {
                   <PortfolioCard
                     key={i}
                     imageUrl={data.imgUrl}
-                    title={data.title}
-                    description={data.description}
                     href={data.href}
                     repo={data.repo}
-                  />
+                  >
+                    <motion.div
+                      initial={{ x: 100, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      transition={{
+                        type: 'spring',
+                        stiffness: 100,
+                        delay: 0.5 * i + 0.5,
+                      }}
+                    >
+                      <h2 className='mt-8 text-2xl font-semibold text-gray-800 capitalize dark:text-white'>
+                        {data.title}
+                      </h2>
+                    </motion.div>
+                    <motion.div
+                      initial={{ x: -100, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      transition={{
+                        type: 'spring',
+                        stiffness: 100,
+                        delay: 0.5 * i + 0.5,
+                      }}
+                    >
+                      <p className='mt-2 text-center font-light text-gray-800 text-lg dark:text-gray-400'>
+                        {data.description}
+                      </p>
+                    </motion.div>
+                  </PortfolioCard>
                 </motion.div>
               )
             })}

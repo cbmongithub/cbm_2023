@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { FaGithub, FaLink } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 
-const PortfolioCard = ({ imageUrl, title, description, href, repo }) => {
+const PortfolioCard = ({ imageUrl, href, repo, children }) => {
   return (
     <div
       className='bg-cover my-12 bg-center rounded-lg cursor-pointer w-full h-96 group shadow-md'
@@ -32,25 +32,8 @@ const PortfolioCard = ({ imageUrl, title, description, href, repo }) => {
           </Link>
         </div>
       </div>
-      <div className='flex flex-col justify-center items-center'>
-        <motion.div
-          initial={{ x: 100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ type: 'spring', stiffness: 100, delay: 0.5 }}
-        >
-          <h2 className='mt-8 text-2xl font-semibold text-gray-800 capitalize dark:text-white'>
-            {title}
-          </h2>
-        </motion.div>
-        <motion.div
-          initial={{ x: 100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ type: 'spring', stiffness: 100, delay: 1 }}
-        >
-          <p className='mt-2 text-center font-light text-gray-800 text-lg dark:text-gray-400'>
-            {description}
-          </p>
-        </motion.div>
+      <div className='flex flex-col justify-center items-center cursor-default'>
+        {children}
       </div>
     </div>
   )

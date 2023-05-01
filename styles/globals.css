@@ -22,6 +22,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 body::-webkit-scrollbar {
@@ -35,12 +38,6 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background-color: #111827;
   border-radius: 0.5rem;
-}
-
-h1 {
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
 a:focus {
