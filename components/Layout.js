@@ -11,10 +11,12 @@ const variants = {
     transition: {
       duration: 0.5,
       ease: 'easeInOut',
+      type: 'spring',
+      stiffness: 100,
     },
   },
   in: {
-    y: 100,
+    y: 300,
     opacity: 0,
     transition: {
       duration: 0.5,
@@ -23,7 +25,7 @@ const variants = {
   },
   out: {
     opacity: 0,
-    y: -100,
+    y: -300,
     transition: {
       duration: 0.5,
       ease: 'easeInOut',
@@ -53,9 +55,9 @@ const Layout = ({ children }) => {
             <Navbar />
             {children}
           </main>
+          {isHome ? null : <Footer />}
         </motion.div>
       </AnimatePresence>
-      {isHome ? null : <Footer />}
     </>
   )
 }
