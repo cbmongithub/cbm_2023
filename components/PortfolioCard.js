@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { FaGithub, FaLink } from 'react-icons/fa'
-import { motion } from 'framer-motion'
 
 const PortfolioCard = ({ imageUrl, href, repo, children }) => {
   return (
