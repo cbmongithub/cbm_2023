@@ -58,7 +58,7 @@ const PostCard = ({ title, date, description, author, type, slug }) => {
         <div className='flex items-center space-x-4'>
           <Image
             className='w-7 h-7 rounded-full'
-            src='http://localhost:3000/img/me.jpg'
+            src='/img/me.jpg'
             alt='Jese Leos avatar'
             width={28}
             height={28}

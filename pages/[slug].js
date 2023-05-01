@@ -21,7 +21,7 @@ const Post = ({ data, content }) => {
             <div className='flex space-x-3'>
               <Image
                 className='w-7 h-7 rounded-full'
-                src='http://localhost:3000/img/me.jpg'
+                src='/img/me.jpg'
                 alt='Jese Leos avatar'
                 width={28}
                 height={28}
