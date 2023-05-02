@@ -1,10 +1,18 @@
-import Background from '../components/Background'
+import SiteHead from '../components/SiteHead'
 import Heading from '../components/Heading'
 import { motion } from 'framer-motion'
 
 const Contact = () => {
   return (
     <>
+      <SiteHead
+        page='Contact'
+        title='Contact'
+        description={'Questions or comments? Contact me anytime.'}
+        keywords={
+          'nextjs, contact page tailwind css, contact page, christian martinez, contact form, react contact form'
+        }
+      />
       <section>
         <Heading title='Contact' paragraph='Get in touch! Contact me anytime' />
         <motion.div

@@ -1,0 +1,96 @@
+---
+title: 'Getting started with framer'
+date: 'May 1, 2023'
+description: 'How to get up and going using framer motion in react.'
+author: Christian Martinez
+type: Tutorial
+---
+
+# Getting Started with Framer Motion
+
+Framer Motion is a popular animation library for React that enables you to create smooth and interactive animations. It offers a simple API that allows you to create animations with just a few lines of code. In this tutorial, we will explore the basics of Framer Motion and learn how to create animations using it.
+
+## Installation
+
+To get started with Framer Motion, you need to install it in your project. You can install it using npm or yarn:
+
+```
+npm install framer-motion
+```
+
+or
+
+```
+yarn add framer-motion
+```
+
+## Basic Usage
+
+Framer Motion provides a set of components that you can use to create animations. To animate an element, you can wrap it with one of the provided components. For example, to animate a div element, you can use the motion.div component.
+
+Here's an example that animates a div element using Framer Motion:
+
+```
+import { motion } from 'framer-motion';
+
+function App() {
+return (
+<motion.div animate={{ scale: 2 }}>Hello, World!</motion.div>
+); }
+```
+
+In this example, we import the motion component from Framer Motion and wrap
+a div element with it. We pass an animate prop to the motion.div component, which
+specifies the target state of the animation. In this case, we're animating the scale
+of the element to be twice its original size.
+
+## Animating CSS Properties
+
+Framer Motion allows you to animate any CSS property using the animate prop. To animate a CSS property, you simply pass an object to the animate prop that contains the target values for the property.
+
+For example, to animate the background color of an element, you can do the following:
+
+```
+<motion.div animate={{ backgroundColor: 'red' }}>Hello, World!</motion.div>
+```
+
+In this example, we're animating the background color of the element to be red.
+
+## Variants
+
+Variants allow you to define a set of animation states that you can reuse across multiple components. A variant is a named set of animation properties that you can apply to a component using the variants prop.
+
+Here's an example that uses variants to create a simple button animation:
+
+```
+import { motion } from 'framer-motion';
+
+const buttonVariants = {
+idle: { scale: 1 },
+hovered: { scale: 1.1 },
+pressed: { scale: 0.9 },
+};
+
+function Button() {
+return (
+
+<motion.button
+  variants={buttonVariants}
+  initial='idle'
+  whileHover='hovered'
+  whileTap='pressed'
+>
+  Click Me!
+</motion.button>
+); }
+```
+
+In this example, we define a set of variants for the button animation. The variants
+prop of the motion.button component specifies the set of variants that we want to
+use. We also specify the initial state of the animation using the initial prop and
+the states that we want to apply when the button is hovered or pressed using the
+whileHover and whileTap props, respectively.
+
+## Conclusion
+
+Framer Motion is a powerful animation library for React that makes it easy to create smooth and interactive animations. In this tutorial, we covered the basics of Framer Motion and learned how to create animations using its simple API. With a little practice, you can use Framer Motion to create impressive animations that will enhance the user experience of your web applications.

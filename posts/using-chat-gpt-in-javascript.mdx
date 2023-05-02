@@ -1,0 +1,88 @@
+---
+title: 'Using the Open AI npm package'
+date: 'May 1, 2023'
+description: 'How to use the open ai npm package in javascript.'
+author: Christian Martinez
+type: Tutorial
+---
+
+# Using the OpenAI NPM Package in JavaScript
+
+The OpenAI NPM package allows developers to easily access the OpenAI API and perform natural language processing tasks. In this tutorial, we will explore how to use the OpenAI NPM package in JavaScript.
+
+## Prerequisites
+
+Before we get started, you will need to sign up for the OpenAI API and obtain an API key. You can sign up at [openai.com](https://openai.com/). Once you have your API key, you're ready to integrate it into your JavaScript application.
+
+You will also need to have Node.js and NPM installed on your machine. If you haven't installed them yet, you can download them from the [official website](https://nodejs.org/en/).
+
+## Installing the OpenAI Package
+
+To use the OpenAI package in your JavaScript application, you will need to install it via NPM. You can do this by running the following command in your terminal:
+
+```
+npm install openai
+```
+
+Once you have installed the package, you can import it into your JavaScript file like this:
+
+```javascript
+const openai = require('openai')
+```
+
+## Authenticating with the OpenAI API
+
+To authenticate with the OpenAI API, you will first need to install dotenv to set your API key as an environment variable in your JavaScript application. You can do this by adding the following:
+
+```javascript
+npm install dotenv
+```
+
+then create a .env file and paste in your environment variable
+
+```javascript
+process.env.OPENAI_API_KEY = 'your-api-key-here'
+```
+
+Be sure to replace `'your-api-key-here'` with your actual API key.
+
+## Making Requests to the OpenAI API
+
+The OpenAI package provides a variety of functions for interacting with the OpenAI API. Here is an example of how to use the `completions` function to generate text:
+
+```javascript
+const { Configuration, OpenAIApi } = require('openai')
+const configuration = new Configuration({
+  apiKey: process.env.OPENAI_API_KEY,
+})
+const openai = new OpenAIApi(configuration)
+const prompt = 'Hello, my name is Christian'
+const model = 'text-davinci-003'
+
+require('dotenv').config()
+
+openai.completions
+  .create({
+    engine: model,
+    prompt: prompt,
+    maxTokens: 5,
+  })
+  .then((response) => {
+    console.log(response.data.choices[0].text)
+  })
+  .catch((err) => {
+    console.error(err)
+  })
+```
+
+In this example, we pass the `create` function an object with the following properties:
+
+- `engine`: The ID of the model to use for text generation.
+- `prompt`: The text prompt to use for generating text.
+- `maxTokens`: The maximum number of tokens to generate in the response.
+
+The `create` function returns a Promise that resolves to the generated text. We then log the generated text to the console.
+
+## Conclusion
+
+Using the OpenAI NPM package, it is easy to perform natural language processing tasks in JavaScript applications. By following the steps outlined in this tutorial, you should be able to get started using the OpenAI API in your own projects.

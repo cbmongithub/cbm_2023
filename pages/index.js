@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import SiteHead from '../components/SiteHead'
 import Link from 'next/link'
 import Image from 'next/image'
 import { TypeAnimation } from 'react-type-animation'
@@ -8,10 +8,16 @@ import { motion } from 'framer-motion'
 const Index = () => {
   return (
     <>
-      <Head>
-        <title>Home | Christian B. Martinez</title>
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
+      <SiteHead
+        page='Home'
+        title='Home'
+        description={
+          'Portfolio site of full stack web developer Christian B. Martinez'
+        }
+        keywords={
+          'next js, tailwind css, blog, javascript, tech site, portfolio site, chatgpt app, react'
+        }
+      />
       <section>
         <div className='absolute top-0 flex flex-row justify-center items-center w-full h-full bg-transparent z-30 px-6 py-12 md:px-12 text-gray-800 text-center lg:text-left'>
           <div className='container mx-auto xl:px-32'>

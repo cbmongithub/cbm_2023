@@ -1,3 +1,4 @@
+import SiteHead from '../components/SiteHead'
 import { MDXRemote } from 'next-mdx-remote'
 import getPost from '../helpers/getPost'
 import getPosts from '../helpers/getPosts'
@@ -10,6 +11,12 @@ import { motion } from 'framer-motion'
 const Post = ({ data, content }) => {
   return (
     <>
+      <SiteHead
+        page={data.title}
+        title={data.title}
+        description={data.description}
+        keywords={`nextjs, blog, javascript, tech blogs, chatgpt, react js, ${data.title}`}
+      />
       <section>
         <Heading title={data.title} />
         <motion.div

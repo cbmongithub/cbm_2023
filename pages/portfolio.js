@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import SiteHead from '../components/SiteHead'
 import Heading from '../components/Heading'
 import { PortfolioData } from '../constants'
 import PortfolioCard from '../components/PortfolioCard'
@@ -7,10 +7,14 @@ import { motion } from 'framer-motion'
 const Portfolio = () => {
   return (
     <>
-      <Head>
-        <title>Christian B. Martinez | Portfolio</title>
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
+      <SiteHead
+        page='Portfolio'
+        title='Portfolio'
+        description={'View my most recent portfolio of projects'}
+        keywords={
+          'portfolio site, next js portfolio, react, technology, chatgpt'
+        }
+      />
       <section>
         <Heading title='Portfolio' paragraph='View my most recent projects' />
         <div className='mb-20 pb-16 px-6 mx-auto max-w-screen-xl '>

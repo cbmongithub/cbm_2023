@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import SiteHead from '../components/SiteHead'
 import Heading from '../components/Heading'
 import PostCard from '../components/PostCard'
 import getPosts from '../helpers/getPosts'
@@ -7,10 +7,12 @@ import { motion } from 'framer-motion'
 const Blog = ({ posts }) => {
   return (
     <>
-      <Head>
-        <title>Christian B. Martinez | Blog</title>
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
+      <SiteHead
+        page={posts.title}
+        title={posts.title}
+        description={posts.description}
+        keywords={'nextjs, blog, javascript, tech blogs, chatgpt, react js'}
+      />
       <section>
         <Heading
           title='Blog'
