@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 
 const Heading = ({ title, paragraph }) => {
   return (
-    <div className='mx-auto text-center my-20'>
+    <div className='mx-auto text-center my-20 relative z-30'>
       <motion.div
         initial={{ x: 100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}

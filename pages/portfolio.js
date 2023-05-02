@@ -13,7 +13,7 @@ const Portfolio = () => {
       </Head>
       <section>
         <Heading title='Portfolio' paragraph='View my most recent projects' />
-        <div className='mb-8 pb-16 px-6 mx-auto max-w-screen-xl '>
+        <div className='mb-20 pb-16 px-6 mx-auto max-w-screen-xl '>
           <div className='grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-3'>
             {PortfolioData.map((data, i) => {
               return (
