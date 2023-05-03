@@ -2,13 +2,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 const PostCard = ({ title, date, description, author, type, slug }) => {
-  const isBrowser = () => typeof window !== 'undefined'
-
-  function handleScroll() {
-    if (!isBrowser()) return
-    document.querySelector('body').scrollTo(0, 0)
-  }
-
   return (
     <article className='p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700'>
       <div className='flex justify-between items-center mb-5 text-gray-500'>
@@ -69,7 +62,6 @@ const PostCard = ({ title, date, description, author, type, slug }) => {
           href='/[slug]'
           className='inline-flex items-center font-medium text-primary-600 dark:text-primary-500 hover:underline'
           as={`/${slug}`}
-          onClick={handleScroll}
         >
           Read more
           <svg

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
@@ -14,6 +14,13 @@ const Post = ({ data, content }) => {
   const handleToggle = () => {
     setShow(!show)
   }
+  const isBrowser = () => typeof window !== 'undefined'
+
+  useEffect(() => {
+    if (!isBrowser()) return
+    document.querySelector('body').scrollTo(0, 0)
+  }, [])
+
   return (
     <>
       <SiteHead
