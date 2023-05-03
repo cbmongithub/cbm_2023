@@ -1,4 +1,4 @@
-const PortfolioData = [
+const portfolioData = [
   {
     title: 'Twitter Bot',
     imgUrl:
@@ -49,4 +49,56 @@ const PortfolioData = [
   },
 ]
 
-export { PortfolioData }
+const userData = {
+  githubUsername: 'christianbmartinez',
+  name: 'Christian Martinez',
+  designation: 'Full-Stack Developer',
+  avatarUrl: '/img/me.jpg',
+  email: 'hello@christianbmartinez.com',
+  phone: '+1 8016451924',
+  address: 'Salt Lake City, Utah',
+  projects: [
+    {
+      title: 'Tailwind Master Kit',
+      link: 'https://tailwindmasterkit.com',
+      imgUrl: '/tmk.jpg',
+    },
+    {
+      title: 'PlaceholderTech',
+      link: 'https://placeholdertech.in',
+      imgUrl: '/placeholdertech.png',
+    },
+    {
+      title: 'Portfolio',
+      link: 'https://manuarora.in',
+      imgUrl: '/portfolio.png',
+    },
+    {
+      title: 'CovidRescue',
+      link: 'https://covidrescue.co.in',
+      imgUrl: '/covidrescue.png',
+    },
+    {
+      title: 'Algochurn',
+      link: 'https://algochurn.com',
+      imgUrl: '/algochurn.png',
+    },
+    {
+      title: 'Playground',
+      link: 'https://play.placeholdertech.in',
+      imgUrl: '/playground.png',
+    },
+    {
+      title: 'Feedmeback',
+      link: 'https://feedmeback.vercel.app',
+      imgUrl: '/feedmeback.png',
+    },
+    {
+      title: 'Devmedium',
+      link: 'https://devmedium.vercel.app',
+      imgUrl: '/devmedium.png',
+    },
+  ],
+}
+
+export { portfolioData, userData }

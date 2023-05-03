@@ -16,8 +16,8 @@ const Contact = () => {
       <section>
         <Heading title='Contact' paragraph='Get in touch! Contact me anytime' />
         <motion.div
-          initial={{ x: 100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
+          initial={{ y: -100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
           transition={{ type: 'spring', stiffness: 100, delay: 1 }}
         >
           <div className='container mt-52 md:mt-32 px-6 mx-auto lg:w-2/3'>

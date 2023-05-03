@@ -1,6 +1,6 @@
 import SiteHead from '../components/SiteHead'
 import Heading from '../components/Heading'
-import { PortfolioData } from '../constants'
+import { portfolioData } from '../constants'
 import PortfolioCard from '../components/PortfolioCard'
 import { motion } from 'framer-motion'
 
@@ -19,7 +19,7 @@ const Portfolio = () => {
         <Heading title='Portfolio' paragraph='View my most recent projects' />
         <div className='mb-20 pb-16 px-6 mx-auto max-w-screen-xl '>
           <div className='grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-3'>
-            {PortfolioData.map((data, i) => {
+            {portfolioData.map((data, i) => {
               return (
                 <motion.div
                   key={data.title}
