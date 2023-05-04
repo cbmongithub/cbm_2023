@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Image from 'next/image'
 import { FaMapPin, FaBriefcase, FaUniversity } from 'react-icons/fa'
 import { motion } from 'framer-motion'
@@ -5,9 +6,10 @@ import SiteHead from '../components/SiteHead'
 import Heading from '../components/Heading'
 import { userData } from '../constants'
 import getLatestRepos from '../helpers/getLatestRepos'
-import LatestCode from '../components/LatestCode'
+import GithubRepoCard from '../components/GithubRepoCard'
 
 const About = ({ repositories }) => {
+  const [repos, setRepos] = useState(repositories)
   return (
     <>
       <SiteHead
@@ -83,7 +85,34 @@ const About = ({ repositories }) => {
                 </div>
               </div>
             </div>
-            <LatestCode repositories={repositories} />
+            <Heading
+              title='Latest Code'
+              paragraph='View my latest code from github'
+            />
+
+            <div className='py-6  lg:py-20'>
+              <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 max-w-6xl mx-auto px-10 lg:-mt-20 gap-y-20'>
+                {repos &&
+                  repos.map((latestRepo, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{
+                        opacity: 0,
+                        translateY: -100,
+                      }}
+                      whileInView={{ opacity: 1, translateY: 0 }}
+                      transition={{
+                        type: 'spring',
+                        stiffness: 100,
+                        duration: 1.5,
+                        delay: 0.5 * i,
+                      }}
+                    >
+                      <GithubRepoCard latestRepo={latestRepo} key={i} />
+                    </motion.div>
+                  ))}
+              </div>
+            </div>
           </div>
         </motion.div>
       </section>
@@ -92,12 +121,9 @@ const About = ({ repositories }) => {
 }
 
 export const getServerSideProps = async () => {
-  console.log(process.env.GITHUB_AUTH_TOKEN)
   let token = process.env.GITHUB_AUTH_TOKEN
 
   const repositories = await getLatestRepos(userData, token)
-  console.log('REPOSITORIES', repositories)
-
   return {
     props: {
       repositories,

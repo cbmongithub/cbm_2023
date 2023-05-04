@@ -43,7 +43,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <AnimatePresence initial={false} mode='wait'>
+      <AnimatePresence initial={true} mode='wait'>
         <motion.div
           key={asPath}
           variants={variants}

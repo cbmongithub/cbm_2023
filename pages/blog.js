@@ -8,8 +8,8 @@ const Blog = ({ posts }) => {
   return (
     <>
       <SiteHead
-        page={posts.title}
-        title={posts.title}
+        page={'Blog'}
+        title={'Blog'}
         description={posts.description}
         keywords={'nextjs, blog, javascript, tech blogs, chatgpt, react js'}
       />
@@ -27,7 +27,7 @@ const Blog = ({ posts }) => {
                   opacity: 0,
                   translateY: -100,
                 }}
-                animate={{ opacity: 1, translateY: 0 }}
+                whileInView={{ opacity: 1, translateY: 0 }}
                 transition={{
                   type: 'spring',
                   stiffness: 100,

@@ -41,7 +41,7 @@ const Post = ({ data, content }) => {
               <Image
                 className='w-7 h-7 rounded-full'
                 src='/img/me.jpg'
-                alt='Jese Leos avatar'
+                alt='Christian B. Martinez Avatar'
                 width={28}
                 height={28}
               />

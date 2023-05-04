@@ -27,7 +27,7 @@ const Portfolio = () => {
                     opacity: 0,
                     translateY: -100,
                   }}
-                  animate={{ opacity: 1, translateY: 0 }}
+                  whileInView={{ opacity: 1, translateY: 0 }}
                   transition={{
                     type: 'spring',
                     stiffness: 100,
