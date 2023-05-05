@@ -1,23 +1,24 @@
 import { FaGithub } from 'react-icons/fa'
+import Link from 'next/link'
 
 const GithubRepoCard = ({ latestRepo }) => {
   return (
-    <div className='flex flex-col justify-center items-center text-center bg-gradient-to-r from-purple-600 shadow-xl rounded-lg to-pink-500 p-10'>
-      <h1 className='font-semibold text-xl dark:text-gray-200 text-white'>
+    <div className='p-6 bg-gradient-to-r from-purple-600 to-pink-500 rounded-lg shadow-xl '>
+      <h2 className='mb-2 text-2xl font-bold tracking-tight text-white'>
         {latestRepo.name}
-      </h1>
-      <p className='text-base font-normal my-4 text-white'>
+      </h2>
+      <p className='mb-5 font-light text-gray-100 dark:text-gray-100'>
         {latestRepo.description}
       </p>
-      <a
-        href={latestRepo.clone_url}
-        className='text-white font-medium text-md hover:opacity-80 transition duration-150 ease-in-out'
-      >
-        <div className='text-white font-bold py-2 px-4 rounded inline-flex items-center'>
-          <FaGithub className='mr-2' />
-          <span>View Repo</span>
-        </div>
-      </a>
+      <div className='flex justify-between items-center'>
+        <Link
+          href={latestRepo.clone_url}
+          className='text-white inline-flex items-center font-medium text-primary-600 hover:text-gray-200 transition duration-300 ease-in-out'
+        >
+          View Repo
+          <FaGithub className='ml-2' />
+        </Link>
+      </div>
     </div>
   )
 }

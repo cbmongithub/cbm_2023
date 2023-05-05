@@ -3,6 +3,7 @@ import Footer from './Footer'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import ChatWidget from './ChatWidget'
 
 const variants = {
   inactive: {
@@ -55,6 +56,7 @@ const Layout = ({ children }) => {
             <Navbar />
             {children}
           </main>
+          <ChatWidget />
           {isHome ? null : <Footer />}
         </motion.div>
       </AnimatePresence>

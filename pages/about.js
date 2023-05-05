@@ -25,11 +25,11 @@ const About = ({ repositories }) => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ type: 'spring', stiffness: 100, delay: 1 }}
         >
-          <div className='container mt-52 px-6 mx-auto lg:w-2/3'>
-            <div className='relative flex flex-col min-w-0 break-words bg-white w-full mb-20 shadow-xl rounded-lg'>
+          <div className='flex flex-col justify-center items-center mt-52 pb-20 px-6 mx-auto lg:w-2/3'>
+            <div className='flex flex-col min-w-0 break-words w-full shadow-xl rounded-lg'>
               <div className='px-6'>
                 <div className='flex flex-wrap justify-center'>
-                  <div className='w-full lg:w-3/12 px-4 lg:order-2 flex justify-center'>
+                  <div className='w-full lg:w-2/3 px-4 lg:order-2 flex justify-center'>
                     <div className='relative'>
                       <motion.div
                         initial={{ y: -100, opacity: 0 }}
@@ -85,36 +85,36 @@ const About = ({ repositories }) => {
                 </div>
               </div>
             </div>
-            <Heading
-              title='Latest Code'
-              paragraph='View my latest code from github'
-            />
-
-            <div className='py-6  lg:py-20'>
-              <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 max-w-6xl mx-auto px-10 lg:-mt-20 gap-y-20'>
-                {repos &&
-                  repos.map((latestRepo, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{
-                        opacity: 0,
-                        translateY: -100,
-                      }}
-                      whileInView={{ opacity: 1, translateY: 0 }}
-                      transition={{
-                        type: 'spring',
-                        stiffness: 100,
-                        duration: 1.5,
-                        delay: 0.5 * i,
-                      }}
-                    >
-                      <GithubRepoCard latestRepo={latestRepo} key={i} />
-                    </motion.div>
-                  ))}
-              </div>
-            </div>
           </div>
         </motion.div>
+        <Heading
+          title='Latest Code'
+          paragraph='View my latest code from Github'
+        />
+
+        <div className='mb-20 py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6'>
+          <div className='grid gap-12 grid-cols-1 md:grid-cols-2 xl:grid-cols-3'>
+            {repos &&
+              repos.map((latestRepo, i) => (
+                <motion.div
+                  key={i}
+                  initial={{
+                    opacity: 0,
+                    translateY: -100,
+                  }}
+                  whileInView={{ opacity: 1, translateY: 0 }}
+                  transition={{
+                    type: 'spring',
+                    stiffness: 100,
+                    duration: 1.5,
+                    delay: 0.5 * i + 0.5,
+                  }}
+                >
+                  <GithubRepoCard latestRepo={latestRepo} key={i} />
+                </motion.div>
+              ))}
+          </div>
+        </div>
       </section>
     </>
   )
