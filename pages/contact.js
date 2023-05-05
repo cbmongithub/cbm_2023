@@ -147,12 +147,10 @@ const Contact = () => {
           px-6
           py-2.5
           bg-purple-600
+          rounded-md
           text-white
-          font-medium
-          text-xs
-          leading-tight
-          uppercase
-          rounded
+          font-medium          
+          text-sm leading-snug uppercase
           shadow-md
           hover:bg-purple-700 hover:shadow-lg
           focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0
