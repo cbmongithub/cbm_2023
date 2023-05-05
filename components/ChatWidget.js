@@ -7,7 +7,8 @@ const ChatWidget = () => {
   const [prompt, setPrompt] = useState('')
   const [placeholder, setPlaceholder] = useState('Ask any question')
   const [message, setMessage] = useState('')
-  const [storedValues, setStoredValues] = useState([])
+  const [botStore, setBotStore] = useState([])
+  const [userStore, setUserStore] = useState([])
   const [response, setResponse] = useState(
     'Welcome! I am Christians chatbot. You can ask me anything about Christian and I will respond accordingly.'
   )
@@ -26,6 +27,7 @@ const ChatWidget = () => {
       setPrompt('')
       setPlaceholder('Ask any question')
       setMessage(prompt)
+      setUserStore([prompt, ...userStore])
 
       const response = await fetch('/api/createMessage', {
         method: 'POST',
@@ -43,6 +45,7 @@ const ChatWidget = () => {
 
       let answer = await response.json()
       setResponse(answer.choices[0].text)
+      setBotStore([answer.choices[0].text, ...botStore])
     }
   }
 
@@ -64,7 +67,8 @@ const ChatWidget = () => {
               <div className='flex flex-col mt-5'>
                 <div className='flex justify-end mb-4'>
                   <div className='mr-2 py-3 px-4 bg-purple-600 rounded-lg text-white'>
-                    {response}
+                    Welcome! I am Christians chatbot. You can ask me anything
+                    about Christian and I will respond accordingly.
                   </div>
                   <Image
                     src='/img/bot.jpg'
@@ -74,15 +78,29 @@ const ChatWidget = () => {
                     height={75}
                   />
                 </div>
-                {message ? (
-                  <div className='flex justify-start mb-4'>
-                    <div className='py-3 px-4 bg-gray-400 rounded-lg text-white'>
-                      {message}
+                {userStore &&
+                  userStore.map((messages, i) => (
+                    <div key={i} className='flex justify-start mb-4'>
+                      <div className='py-3 px-4 bg-gray-400 rounded-lg text-white'>
+                        {messages}
+                      </div>
                     </div>
-                  </div>
-                ) : (
-                  ''
-                )}
+                  ))}
+                {botStore &&
+                  botStore.map((messages, i) => (
+                    <div key={i} className='flex justify-end mb-4'>
+                      <div className='mr-2 py-3 px-4 bg-purple-600 rounded-lg text-white'>
+                        {messages}
+                      </div>
+                      <Image
+                        src='/img/bot.jpg'
+                        className='object-cover h-8 w-8 rounded-full'
+                        alt='Chatbot image for Christian B Martinez'
+                        width={75}
+                        height={75}
+                      />
+                    </div>
+                  ))}
               </div>
               <form className='py-5' onSubmit={handleSubmit}>
                 <div className='flex flex-row justify-between'>
