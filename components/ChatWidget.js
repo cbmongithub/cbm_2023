@@ -2,13 +2,31 @@ import { useState } from 'react'
 import { FaComment } from 'react-icons/fa'
 import Image from 'next/image'
 import ScrollableFeed from 'react-scrollable-feed'
+import { motion, useCycle, AnimatePresence } from 'framer-motion'
 
 const ChatWidget = () => {
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useCycle(false, true)
   const [storedValues, setStoredValues] = useState([])
 
-  const handleToggle = () => {
-    setShow(!show)
+  const variants = {
+    open: {
+      opacity: 1,
+      x: 5,
+      transition: {
+        duration: 0.5,
+        ease: 'easeInOut',
+        type: 'spring',
+        stiffness: 100,
+      },
+    },
+    closed: {
+      x: 300,
+      opacity: 0,
+      transition: {
+        duration: 0.5,
+        ease: 'easeInOut',
+      },
+    },
   }
 
   const generateResponse = async (newQuestion, setNewQuestion) => {
@@ -41,55 +59,78 @@ const ChatWidget = () => {
 
   return (
     <>
-      {show ? (
-        <div className='bg-white flex flex-col w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4 max-h-[30rem] min-h-[22rem] absolute bottom-5 right-5 mx-auto shadow-xl rounded-lg z-30'>
-          <div className='sticky top-0 px-4 py-5 flex justify-between bg-gradient-to-r from-purple-600 to-pink-500 rounded-t-md'>
-            <h1 className='text-white font-semibold text-lg'>Chat</h1>
-            <a
-              onClick={handleToggle}
-              className='text-white font-semibold text-xl cursor-pointer'
-            >
-              x
-            </a>
-          </div>
-          <div className='flex flex-col bg-white min-h-[16rem] max-h-[20rem] w-full'>
-            <ScrollableFeed>
-              <div className='flex flex-row justify-between bg-white rounded-b-md'>
-                <div className='px-4 flex flex-col justify-between'>
-                  <div className='flex flex-col mt-5'>
-                    <div className='flex justify-end mb-4'>
-                      <div className='mr-2 py-3 px-4 bg-purple-600 rounded-lg text-white'>
-                        <p>
-                          Welcome! I am Christians chatbot. You can ask me
-                          anything about Christian and I will respond
-                          accordingly.
-                        </p>
+      <AnimatePresence>
+        {show && (
+          <motion.div
+            variants={variants}
+            initial='closed'
+            animate='open'
+            exit='closed'
+          >
+            <div className='bg-white flex flex-col w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4 max-h-[30rem] min-h-[22rem] absolute bottom-5 right-5 mx-auto shadow-xl rounded-lg z-30'>
+              <div className='sticky top-0 px-4 py-5 flex justify-between bg-gradient-to-r from-purple-600 to-pink-500 rounded-t-md'>
+                <h1 className='text-white font-semibold text-lg'>Chat</h1>
+                <a
+                  onClick={setShow}
+                  className='text-white font-semibold text-xl cursor-pointer'
+                >
+                  x
+                </a>
+              </div>
+              <div className='flex flex-col bg-white min-h-[16rem] max-h-[20rem] w-full'>
+                <ScrollableFeed>
+                  <div className='flex flex-row justify-between bg-white rounded-b-md'>
+                    <div className='px-4 flex flex-col justify-between'>
+                      <div className='flex flex-col mt-5'>
+                        <div className='flex justify-end mb-4'>
+                          <div className='mr-2 py-3 px-4 bg-purple-600 rounded-lg text-white'>
+                            <p>
+                              Welcome! I am Christians chatbot. You can ask me
+                              anything about Christian and I will respond
+                              accordingly.
+                            </p>
+                          </div>
+                          <Image
+                            src='/img/bot.jpg'
+                            className='object-cover h-8 w-8 rounded-full'
+                            alt='Chatbot image for Christian B Martinez'
+                            width={75}
+                            height={75}
+                          />
+                        </div>
                       </div>
-                      <Image
-                        src='/img/bot.jpg'
-                        className='object-cover h-8 w-8 rounded-full'
-                        alt='Chatbot image for Christian B Martinez'
-                        width={75}
-                        height={75}
-                      />
+                      {storedValues.length > 0 && (
+                        <AnswerSection storedValues={storedValues} />
+                      )}
                     </div>
                   </div>
-                  {storedValues.length > 0 && (
-                    <AnswerSection storedValues={storedValues} />
-                  )}
-                </div>
+                </ScrollableFeed>
               </div>
-            </ScrollableFeed>
-          </div>
-          <FormSection generateResponse={generateResponse} />
-        </div>
+              <FormSection generateResponse={generateResponse} />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      {!show ? (
+        <>
+          <AnimatePresence>
+            <motion.div
+              variants={variants}
+              initial='closed'
+              animate='open'
+              exit='closed'
+            >
+              <div
+                onClick={setShow}
+                className='fixed cursor-pointer z-30 bottom-5 right-5 p-4 bg-gradient-to-r from-purple-600 to-pink-500 rounded-full shadow-xl'
+              >
+                <FaComment className='w-5 h-5 text-white' />
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </>
       ) : (
-        <div
-          onClick={handleToggle}
-          className='fixed cursor-pointer z-30 bottom-5 right-5 p-4 bg-gradient-to-r from-purple-600 to-pink-500 rounded-full shadow-xl'
-        >
-          <FaComment className='w-5 h-5 text-white' />
-        </div>
+        ''
       )}
     </>
   )
@@ -99,17 +140,17 @@ const AnswerSection = ({ storedValues }) => {
   return (
     <>
       {storedValues
-        .map((value, index) => {
+        .map((data, index) => {
           return (
             <>
               <div className='flex justify-start mb-4' key={index}>
                 <div className='py-3 px-4 bg-slate-400 rounded-lg text-white'>
-                  <p>{value.question}</p>
+                  <p>{data.question}</p>
                 </div>
               </div>
               <div className='flex justify-end mb-4'>
                 <div className='mr-2 py-3 px-4 bg-purple-600 rounded-lg text-white'>
-                  {value.answer}
+                  {data.answer}
                 </div>
                 <Image
                   src='/img/bot.jpg'
