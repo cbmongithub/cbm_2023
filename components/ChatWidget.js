@@ -49,7 +49,7 @@ const ChatWidget = () => {
       setStoredValues([
         {
           question: newQuestion,
-          answer: answer.choices[0].text,
+          answer: answer.choices[0].message.content,
         },
         ...storedValues,
       ])
@@ -138,15 +138,15 @@ const AnswerSection = ({ storedValues }) => {
       {storedValues
         .map((data, index) => {
           return (
-            <>
-              <div className='flex justify-start mb-4' key={index}>
+            <div key={index}>
+              <div className='flex justify-start mb-4'>
                 <div className='py-3 px-4 bg-slate-400 rounded-lg text-white'>
                   <p>{data.question}</p>
                 </div>
               </div>
               <div className='flex justify-end mb-4'>
                 <div className='mr-2 py-3 px-4 bg-purple-600 rounded-lg text-white'>
-                  {data.answer}
+                  <p>{data.answer}</p>
                 </div>
                 <Image
                   src='/img/bot.jpg'
@@ -156,7 +156,7 @@ const AnswerSection = ({ storedValues }) => {
                   height={75}
                 />
               </div>
-            </>
+            </div>
           )
         })
         .reverse()}
