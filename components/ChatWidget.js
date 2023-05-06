@@ -66,7 +66,7 @@ const ChatWidget = () => {
             initial='closed'
             animate='open'
             exit='closed'
-            className='bg-white flex flex-col w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4 max-h-[30rem] min-h-[22rem] absolute bottom-5 right-6 mx-auto shadow-xl rounded-lg z-30'
+            className='bg-white flex flex-col w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4 max-h-[30rem] min-h-[22rem] absolute bottom-5 right-6   mx-auto shadow-xl rounded-lg z-30'
           >
             <div className='sticky top-0 px-4 py-5 flex justify-between bg-gradient-to-r from-purple-600 to-pink-500 rounded-t-md'>
               <h1 className='text-white font-semibold text-lg'>Chat</h1>
