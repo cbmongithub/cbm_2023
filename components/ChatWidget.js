@@ -41,8 +41,8 @@ const ChatWidget = () => {
   return (
     <>
       {show ? (
-        <div className='container w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4 max-h-[32rem] overflow-y-auto overflow-x-hidden absolute bottom-5 right-5 md:bottom-5 md:right-5 mx-auto shadow-lg rounded-lg z-40'>
-          <div className='sticky top-0 w-full px-5 py-5 flex justify-between bg-gradient-to-r from-purple-600 to-pink-500 rounded-t-md border-b-2'>
+        <div className='bg-white container w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4 max-h-[32rem] min-h-[32rem] overflow-y-auto overflow-x-hidden absolute bottom-5 right-5 mx-auto shadow-xl rounded-lg z-40'>
+          <div className='sticky top-0 px-5 py-5 flex justify-between bg-gradient-to-r from-purple-600 to-pink-500 rounded-t-md border-b-2'>
             <h1 className='text-white font-semibold text-lg'>Chat</h1>
             <a
               onClick={handleToggle}
@@ -52,7 +52,7 @@ const ChatWidget = () => {
             </a>
           </div>
           <div className='flex flex-row justify-between bg-white rounded-b-md'>
-            <div className='w-full px-5 flex flex-col justify-between'>
+            <div className='px-5 flex flex-col justify-between'>
               <div className='flex flex-col mt-5'>
                 {storedValues.length < 1 && (
                   <div className='flex justify-end mb-4'>
@@ -82,7 +82,7 @@ const ChatWidget = () => {
       ) : (
         <div
           onClick={handleToggle}
-          className='fixed cursor-pointer z-40 bottom-5 right-5 p-4 bg-gradient-to-r from-purple-600 to-pink-500 rounded-full lg shadow-xl'
+          className='fixed cursor-pointer z-40 bottom-5 right-5 p-4 bg-gradient-to-r from-purple-600 to-pink-500 rounded-full shadow-xl'
         >
           <FaComment className='w-5 h-5 text-white' />
         </div>
@@ -126,7 +126,7 @@ const FormSection = ({ generateResponse }) => {
 
   return (
     <>
-      <div className='sticky w-full bg-white bottom-0 py-5 flex flex-row justify-between items-center'>
+      <div className='absolute w-full bg-white bottom-0 py-5'>
         <input
           className='text-base
   w-3/4

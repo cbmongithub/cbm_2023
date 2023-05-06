@@ -1,8 +1,8 @@
+import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
+import { motion, AnimatePresence } from 'framer-motion'
 import Navbar from './Navbar'
 import Footer from './Footer'
-import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
 import ChatWidget from '../components/ChatWidget'
 
 const variants = {
