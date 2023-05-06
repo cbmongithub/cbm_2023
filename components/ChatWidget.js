@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { FaComment } from 'react-icons/fa'
 import Image from 'next/image'
+import ScrollableFeed from 'react-scrollable-feed'
 
 const ChatWidget = () => {
   const [show, setShow] = useState(false)
@@ -51,31 +52,34 @@ const ChatWidget = () => {
               x
             </a>
           </div>
-          <div className='flex flex-col bg-white min-h-[16rem] max-h-[20rem] overflow-y-auto w-full'>
-            <div className='flex flex-row justify-between bg-white rounded-b-md'>
-              <div className='px-4 flex flex-col justify-between'>
-                <div className='flex flex-col mt-5'>
-                  <div className='flex justify-end mb-4'>
-                    <div className='mr-2 py-3 px-4 bg-purple-600 rounded-lg text-white'>
-                      <p>
-                        Welcome! I am Christians chatbot. You can ask me
-                        anything about Christian and I will respond accordingly.
-                      </p>
+          <div className='flex flex-col bg-white min-h-[16rem] max-h-[20rem] w-full'>
+            <ScrollableFeed>
+              <div className='flex flex-row justify-between bg-white rounded-b-md'>
+                <div className='px-4 flex flex-col justify-between'>
+                  <div className='flex flex-col mt-5'>
+                    <div className='flex justify-end mb-4'>
+                      <div className='mr-2 py-3 px-4 bg-purple-600 rounded-lg text-white'>
+                        <p>
+                          Welcome! I am Christians chatbot. You can ask me
+                          anything about Christian and I will respond
+                          accordingly.
+                        </p>
+                      </div>
+                      <Image
+                        src='/img/bot.jpg'
+                        className='object-cover h-8 w-8 rounded-full'
+                        alt='Chatbot image for Christian B Martinez'
+                        width={75}
+                        height={75}
+                      />
                     </div>
-                    <Image
-                      src='/img/bot.jpg'
-                      className='object-cover h-8 w-8 rounded-full'
-                      alt='Chatbot image for Christian B Martinez'
-                      width={75}
-                      height={75}
-                    />
                   </div>
+                  {storedValues.length > 0 && (
+                    <AnswerSection storedValues={storedValues} />
+                  )}
                 </div>
-                {storedValues.length > 0 && (
-                  <AnswerSection storedValues={storedValues} />
-                )}
               </div>
-            </div>
+            </ScrollableFeed>
           </div>
           <FormSection generateResponse={generateResponse} />
         </div>
