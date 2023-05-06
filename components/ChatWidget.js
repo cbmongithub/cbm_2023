@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import FormSection from './FormSection'
-import AnswerSection from './AnswerSection'
 import { FaComment } from 'react-icons/fa'
 import Image from 'next/image'
 
@@ -89,6 +87,69 @@ const ChatWidget = () => {
           <FaComment className='w-5 h-5 text-white' />
         </div>
       )}
+    </>
+  )
+}
+
+const AnswerSection = ({ storedValues }) => {
+  return (
+    <>
+      {storedValues.map((value, index) => {
+        return (
+          <>
+            <div className='flex justify-start mb-4' key={index}>
+              <div className='py-3 px-4 bg-gray-400 rounded-lg text-white'>
+                <p>{value.question}</p>
+              </div>
+            </div>
+            <div className='flex justify-end mb-4'>
+              <div className='mr-2 py-3 px-4 bg-purple-600 rounded-lg text-white'>
+                {value.answer}
+              </div>
+              <Image
+                src='/img/bot.jpg'
+                className='object-cover h-8 w-8 rounded-full'
+                alt='Chatbot image for Christian B Martinez'
+                width={75}
+                height={75}
+              />
+            </div>
+          </>
+        )
+      })}
+    </>
+  )
+}
+
+const FormSection = ({ generateResponse }) => {
+  const [newQuestion, setNewQuestion] = useState('')
+
+  return (
+    <>
+      <div className='sticky w-full bg-white bottom-0 py-5 flex flex-row justify-between items-center'>
+        <input
+          className='text-base
+  w-3/4
+  font-normal
+  text-gray-700
+  bg-white bg-clip-padding
+  border border-solid border-gray-300
+  transition
+  ease-in-out
+  m-0
+  focus:text-gray-700 focus:bg-white focus:border-purple-600 focus:outline-none py-5 px-3 rounded-xl'
+          placeholder='Ask any question'
+          value={newQuestion}
+          onChange={(e) => setNewQuestion(e.target.value)}
+        />
+        <button
+          type='submit'
+          className='w-1/4 text-purple-600 font-medium text-sm leading-snug uppercase hover:text-purple-700'
+          onClick={() => generateResponse(newQuestion, setNewQuestion)}
+        >
+          SEND
+        </button>
+      </div>
     </>
   )
 }
