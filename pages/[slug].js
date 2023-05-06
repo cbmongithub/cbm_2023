@@ -21,6 +21,11 @@ const Post = ({ data, content }) => {
     document.querySelector('body').scrollTo(0, 0)
   }, [])
 
+  useEffect(() => {
+    if (!isBrowser()) return
+    console.log(window.getSelection().toString())
+  }, [])
+
   return (
     <>
       <SiteHead

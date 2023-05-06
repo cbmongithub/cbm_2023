@@ -3,8 +3,8 @@ import { motion } from 'framer-motion'
 const Heading = ({ title, paragraph }) => {
   return (
     <motion.div
-      initial={{ x: 100, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
+      initial={{ y: 100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
       transition={{ type: 'spring', stiffness: 100 }}
       className='px-6 mx-auto text-center my-20 relative z-30'
     >
@@ -13,8 +13,8 @@ const Heading = ({ title, paragraph }) => {
       </h1>
       {paragraph ? (
         <motion.div
-          initial={{ x: -100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
+          initial={{ y: -100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
           transition={{ type: 'spring', stiffness: 100, delay: 0.5 }}
         >
           <p className='font-light text-gray-800 text-xl dark:text-gray-400'>
