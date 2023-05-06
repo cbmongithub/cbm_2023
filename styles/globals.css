@@ -55,7 +55,7 @@ a:focus {
   z-index: -1;
 }
 
-code {
+pre {
   -webkit-user-select: text;
   -ms-user-select: text;
   user-select: text;

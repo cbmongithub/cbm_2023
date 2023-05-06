@@ -22,8 +22,17 @@ const Post = ({ data, content }) => {
   }, [])
 
   useEffect(() => {
-    if (!isBrowser()) return
-    console.log(window.getSelection().toString())
+    const saveSelection = async () => {
+      let selection = window.getSelection().toString()
+      if ('clipboard' in navigator) {
+        document.querySelector('body').classList.add('copied')
+        return await navigator.clipboard.writeText(selection)
+      } else {
+        return document.execCommand('copy', true, selection)
+      }
+    }
+    document.addEventListener('mouseup', saveSelection)
+    return () => document.removeEventListener('mouseup', saveSelection)
   }, [])
 
   return (
