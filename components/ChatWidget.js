@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { FaComment } from 'react-icons/fa'
 import Image from 'next/image'
-import ScrollToBottom from 'react-scroll-to-bottom'
 
 const ChatWidget = () => {
   const [show, setShow] = useState(false)
@@ -42,7 +41,7 @@ const ChatWidget = () => {
   return (
     <>
       {show ? (
-        <div className='bg-white flex flex-col w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4 max-h-[32rem] min-h-[32rem] absolute bottom-5 right-5 mx-auto shadow-xl rounded-lg z-30'>
+        <div className='bg-white flex flex-col w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4 max-h-[30rem] min-h-[22rem] absolute bottom-5 right-5 mx-auto shadow-xl rounded-lg z-30'>
           <div className='sticky top-0 px-4 py-5 flex justify-between bg-gradient-to-r from-purple-600 to-pink-500 rounded-t-md'>
             <h1 className='text-white font-semibold text-lg'>Chat</h1>
             <a
@@ -52,7 +51,7 @@ const ChatWidget = () => {
               x
             </a>
           </div>
-          <div className='flex flex-col bg-white min-h-full overflow-y-scroll'>
+          <div className='flex flex-col bg-white min-h-[16rem] max-h-[20rem] overflow-y-auto w-full'>
             <div className='flex flex-row justify-between bg-white rounded-b-md'>
               <div className='px-4 flex flex-col justify-between'>
                 <div className='flex flex-col mt-5'>
@@ -100,7 +99,7 @@ const AnswerSection = ({ storedValues }) => {
           return (
             <>
               <div className='flex justify-start mb-4' key={index}>
-                <div className='py-3 px-4 bg-gray-400 rounded-lg text-white'>
+                <div className='py-3 px-4 bg-slate-400 rounded-lg text-white'>
                   <p>{value.question}</p>
                 </div>
               </div>
@@ -134,7 +133,7 @@ const FormSection = ({ generateResponse }) => {
     <>
       <form
         onSubmit={handleSubmit}
-        className='flex flex-row justify-between items-center sticky h-full w-full bg-white px-4 py-5'
+        className='flex flex-row justify-between items-center relative w-full bottom-0 right-0 bg-white px-4 py-5'
       >
         <input
           className='text-base
