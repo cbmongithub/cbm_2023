@@ -56,9 +56,9 @@ const Layout = ({ children }) => {
             <Navbar />
             {children}
           </main>
-          <ChatWidget />
           {isHome ? null : <Footer />}
         </motion.div>
+        <ChatWidget />
       </AnimatePresence>
     </>
   )
