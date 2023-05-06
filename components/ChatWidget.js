@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { FaComment } from 'react-icons/fa'
 import Image from 'next/image'
+import ScrollToBottom from 'react-scroll-to-bottom'
 
 const ChatWidget = () => {
   const [show, setShow] = useState(false)
@@ -41,8 +42,8 @@ const ChatWidget = () => {
   return (
     <>
       {show ? (
-        <div className='bg-white container w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4 max-h-[32rem] min-h-[32rem] overflow-y-auto overflow-x-hidden absolute bottom-5 right-5 mx-auto shadow-xl rounded-lg z-40'>
-          <div className='sticky top-0 px-5 py-5 flex justify-between bg-gradient-to-r from-purple-600 to-pink-500 rounded-t-md border-b-2'>
+        <div className='bg-white flex flex-col w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4 max-h-[32rem] min-h-[32rem] absolute bottom-5 right-5 mx-auto shadow-xl rounded-lg z-30'>
+          <div className='sticky top-0 px-4 py-5 flex justify-between bg-gradient-to-r from-purple-600 to-pink-500 rounded-t-md'>
             <h1 className='text-white font-semibold text-lg'>Chat</h1>
             <a
               onClick={handleToggle}
@@ -51,10 +52,10 @@ const ChatWidget = () => {
               x
             </a>
           </div>
-          <div className='flex flex-row justify-between bg-white rounded-b-md'>
-            <div className='px-5 flex flex-col justify-between'>
-              <div className='flex flex-col mt-5'>
-                {storedValues.length < 1 && (
+          <div className='flex flex-col bg-white min-h-full overflow-y-scroll'>
+            <div className='flex flex-row justify-between bg-white rounded-b-md'>
+              <div className='px-4 flex flex-col justify-between'>
+                <div className='flex flex-col mt-5'>
                   <div className='flex justify-end mb-4'>
                     <div className='mr-2 py-3 px-4 bg-purple-600 rounded-lg text-white'>
                       <p>
@@ -70,19 +71,19 @@ const ChatWidget = () => {
                       height={75}
                     />
                   </div>
+                </div>
+                {storedValues.length > 0 && (
+                  <AnswerSection storedValues={storedValues} />
                 )}
               </div>
-              {storedValues.length > 0 && (
-                <AnswerSection storedValues={storedValues} />
-              )}
-              <FormSection generateResponse={generateResponse} />
             </div>
           </div>
+          <FormSection generateResponse={generateResponse} />
         </div>
       ) : (
         <div
           onClick={handleToggle}
-          className='fixed cursor-pointer z-40 bottom-5 right-5 p-4 bg-gradient-to-r from-purple-600 to-pink-500 rounded-full shadow-xl'
+          className='fixed cursor-pointer z-30 bottom-5 right-5 p-4 bg-gradient-to-r from-purple-600 to-pink-500 rounded-full shadow-xl'
         >
           <FaComment className='w-5 h-5 text-white' />
         </div>
@@ -94,53 +95,62 @@ const ChatWidget = () => {
 const AnswerSection = ({ storedValues }) => {
   return (
     <>
-      {storedValues.map((value, index) => {
-        return (
-          <>
-            <div className='flex justify-start mb-4' key={index}>
-              <div className='py-3 px-4 bg-gray-400 rounded-lg text-white'>
-                <p>{value.question}</p>
+      {storedValues
+        .map((value, index) => {
+          return (
+            <>
+              <div className='flex justify-start mb-4' key={index}>
+                <div className='py-3 px-4 bg-gray-400 rounded-lg text-white'>
+                  <p>{value.question}</p>
+                </div>
               </div>
-            </div>
-            <div className='flex justify-end mb-4'>
-              <div className='mr-2 py-3 px-4 bg-purple-600 rounded-lg text-white'>
-                {value.answer}
+              <div className='flex justify-end mb-4'>
+                <div className='mr-2 py-3 px-4 bg-purple-600 rounded-lg text-white'>
+                  {value.answer}
+                </div>
+                <Image
+                  src='/img/bot.jpg'
+                  className='object-cover h-8 w-8 rounded-full'
+                  alt='Chatbot image for Christian B Martinez'
+                  width={75}
+                  height={75}
+                />
               </div>
-              <Image
-                src='/img/bot.jpg'
-                className='object-cover h-8 w-8 rounded-full'
-                alt='Chatbot image for Christian B Martinez'
-                width={75}
-                height={75}
-              />
-            </div>
-          </>
-        )
-      })}
+            </>
+          )
+        })
+        .reverse()}
     </>
   )
 }
 
 const FormSection = ({ generateResponse }) => {
   const [newQuestion, setNewQuestion] = useState('')
+  const handleSubmit = (e) => {
+    e.preventDefault()
+  }
 
   return (
     <>
-      <div className='absolute w-full bg-white bottom-0 py-5'>
+      <form
+        onSubmit={handleSubmit}
+        className='flex flex-row justify-between items-center sticky h-full w-full bg-white px-4 py-5'
+      >
         <input
           className='text-base
-  w-3/4
-  font-normal
-  text-gray-700
-  bg-white bg-clip-padding
-  border border-solid border-gray-300
-  transition
-  ease-in-out
-  m-0
-  focus:text-gray-700 focus:bg-white focus:border-purple-600 focus:outline-none py-5 px-3 rounded-xl'
+            w-3/4
+            font-normal
+            text-gray-700
+            bg-white bg-clip-padding
+            border border-solid border-gray-300
+            transition
+            ease-in-out
+            m-0
+              focus:border-purple-600 focus:outline-none py-5 px-4 rounded-xl'
           placeholder='Ask any question'
           value={newQuestion}
           onChange={(e) => setNewQuestion(e.target.value)}
+          type='text'
         />
         <button
           type='submit'
@@ -149,7 +159,7 @@ const FormSection = ({ generateResponse }) => {
         >
           SEND
         </button>
-      </div>
+      </form>
     </>
   )
 }

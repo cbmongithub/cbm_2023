@@ -20,6 +20,7 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
     "react-particles": "^2.9.3",
+    "react-scroll-to-bottom": "^4.2.0",
     "react-type-animation": "^3.0.1",
     "tsparticles": "^2.9.3"
   },
