@@ -78,6 +78,7 @@ pre {
   transform: translateX(100%);
   animation: shift-rightwards 1s ease-in-out infinite;
   animation-delay: 0.5s;
+  z-index: 9999;
 }
 
 @keyframes shift-rightwards {
