@@ -25,7 +25,12 @@ const Post = ({ data, content }) => {
     const saveSelection = async () => {
       let selection = window.getSelection().toString()
       if ('clipboard' in navigator) {
-        document.querySelector('body').classList.add('copied')
+        if (document.querySelector('pre:hover')) {
+          document.querySelector('body').classList.add('copied')
+          setTimeout(() => {
+            document.querySelector('body').classList.remove('copied')
+          }, 500)
+        }
         return await navigator.clipboard.writeText(selection)
       } else {
         return document.execCommand('copy', true, selection)
