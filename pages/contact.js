@@ -1,8 +1,92 @@
+import { useState } from 'react'
 import SiteHead from '../components/SiteHead'
 import Heading from '../components/Heading'
 import { motion } from 'framer-motion'
+import { userData } from '../constants'
+import * as emailjs from 'emailjs-com'
+
+const Alert = ({ variant, children }) => {
+  return (
+    <div className='flex flex-row justify-center items-center mt-2'>
+      <div
+        className={`bg-${variant}-100 border border-${variant}-400 text-${variant}-700 px-4 py-3 rounded relative`}
+        role='alert'
+      >
+        <span className='block sm:inline'>{children}</span>
+        <span className='absolute top-0 bottom-0 right-0 px-4 py-3'>
+          <svg
+            className='fill-current h-6 w-6 text-red-500'
+            role='button'
+            xmlns='http://www.w3.org/2000/svg'
+            viewBox='0 0 20 20'
+          >
+            <title>Close</title>
+            <path d='M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z' />
+          </svg>
+        </span>
+      </div>
+    </div>
+  )
+}
 
 const Contact = () => {
+  const [formData, setFormdata] = useState({
+    email: '',
+    name: '',
+    message: '',
+    loading: false,
+    show: false,
+    alertmessage: '',
+    variant: '',
+  })
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setFormdata({ loading: true })
+
+    const templateParams = {
+      from_name: formData.email,
+      user_name: formData.name,
+      to_name: userData.email,
+      message: formData.message,
+    }
+
+    emailjs
+      .send(
+        'service_kq06veu',
+        'template_x5oo4ci',
+        templateParams,
+        'user_ZqTkxH9x7lpssb7A9r9hM'
+      )
+      .then(
+        (result) => {
+          console.log(result.text)
+          setFormdata({
+            loading: false,
+            alertmessage: 'Thanks for your message! Will respond asap :)',
+            message: '',
+            variant: 'green',
+            show: true,
+          })
+        },
+        (error) => {
+          console.log(error.text)
+          setFormdata({
+            alertmessage: `Failed to send!, ${error.text}`,
+            variant: 'red',
+            show: true,
+          })
+        }
+      )
+  }
+
+  const handleChange = (e) => {
+    setFormdata({
+      ...formData,
+      [e.target.name]: e.target.value,
+    })
+  }
+
   return (
     <>
       <SiteHead
@@ -69,14 +153,13 @@ const Contact = () => {
                           d='M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z'
                         ></path>
                       </svg>
-                      <h6 className='font-medium'>+1-801-555-5555</h6>
+                      <h6 className='font-medium'>+1-801-645-1924</h6>
                     </div>
                   </div>
                   <div className='max-w-[700px] mx-auto'>
-                    <form>
+                    <form onSubmit={handleSubmit}>
                       <div className='form-group mb-6'>
                         <input
-                          type='text'
                           className='form-control block
             w-full
             px-3
@@ -91,13 +174,18 @@ const Contact = () => {
             ease-in-out
             m-0
             focus:text-gray-700 focus:bg-white focus:border-purple-600 focus:outline-none'
-                          id='exampleInput7'
+                          id='name'
+                          name='name'
                           placeholder='Name'
+                          value={formData.name || ''}
+                          type='text'
+                          required
+                          onChange={handleChange}
+                          autoComplete='on'
                         />
                       </div>
                       <div className='form-group mb-6'>
                         <input
-                          type='email'
                           className='form-control block
             w-full
             px-3
@@ -112,8 +200,14 @@ const Contact = () => {
             ease-in-out
             m-0
             focus:text-gray-700 focus:bg-white focus:border-purple-600 focus:outline-none'
-                          id='exampleInput8'
-                          placeholder='Email address'
+                          id='email'
+                          name='email'
+                          placeholder='Email'
+                          type='email'
+                          value={formData.email || ''}
+                          required
+                          autoComplete='on'
+                          onChange={handleChange}
                         />
                       </div>
                       <div className='form-group mb-6'>
@@ -135,9 +229,14 @@ const Contact = () => {
             m-0
             focus:text-gray-700 focus:bg-white focus:border-purple-600 focus:outline-none
           '
-                          id='exampleFormControlTextarea13'
-                          rows='3'
-                          placeholder='Message'
+                          id='message'
+                          name='message'
+                          placeholder='Write message...'
+                          rows='5'
+                          value={formData.message}
+                          autoComplete='off'
+                          onChange={handleChange}
+                          required
                         ></textarea>
                       </div>
                       <button
@@ -159,8 +258,21 @@ const Contact = () => {
           duration-150
           ease-in-out'
                       >
-                        Send
+                        {formData.loading ? 'Sending...' : 'Send'}
                       </button>
+                      <div
+                        className={formData.loading ? 'loading-bar' : 'hidden'}
+                      ></div>
+                      {formData.show ? (
+                        <Alert
+                          variant={formData.variant}
+                          onClick={setFormdata({ show: false })}
+                        >
+                          {formData.alertmessage}
+                        </Alert>
+                      ) : (
+                        'Nothing to show here'
+                      )}
                     </form>
                   </div>
                 </div>
