@@ -30,7 +30,7 @@ const ChatWidget = () => {
   }
 
   const generateResponse = async (newQuestion, setNewQuestion) => {
-    const response = await fetch('/api/createMessage', {
+    const response = await fetch('/api/chatGpt', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

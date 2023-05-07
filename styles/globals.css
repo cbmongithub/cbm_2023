@@ -67,7 +67,7 @@ pre {
   left: 0;
   right: 0;
   height: 10px;
-  background: #777;
+  background-image: linear-gradient(to right, #9333ea, #ec4899);
   transform: translateX(100%);
   animation: shift-rightwards 1s ease-in-out infinite;
   animation-delay: 0.5s;

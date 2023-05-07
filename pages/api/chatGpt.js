@@ -1,4 +1,4 @@
-export default async function createMessage(req, res) {
+const chatGpt = async (req, res) => {
   const { prompt } = req.body
 
   const payload = {
@@ -57,3 +57,5 @@ export default async function createMessage(req, res) {
   const json = await response.json()
   res.status(200).json(json)
 }
+
+export default chatGpt
