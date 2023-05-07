@@ -5,6 +5,10 @@ import { motion } from 'framer-motion'
 import { userData } from '../constants'
 import * as emailjs from 'emailjs-com'
 
+const serviceId = process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID
+const templateId = process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID
+const userId = process.env.NEXT_PUBLIC_EMAIL_USER_ID
+
 const Contact = () => {
   const [formData, setFormdata] = useState({
     email: '',
@@ -27,33 +31,26 @@ const Contact = () => {
       message: formData.message,
     }
 
-    emailjs
-      .send(
-        'service_kq06veu',
-        'template_x5oo4ci',
-        templateParams,
-        'user_ZqTkxH9x7lpssb7A9r9hM'
-      )
-      .then(
-        (result) => {
-          console.log(result.text)
-          setFormdata({
-            loading: false,
-            alertmessage: 'Thanks for your message! Will respond asap :)',
-            message: '',
-            success: true,
-            show: true,
-          })
-        },
-        (error) => {
-          console.log(error.text)
-          setFormdata({
-            alertmessage: `Failed to send!, ${error.text}`,
-            success: false,
-            show: true,
-          })
-        }
-      )
+    emailjs.send(serviceId, templateId, templateParams, userId).then(
+      (result) => {
+        console.log(result.text)
+        setFormdata({
+          loading: false,
+          alertmessage: 'Thanks for your message! Will respond asap :)',
+          message: '',
+          success: true,
+          show: true,
+        })
+      },
+      (error) => {
+        console.log(error.text)
+        setFormdata({
+          alertmessage: `Failed to send!, ${error.text}`,
+          success: false,
+          show: true,
+        })
+      }
+    )
   }
 
   const handleChange = (e) => {
