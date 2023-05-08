@@ -4,103 +4,116 @@ import Socials from './Socials'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 
+const path01Variants = {
+  open: { d: 'M3.06061 2.99999L21.0606 21' },
+  closed: { d: 'M0 9.5L24 9.5' },
+}
+
+const path02Variants = {
+  open: { d: 'M3.00006 21.0607L21 3.06064' },
+  moving: { d: 'M0 14.5L24 14.5' },
+  closed: { d: 'M0 14.5L15 14.5' },
+}
+const firstVariant = {
+  open: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: 'spring',
+      stiffness: 100,
+      delay: 0.5,
+    },
+  },
+  closed: { y: -300, opacity: 0 },
+}
+const secondVariant = {
+  open: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: 'spring',
+      stiffness: 100,
+      delay: 0.5,
+    },
+  },
+  closed: { x: -100, opacity: 0 },
+}
+
+const thirdVariant = {
+  open: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: 'spring',
+      stiffness: 100,
+      delay: 0.75,
+    },
+  },
+  closed: { x: -100, opacity: 0 },
+}
+
+const fourthVariant = {
+  open: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: 'spring',
+      stiffness: 100,
+      delay: 1,
+    },
+  },
+  closed: { x: -100, opacity: 0 },
+}
+
+const fifthVariant = {
+  open: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: 'spring',
+      stiffness: 100,
+      delay: 1.25,
+    },
+  },
+  closed: { x: -100, opacity: 0 },
+}
+
+const sixthVariant = {
+  open: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: 'spring',
+      stiffness: 100,
+      delay: 1.5,
+    },
+  },
+  closed: { x: -100, opacity: 0 },
+}
+
+const seventhVariant = {
+  open: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: 'spring',
+      stiffness: 100,
+      delay: 1.75,
+    },
+  },
+  closed: { y: 300, opacity: 0 },
+}
+
 const Navbar = () => {
   const [nav, setNav] = useState(false)
-
+  const [animation, setAnimation] = useState('closed')
   const handleNav = () => {
     setNav(!nav)
+    setAnimation('moving')
+    setTimeout(() => {
+      setAnimation(animation === 'closed' ? 'open' : 'closed')
+    }, 200)
     document.querySelector('body').style.overflow = nav ? 'auto' : 'hidden'
-  }
-
-  const firstVariant = {
-    open: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: 'spring',
-        stiffness: 100,
-        delay: 0.5,
-      },
-    },
-    closed: { y: -300, opacity: 0 },
-  }
-
-  const secondVariant = {
-    open: {
-      x: 0,
-      opacity: 1,
-      transition: {
-        type: 'spring',
-        stiffness: 100,
-        delay: 0.5,
-      },
-    },
-    closed: { x: -100, opacity: 0 },
-  }
-
-  const thirdVariant = {
-    open: {
-      x: 0,
-      opacity: 1,
-      transition: {
-        type: 'spring',
-        stiffness: 100,
-        delay: 0.75,
-      },
-    },
-    closed: { x: -100, opacity: 0 },
-  }
-
-  const fourthVariant = {
-    open: {
-      x: 0,
-      opacity: 1,
-      transition: {
-        type: 'spring',
-        stiffness: 100,
-        delay: 1,
-      },
-    },
-    closed: { x: -100, opacity: 0 },
-  }
-
-  const fifthVariant = {
-    open: {
-      x: 0,
-      opacity: 1,
-      transition: {
-        type: 'spring',
-        stiffness: 100,
-        delay: 1.25,
-      },
-    },
-    closed: { x: -100, opacity: 0 },
-  }
-
-  const sixthVariant = {
-    open: {
-      x: 0,
-      opacity: 1,
-      transition: {
-        type: 'spring',
-        stiffness: 100,
-        delay: 1.5,
-      },
-    },
-    closed: { x: -100, opacity: 0 },
-  }
-
-  const seventhVariant = {
-    open: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: 'spring',
-        stiffness: 100,
-        delay: 1.75,
-      },
-    },
-    closed: { y: 300, opacity: 0 },
   }
 
   return (
@@ -141,27 +154,21 @@ const Navbar = () => {
               <Link href='/contact'>Contact</Link>
             </li>
           </ul>
-          <div
-            onClick={handleNav}
-            className='mr-3 block md:hidden z-50 cursor-pointer'
-          >
-            {nav ? (
-              <motion.div
-                initial={{ x: -100, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ type: 'spring', stiffness: 100, delay: 0.5 }}
-              >
-                <AiOutlineClose
-                  size={20}
-                  className='hover:text-purple-600 transition duration-150 ease-in-out'
+          <div className='mr-3 block md:hidden z-50 cursor-pointer'>
+            <button onClick={handleNav}>
+              <svg width='29' height='29' viewBox='0 0 29 29'>
+                <motion.path
+                  stroke='#000000'
+                  animate={animation}
+                  variants={path01Variants}
                 />
-              </motion.div>
-            ) : (
-              <AiOutlineMenu
-                size={20}
-                className='hover:text-purple-600 transition duration-150 ease-in-out'
-              />
-            )}
+                <motion.path
+                  stroke='#000000'
+                  animate={animation}
+                  variants={path02Variants}
+                />
+              </svg>
+            </button>
           </div>
           <ul
             className={
