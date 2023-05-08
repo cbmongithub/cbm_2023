@@ -31,7 +31,7 @@ const Index = () => {
                   <h1 className='text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12'>
                     I&apos;m Christian
                     <br />I build
-                    <span className='text-purple-600'>
+                    <span className='text-purple-600 hover:text-pink-500 transition duration-150 ease-in-out'>
                       <TypeAnimation
                         sequence={[
                           'websites',
@@ -55,14 +55,14 @@ const Index = () => {
                   transition={{ type: 'spring', stiffness: 100, delay: 0.5 }}
                 >
                   <Link
-                    className='inline-block px-7 py-3 mr-2 bg-purple-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out'
+                    className='inline-block px-7 py-3 mr-2 border-2 border-purple-600 bg-purple-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-white hover:text-pink-500 hover:shadow-lg hover:border-pink-500 focus:bg-white focus:text-pink-500 focus:border-pink-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-white active:shadow-lg transition duration-150 ease-in-out'
                     href='/about'
                     role='button'
                   >
                     ABOUT ME
                   </Link>
                   <Link
-                    className='inline-block px-7 py-3 bg-transparent text-purple-600 font-medium text-sm leading-snug uppercase rounded hover:text-purple-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out'
+                    className='inline-block px-7 py-3 mr-2 bg-transparent border-2 border-purple-600 bg-white text-purple-600 font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-pink-500 hover:shadow-lg hover:text-white hover:border-pink-500 focus:bg-pink-500 focus:border-pink-500 focus:text-white focus:shadow-lg focus:outline-none focus:ring-0 active:bg-pink-500 active:shadow-lg transition duration-150 ease-in-out'
                     href='/portfolio'
                     role='button'
                   >

@@ -37,7 +37,23 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #111827;
+  background: rgb(236, 72, 153);
+  background: -moz-linear-gradient(
+    180deg,
+    rgba(236, 72, 153, 1) 35%,
+    rgba(147, 51, 234, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    180deg,
+    rgba(236, 72, 153, 1) 35%,
+    rgba(147, 51, 234, 1) 100%
+  );
+  background: linear-gradient(
+    180deg,
+    rgba(236, 72, 153, 1) 35%,
+    rgba(147, 51, 234, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ec4899",endColorstr="#9333ea",GradientType=1);
   border-radius: 0.5rem;
 }
 

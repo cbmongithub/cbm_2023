@@ -13,7 +13,7 @@ const socialLinks = {
 const Socials = ({ style }) => {
   return (
     <div className={`${style} text-purple-600`}>
-      <li className='px-5'>
+      <li className='px-5 text-purple-600 hover:text-pink-500 transition duration-150 ease-in-out'>
         <Link
           href={socialLinks.github}
           target='_blank'
@@ -22,7 +22,7 @@ const Socials = ({ style }) => {
           <FaGithub />
         </Link>
       </li>
-      <li className='px-5'>
+      <li className='px-5 text-purple-600 hover:text-pink-500 transition duration-150 ease-in-out'>
         <Link
           href={socialLinks.codepen}
           target='_blank'
@@ -31,7 +31,7 @@ const Socials = ({ style }) => {
           <FaCodepen />
         </Link>
       </li>
-      <li className='px-5'>
+      <li className='px-5 text-purple-600 hover:text-pink-500 transition duration-150 ease-in-out'>
         <Link
           href={socialLinks.tiktok}
           target='_blank'
@@ -40,7 +40,7 @@ const Socials = ({ style }) => {
           <FaTiktok />
         </Link>
       </li>
-      <li className='px-5'>
+      <li className='px-5 text-purple-600 hover:text-pink-500 transition duration-150 ease-in-out'>
         <Link
           href={socialLinks.twitter}
           target='_blank'

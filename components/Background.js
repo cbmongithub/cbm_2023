@@ -35,7 +35,7 @@ const Background = () => {
               quantity: 4,
             },
             repulse: {
-              distance: 200,
+              distance: 100,
               duration: 0.4,
             },
           },
@@ -52,7 +52,7 @@ const Background = () => {
             width: 1,
           },
           collisions: {
-            enable: true,
+            enable: false,
           },
           move: {
             directions: 'none',
@@ -61,7 +61,7 @@ const Background = () => {
               default: 'bounce',
             },
             random: false,
-            speed: 1,
+            speed: 0.5,
             straight: false,
           },
           number: {

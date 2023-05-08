@@ -92,7 +92,7 @@ const Contact = () => {
                   <div className='grid md:grid-cols-3 lg:grid-cols-3 mb-12'>
                     <div className='mb-12 lg:mb-0 text-center mx-auto'>
                       <svg
-                        className='w-8 h-8 text-purple-600 mb-6 mx-auto'
+                        className='w-8 h-8 text-purple-600 mb-6 mx-auto hover:text-pink-500'
                         xmlns='http://www.w3.org/2000/svg'
                         viewBox='0 0 496 512'
                       >
@@ -109,7 +109,7 @@ const Contact = () => {
                     </div>
                     <div className='mb-12 lg:mb-0 text-center mx-auto'>
                       <svg
-                        className='w-8 h-8 text-purple-600 mb-6 mx-auto'
+                        className='w-8 h-8 text-purple-600 mb-6 mx-auto hover:text-pink-500'
                         xmlns='http://www.w3.org/2000/svg'
                         viewBox='0 0 384 512'
                       >
@@ -122,7 +122,7 @@ const Contact = () => {
                     </div>
                     <div className='mb-6 md:mb-0 text-center mx-auto'>
                       <svg
-                        className='w-8 h-8 text-purple-600 mb-6 mx-auto'
+                        className='w-8 h-8 text-purple-600 mb-6 mx-auto hover:text-pink-500'
                         xmlns='http://www.w3.org/2000/svg'
                         viewBox='0 0 512 512'
                       >
@@ -231,9 +231,9 @@ const Contact = () => {
           font-medium          
           text-sm leading-snug uppercase
           shadow-md
-          hover:bg-purple-700 hover:shadow-lg
-          focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0
-          active:bg-purple-800 active:shadow-lg
+          hover:bg-pink-500 hover:shadow-lg
+          focus:bbg-pink-500  focus:shadow-lg focus:outline-none focus:ring-0
+          active:bg-pink-500 active:shadow-lg
           transition
           duration-150
           ease-in-out'
