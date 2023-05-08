@@ -12,9 +12,9 @@ const PortfolioCard = ({
   tags,
 }) => {
   return (
-    <div className='max-w-sm overflow-hidden rounded-lg shadow-lg'>
+    <div className='max-w-screen overflow-hidden rounded-lg shadow-lg'>
       <Image
-        className='object-cover object-center h-48 w-96'
+        className='object-cover object-center h-48 w-full lg:w-96'
         src={imageUrl}
         alt={alt}
         width={500}

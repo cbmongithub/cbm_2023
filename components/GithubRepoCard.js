@@ -13,9 +13,10 @@ const GithubRepoCard = ({ latestRepo }) => {
       <div className='flex justify-between items-center'>
         <Link
           href={latestRepo.clone_url}
+          target='_blank'
           className='text-white inline-flex items-center font-medium text-primary-600 hover:text-gray-200 transition duration-300 ease-in-out'
         >
-          View Repo
+          Repo
           <FaGithub className='ml-2' />
         </Link>
       </div>

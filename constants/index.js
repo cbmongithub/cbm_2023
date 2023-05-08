@@ -1,3 +1,12 @@
+const socialLinks = {
+  github: 'https://github.com/christianbmartinez',
+  facebook: 'https://facebook.com',
+  linkedin: 'https://linkedin.com',
+  tiktok: 'https://www.tiktok.com/@coderchris',
+  twitter: 'https://twitter.com/_coderchris',
+  codepen: 'https://codepen.io/_coderchris',
+}
+
 const portfolioData = [
   {
     title: 'Twitter Bot',
@@ -73,4 +82,4 @@ const userData = {
   address: 'Salt Lake City, Utah',
 }
 
-export { portfolioData, userData }
+export { socialLinks, portfolioData, userData }

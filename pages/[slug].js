@@ -128,7 +128,7 @@ const Post = ({ data, content, slug }) => {
             url={shareUrl}
             subject={`Check out this blog post: ${data.title}`}
           >
-            <div className='cursor-pointer p-2 mx-3 bg-purple-600 rounded-full shadow-xl hover:bg-pink-500'>
+            <div className='cursor-pointer p-2 mx-3 bg-gray-500 rounded-full shadow-xl hover:bg-gray-600'>
               <AiFillMail className='w-4 h-4 text-white' />
             </div>
           </EmailShareButton>
@@ -137,7 +137,7 @@ const Post = ({ data, content, slug }) => {
             quote={data.title}
             hashtag={data.type}
           >
-            <div className='cursor-pointer p-2 mx-3 bg-purple-600 rounded-full shadow-xl hover:bg-pink-500'>
+            <div className='cursor-pointer p-2 mx-3 bg-blue-600 rounded-full shadow-xl hover:bg-blue-700'>
               <FaFacebook className='w-4 h-4 text-white' />
             </div>
           </FacebookShareButton>
@@ -147,12 +147,12 @@ const Post = ({ data, content, slug }) => {
             summary={data.description}
             source={shareUrl}
           >
-            <div className='cursor-pointer p-2 mx-3 bg-purple-600 rounded-full shadow-xl hover:bg-pink-500'>
+            <div className='cursor-pointer p-2 mx-3 bg-sky-600 rounded-full shadow-xl hover:bg-sky-700'>
               <FaLinkedin className='w-4 h-4 text-white' />
             </div>
           </LinkedinShareButton>
           <RedditShareButton url={shareUrl} title={data.title}>
-            <div className='cursor-pointer p-2 mx-3 bg-purple-600 rounded-full shadow-xl hover:bg-pink-500'>
+            <div className='cursor-pointer p-2 mx-3 bg-orange-600 rounded-full shadow-xl hover:bg-orange-700'>
               <FaReddit className='w-4 h-4 text-white' />
             </div>
           </RedditShareButton>
@@ -161,12 +161,12 @@ const Post = ({ data, content, slug }) => {
             title={`Check out this blog post by @_coderchris! ${data.title}`}
             hashtags={['webdevelopment', 'blog', 'fullstack']}
           >
-            <div className='cursor-pointer p-2 mx-3 bg-purple-600 rounded-full shadow-xl hover:bg-pink-500'>
+            <div className='cursor-pointer p-2 mx-3 bg-sky-500 rounded-full shadow-xl hover:bg-sky-600'>
               <FaTwitter className='w-4 h-4 text-white' />
             </div>
           </TwitterShareButton>
           <WhatsappShareButton url={shareUrl}>
-            <div className='cursor-pointer p-2 mx-3 bg-purple-600 rounded-full shadow-xl hover:bg-pink-500'>
+            <div className='cursor-pointer p-2 mx-3 bg-green-500 rounded-full shadow-xl hover:bg-green-600'>
               <FaWhatsapp className='w-4 h-4 text-white' />
             </div>
           </WhatsappShareButton>

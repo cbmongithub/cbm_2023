@@ -1,14 +1,6 @@
+import { socialLinks } from '../constants'
 import { FaGithub, FaTiktok, FaCodepen, FaTwitter } from 'react-icons/fa'
 import Link from 'next/link'
-
-const socialLinks = {
-  github: 'https://github.com/christianbmartinez',
-  facebook: 'https://facebook.com',
-  linkedin: 'https://linkedin.com',
-  tiktok: 'https://www.tiktok.com/@coderchris',
-  twitter: 'https://twitter.com/_coderchris',
-  codepen: 'https://codepen.io/_coderchris',
-}
 
 const Socials = ({ style }) => {
   return (
