@@ -1,38 +1,57 @@
 import Link from 'next/link'
 import { FaGithub, FaLink } from 'react-icons/fa'
+import Image from 'next/image'
 
-const PortfolioCard = ({ imageUrl, href, repo, children }) => {
+const PortfolioCard = ({
+  title,
+  imageUrl,
+  alt,
+  description,
+  repo,
+  href,
+  tags,
+}) => {
   return (
-    <div
-      className='bg-cover my-12 bg-center rounded-lg cursor-pointer w-full h-96 group shadow-md'
-      style={{
-        backgroundImage: `url('${imageUrl}')`,
-      }}
-    >
-      <div className='flex flex-col rounded-lg justify-center w-full h-full hover:shadow-2xl bg-gradient-to-r from-purple-600 to-pink-500 opacity-60 transition duration-300 ease-in-out hover:opacity-90'>
-        <div className='w-full h-full flex flex-row justify-evenly items-center opacity-0 hover:opacity-100 transition duration-300 ease-in-out'>
+    <div className='max-w-sm overflow-hidden rounded-lg shadow-lg'>
+      <Image
+        className='object-cover object-center h-48 w-96'
+        src={imageUrl}
+        alt={alt}
+        width={500}
+        height={500}
+      />
+      <div className='px-6 py-4 h-40'>
+        <div className='font-bold text-xl mb-2'>{title}</div>
+        <p className='text-gray-700 text-base'>{description}</p>
+        <div className='flex justify-start items-left my-5'>
+          <p className='text-gray-700 text-base my-2'>Project Links:</p>
           <Link
-            className='text-white font-medium text-md tracking-wider hover:opacity-80 transition duration-150 ease-in-out'
-            href={href}
-            role='button'
-          >
-            <span className='inline-flex justify-center items-center'>
-              LIVE&nbsp; <FaLink />
-            </span>
-          </Link>
-          <Link
-            className='text-white font-medium text-md tracking-wider hover:opacity-80 transition duration-150 ease-in-out'
             href={repo}
-            role='button'
+            className='text-gray-700 inline-flex items-center font-medium text-primary-600 hover:text-purple-600 transition duration-300 ease-in-out'
           >
-            <span className='inline-flex justify-center items-center'>
-              REPO&nbsp; <FaGithub />
-            </span>
+            <FaGithub className='ml-3' />
+          </Link>
+
+          <Link
+            href={href}
+            className='text-gray-700 inline-flex items-center font-medium text-primary-600 hover:text-purple-600 transition duration-300 ease-in-out'
+          >
+            <FaLink className='ml-2' />
           </Link>
         </div>
       </div>
-      <div className='flex flex-col justify-center items-center cursor-default'>
-        {children}
+
+      <div className='px-6 pt-4 pb-3'>
+        {tags.map((tag, i) => {
+          return (
+            <span
+              key={i}
+              className='inline-flex justify-between items-center bg-gray-100 shadow-md rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'
+            >
+              <p>{tag}</p>
+            </span>
+          )
+        })}
       </div>
     </div>
   )
