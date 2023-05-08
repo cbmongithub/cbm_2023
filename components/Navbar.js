@@ -1,19 +1,19 @@
 import { useState } from 'react'
-import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
 import Socials from './Socials'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 
-const path01Variants = {
+const svgPathVariant1 = {
   open: { d: 'M3.06061 2.99999L21.0606 21' },
   closed: { d: 'M0 9.5L24 9.5' },
 }
 
-const path02Variants = {
+const svgPathVariant2 = {
   open: { d: 'M3.00006 21.0607L21 3.06064' },
   moving: { d: 'M0 14.5L24 14.5' },
   closed: { d: 'M0 14.5L15 14.5' },
 }
+
 const firstVariant = {
   open: {
     y: 0,
@@ -112,7 +112,7 @@ const Navbar = () => {
     setAnimation('moving')
     setTimeout(() => {
       setAnimation(animation === 'closed' ? 'open' : 'closed')
-    }, 200)
+    }, 500)
     document.querySelector('body').style.overflow = nav ? 'auto' : 'hidden'
   }
 
@@ -158,14 +158,14 @@ const Navbar = () => {
             <button onClick={handleNav}>
               <svg width='29' height='29' viewBox='0 0 29 29'>
                 <motion.path
-                  stroke='#000000'
+                  stroke='#111111'
                   animate={animation}
-                  variants={path01Variants}
+                  variants={svgPathVariant1}
                 />
                 <motion.path
-                  stroke='#000000'
+                  stroke='#111111'
                   animate={animation}
-                  variants={path02Variants}
+                  variants={svgPathVariant2}
                 />
               </svg>
             </button>
