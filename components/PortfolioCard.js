@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { FaGithub, FaLink } from 'react-icons/fa'
-import Image from 'next/image'
 
 const PortfolioCard = ({
   title,
@@ -12,12 +11,13 @@ const PortfolioCard = ({
   tags,
 }) => {
   return (
-    <div className='max-w-screen overflow-hidden rounded-lg shadow-lg'>
+    <div className='max-w-screen overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out'>
       <div
         className='bg-cover bg-center h-48 w-full lg:w-96'
         style={{
           backgroundImage: `url('${imageUrl}')`,
         }}
+        alt={alt}
       >
         <div class='w-full h-full flex justify-center items-center bg-gradient-to-r from-purple-600 to-pink-500 opacity-60'></div>
       </div>
