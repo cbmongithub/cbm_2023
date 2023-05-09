@@ -1,0 +1,74 @@
+---
+title: Using state in React
+date: 'May 8, 2023'
+description: Learn how to use state in react
+author: Christian Martinez
+type: Article
+---
+
+# Using State in React
+
+React is a popular JavaScript library used to build user interfaces. One of the key features of React is the use of state, which allows developers to manage and update the data that is displayed on the screen. In this blog post, we'll take a closer look at how to use state in React.
+
+## What is State?
+
+State is a JavaScript object that contains the data that needs to be displayed on the screen. When the state of a component changes, React will automatically update the rendered output to reflect the new state.
+
+## Using State in a Component
+
+To use state in a component, we first need to define the initial state. This is done by using the `useState` hook, which is a function provided by React. The `useState` hook takes one argument, which is the initial value of the state.
+
+```jsx
+import React, { useState } from 'react'
+
+function Counter() {
+  const [count, setCount] = useState(0)
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>Click me</button>
+    </div>
+  )
+}
+```
+
+In the above example, we define a component called `Counter` that uses the `useState` hook to define an initial state value of 0. The `useState` hook returns an array with two elements: the current value of the state (in this case, `count`), and a function to update the state (in this case, `setCount`). We use these two values to display the current count and update the count when the button is clicked.
+
+## Updating State
+
+To update the state, we use the function that was returned by the `useState` hook. In the example above, we update the count by calling `setCount(count + 1)` when the button is clicked. When this function is called, React will automatically update the rendered output to reflect the new state.
+
+## Using State with Props
+
+In many cases, we want to use state with props. To do this, we simply pass the state value as a prop to a child component.
+
+```jsx
+import React, { useState } from 'react'
+
+function Parent() {
+  const [count, setCount] = useState(0)
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <Child count={count} />
+      <button onClick={() => setCount(count + 1)}>Click me</button>
+    </div>
+  )
+}
+
+function Child(props) {
+  return (
+    <div>
+      <p>The count from the parent is: {props.count}</p>
+    </div>
+  )
+}
+```
+
+In the above example, we define a parent component called `Parent` that uses state to manage the count. We pass the count value as a prop to a child component called `Child`, which displays the count in a paragraph element.
+
+## Conclusion
+
+Using state is an essential part of building React applications. By using state, developers can manage and update the data that is displayed on the screen. With the `useState` hook, it's easy to define and update state values in a functional component. By passing state values as props, we can use state in child components as well.

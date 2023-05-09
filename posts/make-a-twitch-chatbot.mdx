@@ -1,0 +1,89 @@
+---
+title: 'Make a twitch chatbot with tmi.js'
+date: 'May 8, 2023'
+description: 'How to make a twitch chat bot with tmi.js'
+author: Christian Martinez
+type: Tutorial
+---
+
+# Make a twitch chatbot with tmi.js
+
+Twitch is a popular platform for live streaming and gaming, and one of the most engaging ways for streamers to interact with their audience is through Twitch chat. Creating a Twitch chat bot is a great way to enhance your channel, engage with your audience, and automate repetitive tasks. In this blog post, we'll show you how to create a Twitch chat bot using tmi.js.
+
+## What is tmi.js?
+
+tmi.js is a JavaScript library that provides an easy-to-use interface for connecting to the Twitch API and IRC chat. It allows you to write code that interacts with Twitch chat, automate tasks, and create a chat bot that can respond to commands, send messages, and more.
+
+## Setting up tmi.js
+
+Before we dive into the code, we need to set up tmi.js and make sure to have npm and node installed. To get started, we need to install tmi.js using npm. Open up your terminal and type the following command:
+
+```
+npm install tmi.js
+```
+
+Once tmi.js is installed, we can begin writing our code.
+
+## Writing the code
+
+First, let's create a new file called `bot.js` and require the tmi.js module.
+
+```javascript
+const tmi = require('tmi.js')
+```
+
+Next, let's define our Twitch bot's options, such as the username, the channel it will join, and the authentication token.
+
+```javascript
+const options = {
+  identity: {
+    username: 'my_twitch_bot_username',
+    password: 'my_twitch_bot_authentication_token',
+  },
+  channels: ['my_twitch_channel_name'],
+}
+```
+
+Note that you can obtain your Twitch bot's authentication token by going to [https://twitchapps.com/tmi/](https://twitchapps.com/tmi/) and connecting your Twitch account.
+
+Now that we've defined our bot's options, we can create a new tmi.js client and connect it to the Twitch IRC server.
+
+```javascript
+const client = new tmi.client(options)
+
+client.connect()
+```
+
+Once the client is connected, we can listen for events such as when a user sends a message in chat.
+
+```javascript
+client.on('message', (channel, userstate, message, self) => {
+  // Handle incoming messages here
+})
+```
+
+Inside the message event handler, we can add logic to respond to certain messages or commands. For example, let's create a command that responds to users who type !hello in chat.
+
+```javascript
+client.on('message', (channel, userstate, message, self) => {
+  if (message.toLowerCase() === '!hello') {
+    client.say(channel, `Hello, ${userstate.username}!`)
+  }
+})
+```
+
+In the code above, we're checking if the message is equal to "!hello". If it is, we're sending a message back to the chat channel using `client.say()`.
+
+## Running the bot
+
+To run the bot, open up your terminal and navigate to the directory where you saved `bot.js`. Type the following command:
+
+```
+node bot.js
+```
+
+If everything was set up correctly, your bot should connect to Twitch chat and start listening for messages.
+
+## Conclusion
+
+tmi.js is a powerful tool for creating Twitch chat bots. With its easy-to-use interface, you can quickly create a bot that can interact with your audience, automate tasks, and more. By following the steps outlined in this blog post, you can create your own Twitch chat bot and enhance your channel's engagement.
