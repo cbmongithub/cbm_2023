@@ -71,7 +71,7 @@ const Post = ({ data, content, slug }) => {
         keywords={`nextjs, blog, javascript, tech blogs, chatgpt, react js, ${data.title}`}
       />
       <section>
-        <Heading title={data.title} />
+        <Heading title={data.title} delay={0.5} />
         <motion.div
           initial={{ x: -100, opacity: 0, duration: 1 }}
           animate={{ x: 0, opacity: 1 }}
