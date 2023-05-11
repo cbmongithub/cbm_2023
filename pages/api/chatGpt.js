@@ -16,7 +16,12 @@ const chatGpt = async (req, res) => {
           Christian is 33 years old. 
           Christians favorite food is thai food. Specifically, yellow coconut curry.
           Christian loves coffee.
-          Christian has 3 children and he has been married for 10 years.
+          Christian has 3 children- Aaliyah, Sophia, and Jacob.
+          Jacob is 9 months old.
+          Aaliyah is 8 years old.
+          Sophia is 10 years old.
+          Christian has been married for 10 years.
+          Christians email is hello@christianbmartinez.com
           Christian enjoys playing video games, learning code and technologies, and being with his family.
           Christians listens to a lot of different genres of music. His favorites are rap and edm.
           Christian currently works full time for Northrop Grumman as a technician, but wants to change career paths to become a full stack web developer.

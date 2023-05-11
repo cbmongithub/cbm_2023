@@ -88,8 +88,8 @@ const About = ({ repositories }) => {
           </div>
         </motion.div>
         <Heading
-          title='Latest Code'
-          paragraph='View my latest code from Github'
+          title='Latest Repos'
+          paragraph='View my latest repos from Github'
         />
 
         <div className='mb-20 py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6'>

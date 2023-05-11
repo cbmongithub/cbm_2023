@@ -1,5 +1,6 @@
 import { FaGithub } from 'react-icons/fa'
 import Link from 'next/link'
+import moment from 'moment'
 
 const GithubRepoCard = ({ latestRepo }) => {
   return (
@@ -19,6 +20,9 @@ const GithubRepoCard = ({ latestRepo }) => {
           Repo
           <FaGithub className='ml-2' />
         </Link>
+        <p className='text-white inline-flex items-center font-medium'>
+          {moment(`${latestRepo.pushed_at}`).utc().format('MM-DD-YYYY')}
+        </p>
       </div>
     </div>
   )
