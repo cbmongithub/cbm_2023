@@ -181,6 +181,7 @@ const FormSection = ({ generateResponse }) => {
   const [newQuestion, setNewQuestion] = useState('')
   const handleSubmit = (e) => {
     e.preventDefault()
+    setNewQuestion('')
   }
 
   return (
