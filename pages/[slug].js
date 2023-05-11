@@ -76,24 +76,23 @@ const Post = ({ data, content, slug }) => {
           initial={{ x: -100, opacity: 0, duration: 1 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ type: 'spring', stiffness: 100, delay: 0.5 }}
+          className='w-full mx-auto max-w-screen-xl p-4 flex items-center text-center justify-center'
         >
-          <div className='w-full mx-auto max-w-screen-xl p-4 flex items-center text-center justify-center'>
-            <div className='flex space-x-3'>
-              <Image
-                className='w-7 h-7 rounded-full'
-                src='/img/me.jpg'
-                alt='Christian B. Martinez Avatar'
-                width={28}
-                height={28}
-              />
-              <span className='font-medium'>{data.author}</span>
-            </div>
-            <div className='hidden md:inline-flex px-20'>
-              <Socials style={'list-none inline-flex'} />
-            </div>
-            <div className='hidden md:ml-0 md:flex'>
-              <span className='font-medium'>{data.date}</span>
-            </div>
+          <div className='flex space-x-3'>
+            <Image
+              className='w-7 h-7 rounded-full'
+              src='/img/me.jpg'
+              alt='Christian B. Martinez Avatar'
+              width={28}
+              height={28}
+            />
+            <span className='font-medium'>{data.author}</span>
+          </div>
+          <div className='hidden md:inline-flex px-20'>
+            <Socials style={'list-none inline-flex'} />
+          </div>
+          <div className='hidden md:ml-0 md:flex'>
+            <span className='font-medium'>{data.date}</span>
           </div>
         </motion.div>
         <motion.div

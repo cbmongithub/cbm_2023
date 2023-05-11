@@ -19,7 +19,7 @@ const getLatestRepos = async (data, token) => {
           newestRepos.push(repos[i])
         }
       }
-      return newestRepos
+      return newestRepos.splice(0, 6)
     }
   } catch (err) {
     console.log(err)

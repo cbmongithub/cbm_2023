@@ -9,7 +9,7 @@ import getLatestRepos from '../helpers/getLatestRepos'
 import GithubRepoCard from '../components/GithubRepoCard'
 
 const About = ({ repositories }) => {
-  const [repos, setRepos] = useState(repositories)
+  const [repos] = useState(repositories)
   return (
     <>
       <SiteHead
@@ -24,63 +24,62 @@ const About = ({ repositories }) => {
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ type: 'spring', stiffness: 100, delay: 1 }}
+          className='flex flex-col justify-center items-center mt-52 pb-20 px-6 mx-auto lg:w-2/3'
         >
-          <div className='flex flex-col justify-center items-center mt-52 pb-20 px-6 mx-auto lg:w-2/3'>
-            <div className='flex flex-col min-w-0 break-words w-full shadow-xl rounded-lg'>
-              <div className='px-6'>
+          <div className='flex flex-col min-w-0 break-words w-full shadow-xl rounded-lg'>
+            <div className='px-6'>
+              <div className='flex flex-wrap justify-center'>
+                <div className='w-full lg:w-2/3 px-4 lg:order-2 flex justify-center'>
+                  <div className='relative'>
+                    <motion.div
+                      initial={{ y: -100, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{
+                        type: 'spring',
+                        stiffness: 100,
+                        delay: 1.25,
+                      }}
+                    >
+                      <Image
+                        alt='Image of Christian B. Martinez'
+                        src='/img/me.jpg'
+                        className='shadow-xl rounded-full h-auto align-middle border-none absolute -m-[136px] -ml-20 lg:-ml-16'
+                        style={{ maxWidth: '150px' }}
+                        width={150}
+                        height={150}
+                      />
+                    </motion.div>
+                  </div>
+                </div>
+              </div>
+              <div className='text-center mt-12'>
+                <h3 className='text-4xl font-semibold leading-normal mb-2 text-slate-700'>
+                  Christian B. Martinez
+                </h3>
+                <div className='inline-flex text-sm leading-normal mt-0 mb-2 text-slate-400 font-bold uppercase'>
+                  <FaMapPin className='mr-2 text-lg text-slate-400' />
+                  Salt Lake City, Utah
+                </div>
+                <div className='flex flex-row justify-center items-center mb-2 mt-10 text-slate-600'>
+                  <FaBriefcase className='mr-2 text-lg text-slate-400' />
+                  Full Stack Bootcamp Student
+                </div>
+                <div className='flex flex-row justify-center items-center mb-2 text-slate-600'>
+                  <FaUniversity className='mr-2 text-lg text-slate-400' />
+                  University of Utah
+                </div>
+              </div>
+              <div className='mt-10 py-10 border-t border-slate-200 text-center'>
                 <div className='flex flex-wrap justify-center'>
-                  <div className='w-full lg:w-2/3 px-4 lg:order-2 flex justify-center'>
-                    <div className='relative'>
-                      <motion.div
-                        initial={{ y: -100, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{
-                          type: 'spring',
-                          stiffness: 100,
-                          delay: 1.25,
-                        }}
-                      >
-                        <Image
-                          alt='Image of Christian B. Martinez'
-                          src='/img/me.jpg'
-                          className='shadow-xl rounded-full h-auto align-middle border-none absolute -m-[136px] -ml-20 lg:-ml-16'
-                          style={{ maxWidth: '150px' }}
-                          width={150}
-                          height={150}
-                        />
-                      </motion.div>
-                    </div>
-                  </div>
-                </div>
-                <div className='text-center mt-12'>
-                  <h3 className='text-4xl font-semibold leading-normal mb-2 text-slate-700'>
-                    Christian B. Martinez
-                  </h3>
-                  <div className='inline-flex text-sm leading-normal mt-0 mb-2 text-slate-400 font-bold uppercase'>
-                    <FaMapPin className='mr-2 text-lg text-slate-400' />
-                    Salt Lake City, Utah
-                  </div>
-                  <div className='flex flex-row justify-center items-center mb-2 mt-10 text-slate-600'>
-                    <FaBriefcase className='mr-2 text-lg text-slate-400' />
-                    Full Stack Bootcamp Student
-                  </div>
-                  <div className='flex flex-row justify-center items-center mb-2 text-slate-600'>
-                    <FaUniversity className='mr-2 text-lg text-slate-400' />
-                    University of Utah
-                  </div>
-                </div>
-                <div className='mt-10 py-10 border-t border-slate-200 text-center'>
-                  <div className='flex flex-wrap justify-center'>
-                    <div className='w-full lg:w-9/12 px-4'>
-                      <p className='mb-4 text-lg leading-relaxed text-slate-700'>
-                        Hey there! 🖐 I&apos;m Christian, I build apps for the
-                        web! I have been coding for around 6 years as a hobby,
-                        although recently i decided to take action and pursue a
-                        tech career. I am currently a student at the U of
-                        U&apos;s coding bootcamp. Follow me on twitter to stay
-                        up to date on my tech journey!
-                      </p>
-                    </div>
+                  <div className='w-full lg:w-9/12 px-4'>
+                    <p className='mb-4 text-lg leading-relaxed text-slate-700'>
+                      Hey there! 🖐 I&apos;m Christian, I build apps for the
+                      web! I have been coding for around 6 years as a hobby,
+                      although recently i decided to take action and pursue a
+                      tech career. I am currently a student at the U of U&apos;s
+                      coding bootcamp. Follow me on twitter to stay up to date
+                      on my tech journey!
+                    </p>
                   </div>
                 </div>
               </div>
