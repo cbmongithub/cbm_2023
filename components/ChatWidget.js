@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import useLocalStorage from 'use-local-storage'
 import { FaComment } from 'react-icons/fa'
 import Image from 'next/image'
 import ScrollableFeed from 'react-scrollable-feed'
@@ -7,7 +8,7 @@ import { motion, useCycle, AnimatePresence } from 'framer-motion'
 const ChatWidget = () => {
   const [show, setShow] = useCycle(false, true)
   const [typing, setIsTyping] = useState(false)
-  const [storedValues, setStoredValues] = useState([])
+  const [storedValues, setStoredValues] = useLocalStorage('chat', [])
 
   const variants = {
     open: {
