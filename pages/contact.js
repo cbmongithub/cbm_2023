@@ -70,7 +70,7 @@ const Contact = () => {
           'nextjs, contact page tailwind css, contact page, christian martinez, contact form, react contact form'
         }
       />
-      {formData.loading ? <div className='loading-bar'></div> : ''}
+      {formData.loading ? <div className='form-loading-bar'></div> : ''}
       <section>
         <Heading title='Contact' paragraph='Get in touch! Contact me anytime' />
         <motion.div

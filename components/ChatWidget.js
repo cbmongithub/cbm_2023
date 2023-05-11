@@ -6,6 +6,7 @@ import { motion, useCycle, AnimatePresence } from 'framer-motion'
 
 const ChatWidget = () => {
   const [show, setShow] = useCycle(false, true)
+  const [typing, setIsTyping] = useState(false)
   const [storedValues, setStoredValues] = useState([])
 
   const variants = {
@@ -30,6 +31,7 @@ const ChatWidget = () => {
   }
 
   const generateResponse = async (newQuestion, setNewQuestion) => {
+    setIsTyping(true)
     const response = await fetch('/api/chatGpt', {
       method: 'POST',
       headers: {
@@ -54,6 +56,7 @@ const ChatWidget = () => {
         ...storedValues,
       ])
       setNewQuestion('')
+      setIsTyping(false)
     }
   }
 
@@ -101,6 +104,15 @@ const ChatWidget = () => {
                     </div>
                     {storedValues.length > 0 && (
                       <AnswerSection storedValues={storedValues} />
+                    )}
+                    {typing && (
+                      <div className='typing-indicator'>
+                        <div className='typing-indicator-bubble'>
+                          <div className='typing-indicator-dot'></div>
+                          <div className='typing-indicator-dot'></div>
+                          <div className='typing-indicator-dot'></div>
+                        </div>
+                      </div>
                     )}
                   </div>
                 </div>
