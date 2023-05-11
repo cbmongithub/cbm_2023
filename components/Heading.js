@@ -4,7 +4,7 @@ const Heading = ({ title, paragraph, delay }) => {
   return (
     <motion.div
       initial={{ y: 100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
+      whileInView={{ y: 0, opacity: 1 }}
       transition={{ type: 'spring', stiffness: 100, delay: delay ? delay : 0 }}
       className='px-6 mx-auto text-center my-20 relative z-30'
     >
@@ -14,7 +14,7 @@ const Heading = ({ title, paragraph, delay }) => {
       {paragraph ? (
         <motion.div
           initial={{ y: -100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
+          whileInView={{ y: 0, opacity: 1 }}
           transition={{
             type: 'spring',
             stiffness: 100,
