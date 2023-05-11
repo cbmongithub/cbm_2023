@@ -13,15 +13,13 @@ const getLatestRepos = async (data, token) => {
         }
       )
       let repos = res.data.items
-      let latestSixRepos = repos.splice(0, 6)
-      return latestSixRepos
-    } else {
-      const res = await axios.get(
-        `https://api.github.com/search/repositories?q=user:${username}+sort:author-date-desc`
-      )
-      let repos = res.data.items
-      let latestSixRepos = repos.splice(0, 6)
-      return latestSixRepos
+      let newestRepos = []
+      for (let i = 0; i < repos.length; i++) {
+        if (repos[i].pushed_at.includes(new Date().getFullYear())) {
+          newestRepos.push(repos[i])
+        }
+      }
+      return newestRepos
     }
   } catch (err) {
     console.log(err)
