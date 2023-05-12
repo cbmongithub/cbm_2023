@@ -97,8 +97,8 @@ pre {
   justify-content: center;
   width: 52px;
   height: 40px;
-  margin: 0;
-  background-color: #f0f1f1;
+  margin-bottom: 0.75rem;
+  background-color: #9333ea;
   border-radius: 0.5rem;
 }
 
@@ -106,7 +106,7 @@ pre {
   width: 4px;
   height: 4px;
   margin-right: 4px;
-  background-color: #57585a;
+  background-color: #fafafa;
   border-radius: 50%;
   animation-name: bounce;
   animation-duration: 1.3s;
