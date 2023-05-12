@@ -70,24 +70,24 @@ const ChatWidget = () => {
             initial='closed'
             animate='open'
             exit='closed'
-            className='bg-white flex flex-col w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4 max-h-[30rem] min-h-[22rem] absolute bottom-5 right-6   mx-auto shadow-xl rounded-lg z-30'
+            className='flex flex-col w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4 max-h-[30rem] min-h-[22rem] absolute bottom-5 right-6 mx-auto shadow-2xl rounded-lg z-30'
           >
             <div className='sticky top-0 px-4 py-5 flex justify-between bg-gradient-to-r from-purple-600 to-pink-500 rounded-t-md'>
-              <h1 className='text-white font-semibold text-lg'>Chat</h1>
+              <h1 className='text-zinc-50 font-semibold text-lg'>Chat</h1>
               <a
                 onClick={setShow}
-                className='text-white font-semibold text-xl cursor-pointer'
+                className='text-zinc-50 font-semibold text-xl cursor-pointer'
               >
                 x
               </a>
             </div>
-            <div className='flex flex-col bg-white min-h-[16rem] max-h-[20rem] w-full'>
+            <div className='flex flex-col min-h-[16rem] max-h-[20rem] w-full'>
               <ScrollableFeed>
-                <div className='flex flex-row justify-between bg-white rounded-b-md'>
+                <div className='flex flex-row justify-between bg-zinc-50 dark:bg-slate-800 rounded-b-md'>
                   <div className='px-4 flex flex-col justify-between'>
                     <div className='flex flex-col mt-5'>
                       <div className='flex justify-end mb-4'>
-                        <div className='mr-2 py-3 px-4 bg-purple-600 rounded-lg text-white'>
+                        <div className='mr-2 py-3 px-4 bg-purple-600 rounded-lg text-zinc-50'>
                           <p>
                             Welcome! I am Christians chatbot. You can ask me
                             anything about Christian and I will respond
@@ -134,7 +134,7 @@ const ChatWidget = () => {
               exit='closed'
               onClick={setShow}
             >
-              <FaComment className='w-5 h-5 text-white' />
+              <FaComment className='w-5 h-5 text-zinc-50' />
             </motion.div>
           </AnimatePresence>
         </>
@@ -153,12 +153,12 @@ const AnswerSection = ({ storedValues }) => {
           return (
             <div key={index}>
               <div className='flex justify-start mb-4'>
-                <div className='py-3 px-4 bg-slate-400 rounded-lg text-white'>
+                <div className='py-3 px-4 bg-slate-400 dark:bg-slate-600 rounded-lg text-zinc-50'>
                   <p>{data.question}</p>
                 </div>
               </div>
               <div className='flex justify-end mb-4'>
-                <div className='mr-2 py-3 px-4 bg-purple-600 rounded-lg text-white'>
+                <div className='mr-2 py-3 px-4 bg-purple-600 rounded-lg text-zinc-50'>
                   <p>{data.answer}</p>
                 </div>
                 <Image
@@ -188,15 +188,15 @@ const FormSection = ({ generateResponse }) => {
     <>
       <form
         onSubmit={handleSubmit}
-        className='flex flex-row justify-between items-center relative w-full bottom-0 right-0 bg-white px-4 py-5'
+        className='shadow-inner flex flex-row justify-between items-center rounded-b-lg relative w-full bottom-0 right-0 bg-zinc-50 dark:bg-slate-800 px-4 py-5'
       >
         <input
           className='text-base
             w-3/4
             font-normal
-            text-gray-700
-            bg-white bg-clip-padding
-            border border-solid border-gray-300
+            text-zinc-700 dark:text-zinc-200
+            bg-zinc-50 dark:bg-slate-800 bg-clip-padding
+            border border-solid border-zinc-300 dark:border-zinc-500
             transition
             ease-in-out
             m-0
@@ -208,7 +208,7 @@ const FormSection = ({ generateResponse }) => {
         />
         <button
           type='submit'
-          className='w-1/4 text-purple-600 font-medium text-sm leading-snug uppercase hover:text-purple-700'
+          className='w-1/4 text-purple-600 dark:text-zinc-50 font-medium text-sm leading-snug uppercase dark:hover:text-purple-700 hover:text-purple-700'
           onClick={() => generateResponse(newQuestion, setNewQuestion)}
         >
           SEND
