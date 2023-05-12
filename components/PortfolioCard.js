@@ -19,7 +19,7 @@ const PortfolioCard = ({
         }}
         alt={alt}
       >
-        <div class='w-full h-full flex justify-center items-center bg-gradient-to-r from-purple-600 to-pink-500 opacity-60'></div>
+        <div className='w-full h-full flex justify-center items-center bg-gradient-to-r from-purple-600 to-pink-500 opacity-60'></div>
       </div>
       <div className='flex flex-col rounded-lg justify-center w-full h-full hover:shadow-2xl bg-gradient-to-r from-purple-600 to-pink-500 opacity-60 transition duration-300 ease-in-out hover:opacity-90'></div>
       <div className='px-6 py-4 h-20'>

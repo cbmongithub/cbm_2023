@@ -1,9 +1,15 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useTheme } from 'next-themes'
 import { FaMoon, FaSun } from 'react-icons/fa'
 import Socials from './Socials'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+
+const useLoaded = () => {
+  const [loaded, setLoaded] = useState(false)
+  useEffect(() => setLoaded(true), [])
+  return loaded
+}
 
 const svgPathVariant1 = {
   open: { d: 'M3.06061 2.99999L21.0606 21' },
@@ -110,6 +116,7 @@ const Navbar = () => {
   const { theme, setTheme } = useTheme()
   const [nav, setNav] = useState(false)
   const [animation, setAnimation] = useState('closed')
+  const loaded = useLoaded()
   const handleNav = () => {
     setNav(!nav)
     setAnimation('moving')
@@ -164,7 +171,7 @@ const Navbar = () => {
                   setTheme(theme === 'light' ? 'dark' : 'light')
                 }}
               >
-                {theme === 'dark' ? <FaMoon /> : <FaSun />}
+                {theme === 'dark' && loaded ? <FaMoon /> : <FaSun />}
               </div>
             </li>
           </ul>
@@ -176,7 +183,7 @@ const Navbar = () => {
                   setTheme(theme === 'light' ? 'dark' : 'light')
                 }}
               >
-                {theme === 'dark' ? <FaMoon /> : <FaSun />}
+                {theme === 'dark' && loaded ? <FaMoon /> : <FaSun />}
               </div>
             )}
             <button onClick={handleNav}>
