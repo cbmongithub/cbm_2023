@@ -63,6 +63,7 @@ const About = ({ repositories }) => {
                         style={{ maxWidth: '150px' }}
                         width={150}
                         height={150}
+                        priority
                       />
                     </motion.div>
                   </div>

@@ -40,6 +40,10 @@ const Layout = ({ children }) => {
   const { asPath } = useRouter()
   const [isHome, setIsHome] = useState()
   useEffect(() => {
+    const isDarkTheme = localStorage.getItem('theme') === 'dark'
+    document.querySelector('html').style.backgroundColor = `${
+      isDarkTheme ? '#0F172A' : '#FAFAFA'
+    }`
     router.pathname === '/' ? setIsHome(true) : setIsHome(false)
   }, [router.pathname, isHome])
 
