@@ -3,11 +3,11 @@ import Image from 'next/image'
 
 const PostCard = ({ title, date, description, author, type, slug }) => {
   return (
-    <article className='p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700'>
-      <div className='flex justify-between items-center mb-5 text-gray-500'>
+    <article className='p-6 bg-white rounded-lg shadow-2xl dark:bg-slate-800'>
+      <div className='flex justify-between items-center mb-5'>
         {type === 'Tutorial' ? (
           <>
-            <span className='bg-gradient-to-r from-purple-600 to-pink-500 text-white text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800'>
+            <span className='bg-gradient-to-r from-purple-600 to-pink-500 text-zinc-50 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded'>
               <svg
                 className='mr-1 w-3 h-3'
                 fill='currentColor'
@@ -21,7 +21,7 @@ const PostCard = ({ title, date, description, author, type, slug }) => {
           </>
         ) : (
           <>
-            <span className='bg-gradient-to-r from-cyan-500 to-purple-600 text-white text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800'>
+            <span className='bg-gradient-to-r from-cyan-500 to-purple-600 text-white text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded'>
               <svg
                 className='mr-1 w-3 h-3'
                 fill='currentColor'
@@ -41,10 +41,10 @@ const PostCard = ({ title, date, description, author, type, slug }) => {
         )}
         <span className='text-sm'>{date}</span>
       </div>
-      <h2 className='mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white'>
+      <h2 className='mb-2 text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50'>
         {title}
       </h2>
-      <p className='mb-5 font-light text-gray-800 dark:text-gray-400'>
+      <p className='mb-5 font-light text-zinc-900 dark:text-zinc-300'>
         {description}
       </p>
       <div className='flex justify-between items-center'>
@@ -56,11 +56,13 @@ const PostCard = ({ title, date, description, author, type, slug }) => {
             width={28}
             height={28}
           />
-          <span className='font-medium dark:text-white'>{author}</span>
+          <span className='font-medium text-zinc-800 dark:text-zinc-50'>
+            {author}
+          </span>
         </div>
         <Link
           href='/[slug]'
-          className='inline-flex items-center font-medium text-primary-600 dark:text-primary-500 hover:underline'
+          className='inline-flex items-center font-medium text-zinc-800 dark:text-zinc-50 hover:underline'
           as={`/${slug}`}
         >
           Read more

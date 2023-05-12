@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { ThemeProvider } from 'next-themes'
 import { useRouter } from 'next/router'
 import { motion, AnimatePresence } from 'framer-motion'
 import Navbar from './Navbar'
@@ -44,22 +45,24 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <AnimatePresence initial={false} mode='wait'>
-        <motion.div
-          key={asPath}
-          variants={variants}
-          initial='in'
-          animate='inactive'
-          exit='out'
-        >
-          <main className='min-h-screen bg-white z-0'>
-            <Navbar />
-            {children}
-          </main>
-          {isHome ? null : <Footer />}
-        </motion.div>
-        <ChatWidget />
-      </AnimatePresence>
+      <ThemeProvider attribute='class'>
+        <AnimatePresence initial={false} mode='wait'>
+          <motion.div
+            key={asPath}
+            variants={variants}
+            initial='in'
+            animate='inactive'
+            exit='out'
+          >
+            <main className='min-h-screen bg-zinc-50 dark:bg-slate-900 z-0'>
+              <Navbar />
+              {children}
+            </main>
+            {isHome ? null : <Footer />}
+          </motion.div>
+          <ChatWidget />
+        </AnimatePresence>
+      </ThemeProvider>
     </>
   )
 }

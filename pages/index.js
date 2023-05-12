@@ -19,7 +19,7 @@ const Index = () => {
         }
       />
       <section>
-        <div className='absolute top-0 flex flex-row justify-center items-center w-full h-full bg-transparent z-30 px-6 py-12 md:px-12 text-gray-800 text-center lg:text-left'>
+        <div className='absolute top-0 flex flex-row justify-center items-center w-full h-full bg-transparent z-30 px-6 py-12 md:px-12 text-center lg:text-left'>
           <div className='container mx-auto xl:px-32'>
             <div className='grid lg:grid-cols-2 gap-12 items-center'>
               <div className='mt-12 lg:mt-0'>
@@ -28,7 +28,7 @@ const Index = () => {
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ type: 'spring', stiffness: 100 }}
                 >
-                  <h1 className='text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12'>
+                  <h1 className='text-5xl text-zinc-900 dark:text-zinc-50 md:text-6xl xl:text-7xl font-bold tracking-tight mb-12'>
                     I&apos;m Christian
                     <br />I build
                     <span className='text-purple-600 hover:text-pink-500 transition duration-150 ease-in-out'>
@@ -55,14 +55,14 @@ const Index = () => {
                   transition={{ type: 'spring', stiffness: 100, delay: 0.5 }}
                 >
                   <Link
-                    className='inline-block px-7 py-3 mr-2 border-2 border-purple-600 bg-purple-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-white hover:text-pink-500 hover:shadow-lg hover:border-pink-500 focus:bg-white focus:text-pink-500 focus:border-pink-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-white active:shadow-lg transition duration-150 ease-in-out'
+                    className='inline-block px-7 py-3 mr-2 border-2 border-purple-600 bg-purple-600 text-zinc-50 font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-zinc-50 hover:text-pink-500 hover:shadow-lg hover:border-pink-500 focus:bg-zinc-50 focus:text-pink-500 focus:border-pink-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-zinc-50 active:shadow-lg transition duration-150 ease-in-out'
                     href='/about'
                     role='button'
                   >
                     ABOUT ME
                   </Link>
                   <Link
-                    className='inline-block px-7 py-3 mr-2 bg-transparent border-2 border-purple-600 bg-white text-purple-600 font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-pink-500 hover:shadow-lg hover:text-white hover:border-pink-500 focus:bg-pink-500 focus:border-pink-500 focus:text-white focus:shadow-lg focus:outline-none focus:ring-0 active:bg-pink-500 active:shadow-lg transition duration-150 ease-in-out'
+                    className='inline-block px-7 py-3 mr-2 bg-transparent border-2 border-purple-600 bg-zinc-50 text-purple-600 font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-pink-500 hover:shadow-lg hover:text-zinc-50 hover:border-pink-500 focus:bg-pink-500 focus:border-pink-500 focus:text-zinc-50 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-pink-500 active:shadow-lg transition duration-150 ease-in-out'
                     href='/portfolio'
                     role='button'
                   >
@@ -82,7 +82,7 @@ const Index = () => {
                     alt='Image of Christian B. Martinez'
                     width={400}
                     height={400}
-                    className='opacity-95 rounded-full mx-auto w-1/2 h-1/2 md:w-2/3 md:h-2/3 shadow-xl hover:shadow-2xl transition duration-150 ease-in-out'
+                    className='opacity-95 rounded-full mx-auto w-1/2 h-1/2 md:w-2/3 md:h-2/3 shadow-2xl'
                   />
                 </motion.div>
               </div>

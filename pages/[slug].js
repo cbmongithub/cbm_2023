@@ -86,13 +86,17 @@ const Post = ({ data, content, slug }) => {
               width={28}
               height={28}
             />
-            <span className='font-medium'>{data.author}</span>
+            <span className='font-medium text-zinc-800 dark:text-zinc-50'>
+              {data.author}
+            </span>
           </div>
           <div className='hidden md:inline-flex px-20'>
             <Socials style={'list-none inline-flex'} />
           </div>
           <div className='hidden md:ml-0 md:flex'>
-            <span className='font-medium'>{data.date}</span>
+            <span className='font-medium text-zinc-800 dark:text-zinc-50'>
+              {data.date}
+            </span>
           </div>
         </motion.div>
         <motion.div
@@ -115,14 +119,14 @@ const Post = ({ data, content, slug }) => {
           transition={{ type: 'spring', stiffness: 100, delay: 1 }}
           className='w-full flex flex-row justify-center items-center my-20'
         >
-          <div className='flex flex-col prose p-6'>
+          <div className='flex flex-col prose p-6 dark:prose-invert'>
             <MDXRemote {...content} />
           </div>
         </motion.div>
         <div className='flex flex-row justify-center items-center w-full my-10'>
-          <p className='text-gray-800'>Share this post</p>
+          <p className='text-zinc-800 dark:text-zinc-300'>Share this post</p>
         </div>
-        <div className='flex flex-row justify-center items-center w-full mb-20'>
+        <div className='flex flex-row justify-center items-center w-full '>
           <EmailShareButton
             url={shareUrl}
             subject={`Check out this blog post: ${data.title}`}

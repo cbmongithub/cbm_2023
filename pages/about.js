@@ -42,7 +42,7 @@ const About = ({ repositories }) => {
           transition={{ type: 'spring', stiffness: 100, delay: 1 }}
           className='flex flex-col justify-center items-center mt-52 pb-20 px-6 mx-auto lg:w-2/3'
         >
-          <div className='flex flex-col min-w-0 break-words w-full shadow-xl rounded-lg'>
+          <div className='flex flex-col min-w-0 break-words w-full shadow-2xl rounded-xl bg-white dark:bg-slate-800'>
             <div className='px-6'>
               <div className='flex flex-wrap justify-center'>
                 <div className='w-full lg:w-2/3 px-4 lg:order-2 flex justify-center'>
@@ -59,7 +59,7 @@ const About = ({ repositories }) => {
                       <Image
                         alt='Image of Christian B. Martinez'
                         src='/img/me.jpg'
-                        className='shadow-xl rounded-full h-auto align-middle border-none absolute -m-[136px] -ml-20 lg:-ml-16'
+                        className='shadow-2xl rounded-full h-auto align-middle border-none absolute -m-[136px] -ml-20 lg:-ml-16'
                         style={{ maxWidth: '150px' }}
                         width={150}
                         height={150}
@@ -69,26 +69,26 @@ const About = ({ repositories }) => {
                 </div>
               </div>
               <div className='text-center mt-12'>
-                <h3 className='text-4xl font-semibold leading-normal mb-2 text-slate-700'>
+                <h3 className='text-4xl font-semibold leading-normal mb-2 text-zinc-900 dark:text-zinc-50'>
                   Christian B. Martinez
                 </h3>
-                <div className='inline-flex text-sm leading-normal mt-0 mb-2 text-slate-400 font-bold uppercase'>
-                  <FaMapPin className='mr-2 text-lg text-slate-400' />
+                <div className='inline-flex text-sm leading-normal mt-0 mb-2 text-zinc-400 font-bold uppercase'>
+                  <FaMapPin className='mr-2 text-lg text-zinc-400 ' />
                   Salt Lake City, Utah
                 </div>
-                <div className='flex flex-row justify-center items-center mb-2 mt-10 text-slate-600'>
-                  <FaBriefcase className='mr-2 text-lg text-slate-400' />
+                <div className='flex flex-row justify-center items-center mb-2 mt-10 text-zinc-800 dark:text-zinc-50'>
+                  <FaBriefcase className='mr-2 text-lg text-zinc-400 dark:text-zinc-400' />
                   Full Stack Bootcamp Student
                 </div>
-                <div className='flex flex-row justify-center items-center mb-2 text-slate-600'>
-                  <FaUniversity className='mr-2 text-lg text-slate-400' />
+                <div className='flex flex-row justify-center items-center mb-2 text-zinc-800 dark:text-zinc-50'>
+                  <FaUniversity className='mr-2 text-lg text-zinc-400 dark:text-zinc-400' />
                   University of Utah
                 </div>
               </div>
-              <div className='mt-10 py-10 border-t border-slate-200 text-center'>
+              <div className='mt-10 py-10 border-t border-zinc-200 dark:border-zinc-400 text-center'>
                 <div className='flex flex-wrap justify-center'>
                   <div className='w-full lg:w-9/12 px-4'>
-                    <p className='mb-4 text-lg leading-relaxed text-slate-700'>
+                    <p className='mb-4 text-lg leading-relaxed text-zinc-800 dark:text-zinc-50'>
                       Hey there! 🖐 I&apos;m Christian, I build apps for the
                       web! I have been coding for around 6 years as a hobby,
                       although recently i decided to take action and pursue a
@@ -244,7 +244,7 @@ const About = ({ repositories }) => {
           paragraph='View my latest repos from Github'
         />
 
-        <div className='mb-20 py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6'>
+        <div className='pb-20 py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6'>
           <div className='grid gap-12 grid-cols-1 md:grid-cols-2 xl:grid-cols-3'>
             {repos &&
               repos.map((latestRepo, i) => (
