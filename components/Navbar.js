@@ -142,16 +142,6 @@ const Navbar = () => {
           </div>
           <ul className='hidden md:flex z-40'>
             <li className='p-4 font-medium hover:text-purple-600 transition duration-150 ease-in-out'>
-              <div
-                className='flex flex-row justify-center items-center p-1 cursor-pointer'
-                onClick={() => {
-                  setTheme(theme === 'light' ? 'dark' : 'light')
-                }}
-              >
-                {theme === 'dark' ? <FaMoon /> : <FaSun />}
-              </div>
-            </li>
-            <li className='p-4 font-medium hover:text-purple-600 transition duration-150 ease-in-out'>
               <Link href='/'>Home</Link>
             </li>
             <li className='p-4 font-medium hover:text-purple-600 transition duration-150 ease-in-out'>
@@ -166,6 +156,16 @@ const Navbar = () => {
             </li>
             <li className='p-4 font-medium hover:text-purple-600 transition duration-150 ease-in-out'>
               <Link href='/contact'>Contact</Link>
+            </li>
+            <li className='p-4 font-medium hover:text-purple-600 transition duration-150 ease-in-out'>
+              <div
+                className='flex flex-row justify-center items-center p-1 cursor-pointer'
+                onClick={() => {
+                  setTheme(theme === 'light' ? 'dark' : 'light')
+                }}
+              >
+                {theme === 'dark' ? <FaMoon /> : <FaSun />}
+              </div>
             </li>
           </ul>
           <div className='flex flex-row mr-3 justify-center items-center md:hidden z-50 cursor-pointer'>
