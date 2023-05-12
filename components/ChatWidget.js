@@ -81,7 +81,7 @@ const ChatWidget = () => {
                 x
               </a>
             </div>
-            <div className='flex flex-col min-h-[16rem] max-h-[20rem] w-full'>
+            <div className='flex flex-col min-h-[16rem] max-h-[20rem] w-full bg-zinc-50  dark:bg-slate-800'>
               <ScrollableFeed>
                 <div className='flex flex-row justify-between bg-zinc-50 dark:bg-slate-800 rounded-b-md'>
                   <div className='px-4 flex flex-col justify-between'>
