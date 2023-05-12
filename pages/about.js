@@ -35,7 +35,7 @@ const About = ({ repositories }) => {
         keywords={'nextjs, blog, javascript, tech blogs, chatgpt, react js'}
       />
       <section>
-        <Heading title='About Me' paragraph='A little about me' />
+        <Heading title='About' paragraph='A little about me' />
         <motion.div
           initial={{ y: -100, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
