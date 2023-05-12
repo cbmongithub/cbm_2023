@@ -8,6 +8,7 @@ Portfolio website for Christian B. Martinez 2023
 
 - React
 - Next JS
+- Next themes
 - Tailwind CSS
 - Framer motion
 - Open AI API
@@ -15,7 +16,6 @@ Portfolio website for Christian B. Martinez 2023
 - Github API
 - EmailJS
 - Next MDX Remote
-- TBC...
 
 # What's Inside?
 
@@ -25,6 +25,7 @@ Portfolio website for Christian B. Martinez 2023
 - A blog that uses markdown.
 - Particles landing page.
 - Fully responsive design.
+- Light and dark mode.
 - Animated web pages and transitions.
 
 [View live](https://melodic-mandazi-febcac.netlify.app/)
