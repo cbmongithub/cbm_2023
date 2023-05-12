@@ -168,16 +168,26 @@ const Navbar = () => {
               <Link href='/contact'>Contact</Link>
             </li>
           </ul>
-          <div className='mr-3 block md:hidden z-50 cursor-pointer'>
+          <div className='flex flex-row mr-3 justify-center items-center md:hidden z-50 cursor-pointer'>
+            {!nav && (
+              <div
+                className='pb-1 pr-5'
+                onClick={() => {
+                  setTheme(theme === 'light' ? 'dark' : 'light')
+                }}
+              >
+                {theme === 'dark' ? <FaMoon /> : <FaSun />}
+              </div>
+            )}
             <button onClick={handleNav}>
               <svg width='29' height='29' viewBox='0 0 29 29'>
                 <motion.path
-                  stroke='#111111'
+                  stroke='currentColor'
                   animate={animation}
                   variants={svgPathVariant1}
                 />
                 <motion.path
-                  stroke='#111111'
+                  stroke='currentColor'
                   animate={animation}
                   variants={svgPathVariant2}
                 />
@@ -187,8 +197,8 @@ const Navbar = () => {
           <ul
             className={
               nav
-                ? 'fixed z-40 flex flex-col justify-center items-center left-0 top-0 w-full h-screen bg-white ease-in-out duration-500'
-                : 'fixed z-40 flex flex-col justify-center items-center left-[-100%] top-0 w-full h-screen bg-white ease-in-out duration-500'
+                ? 'fixed z-40 flex flex-col justify-center items-center left-0 top-0 w-full h-screen bg-zinc-50 dark:bg-slate-900 ease-in-out duration-500'
+                : 'fixed z-40 flex flex-col justify-center items-center left-[-100%] top-0 w-full h-screen bg-zinc-50 dark:bg-slate-900 ease-in-out duration-500'
             }
           >
             <div className='inline-flex fixed top-20 p-4'>
@@ -206,58 +216,79 @@ const Navbar = () => {
                     <path
                       d='M16,29.93c4.57-1.69,9.77-8.19,6.57-13.15-2.94-4.55-10.18-2.09-13.79.15C4.15,19.8.12,26.1,2.77,31.57,5.91,38.06,15.08,35.68,20,32.89a20.51,20.51,0,0,0,7.46-6.78A14,14,0,0,0,29,15.48l-4.45,1.6a18.39,18.39,0,0,1,5.82,13.26c.08,2.2,3.86,1.46,4.54,0,.52-1.11.81-2.34,1.27-3.48s1-2.5,1.65-3.72a53.15,53.15,0,0,1,4.07-6.86H37.31a27.2,27.2,0,0,0,0,11.64,10.46,10.46,0,0,0,7,7.06,3.31,3.31,0,0,0,3.27-.87A1.19,1.19,0,0,0,47,32,7.86,7.86,0,0,1,41.81,26,26.71,26.71,0,0,1,42,15.84c.2-1-1.08-1.36-1.8-1.36a3.28,3.28,0,0,0-2.74,1.38,53.15,53.15,0,0,0-4.07,6.86c-.57,1.15-1.09,2.32-1.57,3.51s-.8,2.52-1.35,3.69H35c-.18-5.66-2-10.88-6.23-14.8-1.15-1.06-4.94-.49-4.45,1.61a11.62,11.62,0,0,1-4.13,12.16,16.51,16.51,0,0,1-6,3.14c-2,.55-4.39,1-6-.6C5,28.16,7.12,22.73,10.06,20.09A10.91,10.91,0,0,1,14,17.83c1-.33,2.65-.63,3.52,0,1.56,1.16,1.43,3.44.84,5.09A7.24,7.24,0,0,1,14,27.45c-.84.31-1.76,1.35-1.14,2.23s2.27.57,3.12.25Z'
                       transform='translate(-1.92 -14.22)'
-                      className='text-black hover:opacity-75'
+                      className='hover:opacity-75'
+                      fill='currentColor'
                     />
                   </svg>
                 </Link>
               </motion.div>
             </div>
-            <li className='text-black text-2xl hover:text-purple-600 w-full text-center p-4'>
+            <li className='text-zinc-900 dark:text-zinc-200 text-2xl hover:text-purple-600 w-full text-center p-4'>
               <motion.div
                 animate={nav ? 'open' : 'closed'}
                 variants={secondVariant}
               >
-                <Link href='/' onClick={handleNav}>
+                <Link
+                  className='dark:hover:text-purple-600 transition duration-150 ease-in-out'
+                  href='/'
+                  onClick={handleNav}
+                >
                   Home
                 </Link>
               </motion.div>
             </li>
-            <li className='text-black text-2xl hover:text-purple-600 w-full text-center p-4'>
+            <li className='text-zinc-900 dark:text-zinc-200 text-2xl hover:text-purple-600 w-full text-center p-4'>
               <motion.div
                 animate={nav ? 'open' : 'closed'}
                 variants={thirdVariant}
               >
-                <Link href='/about' onClick={handleNav}>
+                <Link
+                  className='dark:hover:text-purple-600 transition duration-150 ease-in-out'
+                  href='/about'
+                  onClick={handleNav}
+                >
                   About
                 </Link>
               </motion.div>
             </li>
-            <li className='text-black text-2xl hover:text-purple-600 w-full text-center p-4'>
+            <li className='text-zinc-900 dark:text-zinc-200 text-2xl hover:text-purple-600 w-full text-center p-4'>
               <motion.div
                 animate={nav ? 'open' : 'closed'}
                 variants={fourthVariant}
               >
-                <Link href='/portfolio' onClick={handleNav}>
+                <Link
+                  className='dark:hover:text-purple-600 transition duration-150 ease-in-out'
+                  href='/portfolio'
+                  onClick={handleNav}
+                >
                   Portfolio
                 </Link>
               </motion.div>
             </li>
-            <li className='text-black text-2xl hover:text-purple-600 w-full text-center p-4'>
+            <li className='text-zinc-900 dark:text-zinc-200 text-2xl hover:text-purple-600 w-full text-center p-4'>
               <motion.div
                 animate={nav ? 'open' : 'closed'}
                 variants={fifthVariant}
               >
-                <Link href='/blog' onClick={handleNav}>
+                <Link
+                  className='dark:hover:text-purple-600 transition duration-150 ease-in-out'
+                  href='/blog'
+                  onClick={handleNav}
+                >
                   Blog
                 </Link>
               </motion.div>
             </li>
-            <li className='text-black text-2xl hover:text-purple-600 w-full text-center'>
+            <li className='text-zinc-900 dark:text-zinc-200 text-2xl hover:text-purple-600 w-full text-center'>
               <motion.div
                 animate={nav ? 'open' : 'closed'}
                 variants={sixthVariant}
               >
-                <Link href='/contact' onClick={handleNav}>
+                <Link
+                  className='dark:hover:text-purple-600 transition duration-150 ease-in-out'
+                  href='/contact'
+                  onClick={handleNav}
+                >
                   Contact
                 </Link>
               </motion.div>
