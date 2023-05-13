@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 const useLoaded = () => {
   const [loaded, setLoaded] = useState(false)
-  useEffect(() => setLoaded(true), [loaded])
+  useEffect(() => setLoaded(true), [])
   return loaded
 }
 
@@ -113,13 +113,14 @@ const seventhVariant = {
 }
 
 const Navbar = () => {
-  const { theme, setTheme } = useTheme('light')
+  const { theme, setTheme } = useTheme()
   const [isOn, setIsOn] = useState(false)
   const [nav, setNav] = useState(false)
   const [animation, setAnimation] = useState('closed')
   const loaded = useLoaded()
 
   const handleNav = () => {
+    console.log(theme)
     setNav(!nav)
     setAnimation('moving')
     setTimeout(() => {
@@ -191,7 +192,7 @@ const Navbar = () => {
                 data-darkmode={isOn}
                 onClick={() => {
                   setIsOn(!isOn)
-                  setTheme(theme === 'light' ? 'dark' : 'light')
+                  setTheme(theme === 'light' || '' ? 'dark' : 'light')
                 }}
                 style={{ justifyContent: isOn ? 'flex-end' : 'flex-start' }}
               >
@@ -221,7 +222,7 @@ const Navbar = () => {
                 data-darkmode={isOn}
                 onClick={() => {
                   setIsOn(!isOn)
-                  setTheme(theme === 'light' ? 'dark' : 'light')
+                  setTheme(theme === 'light' || '' ? 'dark' : 'light')
                 }}
                 style={{ justifyContent: isOn ? 'flex-end' : 'flex-start' }}
               >
