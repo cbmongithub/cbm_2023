@@ -228,7 +228,7 @@ const Navbar = () => {
                 )}
               </div>
             )}
-            <button onClick={handleNav}>
+            <div onClick={handleNav}>
               <svg width='29' height='29' viewBox='0 0 29 29'>
                 <motion.path
                   stroke='currentColor'
@@ -241,7 +241,7 @@ const Navbar = () => {
                   variants={svgPathVariant2}
                 />
               </svg>
-            </button>
+            </div>
           </div>
           <ul
             className={

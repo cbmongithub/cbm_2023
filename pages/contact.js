@@ -218,6 +218,7 @@ const Contact = () => {
                   </div>
                   <button
                     type='submit'
+                    aria-label='Submit form button'
                     className='
           w-full
           px-6
@@ -255,6 +256,7 @@ const Contact = () => {
                         <svg
                           className='fill-current h-6 w-6 text-green-500'
                           role='button'
+                          aria-label='Close button'
                           xmlns='http://www.w3.org/2000/svg'
                           viewBox='0 0 20 20'
                           onClick={() => setFormdata({ show: false })}
@@ -282,6 +284,7 @@ const Contact = () => {
                         <svg
                           className='fill-current h-6 w-6 text-red-500'
                           role='button'
+                          aria-label='Close button'
                           xmlns='http://www.w3.org/2000/svg'
                           viewBox='0 0 20 20'
                           onClick={() => setFormdata({ show: false })}

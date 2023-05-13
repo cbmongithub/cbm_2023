@@ -130,6 +130,7 @@ const Post = ({ data, content, slug }) => {
           <EmailShareButton
             url={shareUrl}
             subject={`Check out this blog post: ${data.title}`}
+            aria-label='Share blog post by email button'
           >
             <div className='cursor-pointer p-2 mx-3 bg-gray-500 rounded-full shadow-xl hover:bg-gray-600'>
               <AiFillMail className='w-4 h-4 text-white' />
@@ -139,6 +140,7 @@ const Post = ({ data, content, slug }) => {
             url={shareUrl}
             quote={data.title}
             hashtag={data.type}
+            aria-label='Share blog post through facebook button'
           >
             <div className='cursor-pointer p-2 mx-3 bg-blue-600 rounded-full shadow-xl hover:bg-blue-700'>
               <FaFacebook className='w-4 h-4 text-white' />
@@ -149,12 +151,17 @@ const Post = ({ data, content, slug }) => {
             title={data.title}
             summary={data.description}
             source={shareUrl}
+            aria-label='Share blog post through linkedin button'
           >
             <div className='cursor-pointer p-2 mx-3 bg-sky-600 rounded-full shadow-xl hover:bg-sky-700'>
               <FaLinkedin className='w-4 h-4 text-white' />
             </div>
           </LinkedinShareButton>
-          <RedditShareButton url={shareUrl} title={data.title}>
+          <RedditShareButton
+            url={shareUrl}
+            title={data.title}
+            aria-label='Share blog post through reddit button'
+          >
             <div className='cursor-pointer p-2 mx-3 bg-orange-600 rounded-full shadow-xl hover:bg-orange-700'>
               <FaReddit className='w-4 h-4 text-white' />
             </div>
@@ -163,12 +170,16 @@ const Post = ({ data, content, slug }) => {
             url={shareUrl}
             title={`Check out this blog post by @_coderchris! ${data.title}`}
             hashtags={['webdevelopment', 'blog', 'fullstack']}
+            aria-label='Share blog post through twitter button'
           >
             <div className='cursor-pointer p-2 mx-3 bg-sky-500 rounded-full shadow-xl hover:bg-sky-600'>
               <FaTwitter className='w-4 h-4 text-white' />
             </div>
           </TwitterShareButton>
-          <WhatsappShareButton url={shareUrl}>
+          <WhatsappShareButton
+            url={shareUrl}
+            aria-label='Share blog post through whatsapp'
+          >
             <div className='cursor-pointer p-2 mx-3 bg-green-500 rounded-full shadow-xl hover:bg-green-600'>
               <FaWhatsapp className='w-4 h-4 text-white' />
             </div>
