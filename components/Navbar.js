@@ -3,7 +3,7 @@ import { useTheme } from 'next-themes'
 import { FaMoon, FaSun } from 'react-icons/fa'
 import Socials from './Socials'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const useLoaded = () => {
   const [loaded, setLoaded] = useState(false)
@@ -114,6 +114,7 @@ const seventhVariant = {
 
 const Navbar = () => {
   const { theme, setTheme } = useTheme()
+  const [isOn, setIsOn] = useState(false)
   const [nav, setNav] = useState(false)
   const [animation, setAnimation] = useState('closed')
   const loaded = useLoaded()
@@ -133,8 +134,8 @@ const Navbar = () => {
           <div className='z-40 flex flex-row items-center justify-center p-4'>
             <Link href='/'>
               <svg
-                width='60'
-                height='60'
+                width='50'
+                height='50'
                 xmlns='http://www.w3.org/2000/svg'
                 viewBox='0 0 46.07 21.5'
               >
@@ -164,26 +165,48 @@ const Navbar = () => {
             <li className='p-4 font-medium hover:text-purple-600 transition duration-150 ease-in-out'>
               <Link href='/contact'>Contact</Link>
             </li>
-            <li className='p-4 font-medium hover:text-purple-600 transition duration-150 ease-in-out'>
+            <li className='p-4'>
               <div
-                className='flex flex-row justify-center items-center p-1 cursor-pointer'
+                className='icon-toggler-container'
+                data-darkmode={isOn}
                 onClick={() => {
+                  setIsOn(!isOn)
                   setTheme(theme === 'light' ? 'dark' : 'light')
                 }}
+                style={{ justifyContent: isOn ? 'flex-end' : 'flex-start' }}
               >
-                {theme === 'dark' && loaded ? <FaMoon /> : <FaSun />}
+                <motion.div layout className='handle'>
+                  <AnimatePresence mode='wait' initial={false}>
+                    <motion.i
+                      initial={{ y: -30, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      exit={{ y: 30, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {theme === 'dark' && loaded ? (
+                        <FaMoon className='toggler-icon' />
+                      ) : (
+                        <FaSun className='toggler-icon' />
+                      )}
+                    </motion.i>
+                  </AnimatePresence>
+                </motion.div>
               </div>
             </li>
           </ul>
           <div className='flex flex-row mr-3 justify-center items-center md:hidden z-50 cursor-pointer'>
             {!nav && (
               <div
-                className='pb-1 pr-5'
+                className='pb-1 pr-6'
                 onClick={() => {
                   setTheme(theme === 'light' ? 'dark' : 'light')
                 }}
               >
-                {theme === 'dark' && loaded ? <FaMoon /> : <FaSun />}
+                {theme === 'dark' && loaded ? (
+                  <FaMoon className='toggler-icon' />
+                ) : (
+                  <FaSun className='toggler-icon' />
+                )}
               </div>
             )}
             <button onClick={handleNav}>

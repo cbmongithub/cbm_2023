@@ -165,6 +165,46 @@ pre {
   }
 }
 
+.icon-toggler-container {
+  height: 25px;
+  width: 50px;
+  background-image: linear-gradient(to right, #9333ea, #ec4899);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.handle {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  overflow: hidden;
+}
+
+.toggler-icon {
+  color: #fff;
+}
+
+[data-darkmode='true'] {
+  background-color: #ec4899;
+}
+
+[data-darkmode='true'] .icon-toggler-container {
+  background-image: linear-gradient(to right, #ec4899, #9333ea);
+}
+
+[data-darkmode='true'] .toggler-icon {
+  color: #fafafa;
+}
+
 @media only screen and (min-width: 768px) {
   .prose {
     width: 80ch;
