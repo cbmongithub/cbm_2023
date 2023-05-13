@@ -113,14 +113,14 @@ const seventhVariant = {
 }
 
 const Navbar = () => {
-  const { theme, setTheme } = useTheme()
+  const { systemTheme, theme, setTheme } = useTheme()
+  const currentTheme = theme === 'system' ? systemTheme : theme
   const [isOn, setIsOn] = useState(false)
   const [nav, setNav] = useState(false)
   const [animation, setAnimation] = useState('closed')
   const loaded = useLoaded()
 
   const handleNav = () => {
-    console.log(theme)
     setNav(!nav)
     setAnimation('moving')
     setTimeout(() => {
@@ -191,8 +191,8 @@ const Navbar = () => {
                 className='icon-toggler-container'
                 data-darkmode={isOn}
                 onClick={() => {
+                  theme == 'dark' ? setTheme('light') : setTheme('dark')
                   setIsOn(!isOn)
-                  setTheme(theme === 'light' || '' ? 'dark' : 'light')
                 }}
                 style={{ justifyContent: isOn ? 'flex-end' : 'flex-start' }}
               >
@@ -221,8 +221,8 @@ const Navbar = () => {
                 className='icon-toggler-container p-4 mr-5'
                 data-darkmode={isOn}
                 onClick={() => {
+                  theme == 'dark' ? setTheme('light') : setTheme('dark')
                   setIsOn(!isOn)
-                  setTheme(theme === 'light' || '' ? 'dark' : 'light')
                 }}
                 style={{ justifyContent: isOn ? 'flex-end' : 'flex-start' }}
               >
