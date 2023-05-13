@@ -113,11 +113,12 @@ const seventhVariant = {
 }
 
 const Navbar = () => {
-  const { theme, setTheme } = useTheme()
+  const { theme, setTheme } = useTheme('light')
   const [isOn, setIsOn] = useState(false)
   const [nav, setNav] = useState(false)
   const [animation, setAnimation] = useState('closed')
   const loaded = useLoaded()
+
   const handleNav = () => {
     setNav(!nav)
     setAnimation('moving')
