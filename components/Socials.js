@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 const Socials = ({ style }) => {
   return (
-    <div className={`${style} text-purple-600`}>
+    <ul className={`${style} text-purple-600`}>
       <li className='px-5 text-purple-600 hover:text-pink-500 transition duration-150 ease-in-out'>
         <Link
           href={socialLinks.github}
@@ -45,7 +45,7 @@ const Socials = ({ style }) => {
           <FaTwitter />
         </Link>
       </li>
-    </div>
+    </ul>
   )
 }
 

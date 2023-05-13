@@ -208,6 +208,7 @@ const FormSection = ({ generateResponse }) => {
         />
         <button
           type='submit'
+          aria-label='Chat submit button'
           className='w-1/4 text-purple-600 dark:text-zinc-50 font-medium text-sm leading-snug uppercase dark:hover:text-purple-700 hover:text-purple-700'
           onClick={() => generateResponse(newQuestion, setNewQuestion)}
         >
