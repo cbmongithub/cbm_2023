@@ -215,4 +215,14 @@ pre {
   #tsparticles {
     display: none;
   }
+
+  .icon-toggler-container {
+    height: 25px;
+    width: 40px;
+  }
+
+  .handle {
+    height: 20px;
+    width: 20px;
+  }
 }

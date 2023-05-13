@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 const useLoaded = () => {
   const [loaded, setLoaded] = useState(false)
-  useEffect(() => setLoaded(true), [])
+  useEffect(() => setLoaded(true), [loaded])
   return loaded
 }
 
@@ -216,12 +216,30 @@ const Navbar = () => {
           <div className='flex flex-row mr-3 justify-center items-center md:hidden z-50 cursor-pointer'>
             {!nav && (
               <div
-                className='pb-1 pr-6'
+                className='icon-toggler-container p-4 mr-5'
+                data-darkmode={isOn}
                 onClick={() => {
+                  setIsOn(!isOn)
                   setTheme(theme === 'light' ? 'dark' : 'light')
                 }}
+                style={{ justifyContent: isOn ? 'flex-end' : 'flex-start' }}
               >
-                {theme === 'dark' && loaded ? <FaMoon /> : <FaSun />}
+                <motion.div layout className='handle'>
+                  <AnimatePresence mode='wait' initial={false}>
+                    <motion.i
+                      initial={{ y: -30, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      exit={{ y: 30, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {theme === 'dark' && loaded ? (
+                        <FaMoon className='toggler-icon' />
+                      ) : (
+                        <FaSun className='toggler-icon' />
+                      )}
+                    </motion.i>
+                  </AnimatePresence>
+                </motion.div>
               </div>
             )}
             <div onClick={handleNav}>

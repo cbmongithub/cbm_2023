@@ -128,7 +128,7 @@ const ChatWidget = () => {
           <AnimatePresence>
             <motion.div
               variants={variants}
-              className='fixed cursor-pointer z-30 bottom-5 right-6 p-4 bg-purple-600 rounded-full shadow-xl hover:bg-pink-500'
+              className='fixed cursor-pointer z-30 bottom-5 right-6 p-4 bg-gradient-to-r from-purple-600 to-pink-500 rounded-full shadow-xl hover:bg-pink-500'
               initial='closed'
               animate='open'
               exit='closed'

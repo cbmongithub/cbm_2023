@@ -89,7 +89,7 @@ const About = ({ repositories }) => {
               <div className='mt-10 py-10 border-t border-zinc-200 dark:border-zinc-400 text-center'>
                 <div className='flex flex-wrap justify-center'>
                   <div className='w-full lg:w-9/12 px-4'>
-                    <p className='mb-4 text-lg leading-relaxed text-zinc-800 dark:text-zinc-50'>
+                    <p className='mb-4 text-lg leading-relaxed text-zinc-800 dark:text-zinc-200'>
                       Hey there! 🖐 I&apos;m Christian, I build apps for the
                       web! I have been coding for around 6 years as a hobby,
                       although recently i decided to take action and pursue a
