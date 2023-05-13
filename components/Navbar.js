@@ -132,7 +132,7 @@ const Navbar = () => {
       <nav>
         <div className='flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-zinc-800 bg-zinc-50 dark:text-zinc-50 dark:bg-slate-900 overflow-hidden'>
           <div className='z-40 flex flex-row items-center justify-center p-4'>
-            <Link href='/'>
+            <Link href='/' aria-label='Christian B Martinez | Home Page'>
               <svg
                 width='50'
                 height='50'
@@ -150,20 +150,39 @@ const Navbar = () => {
           </div>
           <ul className='hidden md:flex z-40'>
             <li className='p-4 font-medium hover:text-purple-600 transition duration-150 ease-in-out'>
-              <Link href='/'>Home</Link>
+              <Link href='/' aria-label='Christian B Martinez | Home Page'>
+                Home
+              </Link>
             </li>
             <li className='p-4 font-medium hover:text-purple-600 transition duration-150 ease-in-out'>
-              <Link href='/about'>About</Link>
+              <Link
+                href='/about'
+                aria-label='Christian B Martinez | About Page'
+              >
+                About
+              </Link>
             </li>
             <li className='p-4 font-medium hover:text-purple-600 transition duration-150 ease-in-out'>
-              <Link href='/portfolio'>Portfolio</Link>
+              <Link
+                href='/portfolio'
+                aria-label='Christian B Martinez | Portfolio Page'
+              >
+                Portfolio
+              </Link>
             </li>
 
             <li className='p-4 font-medium hover:text-purple-600 transition duration-150 ease-in-out'>
-              <Link href='/blog'>Blog</Link>
+              <Link href='/blog' aria-label='Christian B Martinez | Blog Page'>
+                Blog
+              </Link>
             </li>
             <li className='p-4 font-medium hover:text-purple-600 transition duration-150 ease-in-out'>
-              <Link href='/contact'>Contact</Link>
+              <Link
+                href='/contact'
+                aria-label='Christian B Martinez | Contact Page'
+              >
+                Contact
+              </Link>
             </li>
             <li className='p-4'>
               <div
@@ -236,7 +255,11 @@ const Navbar = () => {
                 animate={nav ? 'open' : 'closed'}
                 variants={firstVariant}
               >
-                <Link href='/' onClick={handleNav}>
+                <Link
+                  href='/'
+                  aria-label='Christian B Martinez | Home Page'
+                  onClick={handleNav}
+                >
                   <svg
                     width='60'
                     height='60'
@@ -261,6 +284,7 @@ const Navbar = () => {
                 <Link
                   className='dark:hover:text-purple-600 transition duration-150 ease-in-out'
                   href='/'
+                  aria-label='Christian B Martinez | Home Page'
                   onClick={handleNav}
                 >
                   Home
@@ -275,6 +299,7 @@ const Navbar = () => {
                 <Link
                   className='dark:hover:text-purple-600 transition duration-150 ease-in-out'
                   href='/about'
+                  aria-label='Christian B Martinez | About Page'
                   onClick={handleNav}
                 >
                   About
@@ -289,6 +314,7 @@ const Navbar = () => {
                 <Link
                   className='dark:hover:text-purple-600 transition duration-150 ease-in-out'
                   href='/portfolio'
+                  aria-label='Christian B Martinez | Portfolio Page'
                   onClick={handleNav}
                 >
                   Portfolio
@@ -304,6 +330,7 @@ const Navbar = () => {
                   className='dark:hover:text-purple-600 transition duration-150 ease-in-out'
                   href='/blog'
                   onClick={handleNav}
+                  aria-label='Christian B Martinez | Blog Page'
                 >
                   Blog
                 </Link>
@@ -317,6 +344,7 @@ const Navbar = () => {
                 <Link
                   className='dark:hover:text-purple-600 transition duration-150 ease-in-out'
                   href='/contact'
+                  aria-label='Christian B Martinez | Contact Page'
                   onClick={handleNav}
                 >
                   Contact

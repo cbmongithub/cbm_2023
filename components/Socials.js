@@ -10,6 +10,7 @@ const Socials = ({ style }) => {
           href={socialLinks.github}
           target='_blank'
           rel='noopener noreferrer'
+          aria-label='Christian B Martinez | Github Link'
         >
           <FaGithub />
         </Link>
@@ -19,6 +20,7 @@ const Socials = ({ style }) => {
           href={socialLinks.codepen}
           target='_blank'
           rel='noopener noreferrer'
+          aria-label='Christian B Martinez | Codepen Link'
         >
           <FaCodepen />
         </Link>
@@ -28,6 +30,7 @@ const Socials = ({ style }) => {
           href={socialLinks.tiktok}
           target='_blank'
           rel='noopener noreferrer'
+          aria-label='Christian B Martinez | Tiktok Link'
         >
           <FaTiktok />
         </Link>
@@ -37,6 +40,7 @@ const Socials = ({ style }) => {
           href={socialLinks.twitter}
           target='_blank'
           rel='noopener noreferrer'
+          aria-label='Christian B Martinez | Twitter Link'
         >
           <FaTwitter />
         </Link>

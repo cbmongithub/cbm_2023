@@ -48,6 +48,7 @@ const PortfolioCard = ({
         </p>
         <Link
           href={repo}
+          aria-label='Christian B Martinez | Project Repository Link'
           className='text-zinc-800 dark:text-zinc-50 inline-flex items-center font-medium text-primary-600 hover:text-purple-600 dark:hover:text-purple-600 transition duration-300 ease-in-out'
         >
           <FaGithub className='ml-5' />
@@ -55,6 +56,7 @@ const PortfolioCard = ({
 
         <Link
           href={href}
+          aria-label='Christian B Martinez | Project View Live Link'
           className='text-zinc-800 dark:text-zinc-50 inline-flex items-center font-medium text-primary-600 hover:text-purple-600 dark:hover:text-purple-600 transition duration-300 ease-in-out'
         >
           <FaLink className='ml-5' />

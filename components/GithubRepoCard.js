@@ -12,6 +12,7 @@ const GithubRepoCard = ({ latestRepo }) => {
       <div className='flex justify-between items-center'>
         <Link
           href={latestRepo.clone_url}
+          aria-label={`Christian B Martinez | Repo Link for ${latestRepo.name}`}
           target='_blank'
           className='inline-flex items-center font-medium text-zinc-50 hover:text-zinc-200 transition duration-300 ease-in-out'
         >
