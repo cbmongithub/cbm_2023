@@ -210,3 +210,9 @@ pre {
     width: 80ch;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  #tsparticles {
+    display: none;
+  }
+}
