@@ -18,7 +18,7 @@ const SiteHead = ({ page, title, description, keywords }) => {
       <meta name='robots' content='index, follow' />
       <meta property='og:title' content={title} />
       <meta property='og:description' content={description} />
-      <meta property='og:image' content='/img/me-banner.jpg' />
+      <meta property='og:image' content='/img/me-banner.webp' />
     </Head>
   )
 }

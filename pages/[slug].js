@@ -81,7 +81,7 @@ const Post = ({ data, content, slug }) => {
           <div className='flex space-x-3'>
             <Image
               className='w-7 h-7 rounded-full'
-              src='/img/me.jpg'
+              src='/img/me.webp'
               alt='Christian B. Martinez Avatar'
               width={28}
               height={28}

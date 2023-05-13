@@ -79,7 +79,7 @@ const Index = () => {
                   transition={{ type: 'spring', stiffness: 100, delay: 1 }}
                 >
                   <Image
-                    src='/img/me.jpg'
+                    src='/img/me.webp'
                     priority
                     alt='Image of Christian B. Martinez'
                     width={400}
