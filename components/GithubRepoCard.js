@@ -1,6 +1,6 @@
 import { FaGithub } from 'react-icons/fa'
 import Link from 'next/link'
-import moment from 'moment'
+import dayjs from 'dayjs'
 
 const GithubRepoCard = ({ latestRepo }) => {
   return (
@@ -20,7 +20,7 @@ const GithubRepoCard = ({ latestRepo }) => {
           <FaGithub className='ml-2' />
         </Link>
         <p className='text-zinc-50 inline-flex items-center font-medium'>
-          {moment(`${latestRepo.pushed_at}`).utc().format('MM-DD-YYYY')}
+          {dayjs(latestRepo.pushed_at).format('M/D/YYYY')}
         </p>
       </div>
     </div>
