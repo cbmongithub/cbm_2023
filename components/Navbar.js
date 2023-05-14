@@ -191,7 +191,7 @@ const Navbar = () => {
                 className='icon-toggler-container'
                 data-darkmode={isOn}
                 onClick={() => {
-                  theme == 'dark' ? setTheme('light') : setTheme('dark')
+                  currentTheme == 'dark' ? setTheme('light') : setTheme('dark')
                   setIsOn(!isOn)
                 }}
                 style={{ justifyContent: isOn ? 'flex-end' : 'flex-start' }}
@@ -204,7 +204,7 @@ const Navbar = () => {
                       exit={{ y: 30, opacity: 0 }}
                       transition={{ duration: 0.2 }}
                     >
-                      {theme === 'dark' && loaded ? (
+                      {currentTheme === 'dark' && loaded ? (
                         <FaMoon className='toggler-icon' />
                       ) : (
                         <FaSun className='toggler-icon' />
@@ -221,7 +221,7 @@ const Navbar = () => {
                 className='icon-toggler-container p-4 mr-5'
                 data-darkmode={isOn}
                 onClick={() => {
-                  theme == 'dark' ? setTheme('light') : setTheme('dark')
+                  currentTheme == 'dark' ? setTheme('light') : setTheme('dark')
                   setIsOn(!isOn)
                 }}
                 style={{ justifyContent: isOn ? 'flex-end' : 'flex-start' }}
@@ -234,7 +234,7 @@ const Navbar = () => {
                       exit={{ y: 30, opacity: 0 }}
                       transition={{ duration: 0.2 }}
                     >
-                      {theme === 'dark' && loaded ? (
+                      {currentTheme === 'dark' && loaded ? (
                         <FaMoon className='toggler-icon' />
                       ) : (
                         <FaSun className='toggler-icon' />
