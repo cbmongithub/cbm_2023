@@ -42,7 +42,7 @@ const About = ({ repositories }) => {
           transition={{ type: 'spring', stiffness: 100, delay: 1 }}
           className='flex flex-col justify-center items-center mt-52 pb-20 px-6 mx-auto lg:w-2/3'
         >
-          <div className='flex flex-col min-w-0 break-words w-full shadow-2xl rounded-xl bg-white dark:bg-slate-800'>
+          <div className='flex flex-col min-w-0 break-words shadow-2xl rounded-xl bg-white dark:bg-slate-800'>
             <div className='px-6'>
               <div className='flex flex-wrap justify-center'>
                 <div className='w-full lg:w-2/3 px-4 lg:order-2 flex justify-center'>

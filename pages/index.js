@@ -84,7 +84,7 @@ const Index = () => {
                     alt='Image of Christian B. Martinez'
                     width={400}
                     height={400}
-                    className='opacity-95 rounded-full mx-auto w-1/2 h-1/2 md:w-2/3 md:h-2/3 shadow-2xl'
+                    className='dark:grayscale rounded-full mx-auto w-1/2 h-1/2 md:w-2/3 md:h-2/3 shadow-2xl'
                   />
                 </motion.div>
               </div>

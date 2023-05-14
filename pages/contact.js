@@ -81,7 +81,7 @@ const Contact = () => {
         >
           <div className='container text-slate-800 px-4 md:px-12 relative top:0 md:top-20'>
             <div className='block rounded-xl mt-[-100px] bg-white dark:bg-slate-800 shadow-xl py-10 md:py-12 px-4 md:px-6'>
-              <div className='grid md:grid-cols-3 lg:grid-cols-3 mb-12'>
+              <div className='grid md:grid-cols-3 mb-12'>
                 <div className='mb-12 lg:mb-0 text-center mx-auto'>
                   <svg
                     className='w-8 h-8 text-purple-600 mb-6 mx-auto hover:text-pink-500'
