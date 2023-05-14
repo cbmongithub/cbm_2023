@@ -5,7 +5,7 @@ const getLatestRepos = async (data, token) => {
     const username = data.githubUsername
     if (token) {
       const res = await axios.get(
-        `https://api.github.com/search/repositories?q=user:${username}+sort:author-date-desc`,
+        `https://api.github.com/search/repositories?q=user:${username}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -19,7 +19,8 @@ const getLatestRepos = async (data, token) => {
           newestRepos.push(repos[i])
         }
       }
-      return newestRepos.splice(0, 6)
+      newestRepos.sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at))
+      return newestRepos
     }
   } catch (err) {
     console.log(err)

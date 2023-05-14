@@ -1,6 +1,8 @@
 import { FaGithub } from 'react-icons/fa'
 import Link from 'next/link'
 import dayjs from 'dayjs'
+import relativeTime from 'dayjs/plugin/relativeTime'
+dayjs.extend(relativeTime)
 
 const GithubRepoCard = ({ latestRepo }) => {
   return (
@@ -20,7 +22,7 @@ const GithubRepoCard = ({ latestRepo }) => {
           <FaGithub className='ml-2' />
         </Link>
         <p className='text-zinc-50 inline-flex items-center font-medium'>
-          {dayjs(latestRepo.pushed_at).format('M/D/YYYY')}
+          {`${dayjs(latestRepo.pushed_at).fromNow(true)} ago`}
         </p>
       </div>
     </div>
