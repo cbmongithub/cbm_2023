@@ -20,7 +20,7 @@ const getLatestRepos = async (data, token) => {
         }
       }
       newestRepos.sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at))
-      return newestRepos
+      return newestRepos.splice(0, 6)
     }
   } catch (err) {
     console.log(err)

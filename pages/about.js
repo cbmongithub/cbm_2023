@@ -242,7 +242,7 @@ const About = ({ repositories }) => {
 
         <Heading
           title='Latest Repos'
-          paragraph='View my latest repos from Github'
+          paragraph={`View repos sorted by recently pushed`}
         />
 
         <div className='pb-20 py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6'>
