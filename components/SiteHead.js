@@ -10,7 +10,7 @@ const SiteHead = ({ page, title, description, keywords }) => {
       <link rel='icon' href='/favicon.ico' />
       <link
         rel='canonical'
-        href={`https://www.christianbmartinez.com${router.asPath}`}
+        href={`${process.env.NEXT_PUBLIC_BASE_URL}${router.asPath}`}
       />
       <meta name='viewport' content='width=device-width, initial-scale=1.0' />
       <meta name='keywords' content={keywords} />

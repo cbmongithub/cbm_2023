@@ -99,7 +99,7 @@ const GuestBook = ({ allPosts }) => {
 export default GuestBook
 
 export async function getServerSideProps() {
-  let res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/getPosts`, {
+  let res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getPosts`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
