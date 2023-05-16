@@ -12,7 +12,7 @@ const addPost = async (req, res) => {
       timestamp,
     })
 
-    res.json(post)
+    res.redirect('/guestbook')
   } catch (e) {
     console.error(e)
   }
