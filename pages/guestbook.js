@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import SiteHead from '../components/SiteHead'
 import Heading from '../components/Heading'
+import dayjs from 'dayjs'
 
-const GuestBook = ({ posts }) => {
+const GuestBook = ({ allPosts }) => {
   const [name, setName] = useState('')
   const [message, setMessage] = useState('')
 
@@ -23,32 +24,21 @@ const GuestBook = ({ posts }) => {
         />
         <div className='pb-20 py-8 px-4 mx-auto max-w-screen-md lg:py-16 lg:px-6'>
           <div className='flex flex-col space-y-10'>
-            <div className='bg-white dark:bg-slate-800 p-6 rounded-lg shadow-xl'>
-              <h3 className='mb-2 font-bold tracking-tight text-zinc-900 dark:text-zinc-50'>
-                John Doe
-              </h3>
-              <p className='font-light text-zinc-900 dark:text-zinc-300 text-sm mb-2'>
-                Posted on April 17, 2023
-              </p>
-              <p className='text-zinc-900 dark:text-zinc-300'>
-                This is a sample comment. Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                labore et dolore magna aliqua.
-              </p>
-            </div>
-            <div className='bg-white dark:bg-slate-800 p-6 rounded-lg shadow-xl'>
-              <h3 className='mb-2 font-bold tracking-tight text-zinc-900 dark:text-zinc-50'>
-                Marry Lamb
-              </h3>
-              <p className='font-light text-zinc-900 dark:text-zinc-300 text-sm mb-2'>
-                Posted on March 29, 2023
-              </p>
-              <p className='text-zinc-900 dark:text-zinc-300'>
-                This is a sample comment. Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                labore et dolore magna aliqua.
-              </p>
-            </div>
+            {allPosts.map((data) => {
+              return (
+                <div key={data._id} className='bg-white dark:bg-slate-800 p-6 rounded-lg shadow-xl'>
+                <h3 className='mb-2 font-bold tracking-tight text-zinc-900 dark:text-zinc-50'>
+                  {data.name}
+                </h3>
+                <p className='font-light text-zinc-900 dark:text-zinc-300 text-sm mb-2'>
+                  {`Posted on ${dayjs(data.timestamp).format('M/D/YYYY')}`}
+                </p>
+                <p className='text-zinc-900 dark:text-zinc-300'>
+                  {data.message}
+                </p>
+              </div>
+              )  
+            })}
             <form
               action='/api/addPost'
               method='POST'
@@ -107,3 +97,17 @@ const GuestBook = ({ posts }) => {
 }
 
 export default GuestBook
+
+export async function getServerSideProps() {
+  let res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/getPosts`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+  let allPosts = await res.json()
+
+  return {
+    props: { allPosts },
+  }
+}
