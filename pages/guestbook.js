@@ -64,6 +64,7 @@ const GuestBook = ({ posts }) => {
                 >
                   Name
                 </label>
+                <input type='hidden' value={new Date()} name='timestamp' />
                 <input
                   className='text-base w-full font-normal text-zinc-700 dark:text-zinc-200 bg-zinc-50 dark:bg-slate-800 bg-clip-padding border border-solid border-zinc-300 dark:border-zinc-500 transition ease-in-out m-0 focus:border-purple-600 dark:focus:border-purple-600 focus:outline-none py-5 px-4 rounded-xl'
                   type='text'
