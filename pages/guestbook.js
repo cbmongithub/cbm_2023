@@ -2,8 +2,41 @@ import { useState } from 'react'
 import SiteHead from '../components/SiteHead'
 import Heading from '../components/Heading'
 import dayjs from 'dayjs'
+import { GiphyFetch } from '@giphy/js-fetch-api'
+import {
+  Grid,
+  SearchBar,
+  SearchContext,
+  SearchContextManager,
+} from '@giphy/react-components'
+import { useContext } from 'react'
 
-const GuestBook = ({ allPosts }) => {
+const giphyFetch = new GiphyFetch(process.env.NEXT_PUBLIC_GIPHY_API_KEY)
+
+const fetchGifs = (offset) => giphyFetch.trending({ offset, limit: 10 })
+
+const GiphyComponent = () => {
+  const { fetchGifs, term, channelSearch, activeChannel } =
+    useContext(SearchContext)
+
+  return (
+    <div className='flex flex-col justify-center items-center'>
+      <SearchBar className='w-full mb-5' />
+      <Grid
+        key={`${channelSearch} ${term} ${activeChannel?.user.username}`}
+        columns={600 < 400 ? 2 : 4}
+        width={600}
+        fetchGifs={fetchGifs}
+        onGifClick={(gif, e) => {
+          e.preventDefault()
+          console.log(gif, e)
+        }}
+      />
+    </div>
+  )
+}
+
+const GuestBook = ({ allPosts, gifs }) => {
   const [name, setName] = useState('')
   const [message, setMessage] = useState('')
 
@@ -26,18 +59,21 @@ const GuestBook = ({ allPosts }) => {
           <div className='flex flex-col space-y-10'>
             {allPosts.map((data) => {
               return (
-                <div key={data._id} className='bg-white dark:bg-slate-800 p-6 rounded-lg shadow-xl'>
-                <h3 className='mb-2 font-bold tracking-tight text-zinc-900 dark:text-zinc-50'>
-                  {data.name}
-                </h3>
-                <p className='font-light text-zinc-900 dark:text-zinc-300 text-sm mb-2'>
-                  {`Posted on ${dayjs(data.timestamp).format('M/D/YYYY')}`}
-                </p>
-                <p className='text-zinc-900 dark:text-zinc-300'>
-                  {data.message}
-                </p>
-              </div>
-              )  
+                <div
+                  key={data._id}
+                  className='bg-white dark:bg-slate-800 p-6 rounded-lg shadow-xl'
+                >
+                  <h3 className='mb-2 font-bold tracking-tight text-zinc-900 dark:text-zinc-50'>
+                    {data.name}
+                  </h3>
+                  <p className='font-light text-zinc-900 dark:text-zinc-300 text-sm mb-2'>
+                    {`Posted on ${dayjs(data.timestamp).format('M/D/YYYY')}`}
+                  </p>
+                  <p className='text-zinc-900 dark:text-zinc-300'>
+                    {data.message}
+                  </p>
+                </div>
+              )
             })}
             <form
               action='/api/addPost'
@@ -89,6 +125,17 @@ const GuestBook = ({ allPosts }) => {
                 Submit
               </button>
             </form>
+            {gifs ? (
+              <div>
+                <SearchContextManager
+                  apiKey={process.env.NEXT_PUBLIC_GIPHY_API_KEY}
+                >
+                  <GiphyComponent />
+                </SearchContextManager>
+              </div>
+            ) : (
+              ''
+            )}
           </div>
         </div>
       </section>
@@ -106,8 +153,9 @@ export async function getServerSideProps() {
     },
   })
   let allPosts = await res.json()
+  const { data } = await fetchGifs(0)
 
   return {
-    props: { allPosts },
+    props: { allPosts, gifs: data },
   }
 }
