@@ -4,7 +4,7 @@ import Heading from '../components/Heading'
 import dayjs from 'dayjs'
 import { GiphyFetch } from '@giphy/js-fetch-api'
 import {
-  Grid,
+  Carousel,
   SearchBar,
   SearchContext,
   SearchContextManager,
@@ -15,30 +15,37 @@ const giphyFetch = new GiphyFetch(process.env.NEXT_PUBLIC_GIPHY_API_KEY)
 
 const fetchGifs = (offset) => giphyFetch.trending({ offset, limit: 10 })
 
-const GiphyComponent = () => {
+const GiphyComponent = ({ onGifClick }) => {
   const { fetchGifs, term, channelSearch, activeChannel } =
     useContext(SearchContext)
 
   return (
-    <div className='flex flex-col justify-center items-center'>
+    <>
       <SearchBar className='w-full mb-5' />
-      <Grid
-        key={`${channelSearch} ${term} ${activeChannel?.user.username}`}
-        columns={600 < 400 ? 2 : 4}
-        width={600}
-        fetchGifs={fetchGifs}
+      <Carousel
         onGifClick={(gif, e) => {
           e.preventDefault()
           console.log(gif, e)
         }}
+        gifHeight={200}
+        borderRadius={12}
+        noLink={true}
+        fetchGifs={fetchGifs}
+        key={`${channelSearch} ${term} ${activeChannel?.user.username}`}
       />
-    </div>
+    </>
   )
 }
 
 const GuestBook = ({ allPosts, gifs }) => {
   const [name, setName] = useState('')
   const [message, setMessage] = useState('')
+  const [showGifs, setShowGifs] = useState(false)
+
+  const handleGifs = (e) => {
+    e.preventDefault()
+    setShowGifs(!showGifs)
+  }
 
   return (
     <>
@@ -118,21 +125,51 @@ const GuestBook = ({ allPosts, gifs }) => {
                   onChange={(e) => setMessage(e.target.value)}
                 ></textarea>
               </div>
-              <button
-                className='inline-block px-7 py-3 mr-2 border-2 border-purple-600 bg-purple-600 text-zinc-50 font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-zinc-50 hover:text-pink-500 hover:shadow-lg hover:border-pink-500 focus:bg-zinc-50 focus:text-pink-500 focus:border-pink-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-zinc-50 active:shadow-lg transition duration-150 ease-in-out'
-                type='submit'
-              >
-                Submit
-              </button>
-            </form>
-            {gifs ? (
-              <div>
-                <SearchContextManager
-                  apiKey={process.env.NEXT_PUBLIC_GIPHY_API_KEY}
-                >
-                  <GiphyComponent />
-                </SearchContextManager>
+              <div className='flex flex-row justify-between'>
+                <button onClick={handleGifs}>
+                  <svg
+                    aria-hidden='true'
+                    className='w-6 h-6'
+                    fill='currentColor'
+                    viewBox='0 0 20 20'
+                    xmlns='http://www.w3.org/2000/svg'
+                  >
+                    <path
+                      fillRule='evenodd'
+                      d='M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z'
+                      clipRule='evenodd'
+                    ></path>
+                  </svg>
+                </button>
+                <button className='inline-block px-7 py-3 mr-2 border-2 border-purple-600 bg-purple-600 text-zinc-50 font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-zinc-50 hover:text-pink-500 hover:shadow-lg hover:border-pink-500 focus:bg-zinc-50 focus:text-pink-500 focus:border-pink-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-zinc-50 active:shadow-lg transition duration-150 ease-in-out'>
+                  Submit
+                </button>
               </div>
+            </form>
+            {showGifs && gifs ? (
+              <>
+                <div className='justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none'>
+                  <div className='relative w-auto my-6 mx-auto max-w-3xl'>
+                    <div className='border-0 rounded-lg shadow-lg relative flex flex-col bg-white dark:bg-slate-800 outline-none focus:outline-none'>
+                      <button
+                        className='p-3 ml-auto bg-transparent border-0 text-zinc-50 float-right text-3xl leading-none font-semibold outline-none focus:outline-none'
+                        onClick={() => setShowGifs(!showGifs)}
+                      >
+                        <span className='bg-transparent text-slate-900 dark:text-zinc-50 h-6 w-6 text-2xl block outline-none focus:outline-none'>
+                          ×
+                        </span>
+                      </button>
+                      <div className='relative p-6 flex-auto'>
+                        <SearchContextManager
+                          apiKey={process.env.NEXT_PUBLIC_GIPHY_API_KEY}
+                        >
+                          <GiphyComponent />
+                        </SearchContextManager>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </>
             ) : (
               ''
             )}
