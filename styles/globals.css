@@ -137,12 +137,6 @@ pre {
   }
 }
 
-[contentEditable='true']:empty:before {
-  content: attr(data-text);
-  color: #a1a1aa;
-  cursor: text;
-}
-
 .form-loading-bar {
   position: fixed;
   top: 0;

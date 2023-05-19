@@ -12,6 +12,8 @@ import {
   SearchContext,
   SearchContextManager,
 } from '@giphy/react-components'
+import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 const giphyFetch = new GiphyFetch(process.env.NEXT_PUBLIC_GIPHY_API_KEY)
 
@@ -38,10 +40,9 @@ const GiphyComponent = ({ onGifClick }) => {
 }
 
 const GuestBook = ({ allPosts, gifs }) => {
-  const [name, setName] = useState('')
-  // const [message, setMessage] = useState('')
   const [formattedText, setFormattedText] = useState('')
   const [showGifs, setShowGifs] = useState(false)
+  const [chosenGifUrl, setChosenGifUrl] = useState('')
 
   const handleGifs = (e) => {
     e.preventDefault()
@@ -75,70 +76,41 @@ const GuestBook = ({ allPosts, gifs }) => {
         />
         <div className='pb-20 py-8 px-4 mx-auto max-w-screen-md lg:py-16 lg:px-6'>
           <div className='flex flex-col space-y-10'>
-            {allPosts.map((data) => {
+            {allPosts.map((data, i) => {
               return (
-                <div
+                <motion.div
                   key={data._id}
                   className='bg-white dark:bg-slate-800 p-6 rounded-lg shadow-xl'
+                  initial={{
+                    opacity: 0,
+                    translateY: -100,
+                  }}
+                  whileInView={{ opacity: 1, translateY: 0 }}
+                  transition={{
+                    type: 'spring',
+                    stiffness: 100,
+                    duration: 1.5,
+                    delay: 0.5 * i,
+                  }}
                 >
                   <p className='font-light text-zinc-900 dark:text-zinc-300 text-sm mb-2'>
                     {`Posted on ${dayjs(data.timestamp).format('M/D/YYYY')}`}
                   </p>
                   <p className='text-zinc-900 dark:text-zinc-300'>
-                    {data.message}
+                    {data.formattedText}
+                    {data.gifUrl && (
+                      <Image
+                        className='mt-3 rounded-lg'
+                        src={data.gifUrl}
+                        height={200}
+                        width={200}
+                        alt='Giphy image'
+                      />
+                    )}
                   </p>
-                </div>
+                </motion.div>
               )
             })}
-            {/* <form
-              action='/api/addPost'
-              method='POST'
-              className='bg-white dark:bg-slate-800 rounded-lg shadow-xl p-6'
-            >
-              <h3 className='font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4'>
-                Add a comment
-              </h3>
-              <div className='mb-4'>
-                <label
-                  className='block text-zinc-900 dark:text-zinc-300  font-bold mb-2'
-                  htmlFor='name'
-                >
-                  Name
-                </label>
-                <input type='hidden' value={new Date()} name='timestamp' />
-                <input
-                  className='text-base w-full font-normal text-zinc-700 dark:text-zinc-200 bg-zinc-50 dark:bg-slate-800 bg-clip-padding border border-solid border-zinc-300 dark:border-zinc-500 transition ease-in-out m-0 focus:border-purple-600 dark:focus:border-purple-600 focus:outline-none py-5 px-4 rounded-xl'
-                  type='text'
-                  value={name}
-                  placeholder='Enter your name'
-                  required
-                  name='name'
-                  onChange={(e) => setName(e.target.value)}
-                />
-              </div>
-              <div className='mb-4'>
-                <label
-                  className='block text-zinc-900 dark:text-zinc-300 font-bold mb-2'
-                  htmlFor='comment'
-                >
-                  Comment
-                </label>
-                <textarea
-                  className='text-base w-full font-normal text-zinc-700 dark:text-zinc-200 bg-zinc-50 dark:bg-slate-800 bg-clip-padding border border-solid border-zinc-300 dark:border-zinc-500 transition ease-in-out m-0 focus:border-purple-600 dark:focus:border-purple-600 focus:outline-none py-5 px-4 rounded-xl'
-                  rows='3'
-                  placeholder='Enter your comment'
-                  required
-                  name='message'
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                ></textarea>
-              </div>
-              <div className='flex flex-row'>
-                <button className='inline-block px-7 py-3 mr-2 border-2 border-purple-600 bg-purple-600 text-zinc-50 font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-zinc-50 hover:text-pink-500 hover:shadow-lg hover:border-pink-500 focus:bg-zinc-50 focus:text-pink-500 focus:border-pink-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-zinc-50 active:shadow-lg transition duration-150 ease-in-out'>
-                  Submit
-                </button>
-              </div>
-          </form> */}
             <form action='/api/addPost' method='POST'>
               <div className='w-full max-w-screen-md mx-auto rounded-lg bg-white dark:bg-slate-800 shadow-xl p-5 text-slate-800'>
                 <div className='border border-zinc-300 dark:border-zinc-500 rounded-lg'>
@@ -179,19 +151,40 @@ const GuestBook = ({ allPosts, gifs }) => {
                     </button>
                   </div>
                   <input type='hidden' value={new Date()} name='timestamp' />
+                  <input
+                    type='hidden'
+                    value='We will come back to this'
+                    name='format'
+                  />
                   <div
                     id='format'
                     data-text='Enter your message...'
-                    onChange={(e) => setFormattedText(e.target.value)}
                     contentEditable
                     suppressContentEditableWarning={true}
-                    type='text'
-                    name='message'
-                    value={formattedText}
-                    required
-                    className='flex flex-col text-zinc-700 dark:text-zinc-300  w-full h-auto p-3 cursor-auto active:outline-none focus:outline-none'
+                    className='flex flex-col text-zinc-700 dark:text-zinc-300 min-h-[100px] w-full h-auto p-3 cursor-auto active:outline-none focus:outline-none'
                   >
-                    {formattedText && formattedText}
+                    <input
+                      required
+                      type='text'
+                      value={formattedText}
+                      onChange={(e) => setFormattedText(e.target.value)}
+                      name='formattedText'
+                      placeholder='Enter your message...'
+                      className='w-full bg-transparent outline-none focus:outline:none'
+                      autoComplete='off'
+                    />
+
+                    <input type='hidden' value={chosenGifUrl} name='gifUrl' />
+
+                    {chosenGifUrl && (
+                      <Image
+                        className='mt-3 rounded-lg'
+                        src={chosenGifUrl}
+                        height={200}
+                        width={200}
+                        alt='Giphy image'
+                      />
+                    )}
                   </div>
                   {showGifs && gifs && (
                     <div className='relative p-6 flex-auto'>
@@ -202,6 +195,8 @@ const GuestBook = ({ allPosts, gifs }) => {
                           onGifClick={(gif, e) => {
                             e.preventDefault()
                             console.log(gif, e)
+                            setChosenGifUrl(gif.images.downsized.url)
+                            setShowGifs(!showGifs)
                           }}
                         />
                       </SearchContextManager>
@@ -209,10 +204,7 @@ const GuestBook = ({ allPosts, gifs }) => {
                   )}
                 </div>
                 <div className='flex flex-row justify-left items-center mt-5'>
-                  <button
-                    type='submit'
-                    className='px-7 py-3 mr-2 border-2 border-purple-600 bg-purple-600 text-zinc-50 font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-zinc-50 hover:text-pink-500 hover:shadow-lg hover:border-pink-500 focus:bg-zinc-50 focus:text-pink-500 focus:border-pink-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-zinc-50 active:shadow-lg transition duration-150 ease-in-out'
-                  >
+                  <button className='px-7 py-3 mr-2 border-2 border-purple-600 bg-purple-600 text-zinc-50 font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-zinc-50 hover:text-pink-500 hover:shadow-lg hover:border-pink-500 focus:bg-zinc-50 focus:text-pink-500 focus:border-pink-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-zinc-50 active:shadow-lg transition duration-150 ease-in-out'>
                     Submit
                   </button>
                 </div>

@@ -4,12 +4,14 @@ const addPost = async (req, res) => {
   try {
     const client = await clientPromise
     const db = client.db('posts')
-    const { name, message, timestamp } = req.body
+    const { timestamp, format, formattedText, gifUrl } = req.body
+    console.log(req.body)
 
     const post = await db.collection('posts').insertOne({
-      name,
-      message,
       timestamp,
+      format,
+      formattedText,
+      gifUrl,
     })
 
     res.redirect('/guestbook')
