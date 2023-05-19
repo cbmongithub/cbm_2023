@@ -1,7 +1,10 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import SiteHead from '../components/SiteHead'
 import Heading from '../components/Heading'
 import dayjs from 'dayjs'
+import { BsTypeBold, BsTypeItalic, BsTypeUnderline } from 'react-icons/bs'
+import { AiOutlineGif } from 'react-icons/ai'
+import { MdFormatAlignCenter } from 'react-icons/md'
 import { GiphyFetch } from '@giphy/js-fetch-api'
 import {
   Carousel,
@@ -9,7 +12,6 @@ import {
   SearchContext,
   SearchContextManager,
 } from '@giphy/react-components'
-import { useContext } from 'react'
 
 const giphyFetch = new GiphyFetch(process.env.NEXT_PUBLIC_GIPHY_API_KEY)
 
@@ -23,10 +25,8 @@ const GiphyComponent = ({ onGifClick }) => {
     <>
       <SearchBar className='w-full mb-5' />
       <Carousel
-        onGifClick={(gif, e) => {
-          e.preventDefault()
-          console.log(gif, e)
-        }}
+        className='cursor-pointer'
+        onGifClick={onGifClick}
         gifHeight={200}
         borderRadius={12}
         noLink={true}
@@ -39,12 +39,23 @@ const GiphyComponent = ({ onGifClick }) => {
 
 const GuestBook = ({ allPosts, gifs }) => {
   const [name, setName] = useState('')
-  const [message, setMessage] = useState('')
+  // const [message, setMessage] = useState('')
+  const [formattedText, setFormattedText] = useState('')
   const [showGifs, setShowGifs] = useState(false)
 
   const handleGifs = (e) => {
     e.preventDefault()
     setShowGifs(!showGifs)
+  }
+
+  const handleFormat = (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    const format = e.target.attributes[0].value
+    const inputEl = document.getElementById('format').classList
+    inputEl.value.includes(format)
+      ? inputEl.remove(format)
+      : inputEl.add(format)
   }
 
   return (
@@ -70,9 +81,6 @@ const GuestBook = ({ allPosts, gifs }) => {
                   key={data._id}
                   className='bg-white dark:bg-slate-800 p-6 rounded-lg shadow-xl'
                 >
-                  <h3 className='mb-2 font-bold tracking-tight text-zinc-900 dark:text-zinc-50'>
-                    {data.name}
-                  </h3>
                   <p className='font-light text-zinc-900 dark:text-zinc-300 text-sm mb-2'>
                     {`Posted on ${dayjs(data.timestamp).format('M/D/YYYY')}`}
                   </p>
@@ -82,7 +90,7 @@ const GuestBook = ({ allPosts, gifs }) => {
                 </div>
               )
             })}
-            <form
+            {/* <form
               action='/api/addPost'
               method='POST'
               className='bg-white dark:bg-slate-800 rounded-lg shadow-xl p-6'
@@ -125,54 +133,91 @@ const GuestBook = ({ allPosts, gifs }) => {
                   onChange={(e) => setMessage(e.target.value)}
                 ></textarea>
               </div>
-              <div className='flex flex-row justify-between'>
-                <button onClick={handleGifs}>
-                  <svg
-                    aria-hidden='true'
-                    className='w-6 h-6'
-                    fill='currentColor'
-                    viewBox='0 0 20 20'
-                    xmlns='http://www.w3.org/2000/svg'
-                  >
-                    <path
-                      fillRule='evenodd'
-                      d='M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z'
-                      clipRule='evenodd'
-                    ></path>
-                  </svg>
-                </button>
+              <div className='flex flex-row'>
                 <button className='inline-block px-7 py-3 mr-2 border-2 border-purple-600 bg-purple-600 text-zinc-50 font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-zinc-50 hover:text-pink-500 hover:shadow-lg hover:border-pink-500 focus:bg-zinc-50 focus:text-pink-500 focus:border-pink-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-zinc-50 active:shadow-lg transition duration-150 ease-in-out'>
                   Submit
                 </button>
               </div>
-            </form>
-            {showGifs && gifs ? (
-              <>
-                <div className='justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none'>
-                  <div className='relative w-auto my-6 mx-auto max-w-3xl'>
-                    <div className='border-0 rounded-lg shadow-lg relative flex flex-col bg-white dark:bg-slate-800 outline-none focus:outline-none'>
-                      <button
-                        className='p-3 ml-auto bg-transparent border-0 text-zinc-50 float-right text-3xl leading-none font-semibold outline-none focus:outline-none'
-                        onClick={() => setShowGifs(!showGifs)}
-                      >
-                        <span className='bg-transparent text-slate-900 dark:text-zinc-50 h-6 w-6 text-2xl block outline-none focus:outline-none'>
-                          ×
-                        </span>
-                      </button>
-                      <div className='relative p-6 flex-auto'>
-                        <SearchContextManager
-                          apiKey={process.env.NEXT_PUBLIC_GIPHY_API_KEY}
-                        >
-                          <GiphyComponent />
-                        </SearchContextManager>
-                      </div>
-                    </div>
+          </form> */}
+            <form action='/api/addPost' method='POST'>
+              <div className='w-full max-w-screen-md mx-auto rounded-lg bg-white dark:bg-slate-800 shadow-xl p-5 text-slate-800'>
+                <div className='border border-zinc-300 dark:border-zinc-500 rounded-lg'>
+                  <div className='flex flex-row border-b border-zinc-300 dark:border-zinc-500 bg-zinc-50 dark:bg-slate-900 text-xl text-zinc-400 justify-around rounded-t-lg'>
+                    <button
+                      onClick={handleFormat}
+                      data-format='font-bold'
+                      className='mb-1 text-center outline:none focus:outline-none  w-10 h-10 p-3 hover:text-purple-600 active:bg-transparent'
+                    >
+                      <BsTypeBold />
+                    </button>
+                    <button
+                      onClick={handleFormat}
+                      data-format='italic'
+                      className='mb-1 outline:none focus:outline-none w-10 h-10 p-3 hover:text-purple-600 active:bg-transparent'
+                    >
+                      <BsTypeItalic />
+                    </button>
+                    <button
+                      onClick={handleFormat}
+                      data-format='underline'
+                      className='mb-1 outline:none focus:outline-none w-10 h-10 p-3 hover:text-purple-600 active:bg-transparent'
+                    >
+                      <BsTypeUnderline />
+                    </button>
+                    <button
+                      onClick={handleFormat}
+                      data-format='items-center'
+                      className='mb-1 outline:none focus:outline-none w-10 h-10 p-3 hover:text-purple-600 active:bg-transparent'
+                    >
+                      <MdFormatAlignCenter />
+                    </button>
+                    <button
+                      onClick={handleGifs}
+                      className='mb-1 outline:none focus:outline-none w-10 h-10 p-3 hover:text-purple-600 active:bg-transparent'
+                    >
+                      <AiOutlineGif />
+                    </button>
                   </div>
+                  <input type='hidden' value={new Date()} name='timestamp' />
+                  <div
+                    id='format'
+                    data-text='Enter your message...'
+                    onChange={(e) => setFormattedText(e.target.value)}
+                    contentEditable
+                    suppressContentEditableWarning={true}
+                    type='text'
+                    name='message'
+                    value={formattedText}
+                    required
+                    className='flex flex-col text-zinc-700 dark:text-zinc-300  w-full h-auto p-3 cursor-auto active:outline-none focus:outline-none'
+                  >
+                    {formattedText && formattedText}
+                  </div>
+                  {showGifs && gifs && (
+                    <div className='relative p-6 flex-auto'>
+                      <SearchContextManager
+                        apiKey={process.env.NEXT_PUBLIC_GIPHY_API_KEY}
+                      >
+                        <GiphyComponent
+                          onGifClick={(gif, e) => {
+                            e.preventDefault()
+                            console.log(gif, e)
+                          }}
+                        />
+                      </SearchContextManager>
+                    </div>
+                  )}
                 </div>
-              </>
-            ) : (
-              ''
-            )}
+                <div className='flex flex-row justify-left items-center mt-5'>
+                  <button
+                    type='submit'
+                    className='px-7 py-3 mr-2 border-2 border-purple-600 bg-purple-600 text-zinc-50 font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-zinc-50 hover:text-pink-500 hover:shadow-lg hover:border-pink-500 focus:bg-zinc-50 focus:text-pink-500 focus:border-pink-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-zinc-50 active:shadow-lg transition duration-150 ease-in-out'
+                  >
+                    Submit
+                  </button>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </section>
