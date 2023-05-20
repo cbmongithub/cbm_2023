@@ -61,17 +61,14 @@ const GuestBook = ({ allPosts, gifs }) => {
     e.preventDefault()
     e.stopPropagation()
     if (e.target.tagName === 'svg') {
-      console.log('clicked the svg itself')
       return
     } else if (e.target.tagName === 'BUTTON') {
-      console.log('clicked the button')
       const format = e.target.attributes[0].value
       const inputEl = document.getElementById('userFormat').classList
       inputEl.value.includes(format)
         ? inputEl.remove(format)
         : inputEl.add(format)
     } else {
-      console.log('Clicked path probably')
       return
     }
   }
@@ -120,7 +117,11 @@ const GuestBook = ({ allPosts, gifs }) => {
                       )} ago`}</p>
                     </div>
                     <div
-                      className={`flex flex-col w-full h-auto text-zinc-900 dark:text-zinc-300 py-5`}
+                      className={`flex flex-col w-full h-auto ${
+                        data.format.includes('text-center')
+                          ? data.format + ' justify-center items-center'
+                          : data.format
+                      } text-zinc-900 dark:text-zinc-300 py-5`}
                     >
                       <p>{data.formattedText}</p>
 
