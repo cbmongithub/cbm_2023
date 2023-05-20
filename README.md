@@ -1,3 +1,4 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/62742c89-b09c-46eb-b609-8ad307b7bad0/deploy-status)](https://app.netlify.com/sites/melodic-mandazi-febcac/deploys)
 ![alt text](https://github.com/christianbmartinez/cbm_2023/blob/main/public/img/md-image.jpg)
 
 # What's this?
