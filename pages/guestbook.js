@@ -2,6 +2,8 @@ import { useState, useContext } from 'react'
 import SiteHead from '../components/SiteHead'
 import Heading from '../components/Heading'
 import dayjs from 'dayjs'
+import relativeTime from 'dayjs/plugin/relativeTime'
+dayjs.extend(relativeTime)
 import { BsTypeBold, BsTypeItalic, BsTypeUnderline } from 'react-icons/bs'
 import { AiOutlineGif } from 'react-icons/ai'
 import { MdFormatAlignCenter } from 'react-icons/md'
@@ -43,20 +45,35 @@ const GuestBook = ({ allPosts, gifs }) => {
   const [formattedText, setFormattedText] = useState('')
   const [showGifs, setShowGifs] = useState(false)
   const [chosenGifUrl, setChosenGifUrl] = useState('')
+  const [chosenFormat, setChosenFormat] = useState('')
+  const [loading, setLoading] = useState(false)
 
   const handleGifs = (e) => {
     e.preventDefault()
     setShowGifs(!showGifs)
   }
 
+  const handleChosenFormat = () => {
+    setChosenFormat(document.getElementById('userFormat').classList.value)
+  }
+
   const handleFormat = (e) => {
     e.preventDefault()
     e.stopPropagation()
-    const format = e.target.attributes[0].value
-    const inputEl = document.getElementById('format').classList
-    inputEl.value.includes(format)
-      ? inputEl.remove(format)
-      : inputEl.add(format)
+    if (e.target.tagName === 'svg') {
+      console.log('clicked the svg itself')
+      return
+    } else if (e.target.tagName === 'BUTTON') {
+      console.log('clicked the button')
+      const format = e.target.attributes[0].value
+      const inputEl = document.getElementById('userFormat').classList
+      inputEl.value.includes(format)
+        ? inputEl.remove(format)
+        : inputEl.add(format)
+    } else {
+      console.log('Clicked path probably')
+      return
+    }
   }
 
   return (
@@ -69,6 +86,7 @@ const GuestBook = ({ allPosts, gifs }) => {
           'nextjs, guestbook, javascript, tech, articles, mongodb, react, js, api'
         }
       />
+      {loading ? <div className='form-loading-bar'></div> : ''}
       <section>
         <Heading
           title='Guest Book'
@@ -90,35 +108,54 @@ const GuestBook = ({ allPosts, gifs }) => {
                     type: 'spring',
                     stiffness: 100,
                     duration: 1.5,
-                    delay: 0.5 * i,
+                    delay: 0.25 * i,
                   }}
                 >
-                  <p className='font-light text-zinc-900 dark:text-zinc-300 text-sm mb-2'>
-                    {`Posted on ${dayjs(data.timestamp).format('M/D/YYYY')}`}
-                  </p>
-                  <p className='text-zinc-900 dark:text-zinc-300'>
-                    {data.formattedText}
+                  <div
+                    className={`flex flex-row ${
+                      data.format.includes('text-center') &&
+                      'justify-center items-center'
+                    } font-light text-zinc-900 dark:text-zinc-300 text-sm mb-2`}
+                  >
+                    <p>{`Posted ${dayjs(data.timestamp).fromNow(true)} ago`}</p>
+                  </div>
+                  <div
+                    className={`flex flex-col w-full h-auto ${
+                      data.format.includes('text-center')
+                        ? data.format + ' justify-center items-center'
+                        : data.format
+                    } text-zinc-900 dark:text-zinc-300 py-5`}
+                  >
+                    <p>{data.formattedText}</p>
+
                     {data.gifUrl && (
                       <Image
-                        className='mt-3 rounded-lg'
+                        className='mt-5 rounded-lg w-auto h-auto'
                         src={data.gifUrl}
                         height={200}
                         width={200}
                         alt='Giphy image'
                       />
                     )}
-                  </p>
+                  </div>
                 </motion.div>
               )
             })}
-            <form action='/api/addPost' method='POST'>
+            <form
+              action='/api/addPost'
+              method='POST'
+              onSubmit={() => {
+                setLoading(!loading)
+                handleChosenFormat
+              }}
+            >
               <div className='w-full max-w-screen-md mx-auto rounded-lg bg-white dark:bg-slate-800 shadow-xl p-5 text-slate-800'>
                 <div className='border border-zinc-300 dark:border-zinc-500 rounded-lg'>
                   <div className='flex flex-row border-b border-zinc-300 dark:border-zinc-500 bg-zinc-50 dark:bg-slate-900 text-xl text-zinc-400 justify-around rounded-t-lg'>
                     <button
                       onClick={handleFormat}
                       data-format='font-bold'
-                      className='mb-1 text-center outline:none focus:outline-none  w-10 h-10 p-3 hover:text-purple-600 active:bg-transparent'
+                      className='mb-1 text-center outline:none focus:outline-none w-10 h-10 p-3 hover:text-purple-600 active:bg-transparent'
                     >
                       <BsTypeBold />
                     </button>
@@ -138,7 +175,7 @@ const GuestBook = ({ allPosts, gifs }) => {
                     </button>
                     <button
                       onClick={handleFormat}
-                      data-format='items-center'
+                      data-format='text-center'
                       className='mb-1 outline:none focus:outline-none w-10 h-10 p-3 hover:text-purple-600 active:bg-transparent'
                     >
                       <MdFormatAlignCenter />
@@ -151,26 +188,17 @@ const GuestBook = ({ allPosts, gifs }) => {
                     </button>
                   </div>
                   <input type='hidden' value={new Date()} name='timestamp' />
-                  <input
-                    type='hidden'
-                    value='We will come back to this'
-                    name='format'
-                  />
-                  <div
-                    id='format'
-                    data-text='Enter your message...'
-                    contentEditable
-                    suppressContentEditableWarning={true}
-                    className='flex flex-col text-zinc-700 dark:text-zinc-300 min-h-[100px] w-full h-auto p-3 cursor-auto active:outline-none focus:outline-none'
-                  >
+                  <input type='hidden' value={chosenFormat} name='format' />
+                  <div className='flex flex-col text-zinc-700 dark:text-zinc-300 w-full h-auto p-3 cursor-auto active:outline-none focus:outline-none'>
                     <input
                       required
+                      id='userFormat'
                       type='text'
                       value={formattedText}
                       onChange={(e) => setFormattedText(e.target.value)}
                       name='formattedText'
                       placeholder='Enter your message...'
-                      className='w-full bg-transparent outline-none focus:outline:none'
+                      className='flex flex-row break-words h-auto w-full bg-transparent outline-none focus:outline:none'
                       autoComplete='off'
                     />
 
@@ -178,7 +206,7 @@ const GuestBook = ({ allPosts, gifs }) => {
 
                     {chosenGifUrl && (
                       <Image
-                        className='mt-3 rounded-lg'
+                        className='mt-3 rounded-lg w-auto h-auto'
                         src={chosenGifUrl}
                         height={200}
                         width={200}
@@ -205,7 +233,7 @@ const GuestBook = ({ allPosts, gifs }) => {
                 </div>
                 <div className='flex flex-row justify-left items-center mt-5'>
                   <button className='px-7 py-3 mr-2 border-2 border-purple-600 bg-purple-600 text-zinc-50 font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-zinc-50 hover:text-pink-500 hover:shadow-lg hover:border-pink-500 focus:bg-zinc-50 focus:text-pink-500 focus:border-pink-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-zinc-50 active:shadow-lg transition duration-150 ease-in-out'>
-                    Submit
+                    {loading ? 'SENDING...' : 'SUBMIT'}
                   </button>
                 </div>
               </div>
