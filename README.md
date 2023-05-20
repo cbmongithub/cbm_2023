@@ -12,6 +12,8 @@ Portfolio website for Christian B. Martinez 2023
 - Tailwind CSS
 - Framer motion
 - Open AI API
+- MongoDB
+- Giphy API
 - TS Particles
 - Github API
 - EmailJS
@@ -21,6 +23,7 @@ Portfolio website for Christian B. Martinez 2023
 
 - A web developer portfolio using modern technologies.
 - A chat gpt chat widget that answers questions about me.
+- A full stack guestbook page with gif and formatting support.
 - Programatically fetch latest repos.
 - A blog that uses markdown.
 - Particles landing page.

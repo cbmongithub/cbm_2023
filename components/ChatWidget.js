@@ -4,6 +4,7 @@ import { FaComment } from 'react-icons/fa'
 import Image from 'next/image'
 import ScrollableFeed from 'react-scrollable-feed'
 import { motion, useCycle, AnimatePresence } from 'framer-motion'
+import Link from 'next/link'
 
 const ChatWidget = () => {
   const [show, setShow] = useCycle(false, true)
@@ -90,8 +91,15 @@ const ChatWidget = () => {
                         <div className='mr-2 py-3 px-4 bg-purple-600 rounded-lg text-zinc-50'>
                           <p>
                             Welcome! I am Christians chatbot. You can ask me
-                            anything about Christian and I will respond
-                            accordingly.
+                            anything about Christian! If you&apos;re interested
+                            in signing his guestbook, you can find that
+                            <Link
+                              href='/guestbook'
+                              aria-label='Christian B Martinez | Guestbook'
+                            >
+                              &nbsp;
+                              <span className='underline'>here</span>
+                            </Link>
                           </p>
                         </div>
                         <Image

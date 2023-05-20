@@ -146,7 +146,7 @@ const GuestBook = ({ allPosts, gifs }) => {
               method='POST'
               onSubmit={() => {
                 setLoading(!loading)
-                handleChosenFormat
+                handleChosenFormat()
               }}
             >
               <div className='w-full max-w-screen-md mx-auto rounded-lg bg-white dark:bg-slate-800 shadow-xl p-5 text-slate-800'>
