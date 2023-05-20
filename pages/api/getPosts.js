@@ -14,7 +14,7 @@ const getPosts = async (req, res) => {
 
     res.json(posts)
   } catch (e) {
-    res.json(e)
+    console.error(e)
   }
 }
 

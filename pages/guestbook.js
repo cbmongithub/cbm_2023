@@ -113,21 +113,14 @@ const GuestBook = ({ allPosts, gifs }) => {
                     }}
                   >
                     <div
-                      className={`flex flex-row ${
-                        data.format.includes('text-center') &&
-                        'justify-center items-center'
-                      } font-light text-zinc-900 dark:text-zinc-300 text-sm mb-2`}
+                      className={`flex flex-row font-light text-zinc-900 dark:text-zinc-300 text-sm mb-2`}
                     >
                       <p>{`Posted ${dayjs(data.timestamp).fromNow(
                         true
                       )} ago`}</p>
                     </div>
                     <div
-                      className={`flex flex-col w-full h-auto ${
-                        data.format.includes('text-center')
-                          ? data.format + ' justify-center items-center'
-                          : data.format
-                      } text-zinc-900 dark:text-zinc-300 py-5`}
+                      className={`flex flex-col w-full h-auto text-zinc-900 dark:text-zinc-300 py-5`}
                     >
                       <p>{data.formattedText}</p>
 
@@ -145,7 +138,7 @@ const GuestBook = ({ allPosts, gifs }) => {
                 )
               })}
             <form
-              action={`${process.env.BASE_URL}/api/addPost`}
+              action='/api/addPost'
               method='POST'
               onSubmit={() => {
                 setLoading(!loading)
@@ -251,7 +244,7 @@ const GuestBook = ({ allPosts, gifs }) => {
 export default GuestBook
 
 export async function getServerSideProps() {
-  let res = await fetch(`${process.env.BASE_URL}/api/getPosts`, {
+  let res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getPosts`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
