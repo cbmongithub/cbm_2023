@@ -5,11 +5,16 @@ const getPosts = async (req, res) => {
     const client = await clientPromise
     const db = client.db('posts')
 
-    const posts = await db.collection('posts').find({}).sort({timestamp:-1}).limit(20).toArray()
+    const posts = await db
+      .collection('posts')
+      .find({})
+      .sort({ timestamp: -1 })
+      .limit(20)
+      .toArray()
 
     res.json(posts)
   } catch (e) {
-    console.error(e)
+    res.json(e)
   }
 }
 

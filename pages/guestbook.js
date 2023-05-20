@@ -142,7 +142,7 @@ const GuestBook = ({ allPosts, gifs }) => {
               )
             })}
             <form
-              action='/api/addPost'
+              action={`${process.env.NEXT_PUBLIC_BASE_URL}/api/addPost`}
               method='POST'
               onSubmit={() => {
                 setLoading(!loading)

@@ -16,7 +16,7 @@ const addPost = async (req, res) => {
 
     res.redirect('/guestbook')
   } catch (e) {
-    console.error(e)
+    res.json(e)
   }
 }
 
