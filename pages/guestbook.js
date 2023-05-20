@@ -94,53 +94,56 @@ const GuestBook = ({ allPosts, gifs }) => {
         />
         <div className='pb-20 py-8 px-4 mx-auto max-w-screen-md lg:py-16 lg:px-6'>
           <div className='flex flex-col space-y-10'>
-            {allPosts.map((data, i) => {
-              return (
-                <motion.div
-                  key={data._id}
-                  className='bg-white dark:bg-slate-800 p-6 rounded-lg shadow-xl'
-                  initial={{
-                    opacity: 0,
-                    translateY: -100,
-                  }}
-                  whileInView={{ opacity: 1, translateY: 0 }}
-                  transition={{
-                    type: 'spring',
-                    stiffness: 100,
-                    duration: 1.5,
-                    delay: 0.25 * i,
-                  }}
-                >
-                  <div
-                    className={`flex flex-row ${
-                      data.format.includes('text-center') &&
-                      'justify-center items-center'
-                    } font-light text-zinc-900 dark:text-zinc-300 text-sm mb-2`}
+            {allPosts &&
+              allPosts.map((data, i) => {
+                return (
+                  <motion.div
+                    key={data._id}
+                    className='bg-white dark:bg-slate-800 p-6 rounded-lg shadow-xl'
+                    initial={{
+                      opacity: 0,
+                      translateY: -100,
+                    }}
+                    whileInView={{ opacity: 1, translateY: 0 }}
+                    transition={{
+                      type: 'spring',
+                      stiffness: 100,
+                      duration: 1.5,
+                      delay: 0.25 * i,
+                    }}
                   >
-                    <p>{`Posted ${dayjs(data.timestamp).fromNow(true)} ago`}</p>
-                  </div>
-                  <div
-                    className={`flex flex-col w-full h-auto ${
-                      data.format.includes('text-center')
-                        ? data.format + ' justify-center items-center'
-                        : data.format
-                    } text-zinc-900 dark:text-zinc-300 py-5`}
-                  >
-                    <p>{data.formattedText}</p>
+                    <div
+                      className={`flex flex-row ${
+                        data.format.includes('text-center') &&
+                        'justify-center items-center'
+                      } font-light text-zinc-900 dark:text-zinc-300 text-sm mb-2`}
+                    >
+                      <p>{`Posted ${dayjs(data.timestamp).fromNow(
+                        true
+                      )} ago`}</p>
+                    </div>
+                    <div
+                      className={`flex flex-col w-full h-auto ${
+                        data.format.includes('text-center')
+                          ? data.format + ' justify-center items-center'
+                          : data.format
+                      } text-zinc-900 dark:text-zinc-300 py-5`}
+                    >
+                      <p>{data.formattedText}</p>
 
-                    {data.gifUrl && (
-                      <Image
-                        className='mt-5 rounded-lg w-auto h-auto'
-                        src={data.gifUrl}
-                        height={200}
-                        width={200}
-                        alt='Giphy image'
-                      />
-                    )}
-                  </div>
-                </motion.div>
-              )
-            })}
+                      {data.gifUrl && (
+                        <Image
+                          className='mt-5 rounded-lg w-auto h-auto'
+                          src={data.gifUrl}
+                          height={200}
+                          width={200}
+                          alt='Giphy image'
+                        />
+                      )}
+                    </div>
+                  </motion.div>
+                )
+              })}
             <form
               action={`${process.env.BASE_URL}/api/addPost`}
               method='POST'
