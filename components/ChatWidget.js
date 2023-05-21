@@ -45,7 +45,7 @@ const ChatWidget = () => {
     })
 
     let answer = await response.json()
-    if (answer.json.choices) {
+    if (answer.json.choices[0].message.content) {
       setStoredValues([
         {
           question: newQuestion,
