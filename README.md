@@ -19,11 +19,12 @@ Portfolio website for Christian B. Martinez 2023
 - Github API
 - EmailJS
 - Next MDX Remote
+- Redis
 
 # What's Inside?
 
 - A web developer portfolio using modern technologies.
-- A chat gpt chat widget that answers questions about me.
+- A rate limited chat gpt widget that answers questions about me.
 - A full stack guestbook page with gif and formatting support.
 - Programatically fetch latest repos.
 - A blog that uses markdown.
