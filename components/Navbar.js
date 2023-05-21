@@ -120,6 +120,14 @@ const Navbar = () => {
   const [animation, setAnimation] = useState('closed')
   const loaded = useLoaded()
 
+  const handleThemeColor = () => {
+    currentTheme == 'dark' ? setTheme('light') : setTheme('dark')
+    setIsOn(!isOn)
+    document.querySelector('html').style.backgroundColor = `${
+      currentTheme == 'dark' ? '#FAFAFA' : '#0F172A'
+    }`
+  }
+
   const handleNav = () => {
     setNav(!nav)
     setAnimation('moving')
@@ -190,10 +198,7 @@ const Navbar = () => {
               <div
                 className='icon-toggler-container'
                 data-darkmode={isOn}
-                onClick={() => {
-                  currentTheme == 'dark' ? setTheme('light') : setTheme('dark')
-                  setIsOn(!isOn)
-                }}
+                onClick={handleThemeColor}
                 style={{ justifyContent: isOn ? 'flex-end' : 'flex-start' }}
               >
                 <motion.div layout className='handle'>
@@ -220,10 +225,7 @@ const Navbar = () => {
               <div
                 className='icon-toggler-container p-4 mr-5'
                 data-darkmode={isOn}
-                onClick={() => {
-                  currentTheme == 'dark' ? setTheme('light') : setTheme('dark')
-                  setIsOn(!isOn)
-                }}
+                onClick={handleThemeColor}
                 style={{ justifyContent: isOn ? 'flex-end' : 'flex-start' }}
               >
                 <motion.div layout className='handle'>
