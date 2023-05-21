@@ -49,11 +49,22 @@ const ChatWidget = () => {
     }
 
     let answer = await response.json()
-    if (answer) {
+    console.log(answer)
+    if (answer.json.choices) {
       setStoredValues([
         {
           question: newQuestion,
-          answer: answer.choices[0].message.content,
+          answer: answer.json.choices[0].message.content,
+        },
+        ...storedValues,
+      ])
+      setNewQuestion('')
+      setIsTyping(false)
+    } else {
+      setStoredValues([
+        {
+          question: newQuestion,
+          answer: answer.json,
         },
         ...storedValues,
       ])
@@ -217,7 +228,7 @@ const FormSection = ({ generateResponse }) => {
         <button
           type='submit'
           aria-label='Chat submit button'
-          className='w-1/4 text-purple-600 dark:text-zinc-50 font-medium text-sm leading-snug uppercase dark:hover:text-purple-700 hover:text-purple-700'
+          className='w-1/4 text-purple-600 outline-none focus:outline-none border-none focus:border-none dark:text-zinc-50 font-medium text-sm leading-snug uppercase dark:hover:text-purple-700 hover:text-purple-700'
           onClick={() => generateResponse(newQuestion, setNewQuestion)}
         >
           SEND

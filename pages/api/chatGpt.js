@@ -1,3 +1,16 @@
+import { Ratelimit } from '@upstash/ratelimit'
+import { Redis } from '@upstash/redis'
+
+const redis = new Redis({
+  url: process.env.UPSTASH_REDIS_REST_URL,
+  token: process.env.UPSTASH_REDIS_REST_TOKEN,
+})
+
+const ratelimit = new Ratelimit({
+  redis: redis,
+  limiter: Ratelimit.fixedWindow(5, '60s'),
+})
+
 const chatGpt = async (req, res) => {
   const { prompt } = req.body
 
@@ -63,8 +76,20 @@ const chatGpt = async (req, res) => {
     body: JSON.stringify(payload),
   })
 
-  const json = await response.json()
-  res.status(200).json(json)
+  const result = await ratelimit.limit(response)
+  res.setHeader('X-RateLimit-Limit', result.limit)
+  res.setHeader('X-RateLimit-Remaining', result.remaining)
+
+  if (!result.success) {
+    res.status(200).json({
+      json: "You're sending messages too fast! I have to power off for a bit. Come back later!",
+      rateLimitState: result,
+    })
+    return
+  } else {
+    const json = await response.json()
+    res.status(200).json({ json: json, rateLimitState: result })
+  }
 }
 
 export default chatGpt
