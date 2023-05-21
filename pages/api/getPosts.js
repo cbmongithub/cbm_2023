@@ -15,6 +15,9 @@ const getPosts = async (req, res) => {
     res.json(posts)
   } catch (e) {
     console.error(e)
+    res
+      .status(500)
+      .json({ error: 'An error occurred while trying to fetch posts.', e })
   }
 }
 

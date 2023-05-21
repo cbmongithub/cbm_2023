@@ -17,6 +17,9 @@ const addPost = async (req, res) => {
     res.redirect('/guestbook')
   } catch (e) {
     console.error(e)
+    res
+      .status(500)
+      .json({ error: 'An error occurred while adding the post.', e })
   }
 }
 
