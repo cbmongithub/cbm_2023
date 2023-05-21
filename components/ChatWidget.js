@@ -45,7 +45,6 @@ const ChatWidget = () => {
     })
 
     let answer = await response.json()
-    console.log(answer)
     if (answer.json.choices) {
       setStoredValues([
         {
