@@ -44,12 +44,7 @@ const ChatWidget = () => {
       }),
     })
 
-    if (!response.ok) {
-      throw new Error(response.statusText)
-    }
-
     let answer = await response.json()
-    console.log(answer)
     if (answer.json.choices) {
       setStoredValues([
         {
