@@ -82,7 +82,9 @@ const chatGpt = async (req, res) => {
 
   if (!result.success) {
     res.status(200).json({
-      json: "You're sending messages too fast! I have to power off for a bit. Come back later!",
+      json: {
+        text: "You're sending messages too fast! I have to power off for a bit. Come back later!",
+      },
       rateLimitState: result,
     })
     console.log(res.json, res.rateLimitState)

@@ -46,7 +46,7 @@ const ChatWidget = () => {
 
     let answer = await response.json()
     console.log(answer)
-    if (answer.json.choices[0].message.content) {
+    if (answer.json.choices) {
       setStoredValues([
         {
           question: newQuestion,
@@ -56,11 +56,21 @@ const ChatWidget = () => {
       ])
       setNewQuestion('')
       setIsTyping(false)
+    } else if (answer.json.text) {
+      setStoredValues([
+        {
+          question: newQuestion,
+          answer: answer.json.text,
+        },
+        ...storedValues,
+      ])
+      setNewQuestion('')
+      setIsTyping(false)
     } else {
       setStoredValues([
         {
           question: newQuestion,
-          answer: answer.json,
+          answer: answer.json.text,
         },
         ...storedValues,
       ])
