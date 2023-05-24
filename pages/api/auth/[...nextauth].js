@@ -16,6 +16,7 @@ export const authOptions = {
       return baseUrl
     },
   },
+  secret: process.env.GITHUB_GUESTBOOK_SECRET,
 }
 
 export default NextAuth(authOptions)
