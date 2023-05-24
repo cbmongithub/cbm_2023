@@ -16,6 +16,10 @@ import {
 } from '@giphy/react-components'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import Filter from 'bad-words'
+import { all } from 'axios'
+
+const filter = new Filter()
 
 const giphyFetch = new GiphyFetch(process.env.NEXT_PUBLIC_GIPHY_API_KEY)
 
@@ -91,7 +95,7 @@ const GuestBook = ({ allPosts, gifs }) => {
         />
         <div className='pb-20 py-8 px-4 mx-auto max-w-screen-md lg:py-16 lg:px-6'>
           <div className='flex flex-col space-y-10'>
-            {allPosts &&
+            {allPosts[0] !== undefined ? (
               allPosts.map((data, i) => {
                 return (
                   <motion.div
@@ -123,7 +127,7 @@ const GuestBook = ({ allPosts, gifs }) => {
                           : data.format
                       } text-zinc-900 dark:text-zinc-300 py-5`}
                     >
-                      <p>{data.formattedText}</p>
+                      <p>{filter.clean(data.formattedText)}</p>
 
                       {data.gifUrl && (
                         <Image
@@ -137,7 +141,12 @@ const GuestBook = ({ allPosts, gifs }) => {
                     </div>
                   </motion.div>
                 )
-              })}
+              })
+            ) : (
+              <div className='text-zinc-900 dark:text-zinc-400 py-20 text-center'>
+                <p>No posts yet :( Be the first to sign the guestbook!</p>
+              </div>
+            )}
             <form
               action='/api/addPost'
               method='POST'
@@ -253,7 +262,6 @@ export async function getServerSideProps() {
   })
   let allPosts = await res.json()
   const { data } = await fetchGifs(0)
-
   return {
     props: { allPosts, gifs: data },
   }
