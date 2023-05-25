@@ -6,7 +6,6 @@ const addPost = async (req, res) => {
     const db = client.db('posts')
     const { timestamp, format, formattedText, gifUrl, userName, userImage } =
       req.body
-    console.log(req.body)
 
     const post = await db.collection('posts').insertOne({
       timestamp,

@@ -58,8 +58,6 @@ const GuestBook = ({ allPosts, gifs }) => {
   const [loading, setLoading] = useState(false)
   const { data: session } = useSession()
 
-  console.log({ data: session })
-
   const handleGifs = (e) => {
     e.preventDefault()
     setShowGifs(!showGifs)
@@ -266,7 +264,6 @@ const GuestBook = ({ allPosts, gifs }) => {
                           <GiphyComponent
                             onGifClick={(gif, e) => {
                               e.preventDefault()
-                              console.log(gif, e)
                               setChosenGifUrl(gif.images.downsized.url)
                               setShowGifs(!showGifs)
                             }}
