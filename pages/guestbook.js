@@ -131,7 +131,7 @@ const GuestBook = ({ allPosts, gifs }) => {
                         <Image
                           className='w-7 h-7 rounded-full'
                           src={data.userImage}
-                          alt='Jese Leos avatar'
+                          alt={`Github avatar image for ${data.userName}`}
                           width={28}
                           height={28}
                         />
