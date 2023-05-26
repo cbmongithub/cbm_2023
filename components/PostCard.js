@@ -52,7 +52,7 @@ const PostCard = ({ title, date, description, author, type, slug }) => {
           <Image
             className='w-7 h-7 rounded-full'
             src='/img/me.webp'
-            alt='Jese Leos avatar'
+            alt='Christian Martinez Avatar'
             width={28}
             height={28}
           />

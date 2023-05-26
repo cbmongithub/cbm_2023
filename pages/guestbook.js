@@ -126,7 +126,7 @@ const GuestBook = ({ allPosts, gifs }) => {
                       delay: 0.25 * i,
                     }}
                   >
-                    <div className='flex justify-around items-center mt-3'>
+                    <div className='flex justify-between items-center mb-5'>
                       <div className='flex items-center space-x-4'>
                         <Image
                           className='w-7 h-7 rounded-full'
@@ -135,25 +135,26 @@ const GuestBook = ({ allPosts, gifs }) => {
                           width={28}
                           height={28}
                         />
-                        <span className='font-light text-zinc-800 dark:text-zinc-50'>
-                          {`${dayjs(data.timestamp).fromNow(true)} ago by ${
-                            data.userName
-                          }`}
+                        <span className='font-normal text-zinc-800 dark:text-zinc-300'>
+                          {data.userName}
                         </span>
                       </div>
+                      <span className='font-light  text-zinc-800 dark:text-zinc-300'>
+                        {`${dayjs(data.timestamp).fromNow(true)} ago`}
+                      </span>
                     </div>
                     <div
-                      className={`flex flex-col w-full mt-10 h-auto ${
+                      className={`flex flex-col w-full mt-5 h-auto ${
                         data.format.includes('text-center')
                           ? data.format + ' justify-center items-center'
                           : data.format
-                      } text-zinc-900 dark:text-zinc-300 py-5`}
+                      } text-zinc-900 dark:text-zinc-300 pt-5`}
                     >
-                      <p>{filter.clean(data.formattedText)}</p>
+                      <p className='pb-3'>{filter.clean(data.formattedText)}</p>
 
                       {data.gifUrl && (
                         <Image
-                          className='mt-5 rounded-lg w-auto h-auto'
+                          className='mt-5 pb-3 rounded-lg w-auto h-auto'
                           src={data.gifUrl}
                           height={200}
                           width={200}
@@ -231,7 +232,7 @@ const GuestBook = ({ allPosts, gifs }) => {
                       value={session.user.image}
                       name='userImage'
                     />
-                    <div className='flex flex-col text-zinc-700 dark:text-zinc-300 w-full h-auto p-3 cursor-auto active:outline-none focus:outline-none'>
+                    <div className='flex flex-row text-zinc-700 dark:text-zinc-300 w-full h-auto p-3 cursor-auto active:outline-none focus:outline-none'>
                       <input
                         required
                         id='userFormat'
@@ -240,7 +241,7 @@ const GuestBook = ({ allPosts, gifs }) => {
                         onChange={(e) => setFormattedText(e.target.value)}
                         name='formattedText'
                         placeholder='Enter your message...'
-                        className='flex flex-row break-words h-auto w-full bg-transparent outline-none focus:outline:none'
+                        className='break-word py-2 h-auto w-full bg-transparent outline-none focus:outline:none'
                         autoComplete='off'
                       />
 
