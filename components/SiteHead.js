@@ -1,24 +1,40 @@
 import Head from 'next/head'
 import Script from 'next/script'
 import { useRouter } from 'next/router'
+import { useEffect } from 'react'
+import * as gtag from '../lib/gtag'
 
 const SiteHead = ({ page, title, description, keywords }) => {
   const router = useRouter()
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      gtag.pageview(url)
+    }
+    router.events.on('routeChangeComplete', handleRouteChange)
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [router.events])
   return (
     <>
       <Script
-        src='https://www.googletagmanager.com/gtag/js?id=G-M592GMXCBQ'
         strategy='afterInteractive'
+        src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
       />
-      <Script id='google-analytics' strategy='afterInteractive'>
-        {`
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-M592GMXCBQ');
-  `}
-      </Script>
+      <Script
+        id='gtag-init'
+        strategy='afterInteractive'
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${gtag.GA_TRACKING_ID}', {
+              page_path: window.location.pathname,
+            });
+          `,
+        }}
+      />
       <Head>
         <title>{`Christian B. Martinez | ${page}`}</title>
         <meta name='description' content={description} />
