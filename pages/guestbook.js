@@ -154,7 +154,7 @@ const GuestBook = ({ allPosts, gifs }) => {
 
                       {data.gifUrl && (
                         <Image
-                          className='mt-5 pb-3 rounded-lg w-auto h-auto'
+                          className='mt-5 rounded-lg w-auto h-auto'
                           src={data.gifUrl}
                           height={200}
                           width={200}
@@ -232,7 +232,7 @@ const GuestBook = ({ allPosts, gifs }) => {
                       value={session.user.image}
                       name='userImage'
                     />
-                    <div className='flex flex-row text-zinc-700 dark:text-zinc-300 w-full h-auto p-3 cursor-auto active:outline-none focus:outline-none'>
+                    <div className='flex flex-col text-zinc-700 dark:text-zinc-300 w-full h-auto p-3 cursor-auto active:outline-none focus:outline-none'>
                       <input
                         required
                         id='userFormat'
@@ -241,20 +241,22 @@ const GuestBook = ({ allPosts, gifs }) => {
                         onChange={(e) => setFormattedText(e.target.value)}
                         name='formattedText'
                         placeholder='Enter your message...'
-                        className='break-word py-2 h-auto w-full bg-transparent outline-none focus:outline:none'
+                        className='flex flex-row break-word py-2 h-auto w-full bg-transparent outline-none focus:outline:none'
                         autoComplete='off'
                       />
 
                       <input type='hidden' value={chosenGifUrl} name='gifUrl' />
 
                       {chosenGifUrl && (
-                        <Image
-                          className='mt-3 rounded-lg w-auto h-auto'
-                          src={chosenGifUrl}
-                          height={200}
-                          width={200}
-                          alt='Giphy image'
-                        />
+                        <div className='flex flex-col'>
+                          <Image
+                            className='mt-3 rounded-lg w-auto h-auto'
+                            src={chosenGifUrl}
+                            height={200}
+                            width={200}
+                            alt='Giphy image'
+                          />
+                        </div>
                       )}
                     </div>
                     {showGifs && gifs && (
@@ -281,7 +283,7 @@ const GuestBook = ({ allPosts, gifs }) => {
                       {loading ? 'SENDING...' : 'SUBMIT'}
                     </button>
                     <button
-                      className='px-7 py-3 mr-2 text-zinc-300 font-medium text-sm leading-snug uppercase hover:text-purple-600 focus:bg-none focus:text-purple-600 focus:outline-none focus:ring-0 active:bg-none transition duration-150 ease-in-out'
+                      className='px-7 py-3 mr-2 text-zinc-400 dark:text-zinc-300 font-medium text-sm leading-snug uppercase hover:text-purple-600 focus:bg-none focus:text-purple-600 focus:outline-none focus:ring-0 active:bg-none transition duration-150 ease-in-out'
                       type='button'
                       onClick={() => signOut()}
                     >
