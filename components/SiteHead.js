@@ -20,7 +20,10 @@ const SiteHead = ({ page, title, description, keywords }) => {
         <meta name='robots' content='index, follow' />
         <meta property='og:title' content={title} />
         <meta property='og:description' content={description} />
-        <meta property='og:image' content='/img/me-banner.webp' />
+        <meta
+          property='og:image'
+          content={`${process.env.NEXT_PUBLIC_BASE_URL}/img/me-banner.webp`}
+        />
       </Head>
       <Script
         src='https://www.googletagmanager.com/gtag/js?id=G-M592GMXCBQ'

@@ -79,7 +79,7 @@ const Index = () => {
                   transition={{ type: 'spring', stiffness: 100, delay: 1 }}
                 >
                   <Image
-                    src='/img/me.webp'
+                    src={`${process.env.NEXT_PUBLIC_BASE_URL}/img/me.webp`}
                     priority
                     alt='Image of Christian B. Martinez'
                     width={400}

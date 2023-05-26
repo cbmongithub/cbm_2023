@@ -58,7 +58,7 @@ const About = ({ repositories }) => {
                     >
                       <Image
                         alt='Image of Christian B. Martinez'
-                        src='/img/me.webp'
+                        src={`${process.env.NEXT_PUBLIC_BASE_URL}/img/me.webp`}
                         className='shadow-2xl rounded-full h-auto align-middle border-none absolute -m-[136px] -ml-20 lg:-ml-16'
                         style={{ maxWidth: '150px' }}
                         width={150}

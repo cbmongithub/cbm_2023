@@ -119,7 +119,7 @@ const ChatWidget = () => {
                           </p>
                         </div>
                         <Image
-                          src='/img/bot.webp'
+                          src={`${process.env.NEXT_PUBLIC_BASE_URL}/img/bot.webp`}
                           className='object-cover h-8 w-8 rounded-full'
                           alt='Chatbot image for Christian B Martinez'
                           width={75}
@@ -186,7 +186,7 @@ const AnswerSection = ({ storedValues }) => {
                   <p>{data.answer}</p>
                 </div>
                 <Image
-                  src='/img/bot.webp'
+                  src={`${process.env.NEXT_PUBLIC_BASE_URL}/img/bot.webp`}
                   className='object-cover h-8 w-8 rounded-full'
                   alt='Chatbot image for Christian B Martinez'
                   width={75}

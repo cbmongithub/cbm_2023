@@ -26,7 +26,7 @@ import Heading from '../components/Heading'
 import Socials from '../components/Socials'
 
 const Post = ({ data, content, slug }) => {
-  const shareUrl = `${process.env.NEXT_PUBLIC_BASE_URL}${slug}`
+  const shareUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/${slug}`
 
   const isBrowser = () => typeof window !== 'undefined'
 
@@ -81,7 +81,7 @@ const Post = ({ data, content, slug }) => {
           <div className='flex space-x-3'>
             <Image
               className='w-7 h-7 rounded-full'
-              src='/img/me.webp'
+              src={`${process.env.NEXT_PUBLIC_BASE_URL}/img/me.webp`}
               alt='Christian B. Martinez Avatar'
               width={28}
               height={28}
