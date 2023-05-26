@@ -6,6 +6,19 @@ const SiteHead = ({ page, title, description, keywords }) => {
   const router = useRouter()
   return (
     <>
+      <Script
+        src='https://www.googletagmanager.com/gtag/js?id=G-M592GMXCBQ'
+        strategy='afterInteractive'
+      />
+      <Script id='google-analytics' strategy='afterInteractive'>
+        {`
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M592GMXCBQ');
+  `}
+      </Script>
       <Head>
         <title>{`Christian B. Martinez | ${page}`}</title>
         <meta name='description' content={description} />
@@ -25,19 +38,6 @@ const SiteHead = ({ page, title, description, keywords }) => {
           content={`${process.env.NEXT_PUBLIC_BASE_URL}/img/me-banner.webp`}
         />
       </Head>
-      <Script
-        src='https://www.googletagmanager.com/gtag/js?id=G-M592GMXCBQ'
-        strategy='afterInteractive'
-      />
-      <Script id='google-analytics' strategy='afterInteractive'>
-        {`
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-M592GMXCBQ');
-  `}
-      </Script>
     </>
   )
 }
