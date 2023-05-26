@@ -276,7 +276,7 @@ const GuestBook = ({ allPosts, gifs }) => {
                   <div className='flex flex-row justify-between items-center mt-5'>
                     <button
                       type='submit'
-                      class='text-zinc-50 w-auto bg-gradient-to-r from-purple-600 to-pink-500 focus:ring-0 focus:outline-none font-medium rounded-md text-sm px-5 py-2.5 text-center inline-flex items-center'
+                      className='text-zinc-50 w-auto bg-gradient-to-r from-purple-600 to-pink-500 focus:ring-0 focus:outline-none font-medium rounded-md text-sm px-5 py-2.5 text-center inline-flex items-center'
                     >
                       {loading ? 'SENDING...' : 'SUBMIT'}
                     </button>
@@ -295,10 +295,10 @@ const GuestBook = ({ allPosts, gifs }) => {
                 <button
                   onClick={() => signIn('github')}
                   type='button'
-                  class='text-zinc-50 mt-10 w-auto bg-gradient-to-r from-purple-600 to-pink-500 focus:ring-0 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center'
+                  className='text-zinc-50 mt-10 w-auto bg-gradient-to-r from-purple-600 to-pink-500 focus:ring-0 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center'
                 >
                   <svg
-                    class='w-4 h-4 mr-2 -ml-1'
+                    className='w-4 h-4 mr-2 -ml-1'
                     aria-hidden='true'
                     focusable='false'
                     data-prefix='fab'
