@@ -39,7 +39,7 @@ const variants = {
 const Layout = ({ children }) => {
   const router = useRouter()
   const { asPath } = useRouter()
-  const [isHome, setIsHome] = useState()
+  const [isHome, setIsHome] = useState(false)
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
@@ -51,11 +51,11 @@ const Layout = ({ children }) => {
   }, [router.pathname, isHome])
 
   useEffect(() => {
-    const handleRouteChange = () => {
+    const handleRouteChange = (e) => {
       setLoading(true)
     }
 
-    const handleRouteChangeComplete = () => {
+    const handleRouteChangeComplete = (e) => {
       setLoading(false)
     }
 

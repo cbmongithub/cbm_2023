@@ -1,6 +1,6 @@
 const Loader = () => (
   <div className='bg-zinc-50 dark:bg-slate-900 z-50 overflow-hidden'>
-    <div className='loader-ring'>
+    <div className='fade-in loader-ring'>
       <div className='flex flex-col justify-center items-center my-3.5'>
         <svg
           width='50'

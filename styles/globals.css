@@ -104,6 +104,10 @@ a:focus {
   animation: animate 3s linear infinite;
 }
 
+.fade-in {
+  animation: fadeIn 0.5s;
+}
+
 @keyframes animateC {
   0% {
     transform: rotate(0deg);
@@ -119,6 +123,15 @@ a:focus {
   }
   100% {
     transform: rotate(405deg);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
