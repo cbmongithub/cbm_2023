@@ -94,8 +94,15 @@ const About = ({ repositories }) => {
                       web! I have been coding for around 6 years as a hobby,
                       although recently i decided to take action and pursue a
                       tech career. I am currently a student at the U of U&apos;s
-                      coding bootcamp. Follow me on twitter to stay up to date
-                      on my tech journey!
+                      coding bootcamp. Follow me on&nbsp;
+                      <a
+                        href='https://www.twitter.com/_coderchris'
+                        target='_blank'
+                        className='opacity-75 underline'
+                      >
+                        twitter
+                      </a>
+                      &nbsp;to stay up to date on my tech journey!
                     </p>
                   </div>
                 </div>
