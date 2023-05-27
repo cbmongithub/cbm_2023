@@ -57,7 +57,7 @@ const PortfolioCard = ({
 
         <Link
           href={href}
-          target='_blank'
+          target={href !== '#' ? '_blank' : null}
           aria-label='Christian B Martinez | Project View Live Link'
           className='text-zinc-800 dark:text-zinc-50 inline-flex items-center font-medium text-primary-600 hover:text-purple-600 dark:hover:text-purple-600 transition duration-300 ease-in-out'
         >

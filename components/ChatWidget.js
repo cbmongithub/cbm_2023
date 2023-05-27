@@ -112,6 +112,7 @@ const ChatWidget = () => {
                             <Link
                               href='/guestbook'
                               aria-label='Christian B Martinez | Guestbook'
+                              onClick={setShow}
                             >
                               &nbsp;
                               <span className='underline'>here</span>
