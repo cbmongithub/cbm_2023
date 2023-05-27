@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { ThemeProvider } from 'next-themes'
 import { useRouter } from 'next/router'
 import { motion, AnimatePresence } from 'framer-motion'
+import Loader from './Loader'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import ChatWidget from '../components/ChatWidget'
@@ -39,6 +40,8 @@ const Layout = ({ children }) => {
   const router = useRouter()
   const { asPath } = useRouter()
   const [isHome, setIsHome] = useState()
+  const [loading, setLoading] = useState(false)
+
   useEffect(() => {
     const isDarkTheme = localStorage.getItem('theme') === 'dark'
     document.querySelector('html').style.backgroundColor = `${
@@ -46,6 +49,24 @@ const Layout = ({ children }) => {
     }`
     router.pathname === '/' ? setIsHome(true) : setIsHome(false)
   }, [router.pathname, isHome])
+
+  useEffect(() => {
+    const handleRouteChange = () => {
+      setLoading(true)
+    }
+
+    const handleRouteChangeComplete = () => {
+      setLoading(false)
+    }
+
+    router.events.on('routeChangeStart', handleRouteChange)
+    router.events.on('routeChangeComplete', handleRouteChangeComplete)
+
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChange)
+      router.events.off('routeChangeComplete', handleRouteChangeComplete)
+    }
+  }, [router.events])
 
   return (
     <>
@@ -58,11 +79,17 @@ const Layout = ({ children }) => {
             animate='inactive'
             exit='out'
           >
-            <main className='min-h-screen bg-zinc-50 dark:bg-slate-900 z-0'>
-              <Navbar />
-              {children}
-            </main>
-            {isHome ? null : <Footer />}
+            {loading ? (
+              <Loader />
+            ) : (
+              <>
+                <main className='min-h-screen bg-zinc-50 dark:bg-slate-900 z-0'>
+                  <Navbar />
+                  {children}
+                </main>
+                {isHome ? null : <Footer />}
+              </>
+            )}
           </motion.div>
           <ChatWidget />
         </AnimatePresence>

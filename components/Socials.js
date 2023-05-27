@@ -1,5 +1,11 @@
 import { socialLinks } from '../constants'
-import { FaGithub, FaTiktok, FaCodepen, FaTwitter } from 'react-icons/fa'
+import {
+  FaGithub,
+  FaTiktok,
+  FaCodepen,
+  FaTwitter,
+  FaLinkedin,
+} from 'react-icons/fa'
 import Link from 'next/link'
 
 const Socials = ({ style }) => {
@@ -43,6 +49,16 @@ const Socials = ({ style }) => {
           aria-label='Christian B Martinez | Twitter Link'
         >
           <FaTwitter />
+        </Link>
+      </li>
+      <li className='px-5 text-purple-600 hover:text-pink-500 transition duration-150 ease-in-out'>
+        <Link
+          href={socialLinks.linkedin}
+          target='_blank'
+          rel='noopener noreferrer'
+          aria-label='Christian B Martinez | Github Link'
+        >
+          <FaLinkedin />
         </Link>
       </li>
     </ul>

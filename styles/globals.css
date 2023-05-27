@@ -61,6 +61,67 @@ a:focus {
   outline: none;
 }
 
+.loader-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  background: transparent;
+  border-radius: 50%;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 15px;
+  color: rgb(147, 51, 234);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.loader-ring:before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  border: 3px solid transparent;
+  border-top: 3px solid rgb(147, 51, 234);
+  border-right: 3px solid rgb(147, 51, 234);
+  border-radius: 50%;
+  animation: animateC 3s linear infinite;
+}
+
+.loader-ring > span {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 4px;
+  background: transparent;
+  transform-origin: left;
+  animation: animate 3s linear infinite;
+}
+
+@keyframes animateC {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(405deg);
+  }
+}
+
 .prose {
   width: 100%;
   max-width: 80ch;
