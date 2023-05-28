@@ -1,11 +1,10 @@
 import axios from 'axios'
 
-const getLatestRepos = async (data, token) => {
+const getLatestRepos = async (token) => {
   try {
-    const username = data.githubUsername
     if (token) {
       const res = await axios.get(
-        `https://api.github.com/search/repositories?q=user:${username}`,
+        'https://api.github.com/search/repositories?q=user:christianbmartinez',
         {
           headers: {
             Authorization: `Bearer ${token}`,

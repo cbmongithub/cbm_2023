@@ -75,14 +75,4 @@ const portfolioData = [
   },
 ]
 
-const userData = {
-  githubUsername: 'christianbmartinez',
-  name: 'Christian Martinez',
-  designation: 'Full-Stack Developer',
-  avatarUrl: '/img/me.jpg',
-  email: 'hello@christianbmartinez.com',
-  phone: '+1 8016451924',
-  address: 'Salt Lake City, Utah',
-}
-
-export { socialLinks, portfolioData, userData }
+export { socialLinks, portfolioData }

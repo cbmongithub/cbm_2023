@@ -20,7 +20,6 @@ import {
 import { motion } from 'framer-motion'
 import SiteHead from '../components/SiteHead'
 import Heading from '../components/Heading'
-import { userData } from '../constants'
 import getLatestRepos from '../helpers/getLatestRepos'
 import GithubRepoCard from '../components/GithubRepoCard'
 
@@ -283,7 +282,7 @@ const About = ({ repositories }) => {
 export const getServerSideProps = async () => {
   let token = process.env.GITHUB_AUTH_TOKEN
 
-  const repositories = await getLatestRepos(userData, token)
+  const repositories = await getLatestRepos(token)
   return {
     props: {
       repositories,
