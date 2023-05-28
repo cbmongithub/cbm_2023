@@ -52,15 +52,15 @@ const portfolioData = [
     tags: ['#TAILWIND', '#REACT'],
   },
   {
-    title: 'Veegin',
+    title: 'Chattr',
     imgUrl:
-      'https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80',
-    alt: 'Image for christians veegin project',
+      'https://images.unsplash.com/photo-1679083216051-aa510a1a2c0e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80',
+    alt: 'Image for christians chattrapp project',
     description:
-      'A full stack app for finding vegan only products using the Kroger API, Local Storage, and OAuth2',
-    repo: 'https://github.com/christianbmartinez/veegin',
-    href: '#',
-    tags: ['#EXPRESS', '#MONGODB'],
+      'A full stack app that lets users chat anonymously, in anonymous chatrooms',
+    repo: 'https://github.com/christianbmartinez/chattrapp',
+    href: 'https://chattrapp.netlify.app/',
+    tags: ['#EXPRESS', '#SOCKETIO'],
   },
   {
     title: 'Mysteryboard',
