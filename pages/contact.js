@@ -2,7 +2,6 @@ import { useState } from 'react'
 import SiteHead from '../components/SiteHead'
 import Heading from '../components/Heading'
 import { motion } from 'framer-motion'
-import { userData } from '../constants'
 import * as emailjs from 'emailjs-com'
 
 const serviceId = process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID
@@ -27,25 +26,23 @@ const Contact = () => {
     const templateParams = {
       from_name: formData.email,
       user_name: formData.name,
-      to_name: userData.email,
+      to_name: 'hello@christianbmartinez.com',
       message: formData.message,
     }
 
     emailjs.send(serviceId, templateId, templateParams, userId).then(
       (result) => {
-        console.log(result.text)
         setFormdata({
           loading: false,
-          alertmessage: 'Thanks for your message! Will respond asap :)',
+          alertmessage: 'Thanks! Will respond asap.',
           message: '',
           success: true,
           show: true,
         })
       },
       (error) => {
-        console.log(error.text)
         setFormdata({
-          alertmessage: `Failed to send!, ${error.text}`,
+          alertmessage: `Something went wrong!`,
           success: false,
           show: true,
         })
