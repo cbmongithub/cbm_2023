@@ -32,5 +32,3 @@ Portfolio website for Christian B. Martinez 2023
 - Fully responsive design.
 - Light and dark mode.
 - Animated web pages and transitions.
-
-[View live](https://christianbmartinez.com/)
