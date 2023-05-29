@@ -150,7 +150,9 @@ const GuestBook = ({ allPosts, gifs }) => {
                           : data.format
                       } text-zinc-900 dark:text-zinc-300 pt-5`}
                     >
-                      <p className='pb-3'>{filter.clean(data.formattedText)}</p>
+                      <p className='pb-3 formatted-text'>
+                        {filter.clean(data.formattedText)}
+                      </p>
 
                       {data.gifUrl && (
                         <Image

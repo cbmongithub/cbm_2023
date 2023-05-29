@@ -108,6 +108,13 @@ a:focus {
   animation: fadeIn 0.5s;
 }
 
+.formatted-text {
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  cursor: auto;
+}
+
 @keyframes animateC {
   0% {
     transform: rotate(0deg);
