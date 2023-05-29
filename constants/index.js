@@ -13,10 +13,10 @@ const portfolioData = [
       'https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
     alt: 'Image for christians portfolio site project',
     description:
-      'My newest portfolio site that uses modern web development technologies.',
-    repo: 'https://github.com/christianbmartinez/cbm_2023',
-    href: '#',
-    tags: ['#NEXTJS', '#TAILWIND'],
+      'My old portfolio site built with react, bootstrap, and threejs.',
+    repo: 'https://github.com/christianbmartinez/cbm_2022',
+    href: 'https://preeminent-raindrop-7e0d9e.netlify.app/',
+    tags: ['#REACT', '#BOOTSTRAP'],
   },
   {
     title: 'Colorfill App',
