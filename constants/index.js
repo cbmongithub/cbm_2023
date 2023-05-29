@@ -8,7 +8,7 @@ const socialLinks = {
 
 const portfolioData = [
   {
-    title: 'CBM 2023',
+    title: 'Portfolio Site',
     imgUrl:
       'https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
     alt: 'Image for christians portfolio site project',
@@ -41,7 +41,7 @@ const portfolioData = [
     tags: ['#NODEJS', '#CHATGPT'],
   },
   {
-    title: 'MMBC',
+    title: 'Consulting Site',
     imgUrl:
       'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1738&q=80',
     alt: 'Image for christians mmbc website project',
@@ -52,7 +52,7 @@ const portfolioData = [
     tags: ['#TAILWIND', '#REACT'],
   },
   {
-    title: 'Chattr',
+    title: 'Chattr App',
     imgUrl:
       'https://images.unsplash.com/photo-1679083216051-aa510a1a2c0e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80',
     alt: 'Image for christians chattrapp project',
@@ -70,7 +70,7 @@ const portfolioData = [
     description:
       'A full stack anonymous sharing application that uses mongo db and express for fetching and storing user data.',
     repo: 'https://github.com/christianbmartinez/mysteryboard',
-    href: '#',
+    href: 'https://mysteryboard.herokuapp.com/',
     tags: ['#EXPRESS', '#MONGODB'],
   },
 ]
