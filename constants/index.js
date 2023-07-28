@@ -30,15 +30,14 @@ const portfolioData = [
     tags: ['#CSS VARIABLES', '#JS'],
   },
   {
-    title: 'Twitter Bot',
+    title: 'Full Stack Blog',
     imgUrl:
-      'https://images.unsplash.com/photo-1611605698335-8b1569810432?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80',
-    alt: 'Image for christians twitter bot project',
-    description:
-      'An AI twitter bot powered by ChatGPT that tweets every two hours about given topics.',
-    repo: 'https://github.com/christianbmartinez/twitterbot',
-    href: 'https://twitter.com/chaoticmuchbot',
-    tags: ['#NODEJS', '#CHATGPT'],
+      'https://plus.unsplash.com/premium_photo-1686041335799-a140e5b3b35d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80',
+    alt: 'Image for christians full stack blog project',
+    description: 'A full stack tech blog written with MVC architecture',
+    repo: 'https://github.com/christianbmartinez/tech-blog',
+    href: 'https://guarded-ocean-61686-3600ffdf6cf0.herokuapp.com/',
+    tags: ['#EXPRESS', '#HANDLEBARS'],
   },
   {
     title: 'Consulting Site',

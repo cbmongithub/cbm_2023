@@ -138,6 +138,13 @@ const ChatWidget = () => {
                           <div className='typing-indicator-dot'></div>
                           <div className='typing-indicator-dot'></div>
                         </div>
+                        <Image
+                          src={`${process.env.NEXT_PUBLIC_BASE_URL}/img/bot.webp`}
+                          className='object-cover mb-4 ml-2 h-8 w-8 rounded-full'
+                          alt='Chatbot image for Christian B Martinez'
+                          width={75}
+                          height={75}
+                        />
                       </div>
                     )}
                   </div>
