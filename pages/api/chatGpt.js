@@ -60,7 +60,6 @@ const chatGpt = async (req, res) => {
       },
     ],
     temperature: 0.7,
-    top_p: 1,
     frequency_penalty: 0,
     presence_penalty: 0,
     max_tokens: 100,
