@@ -3,7 +3,6 @@ import {
   FaGithub,
   FaTiktok,
   FaCodepen,
-  FaTwitter,
   FaLinkedin,
 } from 'react-icons/fa'
 import { FaSquareXTwitter } from 'react-icons/fa6'

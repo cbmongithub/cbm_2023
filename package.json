@@ -34,6 +34,7 @@
     "react-share": "^4.4.1",
     "react-type-animation": "^3.0.1",
     "sharp": "^0.32.1",
+    "styled-jsx": "^5.1.2",
     "tsparticles": "^2.9.3",
     "use-local-storage": "^3.0.0"
   },
