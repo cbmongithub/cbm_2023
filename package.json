@@ -34,11 +34,11 @@
     "react-share": "^4.4.1",
     "react-type-animation": "^3.0.1",
     "sharp": "^0.32.1",
+    "styled-jsx": "^5.1.2",
     "tsparticles": "^2.9.3",
     "use-local-storage": "^3.0.0"
   },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "^4.29.5-appdir.0",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.39.0",
     "eslint-config-next": "^13.3.1",

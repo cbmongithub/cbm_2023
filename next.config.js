@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  experimental: {
+    forceSwcTransforms: true,
+  },
   images: {
     domains: ['localhost', 'images.unsplash.com', 'giphy.com', 'gph.is'],
     remotePatterns: [
@@ -11,10 +14,6 @@ const nextConfig = {
         pathname: '**',
       },
     ],
-  },
-  i18n: {
-    locales: ['en'],
-    defaultLocale: 'en',
   },
 }
 
