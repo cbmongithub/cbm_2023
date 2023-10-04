@@ -7,7 +7,7 @@ import * as gtag from '../lib/gtag'
 const SiteHead = ({ page, title, description, keywords }) => {
   const router = useRouter()
   useEffect(() => {
-    const handleRouteChange = (url) => {
+    const handleRouteChange = url => {
       gtag.pageview(url)
     }
     router.events.on('routeChangeComplete', handleRouteChange)
@@ -37,18 +37,42 @@ const SiteHead = ({ page, title, description, keywords }) => {
       />
       <Head>
         <title>{`Christian B. Martinez | ${page}`}</title>
-        <meta name='description' content={description} />
-        <link rel='icon' href='/favicon.ico' />
+        <meta
+          name='description'
+          content={description}
+        />
+        <link
+          rel='icon'
+          href='/favicon.ico'
+        />
         <link
           rel='canonical'
           href={`${process.env.NEXT_PUBLIC_BASE_URL}${router.asPath}`}
         />
-        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-        <meta name='keywords' content={keywords} />
-        <meta name='author' content='Christian B. Martinez' />
-        <meta name='robots' content='index, follow' />
-        <meta property='og:title' content={title} />
-        <meta property='og:description' content={description} />
+        <meta
+          name='viewport'
+          content='width=device-width, initial-scale=1.0'
+        />
+        <meta
+          name='keywords'
+          content={keywords}
+        />
+        <meta
+          name='author'
+          content='Christian B. Martinez'
+        />
+        <meta
+          name='robots'
+          content='index, follow'
+        />
+        <meta
+          property='og:title'
+          content={title}
+        />
+        <meta
+          property='og:description'
+          content={description}
+        />
         <meta
           property='og:image'
           content={`${process.env.NEXT_PUBLIC_BASE_URL}/img/me-banner.webp`}

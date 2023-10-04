@@ -16,8 +16,11 @@ const Portfolio = () => {
         }
       />
       <section>
-        <Heading title='Portfolio' paragraph='View my most recent projects' />
-        <div className='pb-20 px-6 mx-auto max-w-screen-xl'>
+        <Heading
+          title='Portfolio'
+          paragraph='View my most recent projects'
+        />
+        <div className='mx-auto max-w-screen-xl px-6 pb-20'>
           <div className='grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3'>
             {portfolioData.map((data, i) => {
               return (
@@ -33,8 +36,7 @@ const Portfolio = () => {
                     stiffness: 100,
                     duration: 1.5,
                     delay: 0.5 * i,
-                  }}
-                >
+                  }}>
                   <PortfolioCard
                     key={i}
                     title={data.title}
