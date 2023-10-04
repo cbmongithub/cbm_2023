@@ -150,12 +150,11 @@ const portfolioData = [
     tags: ['#TAILWIND', '#REACT'],
   },
   {
-    title: 'Employee Tracker CLI',
+    title: 'Employee Tracker',
     imgUrl:
       'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
     alt: 'Image for christians employee tracker project',
-    description:
-      'A node console application that uses mysql to manage employees.',
+    description: 'A node cli application that uses mysql to manage employees.',
     repo: 'https://github.com/christianbmartinez/employee-tracker',
     href: 'https://drive.google.com/file/d/1uLsYvFhE-2sl5wxVCUevMd-yZhQ4aVN0/view',
     tags: ['#INQUIRER', '#MYSQL'],
@@ -188,8 +187,18 @@ const portfolioData = [
     alt: 'Image for christians portfolio chattr app project',
     description: 'An anonymous chatting application that uses chatgpt.',
     repo: 'https://github.com/christianbmartinez/chattrapp',
-    href: 'https://codeathon-1b48b4588e47.herokuapp.com/',
+    href: 'https://chattrapp.netlify.app/',
     tags: ['#REACT', '#CHATGPT'],
+  },
+  {
+    title: 'Logo Generator',
+    imgUrl:
+      'https://images.unsplash.com/photo-1633409361618-c73427e4e206?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2680&q=80',
+    alt: 'Image for christians portfolio SVG Logo generator project',
+    description: 'A node cli application for generating quality svg logos',
+    repo: 'https://github.com/christianbmartinez/svg-logo-generator',
+    href: 'https://drive.google.com/file/d/1Tg1iBDdUqCIz06HrNIAeVbb3j-26K3-V/view',
+    tags: ['#INQUIRER', '#JS'],
   },
 ]
 
