@@ -171,6 +171,26 @@ const portfolioData = [
     href: 'https://mysteryboard.herokuapp.com/',
     tags: ['#EXPRESS', '#MONGODB'],
   },
+  {
+    title: 'Codeathon',
+    imgUrl:
+      'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80',
+    alt: 'Image for christians portfolio codeathon project',
+    description: 'A full stack application that brings coders together',
+    repo: 'https://github.com/JenevaRay/Codeathon',
+    href: 'https://codeathon-1b48b4588e47.herokuapp.com/',
+    tags: ['#REACT', '#GRAPHQL'],
+  },
+  {
+    title: 'Chattr App',
+    imgUrl:
+      'https://images.unsplash.com/photo-1611606063065-ee7946f0787a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80',
+    alt: 'Image for christians portfolio chattr app project',
+    description: 'An anonymous chatting application that uses chatgpt.',
+    repo: 'https://github.com/christianbmartinez/chattrapp',
+    href: 'https://codeathon-1b48b4588e47.herokuapp.com/',
+    tags: ['#REACT', '#CHATGPT'],
+  },
 ]
 
 export {
