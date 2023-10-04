@@ -4,112 +4,22 @@ import { FaMoon, FaSun } from 'react-icons/fa'
 import Socials from './Socials'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
+import {
+  svgPathVariant1,
+  svgPathVariant2,
+  firstVariant,
+  secondVariant,
+  thirdVariant,
+  fourthVariant,
+  fifthVariant,
+  sixthVariant,
+  seventhVariant,
+} from '../constants'
 
 const useLoaded = () => {
   const [loaded, setLoaded] = useState(false)
   useEffect(() => setLoaded(true), [])
   return loaded
-}
-
-const svgPathVariant1 = {
-  open: { d: 'M3.06061 2.99999L21.0606 21' },
-  closed: { d: 'M0 9.5L24 9.5' },
-}
-
-const svgPathVariant2 = {
-  open: { d: 'M3.00006 21.0607L21 3.06064' },
-  moving: { d: 'M0 14.5L24 14.5' },
-  closed: { d: 'M0 14.5L15 14.5' },
-}
-
-const firstVariant = {
-  open: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      type: 'spring',
-      stiffness: 100,
-      delay: 0.5,
-    },
-  },
-  closed: { y: -300, opacity: 0 },
-}
-const secondVariant = {
-  open: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      type: 'spring',
-      stiffness: 100,
-      delay: 0.5,
-    },
-  },
-  closed: { x: -100, opacity: 0 },
-}
-
-const thirdVariant = {
-  open: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      type: 'spring',
-      stiffness: 100,
-      delay: 0.75,
-    },
-  },
-  closed: { x: -100, opacity: 0 },
-}
-
-const fourthVariant = {
-  open: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      type: 'spring',
-      stiffness: 100,
-      delay: 1,
-    },
-  },
-  closed: { x: -100, opacity: 0 },
-}
-
-const fifthVariant = {
-  open: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      type: 'spring',
-      stiffness: 100,
-      delay: 1.25,
-    },
-  },
-  closed: { x: -100, opacity: 0 },
-}
-
-const sixthVariant = {
-  open: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      type: 'spring',
-      stiffness: 100,
-      delay: 1.5,
-    },
-  },
-  closed: { x: -100, opacity: 0 },
-}
-
-const seventhVariant = {
-  open: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      type: 'spring',
-      stiffness: 100,
-      delay: 1.75,
-    },
-  },
-  closed: { y: 300, opacity: 0 },
 }
 
 const Navbar = () => {
