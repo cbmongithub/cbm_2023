@@ -15,7 +15,7 @@ const chatGpt = async (req, res) => {
   const { prompt } = req.body
 
   const payload = {
-    model: 'gpt-3.5-turbo',
+    model: 'gpt-4-0613',
     messages: [
       {
         role: 'system',

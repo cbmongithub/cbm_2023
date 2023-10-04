@@ -18,7 +18,7 @@ const Blog = ({ posts }) => {
           title='Blog'
           paragraph='Browse through my most recent articles'
         />
-        <div className='pb-20 py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6'>
+        <div className='mx-auto max-w-screen-xl px-4 py-8 pb-20 lg:px-6 lg:py-16'>
           <div className='grid gap-12 lg:grid-cols-2'>
             {posts.map((post, i) => (
               <motion.div
@@ -33,8 +33,7 @@ const Blog = ({ posts }) => {
                   stiffness: 100,
                   duration: 1.5,
                   delay: 0.5 * i,
-                }}
-              >
+                }}>
                 <PostCard
                   key={post.slug}
                   title={post.data.title}

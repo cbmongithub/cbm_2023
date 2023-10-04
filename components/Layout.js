@@ -51,11 +51,11 @@ const Layout = ({ children }) => {
   }, [router.pathname, isHome])
 
   useEffect(() => {
-    const handleRouteChange = (e) => {
+    const handleRouteChange = e => {
       setLoading(true)
     }
 
-    const handleRouteChangeComplete = (e) => {
+    const handleRouteChangeComplete = e => {
       setLoading(false)
     }
 
@@ -71,19 +71,20 @@ const Layout = ({ children }) => {
   return (
     <>
       <ThemeProvider attribute='class'>
-        <AnimatePresence initial={false} mode='wait'>
+        <AnimatePresence
+          initial={false}
+          mode='wait'>
           <motion.div
             key={asPath}
             variants={variants}
             initial='in'
             animate='inactive'
-            exit='out'
-          >
+            exit='out'>
             {loading ? (
               <Loader />
             ) : (
               <>
-                <main className='min-h-screen bg-zinc-50 dark:bg-slate-900 z-0'>
+                <main className='z-0 min-h-screen bg-zinc-50 dark:bg-slate-900'>
                   <Navbar />
                   {children}
                 </main>

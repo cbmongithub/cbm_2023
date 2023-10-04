@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const getLatestRepos = async (token) => {
+const getLatestRepos = async token => {
   try {
     if (token) {
       const res = await axios.get(

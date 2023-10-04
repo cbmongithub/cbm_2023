@@ -44,22 +44,21 @@ const portfolioData = [
     imgUrl:
       'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1738&q=80',
     alt: 'Image for christians mmbc website project',
-    description:
-      "A single page application built with react and tailwind for MMBC's business consulting and tax services.",
+    description: 'A single page application built with react and tailwind.',
     repo: 'https://github.com/christianbmartinez/mmbc',
     href: 'https://www.mmbc.llc/',
     tags: ['#TAILWIND', '#REACT'],
   },
   {
-    title: 'Chattr App',
+    title: 'Employee Tracker CLI',
     imgUrl:
-      'https://images.unsplash.com/photo-1679083216051-aa510a1a2c0e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80',
-    alt: 'Image for christians chattrapp project',
+      'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+    alt: 'Image for christians employee tracker project',
     description:
-      'A full stack app that lets users chat anonymously, in anonymous chatrooms',
-    repo: 'https://github.com/christianbmartinez/chattrapp',
-    href: 'https://chattrapp.netlify.app/',
-    tags: ['#EXPRESS', '#SOCKETIO'],
+      'A node console application that uses mysql to manage employees.',
+    repo: 'https://github.com/christianbmartinez/employee-tracker',
+    href: 'https://drive.google.com/file/d/1uLsYvFhE-2sl5wxVCUevMd-yZhQ4aVN0/view',
+    tags: ['#INQUIRER', '#MYSQL'],
   },
   {
     title: 'Mysteryboard',
@@ -67,7 +66,7 @@ const portfolioData = [
       'https://images.unsplash.com/photo-1615185990778-a15d7015b41d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80',
     alt: 'Image for christians mysteryboard project',
     description:
-      'A full stack anonymous sharing application that uses mongo db and express for fetching and storing user data.',
+      'A full stack application that allows users to post anonymously.',
     repo: 'https://github.com/christianbmartinez/mysteryboard',
     href: 'https://mysteryboard.herokuapp.com/',
     tags: ['#EXPRESS', '#MONGODB'],

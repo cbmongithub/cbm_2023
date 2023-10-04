@@ -71,16 +71,18 @@ const Post = ({ data, content, slug }) => {
         keywords={`nextjs, blog, javascript, tech blogs, chatgpt, react js, ${data.title}`}
       />
       <section>
-        <Heading title={data.title} delay={0.5} />
+        <Heading
+          title={data.title}
+          delay={0.5}
+        />
         <motion.div
           initial={{ x: -100, opacity: 0, duration: 1 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ type: 'spring', stiffness: 100, delay: 0.5 }}
-          className='w-full mx-auto max-w-screen-xl p-4 flex items-center text-center justify-center'
-        >
+          className='mx-auto flex w-full max-w-screen-xl items-center justify-center p-4 text-center'>
           <div className='flex space-x-3'>
             <Image
-              className='w-7 h-7 rounded-full'
+              className='h-7 w-7 rounded-full'
               src={`${process.env.NEXT_PUBLIC_BASE_URL}/img/me.webp`}
               alt='Christian B. Martinez Avatar'
               width={28}
@@ -90,7 +92,7 @@ const Post = ({ data, content, slug }) => {
               {data.author}
             </span>
           </div>
-          <div className='hidden md:inline-flex px-20'>
+          <div className='hidden px-20 md:inline-flex'>
             <Socials style={'list-none inline-flex'} />
           </div>
           <div className='hidden md:ml-0 md:flex'>
@@ -102,9 +104,8 @@ const Post = ({ data, content, slug }) => {
         <motion.div
           initial={{ x: -100, opacity: 0, duration: 1 }}
           animate={{ x: 0, opacity: 1 }}
-          transition={{ type: 'spring', stiffness: 100, delay: 0.5 }}
-        >
-          <div className='ml-0 md:hidden mx-auto w-screen p-4 flex items-center text-center justify-center'>
+          transition={{ type: 'spring', stiffness: 100, delay: 0.5 }}>
+          <div className='mx-auto ml-0 flex w-screen items-center justify-center p-4 text-center md:hidden'>
             <p className='font-medium'>{data.date}</p>
           </div>
           <Socials
@@ -117,33 +118,30 @@ const Post = ({ data, content, slug }) => {
           initial={{ y: 100, opacity: 0, duration: 1 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ type: 'spring', stiffness: 100, delay: 1 }}
-          className='w-full flex flex-row justify-center items-center my-20'
-        >
-          <div className='flex flex-col prose p-6 dark:prose-invert'>
+          className='my-20 flex w-full flex-row items-center justify-center'>
+          <div className='prose flex flex-col p-6 dark:prose-invert'>
             <MDXRemote {...content} />
           </div>
         </motion.div>
-        <div className='flex flex-row justify-center items-center w-full my-10'>
+        <div className='my-10 flex w-full flex-row items-center justify-center'>
           <p className='text-zinc-800 dark:text-zinc-300'>Share this post</p>
         </div>
-        <div className='flex flex-row justify-center items-center w-full '>
+        <div className='flex w-full flex-row items-center justify-center '>
           <EmailShareButton
             url={shareUrl}
             subject={`Check out this blog post: ${data.title}`}
-            aria-label='Share blog post by email button'
-          >
-            <div className='cursor-pointer p-2 mx-3 bg-gray-500 rounded-full shadow-xl hover:bg-gray-600'>
-              <AiFillMail className='w-4 h-4 text-white' />
+            aria-label='Share blog post by email button'>
+            <div className='mx-3 cursor-pointer rounded-full bg-gray-500 p-2 shadow-xl hover:bg-gray-600'>
+              <AiFillMail className='h-4 w-4 text-white' />
             </div>
           </EmailShareButton>
           <FacebookShareButton
             url={shareUrl}
             quote={data.title}
             hashtag={data.type}
-            aria-label='Share blog post through facebook button'
-          >
-            <div className='cursor-pointer p-2 mx-3 bg-blue-600 rounded-full shadow-xl hover:bg-blue-700'>
-              <FaFacebook className='w-4 h-4 text-white' />
+            aria-label='Share blog post through facebook button'>
+            <div className='mx-3 cursor-pointer rounded-full bg-blue-600 p-2 shadow-xl hover:bg-blue-700'>
+              <FaFacebook className='h-4 w-4 text-white' />
             </div>
           </FacebookShareButton>
           <LinkedinShareButton
@@ -151,37 +149,33 @@ const Post = ({ data, content, slug }) => {
             title={data.title}
             summary={data.description}
             source={shareUrl}
-            aria-label='Share blog post through linkedin button'
-          >
-            <div className='cursor-pointer p-2 mx-3 bg-sky-600 rounded-full shadow-xl hover:bg-sky-700'>
-              <FaLinkedin className='w-4 h-4 text-white' />
+            aria-label='Share blog post through linkedin button'>
+            <div className='mx-3 cursor-pointer rounded-full bg-sky-600 p-2 shadow-xl hover:bg-sky-700'>
+              <FaLinkedin className='h-4 w-4 text-white' />
             </div>
           </LinkedinShareButton>
           <RedditShareButton
             url={shareUrl}
             title={data.title}
-            aria-label='Share blog post through reddit button'
-          >
-            <div className='cursor-pointer p-2 mx-3 bg-orange-600 rounded-full shadow-xl hover:bg-orange-700'>
-              <FaReddit className='w-4 h-4 text-white' />
+            aria-label='Share blog post through reddit button'>
+            <div className='mx-3 cursor-pointer rounded-full bg-orange-600 p-2 shadow-xl hover:bg-orange-700'>
+              <FaReddit className='h-4 w-4 text-white' />
             </div>
           </RedditShareButton>
           <TwitterShareButton
             url={shareUrl}
             title={`Check out this blog post by @_coderchris! ${data.title}`}
             hashtags={['webdevelopment', 'blog', 'fullstack']}
-            aria-label='Share blog post through twitter button'
-          >
-            <div className='cursor-pointer p-2 mx-3 bg-sky-500 rounded-full shadow-xl hover:bg-sky-600'>
-              <FaTwitter className='w-4 h-4 text-white' />
+            aria-label='Share blog post through twitter button'>
+            <div className='mx-3 cursor-pointer rounded-full bg-sky-500 p-2 shadow-xl hover:bg-sky-600'>
+              <FaTwitter className='h-4 w-4 text-white' />
             </div>
           </TwitterShareButton>
           <WhatsappShareButton
             url={shareUrl}
-            aria-label='Share blog post through whatsapp'
-          >
-            <div className='cursor-pointer p-2 mx-3 bg-green-500 rounded-full shadow-xl hover:bg-green-600'>
-              <FaWhatsapp className='w-4 h-4 text-white' />
+            aria-label='Share blog post through whatsapp'>
+            <div className='mx-3 cursor-pointer rounded-full bg-green-500 p-2 shadow-xl hover:bg-green-600'>
+              <FaWhatsapp className='h-4 w-4 text-white' />
             </div>
           </WhatsappShareButton>
         </div>
@@ -194,7 +188,7 @@ export default Post
 
 export const getStaticPaths = () => {
   const posts = getPosts()
-  const paths = posts.map((post) => ({ params: { slug: post.slug } }))
+  const paths = posts.map(post => ({ params: { slug: post.slug } }))
   return {
     paths,
     fallback: false,

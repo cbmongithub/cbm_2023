@@ -3,17 +3,16 @@ import Image from 'next/image'
 
 const PostCard = ({ title, date, description, author, type, slug }) => {
   return (
-    <article className='p-6 bg-white rounded-lg shadow-2xl dark:bg-slate-800'>
-      <div className='flex justify-between items-center mb-5'>
+    <article className='rounded-lg bg-white p-6 shadow-2xl dark:bg-slate-800'>
+      <div className='mb-5 flex items-center justify-between'>
         {type === 'Tutorial' ? (
           <>
-            <span className='bg-gradient-to-r from-purple-600 to-pink-500 text-zinc-50 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded'>
+            <span className='inline-flex items-center rounded bg-gradient-to-r from-purple-600 to-pink-500 px-2.5 py-0.5 text-xs font-medium text-zinc-50'>
               <svg
-                className='mr-1 w-3 h-3'
+                className='mr-1 h-3 w-3'
                 fill='currentColor'
                 viewBox='0 0 20 20'
-                xmlns='http://www.w3.org/2000/svg'
-              >
+                xmlns='http://www.w3.org/2000/svg'>
                 <path d='M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z'></path>
               </svg>
               <p>Tutorial</p>
@@ -21,18 +20,16 @@ const PostCard = ({ title, date, description, author, type, slug }) => {
           </>
         ) : (
           <>
-            <span className='bg-gradient-to-r from-cyan-500 to-purple-600 text-white text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded'>
+            <span className='inline-flex items-center rounded bg-gradient-to-r from-cyan-500 to-purple-600 px-2.5 py-0.5 text-xs font-medium text-white'>
               <svg
-                className='mr-1 w-3 h-3'
+                className='mr-1 h-3 w-3'
                 fill='currentColor'
                 viewBox='0 0 20 20'
-                xmlns='http://www.w3.org/2000/svg'
-              >
+                xmlns='http://www.w3.org/2000/svg'>
                 <path
                   fillRule='evenodd'
                   d='M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z'
-                  clipRule='evenodd'
-                ></path>
+                  clipRule='evenodd'></path>
                 <path d='M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z'></path>
               </svg>
               <p>Article</p>
@@ -47,10 +44,10 @@ const PostCard = ({ title, date, description, author, type, slug }) => {
       <p className='mb-5 font-light text-zinc-900 dark:text-zinc-300'>
         {description}
       </p>
-      <div className='flex justify-between items-center'>
+      <div className='flex items-center justify-between'>
         <div className='flex items-center space-x-4'>
           <Image
-            className='w-7 h-7 rounded-full'
+            className='h-7 w-7 rounded-full'
             src={`${process.env.NEXT_PUBLIC_BASE_URL}/img/me.webp`}
             alt='Christian Martinez Avatar'
             width={28}
@@ -63,21 +60,18 @@ const PostCard = ({ title, date, description, author, type, slug }) => {
         <Link
           href='/[slug]'
           aria-label='Christian B Martinez | Blog Article Link'
-          className='inline-flex items-center font-medium text-zinc-800 dark:text-zinc-50 hover:underline'
-          as={`/${slug}`}
-        >
+          className='inline-flex items-center font-medium text-zinc-800 hover:underline dark:text-zinc-50'
+          as={`/${slug}`}>
           Read more
           <svg
-            className='ml-2 w-4 h-4'
+            className='ml-2 h-4 w-4'
             fill='currentColor'
             viewBox='0 0 20 20'
-            xmlns='http://www.w3.org/2000/svg'
-          >
+            xmlns='http://www.w3.org/2000/svg'>
             <path
               fillRule='evenodd'
               d='M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z'
-              clipRule='evenodd'
-            ></path>
+              clipRule='evenodd'></path>
           </svg>
         </Link>
       </div>
