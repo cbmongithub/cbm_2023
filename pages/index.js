@@ -1,3 +1,5 @@
+'use client'
+
 import SiteHead from '../components/SiteHead'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -57,7 +59,6 @@ const Index = () => {
                     href={`${process.env.NEXT_PUBLIC_BASE_URL}/christians-resume.pdf`}
                     role='button'
                     aria-label='Resume view button'
-                    locale={false}
                     target='_blank'
                     rel='noopener noreferrer'>
                     RESUME
