@@ -93,7 +93,7 @@ const Post = ({ data, content, slug }) => {
             </span>
           </div>
           <div className='hidden px-20 md:inline-flex'>
-            <Socials style={'list-none inline-flex'} />
+            <Socials style='list-none inline-flex' />
           </div>
           <div className='hidden md:ml-0 md:flex'>
             <span className='font-medium text-zinc-800 dark:text-zinc-50'>
