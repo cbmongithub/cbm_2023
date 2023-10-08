@@ -58,10 +58,10 @@ const PostCard = ({ title, date, description, author, type, slug }) => {
           </span>
         </div>
         <Link
-          href='/[slug]'
+          href='/blog/[slug]'
           aria-label='Christian B Martinez | Blog Article Link'
           className='inline-flex items-center font-medium text-zinc-800 hover:underline dark:text-zinc-50'
-          as={`/${slug}`}>
+          as={`/blog/${slug}`}>
           Read more
           <svg
             className='ml-2 h-4 w-4'

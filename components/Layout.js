@@ -2,10 +2,11 @@ import { useEffect, useState } from 'react'
 import { ThemeProvider } from 'next-themes'
 import { useRouter } from 'next/router'
 import { motion, AnimatePresence } from 'framer-motion'
+
 import Loader from './Loader'
 import Navbar from './Navbar'
 import Footer from './Footer'
-import ChatWidget from '../components/ChatWidget'
+import ChatWidget from './ChatWidget'
 
 const variants = {
   inactive: {

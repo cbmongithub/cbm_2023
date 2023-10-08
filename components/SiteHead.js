@@ -1,7 +1,8 @@
-import Head from 'next/head'
-import Script from 'next/script'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
+import Head from 'next/head'
+import Script from 'next/script'
+
 import * as gtag from '../lib/gtag'
 
 const SiteHead = ({ page, title, description, keywords }) => {

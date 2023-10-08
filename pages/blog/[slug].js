@@ -19,14 +19,12 @@ import {
   TwitterShareButton,
   WhatsappShareButton,
 } from 'react-share'
-import getPost from '../helpers/getPost'
-import getPosts from '../helpers/getPosts'
-import SiteHead from '../components/SiteHead'
-import Heading from '../components/Heading'
-import Socials from '../components/Socials'
+
+import { getPost, getPosts } from '../../helpers'
+import { SiteHead, Heading, Socials } from '../../components'
 
 const Post = ({ data, content, slug }) => {
-  const shareUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/${slug}`
+  const shareUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/blog/${slug}`
 
   const isBrowser = () => typeof window !== 'undefined'
 
@@ -93,7 +91,7 @@ const Post = ({ data, content, slug }) => {
             </span>
           </div>
           <div className='hidden px-20 md:inline-flex'>
-            <Socials style={'list-none inline-flex'} />
+            <Socials style='list-none inline-flex' />
           </div>
           <div className='hidden md:ml-0 md:flex'>
             <span className='font-medium text-zinc-800 dark:text-zinc-50'>
@@ -196,7 +194,7 @@ export const getStaticPaths = () => {
 }
 
 export const getStaticProps = async ({ params }) => {
-  const post = await getPost(params.slug)
+  const post = getPost(params.slug)
   const mdxSource = await serialize(post.content)
   return {
     props: {

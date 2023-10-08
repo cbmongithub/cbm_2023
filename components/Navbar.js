@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 import { useTheme } from 'next-themes'
 import { FaMoon, FaSun } from 'react-icons/fa'
-import Socials from './Socials'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
+
 import {
   svgPathVariant1,
   svgPathVariant2,
@@ -15,6 +15,7 @@ import {
   sixthVariant,
   seventhVariant,
 } from '../constants'
+import Socials from './Socials'
 
 const useLoaded = () => {
   const [loaded, setLoaded] = useState(false)

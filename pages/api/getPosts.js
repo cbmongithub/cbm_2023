@@ -1,4 +1,4 @@
-import clientPromise from '../../lib/mongodb'
+import { clientPromise } from '../../lib'
 
 const getPosts = async (req, res) => {
   try {

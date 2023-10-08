@@ -18,10 +18,9 @@ import {
   SiExpress,
 } from 'react-icons/si'
 import { motion } from 'framer-motion'
-import SiteHead from '../components/SiteHead'
-import Heading from '../components/Heading'
-import getLatestRepos from '../helpers/getLatestRepos'
-import GithubRepoCard from '../components/GithubRepoCard'
+
+import { SiteHead, Heading, GithubRepoCard, Socials } from '../components'
+import { getLatestRepos } from '../helpers'
 
 const About = ({ repositories }) => {
   const [repos] = useState(repositories)
@@ -79,7 +78,7 @@ const About = ({ repositories }) => {
                 </div>
                 <div className='mb-2 mt-10 flex flex-row items-center justify-center text-zinc-800 dark:text-zinc-50'>
                   <FaBriefcase className='mr-2 text-lg text-zinc-400 dark:text-zinc-400' />
-                  Full Stack Bootcamp Student
+                  Full Stack Developer
                 </div>
                 <div className='mb-2 flex flex-row items-center justify-center text-zinc-800 dark:text-zinc-50'>
                   <FaUniversity className='mr-2 text-lg text-zinc-400 dark:text-zinc-400' />
@@ -90,19 +89,22 @@ const About = ({ repositories }) => {
                 <div className='flex flex-wrap justify-center'>
                   <div className='w-full px-4 lg:w-9/12'>
                     <p className='mb-4 text-lg leading-relaxed text-zinc-800 dark:text-zinc-200'>
-                      Hey there! 🖐 I&apos;m Christian, I build apps for the
-                      web! I have been coding for around 6 years as a hobby,
-                      although recently i decided to take action and pursue a
-                      tech career. I am currently a student at the U of U&apos;s
-                      coding bootcamp. Follow me on&nbsp;
-                      <a
-                        href='https://www.twitter.com/_coderchris'
-                        target='_blank'
-                        className='underline opacity-75'>
-                        twitter
-                      </a>
-                      &nbsp;to stay up to date on my tech journey!
+                      Hey there, 🖐 I&apos;m Christian, a dedicated Full Stack
+                      Web Developer from Utah. I am actively pursuing a full
+                      time role within the dynamic world of the tech industry. I
+                      recently completed the rigorous 6-month coding bootcamp
+                      program at the prestigious University of Utah, where I
+                      honed my skills by successfully delivering a multitude of
+                      full stack projects. This hands-on experience, alongside
+                      my current role at MMBC, has equipped me with a strong
+                      foundation in full stack web development. My passion for
+                      technology drives me to stay current with emerging trends
+                      and cutting-edge technologies, making me ever-ready to
+                      adapt and excel in this rapidly evolving field. Thanks for
+                      viewing my portfolio site, and I would be eager to
+                      connect!
                     </p>
+                    <Socials style='list-none inline-flex mt-8' />
                   </div>
                 </div>
               </div>
