@@ -18,11 +18,9 @@ import {
   SiExpress,
 } from 'react-icons/si'
 import { motion } from 'framer-motion'
-import SiteHead from '../components/SiteHead'
-import Heading from '../components/Heading'
-import getLatestRepos from '../helpers/getLatestRepos'
-import GithubRepoCard from '../components/GithubRepoCard'
-import Socials from '../components/Socials'
+
+import { SiteHead, Heading, GithubRepoCard, Socials } from '../components'
+import { getLatestRepos } from '../helpers'
 
 const About = ({ repositories }) => {
   const [repos] = useState(repositories)

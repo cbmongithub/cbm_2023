@@ -1,8 +1,7 @@
-import SiteHead from '../../components/SiteHead'
-import Heading from '../../components/Heading'
-import PostCard from '../../components/PostCard'
-import getPosts from '../../helpers/getPosts'
 import { motion } from 'framer-motion'
+
+import { SiteHead, Heading, PostCard } from '../../components'
+import { getPosts } from '../../helpers'
 
 const Blog = ({ posts }) => {
   return (

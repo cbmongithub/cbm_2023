@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import SiteHead from '../components/SiteHead'
-import Heading from '../components/Heading'
-import { motion } from 'framer-motion'
 import * as emailjs from 'emailjs-com'
+import { motion } from 'framer-motion'
+
+import { SiteHead, Heading } from '../components'
 
 const serviceId = process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID
 const templateId = process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID

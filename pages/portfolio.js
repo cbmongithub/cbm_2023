@@ -1,8 +1,7 @@
-import SiteHead from '../components/SiteHead'
-import Heading from '../components/Heading'
-import { portfolioData } from '../constants'
-import PortfolioCard from '../components/PortfolioCard'
 import { motion } from 'framer-motion'
+
+import { SiteHead, Heading, PortfolioCard } from '../components'
+import { portfolioData } from '../constants'
 
 const Portfolio = () => {
   return (

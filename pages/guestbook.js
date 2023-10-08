@@ -1,15 +1,8 @@
 import { useState, useContext } from 'react'
-import SiteHead from '../components/SiteHead'
-import Heading from '../components/Heading'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 dayjs.extend(relativeTime)
-import {
-  BsTypeBold,
-  BsGithub,
-  BsTypeItalic,
-  BsTypeUnderline,
-} from 'react-icons/bs'
+import { BsTypeBold, BsTypeItalic, BsTypeUnderline } from 'react-icons/bs'
 import { AiOutlineGif } from 'react-icons/ai'
 import { MdFormatAlignCenter } from 'react-icons/md'
 import { GiphyFetch } from '@giphy/js-fetch-api'
@@ -23,6 +16,8 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import Filter from 'bad-words'
 import { useSession, signIn, signOut } from 'next-auth/react'
+
+import { SiteHead, Heading } from '../components'
 
 const filter = new Filter()
 

@@ -19,11 +19,9 @@ import {
   TwitterShareButton,
   WhatsappShareButton,
 } from 'react-share'
-import getPost from '../../helpers/getPost'
-import getPosts from '../../helpers/getPosts'
-import SiteHead from '../../components/SiteHead'
-import Heading from '../../components/Heading'
-import Socials from '../../components/Socials'
+
+import { getPost, getPosts } from '../../helpers'
+import { SiteHead, Heading, Socials } from '../../components'
 
 const Post = ({ data, content, slug }) => {
   const shareUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/blog/${slug}`

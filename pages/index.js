@@ -1,11 +1,11 @@
 'use client'
 
-import SiteHead from '../components/SiteHead'
+import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
 import { TypeAnimation } from 'react-type-animation'
-import Background from '../components/Background'
-import { motion } from 'framer-motion'
+
+import { SiteHead, Background } from '../components'
 
 const Index = () => {
   return (
