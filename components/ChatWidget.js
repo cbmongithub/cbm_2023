@@ -153,17 +153,15 @@ const ChatWidget = () => {
         )}
       </AnimatePresence>
       {!show && (
-        <AnimatePresence>
-          <motion.div
-            variants={variants}
-            className='fixed bottom-5 right-6 z-30 cursor-pointer rounded-full bg-gradient-to-r from-purple-600 to-pink-500 p-4 shadow-xl hover:bg-pink-500'
-            initial='closed'
-            animate='open'
-            exit='closed'
-            onClick={setShow}>
-            <FaComment className='h-5 w-5 text-zinc-50' />
-          </motion.div>
-        </AnimatePresence>
+        <motion.div
+          variants={variants}
+          className='fixed bottom-5 right-6 z-30 cursor-pointer rounded-full bg-gradient-to-r from-purple-600 to-pink-500 p-4 shadow-xl hover:bg-pink-500'
+          initial='closed'
+          animate='open'
+          exit='closed'
+          onClick={setShow}>
+          <FaComment className='h-5 w-5 text-zinc-50' />
+        </motion.div>
       )}
     </>
   )
@@ -216,10 +214,10 @@ const FormSection = ({ generateResponse }) => {
         <input
           className='m-0
             w-3/4
-            rounded-xl
+            rounded-lg
             border border-solid
             border-zinc-300 bg-zinc-50 bg-clip-padding
-            px-4 py-5 text-base font-normal
+            px-4 py-3 text-base font-normal
             text-zinc-700
             transition
             ease-in-out
@@ -228,12 +226,15 @@ const FormSection = ({ generateResponse }) => {
           value={newQuestion}
           onChange={e => setNewQuestion(e.target.value)}
           type='text'
+          required
         />
         <button
           type='submit'
           aria-label='Chat submit button'
-          className='w-1/4 border-none text-sm font-medium uppercase leading-snug text-purple-600 outline-none hover:text-purple-700 focus:border-none focus:outline-none dark:text-zinc-50 dark:hover:text-purple-700'
-          onClick={() => generateResponse(newQuestion, setNewQuestion)}>
+          className='ml-2 w-1/4 rounded-lg border-2 border-purple-600 bg-purple-600 px-7 py-3 text-sm font-medium uppercase leading-snug text-zinc-50 shadow-md transition duration-150 ease-in-out hover:border-purple-500 hover:bg-zinc-50 hover:text-purple-500 hover:shadow-lg focus:border-purple-500 focus:bg-zinc-50 focus:text-purple-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-zinc-50 active:shadow-lg'
+          onClick={() =>
+            newQuestion && generateResponse(newQuestion, setNewQuestion)
+          }>
           SEND
         </button>
       </form>

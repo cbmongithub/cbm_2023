@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useTheme } from 'next-themes'
 import { FaMoon, FaSun } from 'react-icons/fa'
 import Link from 'next/link'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 import {
   svgPathVariant1,
@@ -116,21 +116,17 @@ const Navbar = () => {
                 <motion.div
                   layout
                   className='handle'>
-                  <AnimatePresence
-                    mode='wait'
-                    initial={false}>
-                    <motion.i
-                      initial={{ y: -30, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      exit={{ y: 30, opacity: 0 }}
-                      transition={{ duration: 0.2 }}>
-                      {currentTheme === 'dark' && loaded ? (
-                        <FaMoon className='toggler-icon' />
-                      ) : (
-                        <FaSun className='toggler-icon' />
-                      )}
-                    </motion.i>
-                  </AnimatePresence>
+                  <motion.i
+                    initial={{ y: -30, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: 30, opacity: 0 }}
+                    transition={{ duration: 0.2 }}>
+                    {currentTheme === 'dark' && loaded ? (
+                      <FaMoon className='toggler-icon' />
+                    ) : (
+                      <FaSun className='toggler-icon' />
+                    )}
+                  </motion.i>
                 </motion.div>
               </div>
             </li>
@@ -145,21 +141,17 @@ const Navbar = () => {
                 <motion.div
                   layout
                   className='handle'>
-                  <AnimatePresence
-                    mode='wait'
-                    initial={false}>
-                    <motion.i
-                      initial={{ y: -30, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      exit={{ y: 30, opacity: 0 }}
-                      transition={{ duration: 0.2 }}>
-                      {currentTheme === 'dark' && loaded ? (
-                        <FaMoon className='toggler-icon' />
-                      ) : (
-                        <FaSun className='toggler-icon' />
-                      )}
-                    </motion.i>
-                  </AnimatePresence>
+                  <motion.i
+                    initial={{ y: -30, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: 30, opacity: 0 }}
+                    transition={{ duration: 0.2 }}>
+                    {currentTheme === 'dark' && loaded ? (
+                      <FaMoon className='toggler-icon' />
+                    ) : (
+                      <FaSun className='toggler-icon' />
+                    )}
+                  </motion.i>
                 </motion.div>
               </div>
             )}
