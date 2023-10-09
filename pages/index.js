@@ -1,5 +1,3 @@
-'use client'
-
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -55,16 +53,16 @@ const Index = () => {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ type: 'spring', stiffness: 100, delay: 0.5 }}>
                   <Link
-                    className='mr-2 inline-block rounded border-2 border-purple-600 bg-purple-600 px-7 py-3 text-sm font-medium uppercase leading-snug text-zinc-50 shadow-md transition duration-150 ease-in-out hover:border-pink-500 hover:bg-zinc-50 hover:text-pink-500 hover:shadow-lg focus:border-pink-500 focus:bg-zinc-50 focus:text-pink-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-zinc-50 active:shadow-lg'
-                    href={`${process.env.NEXT_PUBLIC_BASE_URL}/christians-resume.pdf`}
+                    className='mr-2 inline-block rounded-md border-2 border-purple-600 bg-purple-600 px-7 py-3 text-sm font-medium uppercase leading-snug text-zinc-50 shadow-md transition duration-150 ease-in-out hover:border-pink-500 hover:bg-zinc-50 hover:text-pink-500 hover:shadow-lg focus:border-pink-500 focus:bg-zinc-50 focus:text-pink-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-zinc-50 active:shadow-lg'
+                    href='/christians-resume.pdf'
                     role='button'
-                    aria-label='Resume view button'
                     target='_blank'
+                    aria-label='Resume download button'
                     rel='noopener noreferrer'>
                     RESUME
                   </Link>
                   <Link
-                    className='mr-2 inline-block rounded border-2 border-purple-600 bg-transparent bg-zinc-50 px-7 py-3 text-sm font-medium uppercase leading-snug text-purple-600 shadow-md transition duration-150 ease-in-out hover:border-pink-500 hover:bg-pink-500 hover:text-zinc-50 hover:shadow-lg focus:border-pink-500 focus:bg-pink-500 focus:text-zinc-50 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-pink-500 active:shadow-lg'
+                    className='mr-2 inline-block rounded-md border-2 border-purple-600 bg-transparent bg-zinc-50 px-7 py-3 text-sm font-medium uppercase leading-snug text-purple-600 shadow-md transition duration-150 ease-in-out hover:border-pink-500 hover:bg-pink-500 hover:text-zinc-50 hover:shadow-lg focus:border-pink-500 focus:bg-pink-500 focus:text-zinc-50 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-pink-500 active:shadow-lg'
                     href='/portfolio'
                     role='button'
                     aria-label='Portfolio link button'>

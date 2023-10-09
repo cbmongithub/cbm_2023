@@ -10,7 +10,7 @@ const Heading = ({ title, paragraph, delay }) => {
       <h1 className='mb-12 text-5xl font-extrabold leading-none tracking-tight text-zinc-900 dark:text-zinc-50 md:text-6xl'>
         {title}
       </h1>
-      {paragraph ? (
+      {paragraph && (
         <motion.div
           initial={{ y: -100, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -23,8 +23,6 @@ const Heading = ({ title, paragraph, delay }) => {
             {paragraph}
           </p>
         </motion.div>
-      ) : (
-        ''
       )}
     </motion.div>
   )

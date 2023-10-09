@@ -116,21 +116,17 @@ const Navbar = () => {
                 <motion.div
                   layout
                   className='handle'>
-                  <AnimatePresence
-                    mode='wait'
-                    initial={false}>
-                    <motion.i
-                      initial={{ y: -30, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      exit={{ y: 30, opacity: 0 }}
-                      transition={{ duration: 0.2 }}>
-                      {currentTheme === 'dark' && loaded ? (
-                        <FaMoon className='toggler-icon' />
-                      ) : (
-                        <FaSun className='toggler-icon' />
-                      )}
-                    </motion.i>
-                  </AnimatePresence>
+                  <motion.i
+                    initial={{ y: -30, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: 30, opacity: 0 }}
+                    transition={{ duration: 0.2 }}>
+                    {currentTheme === 'dark' && loaded ? (
+                      <FaMoon className='toggler-icon' />
+                    ) : (
+                      <FaSun className='toggler-icon' />
+                    )}
+                  </motion.i>
                 </motion.div>
               </div>
             </li>
@@ -261,7 +257,7 @@ const Navbar = () => {
                 </Link>
               </motion.div>
             </li>
-            <li className='w-full text-center text-2xl text-zinc-900 hover:text-purple-600 dark:text-zinc-200'>
+            <li className='w-full p-4 text-center text-2xl text-zinc-900 hover:text-purple-600 dark:text-zinc-200'>
               <motion.div
                 animate={nav ? 'open' : 'closed'}
                 variants={sixthVariant}>

@@ -63,7 +63,7 @@ const Post = ({ data, content, slug }) => {
   return (
     <>
       <SiteHead
-        page={data.title}
+        page={`Blog | ${data.title}`}
         title={data.title}
         description={data.description}
         keywords={`nextjs, blog, javascript, tech blogs, chatgpt, react js, ${data.title}`}
