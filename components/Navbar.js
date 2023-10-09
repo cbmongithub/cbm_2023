@@ -253,7 +253,7 @@ const Navbar = () => {
                 </Link>
               </motion.div>
             </li>
-            <li className='w-full text-center text-2xl text-zinc-900 hover:text-purple-600 dark:text-zinc-200'>
+            <li className='w-full p-4 text-center text-2xl text-zinc-900 hover:text-purple-600 dark:text-zinc-200'>
               <motion.div
                 animate={nav ? 'open' : 'closed'}
                 variants={sixthVariant}>
