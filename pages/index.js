@@ -58,7 +58,6 @@ const Index = () => {
                     role='button'
                     target='_blank'
                     aria-label='Resume download button'
-                    download
                     rel='noopener noreferrer'>
                     RESUME
                   </Link>

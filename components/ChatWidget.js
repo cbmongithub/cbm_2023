@@ -231,7 +231,7 @@ const FormSection = ({ generateResponse }) => {
         <button
           type='submit'
           aria-label='Chat submit button'
-          className='ml-2 w-1/4 rounded-lg border-2 border-purple-600 bg-purple-600 px-7 py-3 text-sm font-medium uppercase leading-snug text-zinc-50 shadow-md transition duration-150 ease-in-out hover:border-purple-500 hover:bg-zinc-50 hover:text-purple-500 hover:shadow-lg focus:border-purple-500 focus:bg-zinc-50 focus:text-purple-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-zinc-50 active:shadow-lg'
+          className='ml-2 flex w-1/4 flex-col items-center justify-center rounded-lg border-2 border-purple-600 bg-purple-600 px-7 py-3 text-sm font-medium uppercase leading-snug text-zinc-50 shadow-md transition duration-150 ease-in-out hover:border-purple-500 hover:bg-zinc-50 hover:text-purple-500 hover:shadow-lg focus:border-purple-500 focus:bg-zinc-50 focus:text-purple-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-zinc-50 active:shadow-lg'
           onClick={() =>
             newQuestion && generateResponse(newQuestion, setNewQuestion)
           }>
