@@ -152,22 +152,18 @@ const ChatWidget = () => {
           </motion.div>
         )}
       </AnimatePresence>
-      {!show ? (
-        <>
-          <AnimatePresence>
-            <motion.div
-              variants={variants}
-              className='fixed bottom-5 right-6 z-30 cursor-pointer rounded-full bg-gradient-to-r from-purple-600 to-pink-500 p-4 shadow-xl hover:bg-pink-500'
-              initial='closed'
-              animate='open'
-              exit='closed'
-              onClick={setShow}>
-              <FaComment className='h-5 w-5 text-zinc-50' />
-            </motion.div>
-          </AnimatePresence>
-        </>
-      ) : (
-        ''
+      {!show && (
+        <AnimatePresence>
+          <motion.div
+            variants={variants}
+            className='fixed bottom-5 right-6 z-30 cursor-pointer rounded-full bg-gradient-to-r from-purple-600 to-pink-500 p-4 shadow-xl hover:bg-pink-500'
+            initial='closed'
+            animate='open'
+            exit='closed'
+            onClick={setShow}>
+            <FaComment className='h-5 w-5 text-zinc-50' />
+          </motion.div>
+        </AnimatePresence>
       )}
     </>
   )
