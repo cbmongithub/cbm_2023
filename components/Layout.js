@@ -40,7 +40,7 @@ const variants = {
 const Layout = ({ children }) => {
   const router = useRouter()
   const { asPath } = useRouter()
-  const [isHome, setIsHome] = useState(false)
+  const [isDisabled, setIsDisabled] = useState(false)
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
@@ -48,8 +48,12 @@ const Layout = ({ children }) => {
     document.querySelector('html').style.backgroundColor = `${
       isDarkTheme ? '#0F172A' : '#FAFAFA'
     }`
-    router.pathname === '/' ? setIsHome(true) : setIsHome(false)
-  }, [router.pathname, isHome])
+    router.pathname === '/'
+      ? setIsDisabled(true)
+      : router.pathname === '/404'
+      ? setIsDisabled(true)
+      : setIsDisabled(false)
+  }, [router.pathname, isDisabled])
 
   useEffect(() => {
     const handleRouteChange = e => {
@@ -89,7 +93,7 @@ const Layout = ({ children }) => {
                   <Navbar />
                   {children}
                 </main>
-                {isHome ? null : <Footer />}
+                {isDisabled ? null : <Footer />}
               </>
             )}
           </motion.div>
