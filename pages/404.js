@@ -16,7 +16,7 @@ const NotFound = () => {
         }
       />
       <section>
-        <div className='relative z-50 flex h-full w-full items-center justify-center px-16 pt-48 md:px-0'>
+        <div className='relative z-30 flex h-full w-full items-center justify-center px-16 pt-48 md:px-0'>
           <div className='flex flex-col items-center justify-center rounded-lg bg-white px-4 py-8 shadow-2xl dark:bg-slate-800 md:px-8 lg:px-24'>
             <p className='border-b-2 pb-4 text-6xl font-bold tracking-wider text-zinc-900 dark:text-zinc-50 md:text-6xl lg:text-7xl'>
               404
