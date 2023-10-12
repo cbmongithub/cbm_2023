@@ -10,7 +10,12 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      opacity: {
+        25: '.25',
+        35: '.35',
+      },
+    },
   },
   plugins: [require('@tailwindcss/typography', 'react-type-animation')],
 }

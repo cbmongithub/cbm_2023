@@ -44,36 +44,34 @@ const PostCard = ({ title, date, description, author, type, slug }) => {
       <p className='mb-5 font-light text-zinc-900 dark:text-zinc-300'>
         {description}
       </p>
-      <div className='flex items-center justify-between'>
-        <div className='flex items-center space-x-4'>
-          <Image
-            className='h-7 w-7 rounded-full'
-            src={`${process.env.NEXT_PUBLIC_BASE_URL}/img/me.webp`}
-            alt='Christian Martinez Avatar'
-            width={28}
-            height={28}
-          />
-          <span className='font-medium text-zinc-800 dark:text-zinc-50'>
+      <div className='flex justify-between'>
+        <div className='flex w-1/12 justify-start align-middle'>
+          <div className='relative w-7'>
+            <Image
+              className='mx-auto h-7 w-7 rounded-full object-cover'
+              src={`${process.env.NEXT_PUBLIC_BASE_URL}/img/me.webp`}
+              alt='Christian Martinez Avatar'
+              width={28}
+              height={28}
+            />
+            <div className='dark:opacity-35 absolute inset-0 mx-auto h-7 w-7 rounded-full bg-purple-600 opacity-25 dark:bg-gradient-to-r dark:from-purple-600 dark:to-pink-500'></div>
+          </div>
+        </div>
+        <div className='flex w-3/12 justify-start align-middle'>
+          <span className='ml-[-2px] font-medium text-zinc-800 dark:text-zinc-50 sm:ml-[-5px] md:ml-2 lg:ml-0'>
             {author}
           </span>
         </div>
-        <Link
-          href='/blog/[slug]'
-          aria-label='Christian B Martinez | Blog Article Link'
-          className='inline-flex items-center font-medium text-zinc-800 hover:underline dark:text-zinc-50'
-          as={`/blog/${slug}`}>
-          Read more
-          <svg
-            className='ml-2 h-4 w-4'
-            fill='currentColor'
-            viewBox='0 0 20 20'
-            xmlns='http://www.w3.org/2000/svg'>
-            <path
-              fillRule='evenodd'
-              d='M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z'
-              clipRule='evenodd'></path>
-          </svg>
-        </Link>
+        <div className='flex w-8/12 justify-end align-middle'>
+          <Link
+            href='/blog/[slug]'
+            aria-label='Christian B Martinez | Blog Article Link'
+            className='inline-flex font-medium text-zinc-800 hover:underline dark:text-zinc-50'
+            as={`/blog/${slug}`}>
+            Read more
+          </Link>
+          &nbsp;&rarr;
+        </div>
       </div>
     </article>
   )

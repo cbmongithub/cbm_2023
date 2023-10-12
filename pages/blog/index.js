@@ -17,8 +17,8 @@ const Blog = ({ posts }) => {
           title='Blog'
           paragraph='Browse through my most recent articles'
         />
-        <div className='mx-auto max-w-screen-xl px-4 py-8 pb-20 lg:px-6 lg:py-16'>
-          <div className='grid gap-12 lg:grid-cols-2'>
+        <div className='mx-auto max-w-screen-lg px-4 py-8 pb-20 lg:px-6 lg:py-16'>
+          <div className='grid gap-12 md:grid-cols-2'>
             {posts.map((post, i) => (
               <motion.div
                 key={post.slug}
