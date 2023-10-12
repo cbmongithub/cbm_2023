@@ -1,3 +1,4 @@
+import Avatar from './Avatar'
 import Background from './Background'
 import ChatWidget from './ChatWidget'
 import Footer from './Footer'
@@ -12,6 +13,7 @@ import SiteHead from './SiteHead'
 import Socials from './Socials'
 
 export {
+  Avatar,
   Background,
   ChatWidget,
   Footer,

@@ -77,13 +77,13 @@ const Contact = () => {
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ type: 'spring', stiffness: 100, delay: 1 }}
-          className='container mx-auto mt-52 px-6 md:mt-32 lg:w-2/3'>
-          <div className='top:0 container relative px-4 text-slate-800 md:top-20 md:px-12'>
+          className='container mx-auto mt-52 max-w-2xl md:mt-32 lg:w-2/3'>
+          <div className='top:0 container relative px-6 text-slate-800 md:top-20 md:px-12'>
             <div className='mt-[-100px] block rounded-xl bg-white px-4 py-10 shadow-xl dark:bg-slate-800 md:px-6 md:py-12'>
-              <div className='mx-auto mb-12 grid max-w-[700px] grid-cols-3'>
-                <div className='mx-auto mb-12 text-center lg:mb-0'>
+              <div className='mx-auto grid max-w-[700px] grid-cols-3'>
+                <div className='mx-auto mb-12 text-center'>
                   <svg
-                    className='mx-auto mb-6 h-6 w-6 text-purple-600 hover:text-pink-500 md:h-8 md:w-8'
+                    className='mx-auto mb-6 h-6 w-6 cursor-pointer text-purple-600 hover:text-pink-500 md:h-8 md:w-8'
                     xmlns='http://www.w3.org/2000/svg'
                     viewBox='0 0 496 512'>
                     <path
@@ -99,7 +99,7 @@ const Contact = () => {
                 </div>
                 <div className='mx-auto mb-12 text-center lg:mb-0'>
                   <svg
-                    className='mx-auto mb-6 h-6 w-6 text-purple-600 hover:text-pink-500 md:h-8 md:w-8'
+                    className='mx-auto mb-6 h-6 w-6 cursor-pointer text-purple-600 hover:text-pink-500 md:h-8 md:w-8'
                     xmlns='http://www.w3.org/2000/svg'
                     viewBox='0 0 384 512'>
                     <path
@@ -112,7 +112,7 @@ const Contact = () => {
                 </div>
                 <div className='mx-auto mb-6 text-center md:mb-0'>
                   <svg
-                    className='mx-auto mb-6 h-6 w-6 text-purple-600 hover:text-pink-500 md:h-8 md:w-8'
+                    className='mx-auto mb-6 h-6 w-6 cursor-pointer text-purple-600 hover:text-pink-500 md:h-8 md:w-8'
                     xmlns='http://www.w3.org/2000/svg'
                     viewBox='0 0 512 512'>
                     <path

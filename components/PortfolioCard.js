@@ -18,47 +18,45 @@ const PortfolioCard = ({
           backgroundImage: `url('${imageUrl}')`,
         }}
         alt={alt}>
-        <div className='flex h-full w-full items-center justify-center bg-gradient-to-r from-purple-600 to-pink-500 opacity-60'></div>
+        <div className='flex h-full w-full items-center justify-center bg-purple-600 opacity-60 dark:bg-gradient-to-r dark:from-purple-600 dark:to-pink-500'></div>
       </div>
       <div className='flex h-full w-full flex-col justify-center rounded-lg bg-gradient-to-r from-purple-600 to-pink-500 opacity-60 transition duration-300 ease-in-out hover:opacity-90 hover:shadow-2xl'></div>
-      <div className='h-20 px-6 py-4'>
-        <div className='mb-2 text-xl font-bold text-zinc-900 dark:text-zinc-50'>
+      <div className='p-6'>
+        <h1 className='text-xl font-bold text-zinc-900 dark:text-zinc-50'>
           {title}
-        </div>
-        <p className='text-base text-zinc-800 dark:text-zinc-300'>
+        </h1>
+        <p className='py-4 text-base text-zinc-800 dark:text-zinc-300'>
           {description}
         </p>
-      </div>
-      <div className='mt-10 px-6 pb-3 pt-4'>
         {tags.map((tag, i) => {
           return (
             <span
               key={i}
-              className='mb-2 mr-2 inline-flex items-center justify-between rounded-full bg-zinc-100 px-3 py-1 text-sm font-semibold text-zinc-800 shadow-md dark:bg-zinc-50'>
-              <p>{tag}</p>
+              className='mb-4 mr-2 mt-3 inline-flex items-center justify-between rounded-full bg-purple-600 px-3 py-1 text-sm font-semibold text-zinc-50 shadow-xl dark:bg-gradient-to-r dark:from-purple-600 dark:to-pink-500'>
+              {tag}
             </span>
           )
         })}
-      </div>
-      <div className='inline-flex px-6 pb-3 pt-4'>
-        <p className='my-2 text-base text-zinc-800 dark:text-zinc-50'>
-          Project Links:
-        </p>
-        <Link
-          href={repo}
-          target='_blank'
-          aria-label='Christian B Martinez | Project Repository Link'
-          className='text-primary-600 inline-flex items-center font-medium text-zinc-800 transition duration-300 ease-in-out hover:text-purple-600 dark:text-zinc-50 dark:hover:text-purple-600'>
-          <FaGithub className='ml-5' />
-        </Link>
+        <div className='flex'>
+          <p className='pt-4 text-base text-zinc-800 dark:text-zinc-50'>
+            Project Links:
+          </p>
+          <Link
+            href={repo}
+            target='_blank'
+            aria-label='Christian B Martinez | Project Repository Link'
+            className='inline-flex items-center font-medium text-zinc-800 transition duration-100 ease-in-out hover:text-purple-600 dark:text-zinc-50 dark:hover:text-purple-600'>
+            <FaGithub className='ml-5 mt-4' />
+          </Link>
 
-        <Link
-          href={href}
-          target={href !== '#' ? '_blank' : null}
-          aria-label='Christian B Martinez | Project View Live Link'
-          className='text-primary-600 inline-flex items-center font-medium text-zinc-800 transition duration-300 ease-in-out hover:text-purple-600 dark:text-zinc-50 dark:hover:text-purple-600'>
-          <FaLink className='ml-5' />
-        </Link>
+          <Link
+            href={href}
+            target={href !== '#' ? '_blank' : null}
+            aria-label='Christian B Martinez | Project View Live Link'
+            className='inline-flex items-center font-medium text-zinc-800 transition duration-100 ease-in-out hover:text-purple-600 dark:text-zinc-50 dark:hover:text-purple-600'>
+            <FaLink className='ml-5 mt-4' />
+          </Link>
+        </div>
       </div>
     </div>
   )

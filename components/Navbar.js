@@ -274,7 +274,7 @@ const Navbar = () => {
               <motion.div
                 animate={nav ? 'open' : 'closed'}
                 variants={seventhVariant}>
-                <Socials style={'inline-flex'} />
+                <Socials />
               </motion.div>
             </div>
           </ul>

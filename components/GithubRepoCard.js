@@ -11,17 +11,7 @@ const GithubRepoCard = ({ latestRepo }) => {
         <h2 className='inline-flex items-center text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50'>
           {latestRepo.name}
         </h2>
-        <span className='mr-2 inline-flex items-center text-sm'>
-          <FaRegFileCode />
-          &nbsp;
-          {latestRepo.size / 1000} MB
-        </span>
-      </div>
-      <p className='my-6 font-light text-zinc-800 dark:text-zinc-100'>
-        {latestRepo.description}
-      </p>
-      <div className='flex items-center justify-between'>
-        <span className='mr-2 inline-flex items-center rounded-lg bg-gradient-to-r from-purple-600 to-pink-500 px-2.5 py-1.5 text-xs font-medium text-zinc-50'>
+        <span className='mr-2 inline-flex items-center rounded-lg bg-purple-600 px-2.5 py-1.5 text-xs font-medium text-zinc-50 dark:bg-gradient-to-r dark:from-purple-600 dark:to-pink-500'>
           <svg
             className='mr-1.5 h-2.5 w-2.5'
             aria-hidden='true'
@@ -31,6 +21,16 @@ const GithubRepoCard = ({ latestRepo }) => {
             <path d='M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm3.982 13.982a1 1 0 0 1-1.414 0l-3.274-3.274A1.012 1.012 0 0 1 9 10V6a1 1 0 0 1 2 0v3.586l2.982 2.982a1 1 0 0 1 0 1.414Z' />
           </svg>
           {`${dayjs(latestRepo.pushed_at).fromNow(true)} ago`}
+        </span>
+      </div>
+      <p className='my-6 font-light text-zinc-800 dark:text-zinc-100'>
+        {latestRepo.description}
+      </p>
+      <div className='flex items-center justify-between'>
+        <span className='mr-2 inline-flex items-center text-sm'>
+          <FaRegFileCode />
+          &nbsp;
+          {latestRepo.size / 1000} MB
         </span>
         <Link
           href={latestRepo.clone_url}

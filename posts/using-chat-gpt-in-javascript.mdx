@@ -2,7 +2,7 @@
 title: 'Using the Open AI npm package'
 date: 'Sept 18, 2023'
 description: 'How to use the open ai npm package in javascript.'
-author: Christian Martinez
+author: Christian
 type: Tutorial
 ---
 
@@ -65,10 +65,10 @@ openai.completions
     prompt: prompt,
     maxTokens: 5,
   })
-  .then((response) => {
+  .then(response => {
     console.log(response.data.choices[0].text)
   })
-  .catch((err) => {
+  .catch(err => {
     console.error(err)
   })
 ```

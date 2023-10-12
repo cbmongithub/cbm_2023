@@ -19,7 +19,13 @@ import {
 } from 'react-icons/si'
 import { motion } from 'framer-motion'
 
-import { SiteHead, Heading, GithubRepoCard, Socials } from '../components'
+import {
+  SiteHead,
+  Heading,
+  GithubRepoCard,
+  Socials,
+  Avatar,
+} from '../components'
 
 const About = () => {
   const [repos, setRepos] = useState()
@@ -57,30 +63,18 @@ const About = () => {
           className='mx-auto mt-52 flex flex-col items-center justify-center px-6 pb-20 lg:w-2/3'>
           <div className='flex min-w-0 flex-col break-words rounded-xl bg-white shadow-2xl dark:bg-slate-800'>
             <div className='px-6'>
-              <div className='flex flex-wrap justify-center'>
-                <div className='flex w-full justify-center px-4 lg:order-2 lg:w-2/3'>
-                  <div className='relative'>
-                    <motion.div
-                      initial={{ y: -100, opacity: 0 }}
-                      whileInView={{ y: 0, opacity: 1 }}
-                      transition={{
-                        type: 'spring',
-                        stiffness: 100,
-                        delay: 0.25,
-                      }}>
-                      <Image
-                        alt='Image of Christian B. Martinez'
-                        src={`${process.env.NEXT_PUBLIC_BASE_URL}/img/me.webp`}
-                        className='absolute -m-[136px] -ml-20 h-auto rounded-full border-none align-middle shadow-2xl lg:-ml-16'
-                        style={{ maxWidth: '150px' }}
-                        width={150}
-                        height={150}
-                        priority
-                      />
-                    </motion.div>
-                  </div>
-                </div>
-              </div>
+              <Avatar
+                className='relative mt-[-75px]'
+                initial={{ y: -100, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{
+                  type: 'spring',
+                  stiffness: 100,
+                  delay: 0.25,
+                }}
+                width='w-1/3 sm:w-1/4'
+                height='h-1/3 sm:h-1/4'
+              />
               <div className='mt-12 text-center'>
                 <h3 className='mb-2 text-4xl font-semibold leading-normal text-zinc-900 dark:text-zinc-50'>
                   Christian B. Martinez
@@ -100,7 +94,7 @@ const About = () => {
               </div>
               <div className='mt-10 border-t border-zinc-200 py-10 text-center dark:border-zinc-400'>
                 <div className='flex flex-wrap justify-center'>
-                  <div className='w-full px-4 lg:w-9/12'>
+                  <div className='w-full max-w-[600px] px-6'>
                     <p className='mb-4 text-lg leading-relaxed text-zinc-800 dark:text-zinc-200'>
                       Hey there, 🖐 I&apos;m Christian, a dedicated Full Stack
                       Web Developer from Utah. I am actively pursuing a full

@@ -77,23 +77,28 @@ const Post = ({ data, content, slug }) => {
           initial={{ x: -100, opacity: 0, duration: 1 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ type: 'spring', stiffness: 100, delay: 0.5 }}
-          className='mx-auto flex w-full max-w-screen-xl items-center justify-center p-4 text-center'>
-          <div className='flex space-x-3'>
-            <Image
-              className='h-7 w-7 rounded-full'
-              src={`${process.env.NEXT_PUBLIC_BASE_URL}/img/me.webp`}
-              alt='Christian B. Martinez Avatar'
-              width={28}
-              height={28}
-            />
+          className='mx-auto flex w-full max-w-screen-sm items-center justify-center p-4 text-center'>
+          <div className='flex w-1/12 justify-start align-middle'>
+            <div className='relative w-7'>
+              <Image
+                className='mx-auto h-7 w-7 rounded-full object-cover'
+                src={`${process.env.NEXT_PUBLIC_BASE_URL}/img/me.webp`}
+                alt='Christian Martinez Avatar'
+                width={28}
+                height={28}
+              />
+              <div className='dark:opacity-35 absolute inset-0 mx-auto h-7 w-7 rounded-full bg-purple-600 opacity-25 dark:bg-gradient-to-r dark:from-purple-600 dark:to-pink-500'></div>
+            </div>
+          </div>
+          <div className='flex w-2/12 justify-start align-middle'>
             <span className='font-medium text-zinc-800 dark:text-zinc-50'>
               {data.author}
             </span>
           </div>
-          <div className='hidden px-20 md:inline-flex'>
-            <Socials style='list-none inline-flex' />
+          <div className='hidden w-7/12 justify-center px-20 align-middle md:flex'>
+            <Socials style='list-none flex' />
           </div>
-          <div className='hidden md:ml-0 md:flex'>
+          <div className='hidden w-2/12 justify-end align-middle md:ml-0 md:flex'>
             <span className='font-medium text-zinc-800 dark:text-zinc-50'>
               {data.date}
             </span>
