@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import {
   FaMapPin,
@@ -20,10 +20,23 @@ import {
 import { motion } from 'framer-motion'
 
 import { SiteHead, Heading, GithubRepoCard, Socials } from '../components'
-import { getLatestRepos } from '../helpers'
 
-const About = ({ repositories }) => {
-  const [repos] = useState(repositories)
+const About = () => {
+  const [repos, setRepos] = useState()
+
+  useEffect(() => {
+    const fetchRepos = async () => {
+      const response = await fetch('/api/getLatestRepos', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+      const result = await response.json()
+      setRepos(result.json.items)
+    }
+    fetchRepos()
+  }, [])
   return (
     <>
       <SiteHead
@@ -248,7 +261,7 @@ const About = ({ repositories }) => {
             {repos &&
               repos.map((latestRepo, i) => (
                 <motion.div
-                  key={i}
+                  key={latestRepo.id}
                   initial={{
                     opacity: 0,
                     translateY: -100,
@@ -262,7 +275,7 @@ const About = ({ repositories }) => {
                   }}>
                   <GithubRepoCard
                     latestRepo={latestRepo}
-                    key={i}
+                    key={latestRepo.node_id}
                   />
                 </motion.div>
               ))}
@@ -271,17 +284,6 @@ const About = ({ repositories }) => {
       </section>
     </>
   )
-}
-
-export const getServerSideProps = async () => {
-  let token = process.env.GITHUB_AUTH_TOKEN
-
-  const repositories = await getLatestRepos(token)
-  return {
-    props: {
-      repositories,
-    },
-  }
 }
 
 export default About
