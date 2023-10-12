@@ -54,11 +54,11 @@ const PostCard = ({ title, date, description, author, type, slug }) => {
               width={28}
               height={28}
             />
-            <div className='dark:opacity-35 absolute inset-0 mx-auto h-7 w-7 rounded-full bg-purple-600 opacity-25 dark:bg-gradient-to-r dark:from-purple-600 dark:to-pink-500'></div>
+            <div className='absolute inset-0 mx-auto h-7 w-7 rounded-full bg-purple-600 opacity-25 dark:bg-gradient-to-r dark:from-purple-600 dark:to-pink-500 dark:opacity-35'></div>
           </div>
         </div>
         <div className='flex w-3/12 justify-start align-middle'>
-          <span className='ml-[-2px] font-medium text-zinc-800 dark:text-zinc-50 sm:ml-[-5px] md:ml-2 lg:ml-0'>
+          <span className='ml-1 font-medium text-zinc-800 dark:text-zinc-50'>
             {author}
           </span>
         </div>
