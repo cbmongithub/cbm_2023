@@ -26,8 +26,6 @@ const Index = () => {
                 initial={{ x: 100, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ type: 'spring', stiffness: 100, delay: 1 }}
-                width='w-1/2'
-                height='h-1/2'
               />
               <div className='mt-12 lg:mt-0'>
                 <motion.div
