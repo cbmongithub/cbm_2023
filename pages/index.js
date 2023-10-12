@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { TypeAnimation } from 'react-type-animation'
 
-import { SiteHead, Background } from '../components'
+import { SiteHead, Background, Avatar } from '../components'
 
 const Index = () => {
   return (
@@ -22,6 +22,14 @@ const Index = () => {
         <div className='absolute top-0 z-30 flex h-full w-full flex-row items-center justify-center bg-transparent px-6 py-12 text-center md:px-12 lg:text-left'>
           <div className='container mx-auto xl:px-32'>
             <div className='grid items-center gap-12 lg:grid-cols-2'>
+              <Avatar
+                className='relative flex-col items-center justify-center lg:hidden'
+                initial={{ x: 100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ type: 'spring', stiffness: 100, delay: 1 }}
+                width='w-1/2'
+                height='h-1/2'
+              />
               <div className='mt-12 lg:mt-0'>
                 <motion.div
                   initial={{ x: -100, opacity: 0 }}
@@ -70,21 +78,12 @@ const Index = () => {
                   </Link>
                 </motion.div>
               </div>
-              <div className='mb-12 flex flex-col items-center justify-center lg:mb-0'>
-                <motion.div
-                  initial={{ x: 100, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ type: 'spring', stiffness: 100, delay: 1 }}>
-                  <Image
-                    src={`${process.env.NEXT_PUBLIC_BASE_URL}/img/me.webp`}
-                    priority
-                    alt='Image of Christian B. Martinez'
-                    width={400}
-                    height={400}
-                    className='mx-auto h-1/2 w-1/2 rounded-full shadow-2xl dark:grayscale md:h-2/3 md:w-2/3'
-                  />
-                </motion.div>
-              </div>
+              <Avatar
+                className='relative mb-0 hidden flex-col items-center justify-center lg:flex'
+                initial={{ x: 100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ type: 'spring', stiffness: 100, delay: 1 }}
+              />
             </div>
           </div>
         </div>

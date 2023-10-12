@@ -4,7 +4,7 @@ import { FaSquareXTwitter } from 'react-icons/fa6'
 
 import { socialLinks } from '../constants'
 
-const Socials = ({ style }) => {
+const Socials = ({ style = 'inline-flex' }) => {
   return (
     <ul className={`${style} text-purple-600`}>
       <li className='px-5 text-purple-600 transition duration-150 ease-in-out hover:text-pink-500'>
