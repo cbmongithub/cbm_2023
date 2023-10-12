@@ -21,7 +21,7 @@ const PortfolioCard = ({
         <div className='flex h-full w-full items-center justify-center bg-purple-600 opacity-60 dark:bg-gradient-to-r dark:from-purple-600 dark:to-pink-500'></div>
       </div>
       <div className='flex h-full w-full flex-col justify-center rounded-lg bg-gradient-to-r from-purple-600 to-pink-500 opacity-60 transition duration-300 ease-in-out hover:opacity-90 hover:shadow-2xl'></div>
-      <div className='p-4'>
+      <div className='p-6'>
         <h1 className='text-xl font-bold text-zinc-900 dark:text-zinc-50'>
           {title}
         </h1>
