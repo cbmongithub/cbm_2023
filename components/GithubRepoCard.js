@@ -21,7 +21,7 @@ const GithubRepoCard = ({ latestRepo }) => {
         {latestRepo.description}
       </p>
       <div className='flex items-center justify-between'>
-        <span className='mr-2 inline-flex items-center rounded-lg bg-gradient-to-r from-purple-600 to-pink-500 px-2.5 py-1.5 text-xs font-medium text-zinc-50'>
+        <span className='mr-2 inline-flex items-center rounded-lg bg-purple-600 px-2.5 py-1.5 text-xs font-medium text-zinc-50 dark:bg-gradient-to-r dark:from-purple-600 dark:to-pink-500'>
           <svg
             className='mr-1.5 h-2.5 w-2.5'
             aria-hidden='true'
