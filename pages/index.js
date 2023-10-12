@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import Image from 'next/image'
 import { TypeAnimation } from 'react-type-animation'
 
 import { SiteHead, Background, Avatar } from '../components'
