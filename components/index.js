@@ -11,6 +11,7 @@ import PortfolioCard from './PortfolioCard'
 import PostCard from './PostCard'
 import SiteHead from './SiteHead'
 import Socials from './Socials'
+import ToolTip from './ToolTip'
 
 export {
   Avatar,
@@ -26,4 +27,5 @@ export {
   PostCard,
   SiteHead,
   Socials,
+  ToolTip,
 }
