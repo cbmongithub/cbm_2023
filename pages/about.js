@@ -458,6 +458,7 @@ const About = () => {
                   role={experience.role}
                   from={experience.from}
                   to={experience.to}
+                  accomplishments={experience.accomplishments}
                 />
               </motion.div>
             ))}

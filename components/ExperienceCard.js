@@ -1,7 +1,15 @@
 import Image from 'next/image'
 
-const ExperienceCard = ({ src, company, type, role, from, to }) => (
-  <div className='rounded-xl border border-zinc-300 p-5 dark:border-zinc-600'>
+const ExperienceCard = ({
+  src,
+  company,
+  type,
+  role,
+  from,
+  to,
+  accomplishments,
+}) => (
+  <div className='rounded-xl bg-white p-5 shadow-2xl dark:bg-slate-800'>
     <ol className='space-y-4'>
       <li className='flex gap-4'>
         <div className='flex h-10 w-10 items-center justify-center rounded-full'>
@@ -36,6 +44,14 @@ const ExperienceCard = ({ src, company, type, role, from, to }) => (
             <time dateTime={to}>{to}</time>
           </dd>
         </dl>
+      </li>
+      <li className='justify-left flex items-start align-middle md:h-44 md:items-center md:justify-center lg:h-48'>
+        <dt className='sr-only'>Accomplishments</dt>
+        <dd className='text-xs leading-5 text-zinc-500 dark:text-zinc-400'>
+          {accomplishments.map(accomplishment => (
+            <p key={accomplishment}>• {accomplishment}</p>
+          ))}
+        </dd>
       </li>
     </ol>
   </div>
