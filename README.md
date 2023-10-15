@@ -8,6 +8,7 @@ Portfolio website for Christian B. Martinez 2023
 # Built with
 
 - React
+- Axios
 - Next JS
 - Next themes
 - Tailwind CSS

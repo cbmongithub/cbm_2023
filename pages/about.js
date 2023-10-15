@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import Image from 'next/image'
 import {
   FaMapPin,
   FaBriefcase,
@@ -8,14 +7,22 @@ import {
   FaBootstrap,
   FaNodeJs,
 } from 'react-icons/fa'
-import { AiFillHtml5 } from 'react-icons/ai'
+import { AiFillGithub, AiFillSlackCircle } from 'react-icons/ai'
 import { IoLogoJavascript } from 'react-icons/io'
 import {
   SiTailwindcss,
-  SiCss3,
+  SiMysql,
+  SiTypescript,
   SiNextdotjs,
+  SiInsomnia,
+  SiAdobephotoshop,
+  SiAdobeillustrator,
+  SiZoom,
   SiMongodb,
   SiExpress,
+  SiVisualstudiocode,
+  SiHeroku,
+  SiNetlify,
 } from 'react-icons/si'
 import { motion } from 'framer-motion'
 
@@ -25,6 +32,7 @@ import {
   GithubRepoCard,
   Socials,
   Avatar,
+  ToolTip,
 } from '../components'
 
 const About = () => {
@@ -120,129 +128,305 @@ const About = () => {
         </motion.div>
 
         <Heading
-          title='Skills'
-          paragraph='Tech stacks where i am most proficient'
+          title='Stack'
+          paragraph='Languages and frameworks that I use'
         />
-        <div className='mx-auto mb-40 mt-20 flex max-w-screen-xl flex-row flex-wrap items-center justify-center px-4 py-8 lg:px-6 lg:py-16'>
-          <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{
-              type: 'spring',
-              stiffness: 100,
-            }}>
-            <div className='m-3 rounded-full bg-yellow-500 p-2 shadow-xl'>
+        <div className='mx-auto mb-40 mt-20 flex max-w-screen-xl flex-row flex-wrap items-center justify-center px-4 py-8 lg:px-6'>
+          <ToolTip text='JavaScript'>
+            <motion.div
+              className='m-3 rounded-full bg-blue-600 p-2 shadow-xl'
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{
+                type: 'spring',
+                stiffness: 100,
+              }}>
               <IoLogoJavascript className='h-7 w-7 text-white' />
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{
-              type: 'spring',
-              stiffness: 100,
-              delay: 0.1,
-            }}>
-            <div className='m-3 rounded-full bg-orange-600 p-2 shadow-xl'>
-              <AiFillHtml5 className='h-7 w-7 text-white' />
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{
-              type: 'spring',
-              stiffness: 100,
-              delay: 0.2,
-            }}>
-            <div className='m-3 rounded-full bg-blue-600 p-2 shadow-xl'>
-              <SiCss3 className='h-7 w-7 text-white' />
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{
-              type: 'spring',
-              stiffness: 100,
-              delay: 0.3,
-            }}>
-            <div className='m-3 rounded-full bg-zinc-600 p-2 shadow-xl'>
+            </motion.div>
+          </ToolTip>
+          <ToolTip
+            text='MySQL'
+            align='left-1'>
+            <motion.div
+              className='m-3 rounded-full bg-blue-600 p-2 shadow-xl'
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{
+                type: 'spring',
+                stiffness: 100,
+                delay: 0.1,
+              }}>
+              <SiMysql className='h-7 w-7 text-white' />
+            </motion.div>
+          </ToolTip>
+          <ToolTip
+            text='TypeScript'
+            align='-left-2'>
+            <motion.div
+              className='m-3 rounded-full bg-blue-600 p-2 shadow-xl'
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{
+                type: 'spring',
+                stiffness: 100,
+                delay: 0.2,
+              }}>
+              <SiTypescript className='h-7 w-7 text-white' />
+            </motion.div>
+          </ToolTip>
+          <ToolTip
+            text='React'
+            align='left-2'>
+            <motion.div
+              className='m-3 rounded-full bg-zinc-600 p-2 shadow-xl'
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{
+                type: 'spring',
+                stiffness: 100,
+                delay: 0.3,
+              }}>
               <FaReact className='h-7 w-7 text-sky-400' />
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{
-              type: 'spring',
-              stiffness: 100,
-              delay: 0.4,
-            }}>
-            <div className='m-3 rounded-full bg-purple-600 p-2 shadow-xl'>
+            </motion.div>
+          </ToolTip>
+          <ToolTip
+            text='Bootstrap'
+            align='-right-1'>
+            <motion.div
+              className='m-3 rounded-full bg-purple-600 p-2 shadow-xl'
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{
+                type: 'spring',
+                stiffness: 100,
+                delay: 0.4,
+              }}>
               <FaBootstrap className='h-7 w-7 text-white' />
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{
-              type: 'spring',
-              stiffness: 100,
-              delay: 0.5,
-            }}>
-            <div className='m-3 rounded-full bg-lime-600 p-2 shadow-xl'>
+            </motion.div>
+          </ToolTip>
+          <ToolTip
+            text='NodeJS'
+            align='-right-0'>
+            <motion.div
+              className='m-3 rounded-full bg-lime-600 p-2 shadow-xl'
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{
+                type: 'spring',
+                stiffness: 100,
+                delay: 0.5,
+              }}>
               <FaNodeJs className='h-7 w-7 text-white' />
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{
-              type: 'spring',
-              stiffness: 100,
-              delay: 0.6,
-            }}>
-            <div className='m-3 rounded-full bg-sky-400 p-2 shadow-xl'>
+            </motion.div>
+          </ToolTip>
+          <ToolTip
+            text='TailwindCSS'
+            align='-right-3'>
+            <motion.div
+              className='m-3 rounded-full bg-sky-400 p-2 shadow-xl'
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{
+                type: 'spring',
+                stiffness: 100,
+                delay: 0.6,
+              }}>
               <SiTailwindcss className='h-7 w-7 text-white' />
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{
-              type: 'spring',
-              stiffness: 100,
-              delay: 0.7,
-            }}>
-            <div className='m-3 rounded-full bg-zinc-600 p-2 shadow-xl'>
+            </motion.div>
+          </ToolTip>
+          <ToolTip
+            text='NextJS'
+            align='right-1'>
+            <motion.div
+              className='m-3 rounded-full bg-zinc-600 p-2 shadow-xl'
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{
+                type: 'spring',
+                stiffness: 100,
+                delay: 0.7,
+              }}>
               <SiNextdotjs className='h-7 w-7 text-white' />
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{
-              type: 'spring',
-              stiffness: 100,
-              delay: 0.8,
-            }}>
-            <div className='m-3 rounded-full bg-green-600 p-2 shadow-xl'>
+            </motion.div>
+          </ToolTip>
+          <ToolTip
+            text='MongoDB'
+            align='-right-2'>
+            <motion.div
+              className='m-3 rounded-full bg-green-600 p-2 shadow-xl'
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{
+                type: 'spring',
+                stiffness: 100,
+                delay: 0.8,
+              }}>
               <SiMongodb className='h-7 w-7 text-white' />
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{
-              type: 'spring',
-              stiffness: 100,
-              delay: 0.9,
-            }}>
-            <div className='m-3 rounded-full bg-gray-500 p-2 shadow-xl'>
+            </motion.div>
+          </ToolTip>
+          <ToolTip text='ExpressJS'>
+            <motion.div
+              className='m-3 rounded-full bg-gray-500 p-2 shadow-xl'
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{
+                type: 'spring',
+                stiffness: 100,
+                delay: 0.9,
+              }}>
               <SiExpress className='h-7 w-7 text-white' />
-            </div>
-          </motion.div>
+            </motion.div>
+          </ToolTip>
+        </div>
+
+        <Heading
+          title='Tools'
+          paragraph='Some of the tools I use to get the job done'
+        />
+        <div className='mx-auto mb-40 mt-20 flex max-w-screen-xl flex-row flex-wrap items-center justify-center px-4 py-8 lg:px-6'>
+          <ToolTip
+            text='VSCode'
+            align='right-1'>
+            <motion.div
+              className='m-3 rounded-full bg-slate-700 p-2 shadow-xl'
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{
+                type: 'spring',
+                stiffness: 100,
+                delay: 0.9,
+              }}>
+              <SiVisualstudiocode className='h-7 w-7 text-blue-500' />
+            </motion.div>
+          </ToolTip>
+          <ToolTip
+            text='Git/GitHub'
+            align='-left-3'>
+            <motion.div
+              className='m-3 rounded-full bg-black p-2 shadow-xl'
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{
+                type: 'spring',
+                stiffness: 100,
+                delay: 0.8,
+              }}>
+              <AiFillGithub className='h-7 w-7 text-white' />
+            </motion.div>
+          </ToolTip>
+          <ToolTip text='Compass'>
+            <motion.div
+              className='m-3 rounded-full bg-green-600 p-2 shadow-xl'
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{
+                type: 'spring',
+                stiffness: 100,
+                delay: 0.7,
+              }}>
+              <SiMongodb className='h-7 w-7 text-white' />
+            </motion.div>
+          </ToolTip>
+          <ToolTip text='Insomnia'>
+            <motion.div
+              className='m-3 rounded-full bg-purple-700 p-2 shadow-xl'
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{
+                type: 'spring',
+                stiffness: 100,
+                delay: 0.6,
+              }}>
+              <SiInsomnia className='h-7 w-7 text-white' />
+            </motion.div>
+          </ToolTip>
+          <ToolTip text='Illustrator'>
+            <motion.div
+              className='m-3 rounded-full bg-yellow-900 p-2 shadow-xl'
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{
+                type: 'spring',
+                stiffness: 100,
+                delay: 0.5,
+              }}>
+              <SiAdobeillustrator className='h-7 w-7 text-yellow-600' />
+            </motion.div>
+          </ToolTip>
+          <ToolTip
+            text='Photoshop'
+            align='-left-2'>
+            <motion.div
+              className='m-3 rounded-full bg-sky-400 p-2 shadow-xl'
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{
+                type: 'spring',
+                stiffness: 100,
+                delay: 0.4,
+              }}>
+              <SiAdobephotoshop className='h-7 w-7 text-indigo-800' />
+            </motion.div>
+          </ToolTip>
+          <ToolTip
+            text='Zoom'
+            align='left-2'>
+            <motion.div
+              className='m-3 rounded-full bg-blue-500 p-2 shadow-xl'
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{
+                type: 'spring',
+                stiffness: 100,
+                delay: 0.3,
+              }}>
+              <SiZoom className='h-7 w-7 text-white' />
+            </motion.div>
+          </ToolTip>
+          <ToolTip
+            text='Slack'
+            align='left-2.5'>
+            <motion.div
+              className='m-3 rounded-full bg-zinc-700 p-2 shadow-xl'
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{
+                type: 'spring',
+                stiffness: 100,
+                delay: 0.2,
+              }}>
+              <AiFillSlackCircle className='h-7 w-7 text-white' />
+            </motion.div>
+          </ToolTip>
+          <ToolTip
+            text='Netlify'
+            align='left-1'>
+            <motion.div
+              className='m-3 rounded-full bg-teal-500 p-2 shadow-xl'
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{
+                type: 'spring',
+                stiffness: 100,
+                delay: 0.1,
+              }}>
+              <SiNetlify className='h-7 w-7 text-white' />
+            </motion.div>
+          </ToolTip>
+          <ToolTip
+            text='Heroku'
+            align='left-0.5'>
+            <motion.div
+              className='m-3 rounded-full bg-purple-600/80 p-2 shadow-xl'
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{
+                type: 'spring',
+                stiffness: 100,
+              }}>
+              <SiHeroku className='h-7 w-7 text-white' />
+            </motion.div>
+          </ToolTip>
         </div>
 
         <Heading
