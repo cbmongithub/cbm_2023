@@ -1,3 +1,49 @@
+const experienceData = [
+  {
+    src: '/img/mixdlogo.png',
+    company: 'Mixdlabs',
+    type: 'Full-Time',
+    role: 'Chief Technology Officer',
+    from: '2015',
+    to: '2020',
+    accomplishments: [
+      'Created a bespoke Shopify theme tailored to specific project requirements.',
+      'Developed a wholesale portal for our retail clients which resulted in a $140,000 increase in annual revenue.',
+      'Optimized page load speeds and SEO which lead to a 36% increase in organic traffic.',
+      'Learned the liquid templating language which is prevalent in the Shopify ecosystem.',
+    ],
+  },
+  {
+    src: '/img/mmbclogo.png',
+    company: 'MMBC',
+    type: 'Contract',
+    role: 'Web Developer',
+    from: '2020',
+    to: 'Present',
+    accomplishments: [
+      'Built a lightning-fast single page application with React and Tailwind CSS.',
+      'Increased website inquiries from 2% to 18% month over month.',
+      'Achieved 99.9% uptime by deploying to google cloud.',
+      'Demonstrated expertise in responsive design, accessibility, and mobile optimization.',
+      'Continuously updated skills and knowledge to stay at the forefront of web development trends.',
+    ],
+  },
+  {
+    src: '/img/nglogo.jpg',
+    company: 'Northrop Grumman',
+    type: 'Full-Time',
+    role: 'Technician',
+    from: '2021',
+    to: 'Present',
+    accomplishments: [
+      'Proficiently diagnosed and resolved issues in legacy computer applications.',
+      'Manufactured composite components for the Airbus A400M aircraft using proprietary machinery.',
+      'Collaborated with System Engineers, providing valuable feedback on software enhancements.',
+      'Operated sophisticated Airbus computer systems to ensure parts maintain quality and consistency. ',
+    ],
+  },
+]
+
 const svgPathVariant1 = {
   open: { d: 'M3.06061 2.99999L21.0606 21' },
   closed: { d: 'M0 9.5L24 9.5' },
@@ -203,6 +249,7 @@ const portfolioData = [
 ]
 
 export {
+  experienceData,
   socialLinks,
   portfolioData,
   svgPathVariant1,
