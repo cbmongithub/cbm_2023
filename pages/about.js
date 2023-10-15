@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import {
   FaMapPin,
@@ -24,8 +25,8 @@ import {
   SiHeroku,
   SiNetlify,
 } from 'react-icons/si'
-import { motion } from 'framer-motion'
 
+import { experienceData } from '../constants'
 import {
   SiteHead,
   Heading,
@@ -33,6 +34,7 @@ import {
   Socials,
   Avatar,
   ToolTip,
+  ExperienceCard,
 } from '../components'
 
 const About = () => {
@@ -69,7 +71,7 @@ const About = () => {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ type: 'spring', stiffness: 100, delay: 1 }}
           className='mx-auto mt-52 flex flex-col items-center justify-center px-6 pb-20 lg:w-2/3'>
-          <div className='flex min-w-0 flex-col break-words rounded-xl bg-white shadow-2xl dark:bg-slate-800'>
+          <div className='flex min-w-0 flex-col break-words rounded-xl bg-white shadow-xl dark:bg-slate-800'>
             <div className='px-6'>
               <Avatar
                 className='relative mt-[-75px]'
@@ -102,7 +104,7 @@ const About = () => {
               </div>
               <div className='mt-10 border-t border-zinc-200 py-10 text-center dark:border-zinc-400'>
                 <div className='flex flex-wrap justify-center'>
-                  <div className='w-full max-w-[600px] px-6'>
+                  <div className='w-full max-w-[600px] px-4'>
                     <p className='mb-4 text-lg leading-relaxed text-zinc-800 dark:text-zinc-200'>
                       Hey there, 🖐 I&apos;m Christian, a dedicated Full Stack
                       Web Developer from Utah. I am actively pursuing a full
@@ -430,10 +432,42 @@ const About = () => {
         </div>
 
         <Heading
-          title='Latest Repos'
-          paragraph={`View my latest six pushes to Github`}
+          title='Experience'
+          paragraph='Past and present roles'
         />
+        <div className='relative mx-auto max-w-screen-xl px-4 py-8 pb-20 lg:px-6 lg:py-16'>
+          <div className='grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-3'>
+            {experienceData.map((experience, i) => (
+              <motion.div
+                key={experience.company}
+                initial={{
+                  opacity: 0,
+                  translateY: -100,
+                }}
+                whileInView={{ opacity: 1, translateY: 0 }}
+                transition={{
+                  type: 'spring',
+                  stiffness: 100,
+                  duration: 1.5,
+                  delay: 0.5 * i + 0.5,
+                }}>
+                <ExperienceCard
+                  src={experience.src}
+                  company={experience.company}
+                  type={experience.type}
+                  role={experience.role}
+                  from={experience.from}
+                  to={experience.to}
+                />
+              </motion.div>
+            ))}
+          </div>
+        </div>
 
+        <Heading
+          title='Latest Projects'
+          paragraph={`View my latest projects on Github`}
+        />
         <div className='mx-auto max-w-screen-xl px-4 py-8 pb-20 lg:px-6 lg:py-16'>
           <div className='grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-3'>
             {repos &&

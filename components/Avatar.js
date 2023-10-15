@@ -20,13 +20,14 @@ const Avatar = ({
     <Image
       src={`${process.env.NEXT_PUBLIC_BASE_URL}/img/me.webp`}
       priority
+      loading='eager'
       alt='Image of Christian B. Martinez'
       width={400}
       height={400}
       className={`mx-auto ${height} ${width} rounded-full object-cover ${shadow}`}
     />
     <div
-      className={`absolute inset-0 mx-auto h-full ${width} dark:opacity-35 rounded-full bg-purple-600 opacity-25 dark:bg-gradient-to-r dark:from-purple-600 dark:to-pink-500`}></div>
+      className={`absolute inset-0 mx-auto h-full ${width} rounded-full bg-purple-600 opacity-25 dark:bg-gradient-to-r dark:from-purple-600 dark:to-pink-500 dark:opacity-35`}></div>
   </motion.div>
 )
 

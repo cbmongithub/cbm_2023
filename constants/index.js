@@ -1,3 +1,30 @@
+const experienceData = [
+  {
+    src: '/img/mixdlogo.png',
+    company: 'Mixdlabs',
+    type: 'Full-Time',
+    role: 'CTO',
+    from: '2015',
+    to: '2020',
+  },
+  {
+    src: '/img/mmbclogo.png',
+    company: 'MMBC',
+    type: 'Contract',
+    role: 'Web Developer',
+    from: '2020',
+    to: 'Present',
+  },
+  {
+    src: '/img/nglogo.jpg',
+    company: 'Northrop Grumman',
+    type: 'Full-Time',
+    role: 'Technician',
+    from: '2021',
+    to: 'Present',
+  },
+]
+
 const svgPathVariant1 = {
   open: { d: 'M3.06061 2.99999L21.0606 21' },
   closed: { d: 'M0 9.5L24 9.5' },
@@ -203,6 +230,7 @@ const portfolioData = [
 ]
 
 export {
+  experienceData,
   socialLinks,
   portfolioData,
   svgPathVariant1,

@@ -1,6 +1,7 @@
 import Avatar from './Avatar'
 import Background from './Background'
 import ChatWidget from './ChatWidget'
+import ExperienceCard from './ExperienceCard'
 import Footer from './Footer'
 import GithubRepoCard from './GithubRepoCard'
 import Heading from './Heading'
@@ -17,6 +18,7 @@ export {
   Avatar,
   Background,
   ChatWidget,
+  ExperienceCard,
   Footer,
   GithubRepoCard,
   Heading,
