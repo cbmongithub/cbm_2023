@@ -294,6 +294,7 @@ const About = () => {
               transition={{
                 type: 'spring',
                 stiffness: 100,
+                delay: 0.9,
               }}>
               <SiVisualstudiocode className='h-7 w-7 text-blue-500' />
             </motion.div>
@@ -308,7 +309,7 @@ const About = () => {
               transition={{
                 type: 'spring',
                 stiffness: 100,
-                delay: 0.1,
+                delay: 0.8,
               }}>
               <AiFillGithub className='h-7 w-7 text-white' />
             </motion.div>
@@ -321,7 +322,7 @@ const About = () => {
               transition={{
                 type: 'spring',
                 stiffness: 100,
-                delay: 0.2,
+                delay: 0.7,
               }}>
               <SiMongodb className='h-7 w-7 text-white' />
             </motion.div>
@@ -334,7 +335,7 @@ const About = () => {
               transition={{
                 type: 'spring',
                 stiffness: 100,
-                delay: 0.3,
+                delay: 0.6,
               }}>
               <SiInsomnia className='h-7 w-7 text-white' />
             </motion.div>
@@ -347,7 +348,7 @@ const About = () => {
               transition={{
                 type: 'spring',
                 stiffness: 100,
-                delay: 0.4,
+                delay: 0.5,
               }}>
               <SiAdobeillustrator className='h-7 w-7 text-yellow-600' />
             </motion.div>
@@ -362,7 +363,7 @@ const About = () => {
               transition={{
                 type: 'spring',
                 stiffness: 100,
-                delay: 0.5,
+                delay: 0.4,
               }}>
               <SiAdobephotoshop className='h-7 w-7 text-indigo-800' />
             </motion.div>
@@ -377,7 +378,7 @@ const About = () => {
               transition={{
                 type: 'spring',
                 stiffness: 100,
-                delay: 0.6,
+                delay: 0.3,
               }}>
               <SiZoom className='h-7 w-7 text-white' />
             </motion.div>
@@ -392,7 +393,7 @@ const About = () => {
               transition={{
                 type: 'spring',
                 stiffness: 100,
-                delay: 0.7,
+                delay: 0.2,
               }}>
               <AiFillSlackCircle className='h-7 w-7 text-white' />
             </motion.div>
@@ -407,7 +408,7 @@ const About = () => {
               transition={{
                 type: 'spring',
                 stiffness: 100,
-                delay: 0.8,
+                delay: 0.1,
               }}>
               <SiNetlify className='h-7 w-7 text-white' />
             </motion.div>
@@ -422,7 +423,6 @@ const About = () => {
               transition={{
                 type: 'spring',
                 stiffness: 100,
-                delay: 0.9,
               }}>
               <SiHeroku className='h-7 w-7 text-white' />
             </motion.div>
