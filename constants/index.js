@@ -3,7 +3,7 @@ const experienceData = [
     src: '/img/mixdlogo.png',
     company: 'Mixdlabs',
     type: 'Full-Time',
-    role: 'CTO',
+    role: 'Chief Technology Officer',
     from: '2015',
     to: '2020',
   },

@@ -31,9 +31,9 @@ const ExperienceCard = ({ src, company, type, role, from, to }) => (
           <dd
             className='ml-auto text-xs text-zinc-500 dark:text-zinc-400'
             aria-label={`${from} until ${to}`}>
-            <time datetime={from}>{from}</time>
+            <time dateTime={from}>{from}</time>
             <span aria-hidden='true'>—</span>
-            <time datetime={to}>{to}</time>
+            <time dateTime={to}>{to}</time>
           </dd>
         </dl>
       </li>
