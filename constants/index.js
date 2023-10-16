@@ -14,7 +14,7 @@ const experienceData = [
     ],
   },
   {
-    src: '/img/mmbclogo.png',
+    src: '/img/mmbclogo.jpg',
     company: 'MMBC',
     type: 'Contract',
     role: 'Web Developer',
