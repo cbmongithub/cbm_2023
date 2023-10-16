@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
 import { useTheme } from 'next-themes'
 import { FaMoon, FaSun } from 'react-icons/fa'
 import Link from 'next/link'
@@ -26,6 +27,7 @@ const useLoaded = () => {
 const Navbar = () => {
   const { systemTheme, theme, setTheme } = useTheme()
   const currentTheme = theme === 'system' ? systemTheme : theme
+  const router = useRouter()
   const [isOn, setIsOn] = useState(false)
   const [nav, setNav] = useState(false)
   const [animation, setAnimation] = useState('closed')
@@ -42,11 +44,17 @@ const Navbar = () => {
   const handleNav = () => {
     setNav(!nav)
     setAnimation('moving')
+    document.querySelector('body').style.overflowY = nav ? 'auto' : 'hidden'
     setTimeout(() => {
       setAnimation(animation === 'closed' ? 'open' : 'closed')
     }, 500)
-    document.querySelector('body').style.overflow = nav ? 'auto' : 'hidden'
   }
+
+  useEffect(() => {
+    router.pathname === '/'
+      ? (document.querySelector('body').style.overflowY = 'hidden')
+      : (document.querySelector('body').style.overflowY = 'auto')
+  }, [router.pathname])
 
   return (
     <>
@@ -141,9 +149,7 @@ const Navbar = () => {
                 <motion.div
                   layout
                   className='handle'>
-                  <AnimatePresence
-                    mode='sync'
-                    initial={false}>
+                  <AnimatePresence initial={false}>
                     <motion.i
                       initial={{ y: -30, opacity: 0 }}
                       animate={{ y: 0, opacity: 1 }}

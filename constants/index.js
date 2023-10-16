@@ -56,7 +56,7 @@ const svgPathVariant2 = {
 
 const firstVariant = {
   open: {
-    y: 0,
+    x: 0,
     opacity: 1,
     transition: {
       type: 'spring',
@@ -64,7 +64,7 @@ const firstVariant = {
       delay: 0.07142857142,
     },
   },
-  closed: { y: -300, opacity: 0 },
+  closed: { x: -300, opacity: 0 },
 }
 const secondVariant = {
   open: {
@@ -133,7 +133,7 @@ const sixthVariant = {
 
 const seventhVariant = {
   open: {
-    y: 0,
+    x: 0,
     opacity: 1,
     transition: {
       type: 'spring',
@@ -141,7 +141,7 @@ const seventhVariant = {
       delay: 0.5,
     },
   },
-  closed: { y: 300, opacity: 0 },
+  closed: { x: -300, opacity: 0 },
 }
 
 const socialLinks = {

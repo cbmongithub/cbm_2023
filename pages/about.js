@@ -130,6 +130,40 @@ const About = () => {
         </motion.div>
 
         <Heading
+          title='Experience'
+          paragraph='Past and present roles'
+        />
+        <div className='relative mx-auto max-w-screen-xl px-4 py-8 pb-20 lg:px-6 lg:py-16'>
+          <div className='grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-3'>
+            {experienceData.map((experience, i) => (
+              <motion.div
+                key={experience.company}
+                initial={{
+                  opacity: 0,
+                  translateY: -100,
+                }}
+                whileInView={{ opacity: 1, translateY: 0 }}
+                transition={{
+                  type: 'spring',
+                  stiffness: 100,
+                  duration: 1.5,
+                  delay: 0.5 * i + 0.5,
+                }}>
+                <ExperienceCard
+                  src={experience.src}
+                  company={experience.company}
+                  type={experience.type}
+                  role={experience.role}
+                  from={experience.from}
+                  to={experience.to}
+                  accomplishments={experience.accomplishments}
+                />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        <Heading
           title='Stack'
           paragraph='Preferred languages and frameworks'
         />
@@ -436,42 +470,8 @@ const About = () => {
         </div>
 
         <Heading
-          title='Experience'
-          paragraph='Past and present roles'
-        />
-        <div className='relative mx-auto max-w-screen-xl px-4 py-8 pb-20 lg:px-6 lg:py-16'>
-          <div className='grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-3'>
-            {experienceData.map((experience, i) => (
-              <motion.div
-                key={experience.company}
-                initial={{
-                  opacity: 0,
-                  translateY: -100,
-                }}
-                whileInView={{ opacity: 1, translateY: 0 }}
-                transition={{
-                  type: 'spring',
-                  stiffness: 100,
-                  duration: 1.5,
-                  delay: 0.5 * i + 0.5,
-                }}>
-                <ExperienceCard
-                  src={experience.src}
-                  company={experience.company}
-                  type={experience.type}
-                  role={experience.role}
-                  from={experience.from}
-                  to={experience.to}
-                  accomplishments={experience.accomplishments}
-                />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        <Heading
-          title='Latest Projects'
-          paragraph={`View my latest projects on Github`}
+          title='Latest Repos'
+          paragraph={`View my latest repos on Github`}
         />
         <div className='mx-auto max-w-screen-xl px-4 py-8 pb-20 lg:px-6 lg:py-16'>
           <div className='grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-3'>

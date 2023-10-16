@@ -11,7 +11,6 @@ import ChatWidget from './ChatWidget'
 const variants = {
   inactive: {
     opacity: 1,
-    y: 0,
     transition: {
       duration: 0.5,
       ease: 'easeInOut',
@@ -20,7 +19,6 @@ const variants = {
     },
   },
   in: {
-    y: 300,
     opacity: 0,
     transition: {
       duration: 0.5,
@@ -29,7 +27,6 @@ const variants = {
   },
   out: {
     opacity: 0,
-    y: -300,
     transition: {
       duration: 0.5,
       ease: 'easeInOut',
@@ -74,33 +71,31 @@ const Layout = ({ children }) => {
   }, [router.events])
 
   return (
-    <>
-      <ThemeProvider attribute='class'>
-        <AnimatePresence
-          initial={false}
-          mode='wait'>
-          <motion.div
-            key={asPath}
-            variants={variants}
-            initial='in'
-            animate='inactive'
-            exit='out'>
-            {loading ? (
-              <Loader />
-            ) : (
-              <>
-                <main className='z-0 min-h-screen bg-zinc-50 dark:bg-slate-900'>
-                  <Navbar />
-                  {children}
-                </main>
-                {isDisabled ? null : <Footer />}
-              </>
-            )}
-          </motion.div>
-          <ChatWidget />
-        </AnimatePresence>
-      </ThemeProvider>
-    </>
+    <ThemeProvider attribute='class'>
+      <AnimatePresence
+        initial={false}
+        mode='wait'>
+        <motion.div
+          key={asPath}
+          variants={variants}
+          initial='in'
+          animate='inactive'
+          exit='out'>
+          {loading ? (
+            <Loader />
+          ) : (
+            <>
+              <main className='z-0 min-h-screen bg-zinc-50 dark:bg-slate-900'>
+                <Navbar />
+                {children}
+              </main>
+              {isDisabled ? null : <Footer />}
+            </>
+          )}
+        </motion.div>
+        <ChatWidget />
+      </AnimatePresence>
+    </ThemeProvider>
   )
 }
 
