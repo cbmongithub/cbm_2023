@@ -16,7 +16,7 @@ const GithubRepoCard = ({ latestRepo }) => {
         <ToolTip
           text={`Created ${dayjs(latestRepo.created_at).format('MM/DD/YYYY')}`}
           align='-right-5'
-          top='-top-12'>
+          top='-top-9'>
           <span className='inline-flex items-center rounded-lg bg-purple-600 px-2.5 pb-2 pt-1.5 text-xs font-medium text-zinc-50 dark:bg-gradient-to-r dark:from-purple-600 dark:to-pink-500'>
             <svg
               className='mr-1.5 h-2.5 w-2.5'
@@ -30,11 +30,11 @@ const GithubRepoCard = ({ latestRepo }) => {
           </span>
         </ToolTip>
       </div>
-      <p className='my-6 font-light text-zinc-800 dark:text-zinc-100'>
+      <p className='my-6 text-zinc-500 dark:text-zinc-400'>
         {latestRepo.description}
       </p>
       <div className='flex items-center justify-between'>
-        <span className='mr-2 inline-flex items-center text-sm'>
+        <span className='mr-2 inline-flex items-center text-sm font-medium text-zinc-500 dark:text-zinc-400'>
           <FaRegFileCode />
           &nbsp;
           {latestRepo.size / 1000} MB
@@ -43,7 +43,7 @@ const GithubRepoCard = ({ latestRepo }) => {
           href={latestRepo.clone_url}
           target='_blank'
           aria-label={`Christian B Martinez | Repo Link for ${latestRepo.name}`}
-          className='inline-flex items-center font-medium text-zinc-800 hover:underline dark:text-zinc-50'>
+          className='inline-flex items-center text-sm font-medium text-zinc-900 hover:underline dark:text-zinc-50'>
           View Repo
           <svg
             className='ml-2 h-4 w-4'

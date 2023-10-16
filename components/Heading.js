@@ -19,7 +19,7 @@ const Heading = ({ title, paragraph, delay }) => {
             stiffness: 100,
             delay: delay ? delay : 0.5,
           }}>
-          <p className='text-xl font-light text-zinc-800 dark:text-zinc-400'>
+          <p className='text-lg font-light text-zinc-500 dark:text-zinc-400'>
             {paragraph}
           </p>
         </motion.div>

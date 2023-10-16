@@ -1,4 +1,4 @@
-const ToolTip = ({ children, text, align = '-left-1', top = '-top-8' }) => (
+const ToolTip = ({ children, text, align = '-left-1', top = '-top-6' }) => (
   <div className='group relative cursor-pointer'>
     {children}
     <span

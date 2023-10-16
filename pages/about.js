@@ -86,26 +86,26 @@ const About = () => {
                 height='h-1/3 sm:h-1/4'
               />
               <div className='mt-12 text-center'>
-                <h3 className='mb-2 text-4xl font-semibold leading-normal text-zinc-900 dark:text-zinc-50'>
+                <h3 className='mb-2 text-3xl font-semibold leading-normal text-zinc-900 dark:text-zinc-50'>
                   Christian B. Martinez
                 </h3>
-                <div className='mb-2 mt-0 inline-flex text-sm font-bold uppercase leading-normal text-zinc-400'>
-                  <FaMapPin className='mr-2 text-lg text-zinc-400 ' />
+                <div className='mb-2 mt-0 inline-flex text-sm font-bold uppercase leading-normal text-zinc-500 dark:text-zinc-400'>
+                  <FaMapPin className='text-md mr-2 text-zinc-400 ' />
                   Salt Lake City, Utah
                 </div>
-                <div className='mb-2 mt-10 flex flex-row items-center justify-center text-zinc-800 dark:text-zinc-50'>
-                  <FaBriefcase className='mr-2 text-lg text-zinc-400 dark:text-zinc-400' />
+                <div className='mb-2 mt-10 flex flex-row items-center justify-center text-zinc-500 dark:text-zinc-400'>
+                  <FaBriefcase className='text-md mr-2 text-zinc-500 dark:text-zinc-400' />
                   Full Stack Developer
                 </div>
-                <div className='mb-2 flex flex-row items-center justify-center text-zinc-800 dark:text-zinc-50'>
-                  <FaUniversity className='mr-2 text-lg text-zinc-400 dark:text-zinc-400' />
+                <div className='mb-2 flex flex-row items-center justify-center text-zinc-500 dark:text-zinc-400'>
+                  <FaUniversity className='text-md mr-2 text-zinc-500 dark:text-zinc-400' />
                   University of Utah
                 </div>
               </div>
-              <div className='mt-10 border-t border-zinc-200 py-10 text-center dark:border-zinc-400'>
+              <div className='mt-10 border-t border-zinc-300 py-10 text-center dark:border-zinc-600'>
                 <div className='flex flex-wrap justify-center'>
-                  <div className='w-full max-w-[600px] px-4'>
-                    <p className='mb-4 text-lg leading-relaxed text-zinc-800 dark:text-zinc-200'>
+                  <div className='w-full max-w-[600px]'>
+                    <p className='text-md mb-2 leading-relaxed text-zinc-500 dark:text-zinc-400'>
                       Hey there, 🖐 I&apos;m Christian, a dedicated Full Stack
                       Web Developer from Utah. I am actively pursuing a full
                       time role within the dynamic world of the tech industry. I
@@ -131,12 +131,12 @@ const About = () => {
 
         <Heading
           title='Stack'
-          paragraph='Languages and frameworks that I use'
+          paragraph='Preferred languages and frameworks'
         />
         <div className='mx-auto mb-40 mt-20 flex max-w-screen-xl flex-row flex-wrap items-center justify-center px-4 py-8 lg:px-6'>
           <ToolTip text='JavaScript'>
             <motion.div
-              className='m-3 rounded-full bg-blue-600 p-2 shadow-xl'
+              className='m-3 rounded-full bg-yellow-500 p-2 shadow-xl'
               initial={{ y: 100, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{
@@ -283,7 +283,7 @@ const About = () => {
 
         <Heading
           title='Tools'
-          paragraph='Some of the tools I use to get the job done'
+          paragraph='Some of the daily tools I use'
         />
         <div className='mx-auto mb-40 mt-20 flex max-w-screen-xl flex-row flex-wrap items-center justify-center px-4 py-8 lg:px-6'>
           <ToolTip
@@ -303,7 +303,7 @@ const About = () => {
           </ToolTip>
           <ToolTip
             text='Git/GitHub'
-            align='-left-3'>
+            align='-left-2'>
             <motion.div
               className='m-3 rounded-full bg-black p-2 shadow-xl'
               initial={{ y: 100, opacity: 0 }}
@@ -316,7 +316,9 @@ const About = () => {
               <AiFillGithub className='h-7 w-7 text-white' />
             </motion.div>
           </ToolTip>
-          <ToolTip text='Compass'>
+          <ToolTip
+            text='Compass'
+            align='-left-0'>
             <motion.div
               className='m-3 rounded-full bg-green-600 p-2 shadow-xl'
               initial={{ y: 100, opacity: 0 }}
@@ -329,7 +331,9 @@ const About = () => {
               <SiMongodb className='h-7 w-7 text-white' />
             </motion.div>
           </ToolTip>
-          <ToolTip text='Insomnia'>
+          <ToolTip
+            text='Insomnia'
+            align='-left-0'>
             <motion.div
               className='m-3 rounded-full bg-purple-700 p-2 shadow-xl'
               initial={{ y: 100, opacity: 0 }}
