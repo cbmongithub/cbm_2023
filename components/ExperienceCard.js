@@ -25,29 +25,31 @@ const ExperienceCard = ({
         <dl className='flex flex-auto flex-wrap gap-x-2'>
           <dt className='sr-only'>{company}</dt>
           <div className='flex w-full justify-between'>
-            <dd className='text-sm font-medium text-zinc-800 dark:text-zinc-50'>
+            <dd className='text-md font-bold leading-normal text-zinc-900 dark:text-zinc-50'>
               {company}
             </dd>
-            <dt className='sr-only'>{type}</dt>
-            <dd className='text-xs font-medium text-zinc-500 dark:text-zinc-400'>
-              {type}
+            <dt className='sr-only'>Date</dt>
+            <dd
+              className='lg:text-md text-sm font-medium text-zinc-900 dark:text-zinc-50'
+              aria-label={`${from} until ${to}`}>
+              <time dateTime={from}>{from}</time>
+              <span aria-hidden='true'>—</span>
+              <time dateTime={to}>{to}</time>
             </dd>
           </div>
           <dt className='sr-only'>{role}</dt>
-          <dd className='text-xs text-zinc-500 dark:text-zinc-400'>{role}</dd>
-          <dt className='sr-only'>Date</dt>
-          <dd
-            className='ml-auto text-xs text-zinc-500 dark:text-zinc-400'
-            aria-label={`${from} until ${to}`}>
-            <time dateTime={from}>{from}</time>
-            <span aria-hidden='true'>—</span>
-            <time dateTime={to}>{to}</time>
+          <dd className='lg:text-md text-sm text-zinc-500 dark:text-zinc-400'>
+            {role}
+          </dd>
+          <dt className='sr-only'>{type}</dt>
+          <dd className='lg:text-md ml-auto text-sm text-zinc-500 dark:text-zinc-400'>
+            {type}
           </dd>
         </dl>
       </li>
-      <li className='justify-left flex items-start align-middle md:h-44 md:items-center md:justify-center lg:h-48'>
+      <li className='justify-left flex items-center align-middle md:h-44 lg:h-40 xl:h-44'>
         <dt className='sr-only'>Accomplishments</dt>
-        <dd className='text-xs leading-5 text-zinc-500 dark:text-zinc-400'>
+        <dd className='lg:text-md text-sm leading-5 text-zinc-500 dark:text-zinc-400'>
           {accomplishments.map(accomplishment => (
             <p key={accomplishment}>• {accomplishment}</p>
           ))}
