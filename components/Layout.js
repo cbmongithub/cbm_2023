@@ -44,10 +44,6 @@ const Layout = ({ children }) => {
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    const isDarkTheme = localStorage.getItem('theme') === 'dark'
-    document.querySelector('html').style.backgroundColor = `${
-      isDarkTheme ? '#0F172A' : '#FAFAFA'
-    }`
     router.pathname === '/'
       ? setIsDisabled(true)
       : router.pathname === '/404'

@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { TypeAnimation } from 'react-type-animation'
@@ -5,6 +6,9 @@ import { TypeAnimation } from 'react-type-animation'
 import { SiteHead, Background, Avatar } from '../components'
 
 const Index = () => {
+  useEffect(() => {
+    document.querySelector('body').style.overflow = 'hidden'
+  })
   return (
     <>
       <SiteHead
