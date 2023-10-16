@@ -150,6 +150,31 @@ a:focus {
   max-width: 80ch;
 }
 
+.prose p {
+  font-weight: 300;
+}
+
+.prose h2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.prose h2 {
+  font-size: 1.85rem;
+  line-height: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.prose h3 {
+  font-size: 1.25rem;
+  line-height: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
 #tsparticles {
   width: inherit;
   height: inherit;

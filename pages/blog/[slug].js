@@ -87,11 +87,11 @@ const Post = ({ data, content, slug }) => {
                 width={28}
                 height={28}
               />
-              <div className='dark:opacity-35 absolute inset-0 mx-auto h-7 w-7 rounded-full bg-purple-600 opacity-25 dark:bg-gradient-to-r dark:from-purple-600 dark:to-pink-500'></div>
+              <div className='absolute inset-0 mx-auto h-7 w-7 rounded-full bg-purple-600 opacity-25 dark:bg-gradient-to-r dark:from-purple-600 dark:to-pink-500 dark:opacity-35'></div>
             </div>
           </div>
           <div className='flex w-2/12 justify-start align-middle'>
-            <span className='font-medium text-zinc-800 dark:text-zinc-50'>
+            <span className='font-medium text-zinc-900 dark:text-zinc-50'>
               {data.author}
             </span>
           </div>
@@ -99,7 +99,7 @@ const Post = ({ data, content, slug }) => {
             <Socials style='list-none flex' />
           </div>
           <div className='hidden w-2/12 justify-end align-middle md:ml-0 md:flex'>
-            <span className='font-medium text-zinc-800 dark:text-zinc-50'>
+            <span className='font-medium text-zinc-900 dark:text-zinc-50'>
               {data.date}
             </span>
           </div>
@@ -109,7 +109,9 @@ const Post = ({ data, content, slug }) => {
           animate={{ x: 0, opacity: 1 }}
           transition={{ type: 'spring', stiffness: 100, delay: 0.5 }}>
           <div className='mx-auto ml-0 flex w-screen items-center justify-center p-4 text-center md:hidden'>
-            <p className='font-medium'>{data.date}</p>
+            <p className='font-medium text-zinc-900 dark:text-zinc-50'>
+              {data.date}
+            </p>
           </div>
           <Socials
             style={

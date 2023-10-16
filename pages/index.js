@@ -23,14 +23,14 @@ const Index = () => {
             <div className='grid items-center gap-12 lg:grid-cols-2'>
               <Avatar
                 className='relative flex-col items-center justify-center lg:hidden'
-                initial={{ x: 100, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ type: 'spring', stiffness: 100, delay: 1 }}
+                initial={{ y: -100, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ type: 'spring', stiffness: 100, delay: 0.5 }}
               />
               <div className='mt-12 lg:mt-0'>
                 <motion.div
-                  initial={{ x: -100, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
+                  initial={{ y: -100, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
                   transition={{ type: 'spring', stiffness: 100 }}>
                   <h1 className='mb-12 text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 md:text-6xl xl:text-7xl'>
                     I&apos;m Christian

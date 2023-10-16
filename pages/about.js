@@ -86,18 +86,18 @@ const About = () => {
                 height='h-1/3 sm:h-1/4'
               />
               <div className='mt-12 text-center'>
-                <h3 className='mb-2 text-3xl font-semibold leading-normal text-zinc-900 dark:text-zinc-50'>
+                <h3 className='mb-2 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 md:text-4xl'>
                   Christian B. Martinez
                 </h3>
-                <div className='mb-2 mt-0 inline-flex text-sm font-bold uppercase leading-normal text-zinc-500 dark:text-zinc-400'>
+                <div className='mb-2 mt-0 inline-flex text-sm font-medium uppercase leading-normal text-zinc-500 dark:text-zinc-400'>
                   <FaMapPin className='text-md mr-2 text-zinc-400 ' />
                   Salt Lake City, Utah
                 </div>
-                <div className='mb-2 mt-10 flex flex-row items-center justify-center text-zinc-500 dark:text-zinc-400'>
+                <div className='mb-2 mt-10 flex flex-row items-center justify-center font-light text-zinc-500 dark:text-zinc-400'>
                   <FaBriefcase className='text-md mr-2 text-zinc-500 dark:text-zinc-400' />
                   Full Stack Developer
                 </div>
-                <div className='mb-2 flex flex-row items-center justify-center text-zinc-500 dark:text-zinc-400'>
+                <div className='mb-2 flex flex-row items-center justify-center font-light text-zinc-500 dark:text-zinc-400'>
                   <FaUniversity className='text-md mr-2 text-zinc-500 dark:text-zinc-400' />
                   University of Utah
                 </div>
@@ -105,7 +105,7 @@ const About = () => {
               <div className='mt-10 border-t border-zinc-300 py-10 text-center dark:border-zinc-600'>
                 <div className='flex flex-wrap justify-center'>
                   <div className='w-full max-w-[600px]'>
-                    <p className='text-md mb-2 leading-relaxed text-zinc-500 dark:text-zinc-400'>
+                    <p className='text-md mb-2 font-light leading-relaxed text-zinc-500 dark:text-zinc-400'>
                       Hey there, 🖐 I&apos;m Christian, a dedicated Full Stack
                       Web Developer from Utah. I am actively pursuing a full
                       time role within the dynamic world of the tech industry. I
@@ -128,6 +128,40 @@ const About = () => {
             </div>
           </div>
         </motion.div>
+
+        <Heading
+          title='Experience'
+          paragraph='Past and present roles'
+        />
+        <div className='relative mx-auto max-w-screen-xl px-4 py-8 pb-20 lg:px-6 lg:py-16'>
+          <div className='grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-3'>
+            {experienceData.map((experience, i) => (
+              <motion.div
+                key={experience.company}
+                initial={{
+                  opacity: 0,
+                  translateY: -100,
+                }}
+                whileInView={{ opacity: 1, translateY: 0 }}
+                transition={{
+                  type: 'spring',
+                  stiffness: 100,
+                  duration: 1.5,
+                  delay: 0.5 * i + 0.5,
+                }}>
+                <ExperienceCard
+                  src={experience.src}
+                  company={experience.company}
+                  type={experience.type}
+                  role={experience.role}
+                  from={experience.from}
+                  to={experience.to}
+                  accomplishments={experience.accomplishments}
+                />
+              </motion.div>
+            ))}
+          </div>
+        </div>
 
         <Heading
           title='Stack'
@@ -436,42 +470,8 @@ const About = () => {
         </div>
 
         <Heading
-          title='Experience'
-          paragraph='Past and present roles'
-        />
-        <div className='relative mx-auto max-w-screen-xl px-4 py-8 pb-20 lg:px-6 lg:py-16'>
-          <div className='grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-3'>
-            {experienceData.map((experience, i) => (
-              <motion.div
-                key={experience.company}
-                initial={{
-                  opacity: 0,
-                  translateY: -100,
-                }}
-                whileInView={{ opacity: 1, translateY: 0 }}
-                transition={{
-                  type: 'spring',
-                  stiffness: 100,
-                  duration: 1.5,
-                  delay: 0.5 * i + 0.5,
-                }}>
-                <ExperienceCard
-                  src={experience.src}
-                  company={experience.company}
-                  type={experience.type}
-                  role={experience.role}
-                  from={experience.from}
-                  to={experience.to}
-                  accomplishments={experience.accomplishments}
-                />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        <Heading
-          title='Latest Projects'
-          paragraph={`View my latest projects on Github`}
+          title='Latest Repos'
+          paragraph={`View my latest repos on Github`}
         />
         <div className='mx-auto max-w-screen-xl px-4 py-8 pb-20 lg:px-6 lg:py-16'>
           <div className='grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-3'>
