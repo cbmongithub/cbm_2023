@@ -45,12 +45,13 @@ const experienceData = [
 
 const svgPathVariant1 = {
   open: { d: 'M3.06061 2.99999L21.0606 21' },
-  closed: { d: 'M0 9.5L24 9.5' },
+  closed: { d: 'M0 8.5L24 8.5' },
 }
 
 const svgPathVariant2 = {
   open: { d: 'M3.00006 21.0607L21 3.06064' },
-  closed: { d: 'M0 14.5L15 14.5' },
+  moving: { d: 'M0 14.5L24 14.5' },
+  closed: { d: 'M0 14.5L12 14.5' },
 }
 
 const firstVariant = {
@@ -60,7 +61,7 @@ const firstVariant = {
     transition: {
       type: 'spring',
       stiffness: 100,
-      delay: 0.5,
+      delay: 0.07142857142,
     },
   },
   closed: { y: -300, opacity: 0 },
@@ -72,7 +73,7 @@ const secondVariant = {
     transition: {
       type: 'spring',
       stiffness: 100,
-      delay: 0.5,
+      delay: 0.14285714284,
     },
   },
   closed: { x: -100, opacity: 0 },
@@ -85,7 +86,7 @@ const thirdVariant = {
     transition: {
       type: 'spring',
       stiffness: 100,
-      delay: 0.75,
+      delay: 0.21428571426,
     },
   },
   closed: { x: -100, opacity: 0 },
@@ -98,7 +99,7 @@ const fourthVariant = {
     transition: {
       type: 'spring',
       stiffness: 100,
-      delay: 1,
+      delay: 0.28571428568,
     },
   },
   closed: { x: -100, opacity: 0 },
@@ -111,7 +112,7 @@ const fifthVariant = {
     transition: {
       type: 'spring',
       stiffness: 100,
-      delay: 1.25,
+      delay: 0.3571428571,
     },
   },
   closed: { x: -100, opacity: 0 },
@@ -124,7 +125,7 @@ const sixthVariant = {
     transition: {
       type: 'spring',
       stiffness: 100,
-      delay: 1.5,
+      delay: 0.42857142852,
     },
   },
   closed: { x: -100, opacity: 0 },
@@ -137,7 +138,7 @@ const seventhVariant = {
     transition: {
       type: 'spring',
       stiffness: 100,
-      delay: 1.75,
+      delay: 0.5,
     },
   },
   closed: { y: 300, opacity: 0 },

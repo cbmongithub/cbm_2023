@@ -71,21 +71,21 @@ const Navbar = () => {
             </Link>
           </div>
           <ul className='z-40 hidden md:flex'>
-            <li className='p-4 font-medium transition duration-150 ease-in-out hover:text-purple-600'>
+            <li className='p-4 transition duration-150 ease-in-out hover:text-purple-600'>
               <Link
                 href='/'
                 aria-label='Christian B Martinez | Home Page'>
                 Home
               </Link>
             </li>
-            <li className='p-4 font-medium transition duration-150 ease-in-out hover:text-purple-600'>
+            <li className='p-4 transition duration-150 ease-in-out hover:text-purple-600'>
               <Link
                 href='/about'
                 aria-label='Christian B Martinez | About Page'>
                 About
               </Link>
             </li>
-            <li className='p-4 font-medium transition duration-150 ease-in-out hover:text-purple-600'>
+            <li className='p-4 transition duration-150 ease-in-out hover:text-purple-600'>
               <Link
                 href='/portfolio'
                 aria-label='Christian B Martinez | Portfolio Page'>
@@ -93,14 +93,14 @@ const Navbar = () => {
               </Link>
             </li>
 
-            <li className='p-4 font-medium transition duration-150 ease-in-out hover:text-purple-600'>
+            <li className='p-4 transition duration-150 ease-in-out hover:text-purple-600'>
               <Link
                 href='/blog'
                 aria-label='Christian B Martinez | Blog Page'>
                 Blog
               </Link>
             </li>
-            <li className='p-4 font-medium transition duration-150 ease-in-out hover:text-purple-600'>
+            <li className='p-4 transition duration-150 ease-in-out hover:text-purple-600'>
               <Link
                 href='/contact'
                 aria-label='Christian B Martinez | Contact Page'>
@@ -142,7 +142,7 @@ const Navbar = () => {
                   layout
                   className='handle'>
                   <AnimatePresence
-                    mode='wait'
+                    mode='sync'
                     initial={false}>
                     <motion.i
                       initial={{ y: -30, opacity: 0 }}
@@ -210,7 +210,7 @@ const Navbar = () => {
                 animate={nav ? 'open' : 'closed'}
                 variants={secondVariant}>
                 <Link
-                  className='transition duration-150 ease-in-out dark:hover:text-purple-600'
+                  className='font-light transition duration-150 ease-in-out dark:hover:text-purple-600'
                   href='/'
                   aria-label='Christian B Martinez | Home Page'
                   onClick={handleNav}>
@@ -223,7 +223,7 @@ const Navbar = () => {
                 animate={nav ? 'open' : 'closed'}
                 variants={thirdVariant}>
                 <Link
-                  className='transition duration-150 ease-in-out dark:hover:text-purple-600'
+                  className='font-light transition duration-150 ease-in-out dark:hover:text-purple-600'
                   href='/about'
                   aria-label='Christian B Martinez | About Page'
                   onClick={handleNav}>
@@ -236,7 +236,7 @@ const Navbar = () => {
                 animate={nav ? 'open' : 'closed'}
                 variants={fourthVariant}>
                 <Link
-                  className='transition duration-150 ease-in-out dark:hover:text-purple-600'
+                  className='font-light transition duration-150 ease-in-out dark:hover:text-purple-600'
                   href='/portfolio'
                   aria-label='Christian B Martinez | Portfolio Page'
                   onClick={handleNav}>
@@ -249,7 +249,7 @@ const Navbar = () => {
                 animate={nav ? 'open' : 'closed'}
                 variants={fifthVariant}>
                 <Link
-                  className='transition duration-150 ease-in-out dark:hover:text-purple-600'
+                  className='font-light transition duration-150 ease-in-out dark:hover:text-purple-600'
                   href='/blog'
                   onClick={handleNav}
                   aria-label='Christian B Martinez | Blog Page'>
@@ -262,7 +262,7 @@ const Navbar = () => {
                 animate={nav ? 'open' : 'closed'}
                 variants={sixthVariant}>
                 <Link
-                  className='transition duration-150 ease-in-out dark:hover:text-purple-600'
+                  className='font-light transition duration-150 ease-in-out dark:hover:text-purple-600'
                   href='/contact'
                   aria-label='Christian B Martinez | Contact Page'
                   onClick={handleNav}>

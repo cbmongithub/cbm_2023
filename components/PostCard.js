@@ -36,12 +36,14 @@ const PostCard = ({ title, date, description, author, type, slug }) => {
             </span>
           </>
         )}
-        <span className='text-sm'>{date}</span>
+        <span className='text-sm font-light text-zinc-500 dark:text-zinc-400'>
+          {date}
+        </span>
       </div>
       <h2 className='mb-2 text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50'>
         {title}
       </h2>
-      <p className='mb-5 font-light text-zinc-900 dark:text-zinc-300'>
+      <p className='mb-5 font-light text-zinc-500 dark:text-zinc-400'>
         {description}
       </p>
       <div className='flex justify-between'>
@@ -58,7 +60,7 @@ const PostCard = ({ title, date, description, author, type, slug }) => {
           </div>
         </div>
         <div className='flex w-3/12 justify-start align-middle'>
-          <span className='ml-1 font-medium text-zinc-800 dark:text-zinc-50'>
+          <span className='ml-1 font-medium text-zinc-900 dark:text-zinc-50'>
             {author}
           </span>
         </div>
@@ -66,7 +68,7 @@ const PostCard = ({ title, date, description, author, type, slug }) => {
           <Link
             href='/blog/[slug]'
             aria-label='Christian B Martinez | Blog Article Link'
-            className='inline-flex font-medium text-zinc-800 hover:underline dark:text-zinc-50'
+            className='inline-flex font-medium text-zinc-900 hover:underline dark:text-zinc-50'
             as={`/blog/${slug}`}>
             Read more
           </Link>

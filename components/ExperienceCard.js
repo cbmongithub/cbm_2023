@@ -47,9 +47,9 @@ const ExperienceCard = ({
           </dd>
         </dl>
       </li>
-      <li className='justify-left flex items-center align-middle md:h-44 lg:h-40 xl:h-44'>
+      <li className='justify-left flex items-center align-middle md:h-44 lg:h-32 xl:h-40'>
         <dt className='sr-only'>Accomplishments</dt>
-        <dd className='lg:text-md text-sm leading-5 text-zinc-500 dark:text-zinc-400'>
+        <dd className='lg:text-md text-sm font-light leading-5 text-zinc-500 dark:text-zinc-400'>
           {accomplishments.map(accomplishment => (
             <p key={accomplishment}>• {accomplishment}</p>
           ))}

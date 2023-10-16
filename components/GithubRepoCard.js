@@ -30,7 +30,7 @@ const GithubRepoCard = ({ latestRepo }) => {
           </span>
         </ToolTip>
       </div>
-      <p className='my-6 text-zinc-500 dark:text-zinc-400'>
+      <p className='my-6 font-light text-zinc-500 dark:text-zinc-400'>
         {latestRepo.description}
       </p>
       <div className='flex items-center justify-between'>
