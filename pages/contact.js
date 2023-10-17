@@ -142,7 +142,7 @@ const Contact = () => {
             focus:border-purple-600
             focus:bg-white
             focus:text-zinc-700
-            focus:outline-none dark:border-zinc-500 dark:bg-slate-800 dark:text-zinc-200 dark:focus:border-purple-600'
+            focus:outline-none dark:border-zinc-500 dark:bg-slate-900 dark:text-zinc-200 dark:focus:border-purple-600'
                       id='name'
                       name='name'
                       placeholder='Name'
@@ -169,7 +169,7 @@ const Contact = () => {
             focus:border-purple-600
             focus:bg-white
             focus:text-zinc-700
-            focus:outline-none dark:border-zinc-500 dark:bg-slate-800 dark:text-zinc-200 dark:focus:border-purple-600'
+            focus:outline-none dark:border-zinc-500 dark:bg-slate-900 dark:text-zinc-200 dark:focus:border-purple-600'
                       id='email'
                       name='email'
                       placeholder='Email'
@@ -198,7 +198,7 @@ const Contact = () => {
             focus:border-purple-600
             focus:bg-white
             focus:text-zinc-700
-            focus:outline-none dark:border-zinc-500 dark:bg-slate-800 dark:text-zinc-200 dark:focus:border-purple-600
+            focus:outline-none dark:border-zinc-500 dark:bg-slate-900 dark:text-zinc-200 dark:focus:border-purple-600
           '
                       id='message'
                       name='message'
