@@ -11,7 +11,7 @@ const PortfolioCard = ({
   tags,
 }) => {
   return (
-    <div className='max-w-screen overflow-hidden rounded-xl bg-white shadow-2xl dark:bg-slate-800'>
+    <div className='max-w-screen overflow-hidden rounded-xl bg-white shadow-2xl dark:bg-slate-900'>
       <div
         className='h-48 w-full bg-cover bg-center lg:w-96'
         style={{
@@ -20,7 +20,7 @@ const PortfolioCard = ({
         alt={alt}>
         <div className='flex h-full w-full items-center justify-center bg-purple-600 opacity-50 dark:bg-gradient-to-r dark:from-purple-600 dark:to-pink-500'></div>
       </div>
-      <div className='flex h-full w-full flex-col justify-center rounded-lg bg-gradient-to-r from-purple-600 to-pink-500 opacity-60 transition duration-300 ease-in-out hover:opacity-90 hover:shadow-2xl'></div>
+      <div className='flex h-full w-full flex-col justify-center rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 opacity-60 transition duration-300 ease-in-out hover:opacity-90 hover:shadow-2xl'></div>
       <div className='p-6'>
         <h1 className='text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50'>
           {title}

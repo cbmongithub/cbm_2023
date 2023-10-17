@@ -107,10 +107,6 @@ a:focus {
   animation: animate 3s linear infinite;
 }
 
-.fade-in {
-  animation: fadeIn 0.5s;
-}
-
 .formatted-text {
   -webkit-user-select: text;
   -ms-user-select: text;
@@ -133,15 +129,6 @@ a:focus {
   }
   100% {
     transform: rotate(405deg);
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
   }
 }
 
@@ -322,10 +309,6 @@ pre {
 }
 
 @media only screen and (max-width: 768px) {
-  #tsparticles {
-    display: none;
-  }
-
   .icon-toggler-container {
     height: 25px;
     width: 40px;

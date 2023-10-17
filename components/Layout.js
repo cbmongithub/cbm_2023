@@ -43,7 +43,7 @@ const Layout = ({ children }) => {
   useEffect(() => {
     const isDarkTheme = localStorage.getItem('theme') === 'dark'
     document.querySelector('html').style.backgroundColor = `${
-      isDarkTheme ? '#0F172A' : '#FAFAFA'
+      isDarkTheme ? '#020617' : '#FAFAFA'
     }`
     router.pathname === '/'
       ? setIsDisabled(true)
@@ -85,7 +85,7 @@ const Layout = ({ children }) => {
             <Loader />
           ) : (
             <>
-              <main className='z-0 min-h-screen bg-zinc-50 dark:bg-slate-900'>
+              <main className='z-0 min-h-screen bg-zinc-50 dark:bg-slate-950'>
                 <Navbar />
                 {children}
               </main>

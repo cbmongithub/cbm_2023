@@ -59,7 +59,7 @@ const Navbar = () => {
   return (
     <>
       <nav>
-        <div className='mx-auto flex h-24 items-center justify-between overflow-hidden bg-zinc-50 px-4 text-zinc-800 dark:bg-slate-900 dark:text-zinc-50'>
+        <div className='mx-auto flex h-24 items-center justify-between overflow-hidden px-4 text-zinc-800 dark:text-zinc-50'>
           <div className='z-40 flex flex-row items-center justify-center p-4'>
             <Link
               href='/'
@@ -186,8 +186,8 @@ const Navbar = () => {
           <ul
             className={
               nav
-                ? 'fixed left-0 top-0 z-40 flex h-screen w-full flex-col items-center justify-center bg-zinc-50 duration-500 ease-in-out dark:bg-slate-900'
-                : 'fixed left-[-100%] top-0 z-40 flex h-screen w-full flex-col items-center justify-center bg-zinc-50 duration-500 ease-in-out dark:bg-slate-900'
+                ? 'fixed left-0 top-0 z-40 flex h-screen w-full flex-col items-center justify-center bg-zinc-50 duration-500 ease-in-out dark:bg-slate-950'
+                : 'fixed left-[-100%] top-0 z-40 flex h-screen w-full flex-col items-center justify-center bg-zinc-50 duration-500 ease-in-out dark:bg-slate-950'
             }>
             <motion.li
               animate={nav ? 'open' : 'closed'}

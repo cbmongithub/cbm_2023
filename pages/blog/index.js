@@ -29,8 +29,8 @@ const Blog = ({ posts }) => {
                 whileInView={{ opacity: 1, translateY: 0 }}
                 transition={{
                   type: 'spring',
-                  stiffness: 100,
-                  duration: 1.5,
+                  stiffness: 30,
+                  duration: 0.5,
                   delay: 0.5 * i,
                 }}>
                 <PostCard
