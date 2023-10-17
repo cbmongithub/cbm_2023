@@ -186,8 +186,8 @@ const Navbar = () => {
           <ul
             className={
               nav
-                ? 'fixed left-0 top-0 z-40 flex h-screen w-full flex-col items-center justify-center bg-white duration-500 ease-in-out dark:bg-slate-900'
-                : 'fixed left-[-100%] top-0 z-40 flex h-screen w-full flex-col items-center justify-center bg-white duration-500 ease-in-out dark:bg-slate-900'
+                ? 'fixed left-0 top-0 z-40 flex h-screen w-full flex-col items-center justify-center bg-zinc-50 duration-500 ease-in-out dark:bg-slate-950'
+                : 'fixed left-[-100%] top-0 z-40 flex h-screen w-full flex-col items-center justify-center bg-zinc-50 duration-500 ease-in-out dark:bg-slate-950'
             }>
             <motion.li
               animate={nav ? 'open' : 'closed'}
