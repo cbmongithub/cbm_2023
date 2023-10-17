@@ -25,13 +25,13 @@ const Index = () => {
                 className='relative flex-col items-center justify-center lg:hidden'
                 initial={{ y: -100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ type: 'spring', stiffness: 100, delay: 0.5 }}
+                transition={{ type: 'spring', stiffness: 30, delay: 0.5 }}
               />
               <div className='mt-12 lg:mt-0'>
                 <motion.div
                   initial={{ y: -100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
-                  transition={{ type: 'spring', stiffness: 100 }}>
+                  transition={{ type: 'spring', stiffness: 30 }}>
                   <h1 className='mb-12 text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 md:text-6xl xl:text-7xl'>
                     I&apos;m Christian
                     <br />I build
@@ -56,9 +56,9 @@ const Index = () => {
                 <motion.div
                   initial={{ y: 100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
-                  transition={{ type: 'spring', stiffness: 100, delay: 0.5 }}>
+                  transition={{ type: 'spring', stiffness: 30, delay: 0.5 }}>
                   <Link
-                    className='mr-2 inline-block rounded-md border-2 border-purple-600 bg-purple-600 px-7 py-3 text-sm font-medium uppercase leading-snug text-zinc-50 shadow-md transition duration-150 ease-in-out hover:border-pink-500 hover:bg-zinc-50 hover:text-pink-500 hover:shadow-lg focus:border-pink-500 focus:bg-zinc-50 focus:text-pink-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-zinc-50 active:shadow-lg'
+                    className='mr-2 rounded-xl bg-purple-600 px-7 py-3.5 text-sm font-medium uppercase leading-snug text-zinc-50 shadow-xl transition duration-150 ease-in-out hover:border-pink-500 hover:bg-pink-500 hover:shadow-2xl focus:border-pink-500 focus:bg-pink-500 focus:text-zinc-50 focus:shadow-2xl focus:outline-none focus:ring-0 active:bg-pink-500 active:shadow-2xl'
                     href='/christians-resume.pdf'
                     role='button'
                     target='_blank'
@@ -67,7 +67,7 @@ const Index = () => {
                     RESUME
                   </Link>
                   <Link
-                    className='mr-2 inline-block rounded-md border-2 border-purple-600 bg-transparent bg-zinc-50 px-7 py-3 text-sm font-medium uppercase leading-snug text-purple-600 shadow-md transition duration-150 ease-in-out hover:border-pink-500 hover:bg-pink-500 hover:text-zinc-50 hover:shadow-lg focus:border-pink-500 focus:bg-pink-500 focus:text-zinc-50 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-pink-500 active:shadow-lg'
+                    className='mr-2 rounded-xl bg-pink-500 px-7 py-3.5 text-sm font-medium uppercase leading-snug text-zinc-50 shadow-xl transition duration-150 ease-in-out hover:border-purple-600 hover:bg-purple-600 hover:shadow-2xl focus:border-purple-600 focus:bg-purple-600 focus:text-zinc-50 focus:shadow-2xl focus:outline-none focus:ring-0 active:bg-purple-600 active:shadow-2xl'
                     href='/portfolio'
                     role='button'
                     aria-label='Portfolio link button'>
@@ -79,7 +79,7 @@ const Index = () => {
                 className='relative mb-0 hidden flex-col items-center justify-center lg:flex'
                 initial={{ x: 100, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
-                transition={{ type: 'spring', stiffness: 100, delay: 1 }}
+                transition={{ type: 'spring', stiffness: 30, delay: 1 }}
               />
             </div>
           </div>

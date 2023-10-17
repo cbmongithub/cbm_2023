@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import useLocalStorage from 'use-local-storage'
 import { FaComment } from 'react-icons/fa'
+import { AiOutlineClose } from 'react-icons/ai'
 import Image from 'next/image'
 import ScrollableFeed from 'react-scrollable-feed'
 import { motion, useCycle, AnimatePresence } from 'framer-motion'
@@ -19,7 +20,7 @@ const ChatWidget = () => {
         duration: 0.5,
         ease: 'easeInOut',
         type: 'spring',
-        stiffness: 100,
+        stiffness: 30,
       },
     },
     closed: {
@@ -28,6 +29,8 @@ const ChatWidget = () => {
       transition: {
         duration: 0.5,
         ease: 'easeInOut',
+        type: 'spring',
+        stiffness: 30,
       },
     },
   }
@@ -87,22 +90,22 @@ const ChatWidget = () => {
             initial='closed'
             animate='open'
             exit='closed'
-            className='absolute bottom-5 right-6 z-30 mx-auto flex max-h-[30rem] min-h-[22rem] w-3/4 flex-col rounded-lg shadow-2xl md:w-1/2 lg:w-1/3 xl:w-1/4'>
-            <div className='sticky top-0 flex justify-between rounded-t-md bg-gradient-to-r from-purple-600 to-pink-500 px-4 py-5'>
+            className='absolute bottom-5 right-6 z-30 mx-auto flex max-h-[30rem] min-h-[22rem] w-3/4 flex-col rounded-xl shadow-2xl md:w-1/2 lg:w-1/3 xl:w-1/5'>
+            <div className='bg-purple flex items-center justify-between rounded-t-xl bg-purple-600 px-4 py-5 align-middle dark:bg-gradient-to-r dark:from-purple-600 dark:to-pink-500'>
               <h1 className='text-lg font-semibold text-zinc-50'>Chat</h1>
               <a
                 onClick={setShow}
-                className='cursor-pointer text-xl font-semibold text-zinc-50'>
-                x
+                className='cursor-pointer'>
+                <AiOutlineClose className='text-xl font-semibold text-zinc-50' />
               </a>
             </div>
-            <div className='flex max-h-[20rem] min-h-[16rem] w-full flex-col bg-zinc-50  dark:bg-slate-800'>
+            <div className='flex max-h-[20rem] min-h-[16rem] w-full flex-col bg-zinc-50  dark:bg-slate-900'>
               <ScrollableFeed>
-                <div className='flex flex-row justify-between rounded-b-md bg-zinc-50 dark:bg-slate-800'>
+                <div className='flex flex-row justify-between rounded-b-xl bg-zinc-50 dark:bg-slate-900'>
                   <div className='flex flex-col justify-between px-4'>
                     <div className='mt-5 flex flex-col'>
                       <div className='mb-4 flex justify-end'>
-                        <div className='mr-2 rounded-lg bg-purple-600 px-4 py-3 text-zinc-50'>
+                        <div className='mr-2 rounded-xl bg-purple-600 px-4 py-3 text-zinc-50'>
                           <p>
                             Welcome! I am Christians chatbot. You can ask me
                             anything about Christian! If you&apos;re interested
@@ -155,7 +158,7 @@ const ChatWidget = () => {
       {!show && (
         <motion.div
           variants={variants}
-          className='fixed bottom-5 right-6 z-30 cursor-pointer rounded-full bg-gradient-to-r from-purple-600 to-pink-500 p-4 shadow-xl hover:bg-pink-500'
+          className='fixed bottom-5 right-6 z-30 cursor-pointer rounded-full bg-purple-600 p-4 shadow-xl hover:bg-pink-500 dark:bg-gradient-to-r dark:from-purple-600 dark:to-pink-500'
           initial='closed'
           animate='open'
           exit='closed'
@@ -175,12 +178,12 @@ const AnswerSection = ({ storedValues }) => {
           return (
             <div key={index}>
               <div className='mb-4 flex justify-start'>
-                <div className='rounded-lg bg-slate-400 px-4 py-3 text-zinc-50 dark:bg-slate-600'>
+                <div className='rounded-xl bg-slate-400 px-4 py-3 text-zinc-50 dark:bg-slate-600'>
                   <p>{data.question}</p>
                 </div>
               </div>
               <div className='mb-4 flex justify-end'>
-                <div className='mr-2 rounded-lg bg-purple-600 px-4 py-3 text-zinc-50'>
+                <div className='mr-2 rounded-xl bg-purple-600 px-4 py-3 text-zinc-50'>
                   <p>{data.answer}</p>
                 </div>
                 <Image
@@ -210,18 +213,19 @@ const FormSection = ({ generateResponse }) => {
     <>
       <form
         onSubmit={handleSubmit}
-        className='relative bottom-0 right-0 flex w-full flex-row items-center justify-between rounded-b-lg bg-zinc-50 px-4 py-5 shadow-inner dark:bg-slate-800'>
+        className='relative bottom-0 right-0 flex w-full flex-row items-center justify-between rounded-b-xl border-t border-solid border-zinc-300 bg-zinc-50 px-4 pb-4 pt-5 dark:border-zinc-600 dark:bg-slate-900'>
         <input
-          className='m-0
+          className='
+            m-0
             w-3/4
-            rounded-lg
-            border border-solid
-            border-zinc-300 bg-zinc-50 bg-clip-padding
-            px-4 py-3 text-base font-normal
-            text-zinc-700
+            rounded-xl border
+            border-solid border-zinc-300 bg-zinc-50
+            bg-clip-padding px-4 py-3 text-base
+            font-normal
+            text-zinc-500
             transition
             ease-in-out
-              focus:border-purple-600 focus:outline-none dark:border-zinc-500 dark:bg-slate-800 dark:text-zinc-200'
+             focus:border-purple-600 focus:outline-none dark:border-zinc-500 dark:bg-slate-900 dark:text-zinc-400 dark:focus:border-purple-600'
           placeholder='Ask any question'
           value={newQuestion}
           onChange={e => setNewQuestion(e.target.value)}
@@ -231,7 +235,7 @@ const FormSection = ({ generateResponse }) => {
         <button
           type='submit'
           aria-label='Chat submit button'
-          className='ml-2 flex w-1/4 flex-col items-center justify-center rounded-lg border-2 border-purple-600 bg-purple-600 px-7 py-3 text-sm font-medium uppercase leading-snug text-zinc-50 shadow-md transition duration-150 ease-in-out hover:border-purple-500 hover:bg-zinc-50 hover:text-purple-500 hover:shadow-lg focus:border-purple-500 focus:bg-zinc-50 focus:text-purple-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-zinc-50 active:shadow-lg'
+          className='ml-2 flex w-1/4 flex-col items-center justify-center rounded-xl bg-purple-600 px-7 py-3.5 text-sm font-medium uppercase leading-snug text-zinc-50 shadow-xl transition duration-150 ease-in-out hover:border-pink-500 hover:bg-pink-500 hover:shadow-2xl focus:border-pink-500 focus:bg-pink-500 focus:text-zinc-50 focus:shadow-2xl focus:outline-none focus:ring-0 active:bg-pink-500 active:shadow-2xl'
           onClick={() =>
             newQuestion && generateResponse(newQuestion, setNewQuestion)
           }>

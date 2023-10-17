@@ -6,7 +6,7 @@ const Avatar = ({
   initial = { x: 100, opacity: 0 },
   animate = { x: 0, opacity: 1 },
   whileInView,
-  transition = { type: 'spring', stiffness: 100, delay: 1 },
+  transition = { type: 'spring', stiffness: 30, delay: 1 },
   width = 'w-1/2 md:w-1/3 lg:w-2/3',
   height = 'h-1/2 md:w-1/3 lg:h-2/3',
   shadow = 'shadow-2xl',

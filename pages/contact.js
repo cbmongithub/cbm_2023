@@ -76,7 +76,7 @@ const Contact = () => {
         <motion.div
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ type: 'spring', stiffness: 100, delay: 1 }}
+          transition={{ type: 'spring', stiffness: 30, delay: 1 }}
           className='container mx-auto mt-52 max-w-2xl md:mt-32 lg:w-2/3'>
           <div className='top:0 container relative px-6 text-slate-800 md:top-20 md:px-12'>
             <div className='mt-[-100px] block rounded-xl bg-white px-4 py-10 shadow-xl dark:bg-slate-800 md:px-6 md:py-12'>
@@ -131,7 +131,7 @@ const Contact = () => {
                       className='form-control m-0
             block
             w-full
-            rounded
+            rounded-lg
             border
             border-solid
             border-zinc-300
@@ -158,7 +158,7 @@ const Contact = () => {
                       className='form-control m-0
             block
             w-full
-            rounded
+            rounded-lg
             border
             border-solid
             border-zinc-300
@@ -187,7 +187,7 @@ const Contact = () => {
             m-0
             block
             w-full
-            rounded
+            rounded-lg
             border
             border-solid
             border-zinc-300
@@ -212,22 +212,7 @@ const Contact = () => {
                   <button
                     type='submit'
                     aria-label='Submit form button'
-                    className='
-          focus:bbg-pink-500
-          w-full
-          rounded-md
-          bg-purple-600
-          px-6
-          py-2.5
-          text-sm          
-          font-medium uppercase leading-snug
-          text-zinc-50
-          shadow-md transition
-          ease-in-out hover:bg-pink-500 hover:shadow-lg
-          focus:shadow-lg focus:outline-none
-          focus:ring-0
-          active:bg-pink-500
-          active:shadow-lg'>
+                    className='w-full rounded-xl bg-purple-600 px-7 py-3 text-sm font-medium uppercase leading-snug text-zinc-50 shadow-xl transition duration-150 ease-in-out hover:border-pink-500 hover:bg-pink-500 hover:text-zinc-50 hover:shadow-2xl focus:border-pink-500 focus:bg-pink-500 focus:text-zinc-50 focus:shadow-2xl focus:outline-none focus:ring-0 active:bg-pink-500 active:shadow-2xl'>
                     {formData.loading ? 'Sending...' : 'Send'}
                   </button>
                   {formData.show && formData.success ? (
@@ -236,7 +221,7 @@ const Contact = () => {
                       animate={{ x: 0, opacity: 1 }}
                       transition={{
                         type: 'spring',
-                        stiffness: 100,
+                        stiffness: 30,
                       }}
                       className='relative mt-5 rounded-md border border-green-400 bg-green-100 px-4 py-3 text-green-700'
                       role='alert'>
@@ -262,7 +247,7 @@ const Contact = () => {
                       animate={{ x: 0, opacity: 1 }}
                       transition={{
                         type: 'spring',
-                        stiffness: 100,
+                        stiffness: 30,
                       }}
                       className='relative mt-5 rounded-md border border-red-400 bg-red-100 px-4 py-3 text-red-700'
                       role='alert'>

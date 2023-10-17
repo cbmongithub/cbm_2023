@@ -28,6 +28,7 @@ import {
 
 import { experienceData } from '../constants'
 import {
+  Background,
   SiteHead,
   Heading,
   GithubRepoCard,
@@ -69,9 +70,9 @@ const About = () => {
         <motion.div
           initial={{ y: -100, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
-          transition={{ type: 'spring', stiffness: 100, delay: 1 }}
+          transition={{ type: 'spring', stiffness: 30, delay: 1 }}
           className='mx-auto mt-52 flex flex-col items-center justify-center px-6 pb-20 lg:w-2/3'>
-          <div className='flex min-w-0 flex-col break-words rounded-xl bg-white shadow-xl dark:bg-slate-800'>
+          <div className='flex min-w-0 flex-col break-words rounded-xl bg-white shadow-xl dark:bg-slate-900'>
             <div className='px-6'>
               <Avatar
                 className='relative mt-[-75px]'
@@ -79,7 +80,7 @@ const About = () => {
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{
                   type: 'spring',
-                  stiffness: 100,
+                  stiffness: 30,
                   delay: 0.25,
                 }}
                 width='w-1/3 sm:w-1/4'
@@ -145,7 +146,7 @@ const About = () => {
                 whileInView={{ opacity: 1, translateY: 0 }}
                 transition={{
                   type: 'spring',
-                  stiffness: 100,
+                  stiffness: 30,
                   duration: 1.5,
                   delay: 0.5 * i + 0.5,
                 }}>
@@ -175,7 +176,7 @@ const About = () => {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{
                 type: 'spring',
-                stiffness: 100,
+                stiffness: 30,
               }}>
               <IoLogoJavascript className='h-7 w-7 text-white' />
             </motion.div>
@@ -189,7 +190,7 @@ const About = () => {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{
                 type: 'spring',
-                stiffness: 100,
+                stiffness: 30,
                 delay: 0.1,
               }}>
               <SiMysql className='h-7 w-7 text-white' />
@@ -204,7 +205,7 @@ const About = () => {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{
                 type: 'spring',
-                stiffness: 100,
+                stiffness: 30,
                 delay: 0.2,
               }}>
               <SiTypescript className='h-7 w-7 text-white' />
@@ -219,7 +220,7 @@ const About = () => {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{
                 type: 'spring',
-                stiffness: 100,
+                stiffness: 30,
                 delay: 0.3,
               }}>
               <FaReact className='h-7 w-7 text-sky-400' />
@@ -234,7 +235,7 @@ const About = () => {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{
                 type: 'spring',
-                stiffness: 100,
+                stiffness: 30,
                 delay: 0.4,
               }}>
               <FaBootstrap className='h-7 w-7 text-white' />
@@ -249,7 +250,7 @@ const About = () => {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{
                 type: 'spring',
-                stiffness: 100,
+                stiffness: 30,
                 delay: 0.5,
               }}>
               <FaNodeJs className='h-7 w-7 text-white' />
@@ -264,7 +265,7 @@ const About = () => {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{
                 type: 'spring',
-                stiffness: 100,
+                stiffness: 30,
                 delay: 0.6,
               }}>
               <SiTailwindcss className='h-7 w-7 text-white' />
@@ -279,7 +280,7 @@ const About = () => {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{
                 type: 'spring',
-                stiffness: 100,
+                stiffness: 30,
                 delay: 0.7,
               }}>
               <SiNextdotjs className='h-7 w-7 text-white' />
@@ -294,7 +295,7 @@ const About = () => {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{
                 type: 'spring',
-                stiffness: 100,
+                stiffness: 30,
                 delay: 0.8,
               }}>
               <SiMongodb className='h-7 w-7 text-white' />
@@ -307,7 +308,7 @@ const About = () => {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{
                 type: 'spring',
-                stiffness: 100,
+                stiffness: 30,
                 delay: 0.9,
               }}>
               <SiExpress className='h-7 w-7 text-white' />
@@ -329,7 +330,7 @@ const About = () => {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{
                 type: 'spring',
-                stiffness: 100,
+                stiffness: 30,
                 delay: 0.9,
               }}>
               <SiVisualstudiocode className='h-7 w-7 text-blue-500' />
@@ -339,12 +340,12 @@ const About = () => {
             text='Git/GitHub'
             align='-left-2'>
             <motion.div
-              className='m-3 rounded-full bg-black p-2 shadow-xl'
+              className='m-3 rounded-full bg-gray-800 p-2 shadow-xl'
               initial={{ y: 100, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{
                 type: 'spring',
-                stiffness: 100,
+                stiffness: 30,
                 delay: 0.8,
               }}>
               <AiFillGithub className='h-7 w-7 text-white' />
@@ -359,7 +360,7 @@ const About = () => {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{
                 type: 'spring',
-                stiffness: 100,
+                stiffness: 30,
                 delay: 0.7,
               }}>
               <SiMongodb className='h-7 w-7 text-white' />
@@ -374,7 +375,7 @@ const About = () => {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{
                 type: 'spring',
-                stiffness: 100,
+                stiffness: 30,
                 delay: 0.6,
               }}>
               <SiInsomnia className='h-7 w-7 text-white' />
@@ -387,7 +388,7 @@ const About = () => {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{
                 type: 'spring',
-                stiffness: 100,
+                stiffness: 30,
                 delay: 0.5,
               }}>
               <SiAdobeillustrator className='h-7 w-7 text-yellow-600' />
@@ -402,7 +403,7 @@ const About = () => {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{
                 type: 'spring',
-                stiffness: 100,
+                stiffness: 30,
                 delay: 0.4,
               }}>
               <SiAdobephotoshop className='h-7 w-7 text-indigo-800' />
@@ -417,7 +418,7 @@ const About = () => {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{
                 type: 'spring',
-                stiffness: 100,
+                stiffness: 30,
                 delay: 0.3,
               }}>
               <SiZoom className='h-7 w-7 text-white' />
@@ -432,7 +433,7 @@ const About = () => {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{
                 type: 'spring',
-                stiffness: 100,
+                stiffness: 30,
                 delay: 0.2,
               }}>
               <AiFillSlackCircle className='h-7 w-7 text-white' />
@@ -447,7 +448,7 @@ const About = () => {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{
                 type: 'spring',
-                stiffness: 100,
+                stiffness: 30,
                 delay: 0.1,
               }}>
               <SiNetlify className='h-7 w-7 text-white' />
@@ -462,7 +463,7 @@ const About = () => {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{
                 type: 'spring',
-                stiffness: 100,
+                stiffness: 30,
               }}>
               <SiHeroku className='h-7 w-7 text-white' />
             </motion.div>
@@ -486,7 +487,7 @@ const About = () => {
                   whileInView={{ opacity: 1, translateY: 0 }}
                   transition={{
                     type: 'spring',
-                    stiffness: 100,
+                    stiffness: 30,
                     duration: 1.5,
                     delay: 0.5 * i + 0.5,
                   }}>
@@ -498,6 +499,7 @@ const About = () => {
               ))}
           </div>
         </div>
+        <Background />
       </section>
     </>
   )

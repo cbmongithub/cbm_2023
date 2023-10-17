@@ -108,7 +108,7 @@ const GuestBook = ({ allPosts, gifs }) => {
                 return (
                   <motion.div
                     key={data._id}
-                    className='rounded-lg bg-white p-6 shadow-xl dark:bg-slate-800'
+                    className='rounded-xl bg-white p-5 shadow-2xl dark:bg-slate-900'
                     initial={{
                       opacity: 0,
                       translateY: -100,
@@ -116,11 +116,11 @@ const GuestBook = ({ allPosts, gifs }) => {
                     whileInView={{ opacity: 1, translateY: 0 }}
                     transition={{
                       type: 'spring',
-                      stiffness: 100,
+                      stiffness: 30,
                       duration: 1.5,
                       delay: 0.25 * i,
                     }}>
-                    <div className='mb-5 flex items-center justify-between'>
+                    <div className='mb-4 flex items-center justify-between'>
                       <div className='flex items-center space-x-4'>
                         <Image
                           className='h-7 w-7 rounded-full'
@@ -149,7 +149,7 @@ const GuestBook = ({ allPosts, gifs }) => {
 
                       {data.gifUrl && (
                         <Image
-                          className='mt-5 h-auto w-auto rounded-lg'
+                          className='mt-5 h-auto w-auto rounded-xl'
                           src={data.gifUrl}
                           height={200}
                           width={200}
@@ -176,9 +176,9 @@ const GuestBook = ({ allPosts, gifs }) => {
                   setLoading(!loading)
                   handleChosenFormat()
                 }}>
-                <div className='mx-auto w-full max-w-screen-md rounded-lg bg-white p-5 text-slate-800 shadow-xl dark:bg-slate-800'>
-                  <div className='rounded-lg border border-zinc-300 dark:border-zinc-500'>
-                    <div className='flex flex-row justify-around rounded-t-lg border-b border-zinc-300 bg-zinc-50 text-xl text-zinc-400 dark:border-zinc-500 dark:bg-slate-900'>
+                <div className='mx-auto w-full max-w-screen-md rounded-xl bg-white p-5 text-slate-800 shadow-xl dark:bg-slate-900'>
+                  <div className='rounded-xl border border-zinc-300 dark:border-zinc-500'>
+                    <div className='flex flex-row justify-around rounded-t-xl border-b border-zinc-300 bg-zinc-50 text-xl text-zinc-400 dark:border-zinc-500 dark:bg-slate-900'>
                       <button
                         onClick={handleFormat}
                         data-format='font-bold'
@@ -229,7 +229,7 @@ const GuestBook = ({ allPosts, gifs }) => {
                       value={session.user.image}
                       name='userImage'
                     />
-                    <div className='flex h-auto w-full cursor-auto flex-col p-3 text-zinc-700 focus:outline-none active:outline-none dark:text-zinc-300'>
+                    <div className='flex h-auto w-full cursor-auto flex-col p-3 text-zinc-500 focus:outline-none active:outline-none dark:text-zinc-400'>
                       <input
                         required
                         id='userFormat'
@@ -251,7 +251,7 @@ const GuestBook = ({ allPosts, gifs }) => {
                       {chosenGifUrl && (
                         <div className='flex flex-col'>
                           <Image
-                            className='mt-3 h-auto w-auto rounded-lg'
+                            className='mt-3 h-auto w-auto rounded-xl'
                             src={chosenGifUrl}
                             height={200}
                             width={200}
@@ -278,11 +278,11 @@ const GuestBook = ({ allPosts, gifs }) => {
                   <div className='mt-5 flex flex-row items-center justify-between'>
                     <button
                       type='submit'
-                      className='inline-flex w-auto items-center rounded-md bg-gradient-to-r from-purple-600 to-pink-500 px-5 py-2.5 text-center text-sm font-medium text-zinc-50 focus:outline-none focus:ring-0'>
+                      className='inline-flex w-auto rounded-xl bg-purple-600 px-7 py-3.5 text-sm font-medium uppercase leading-snug text-zinc-50 shadow-xl transition duration-150 ease-in-out hover:border-pink-500 hover:bg-pink-500 hover:shadow-2xl focus:border-pink-500 focus:bg-pink-500 focus:text-zinc-50 focus:shadow-2xl focus:outline-none focus:ring-0 active:bg-pink-500 active:shadow-2xl'>
                       {loading ? 'SENDING...' : 'SUBMIT'}
                     </button>
                     <button
-                      className='mr-2 px-7 py-3 text-sm font-medium uppercase leading-snug text-zinc-400 transition duration-150 ease-in-out hover:text-purple-600 focus:bg-none focus:text-purple-600 focus:outline-none focus:ring-0 active:bg-none dark:text-zinc-300'
+                      className='inline-flex w-auto bg-transparent px-7 py-3.5 text-sm font-medium uppercase leading-snug text-purple-600 transition duration-150 ease-in-out hover:text-pink-500'
                       type='button'
                       onClick={() => signOut()}>
                       Sign out
@@ -295,7 +295,7 @@ const GuestBook = ({ allPosts, gifs }) => {
                 <button
                   onClick={() => signIn('github')}
                   type='button'
-                  className='mt-10 inline-flex w-auto items-center rounded-lg bg-gradient-to-r from-purple-600 to-pink-500 px-5 py-2.5 text-center text-sm font-medium text-zinc-50 focus:outline-none focus:ring-0'>
+                  className='mt-10 inline-flex w-auto items-center rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 px-5 py-2.5 text-center text-sm font-medium text-zinc-50 focus:outline-none focus:ring-0'>
                   <svg
                     className='-ml-1 mr-2 h-4 w-4'
                     aria-hidden='true'

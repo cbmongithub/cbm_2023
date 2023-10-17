@@ -76,7 +76,7 @@ const Post = ({ data, content, slug }) => {
         <motion.div
           initial={{ x: -100, opacity: 0, duration: 1 }}
           animate={{ x: 0, opacity: 1 }}
-          transition={{ type: 'spring', stiffness: 100, delay: 0.5 }}
+          transition={{ type: 'spring', stiffness: 30, delay: 0.5 }}
           className='mx-auto flex w-full max-w-screen-sm items-center justify-center p-4 text-center'>
           <div className='flex w-1/12 justify-start align-middle'>
             <div className='relative w-7'>
@@ -107,7 +107,7 @@ const Post = ({ data, content, slug }) => {
         <motion.div
           initial={{ x: -100, opacity: 0, duration: 1 }}
           animate={{ x: 0, opacity: 1 }}
-          transition={{ type: 'spring', stiffness: 100, delay: 0.5 }}>
+          transition={{ type: 'spring', stiffness: 30, delay: 0.5 }}>
           <div className='mx-auto ml-0 flex w-screen items-center justify-center p-4 text-center md:hidden'>
             <p className='font-medium text-zinc-900 dark:text-zinc-50'>
               {data.date}
@@ -122,7 +122,7 @@ const Post = ({ data, content, slug }) => {
         <motion.div
           initial={{ y: 100, opacity: 0, duration: 1 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ type: 'spring', stiffness: 100, delay: 1 }}
+          transition={{ type: 'spring', stiffness: 30, delay: 1 }}
           className='my-20 flex w-full flex-row items-center justify-center'>
           <div className='prose flex flex-col p-6 dark:prose-invert'>
             <MDXRemote {...content} />

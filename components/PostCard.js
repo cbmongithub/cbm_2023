@@ -3,11 +3,11 @@ import Image from 'next/image'
 
 const PostCard = ({ title, date, description, author, type, slug }) => {
   return (
-    <article className='rounded-lg bg-white p-6 shadow-2xl dark:bg-slate-800'>
+    <article className='rounded-xl bg-white p-6 shadow-2xl dark:bg-slate-900'>
       <div className='mb-5 flex items-center justify-between'>
         {type === 'Tutorial' ? (
           <>
-            <span className='inline-flex items-center rounded bg-gradient-to-r from-purple-600 to-pink-500 px-2.5 py-0.5 text-xs font-medium text-zinc-50'>
+            <span className='inline-flex items-center rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 px-2 py-1 text-xs font-medium text-zinc-50'>
               <svg
                 className='mr-1 h-3 w-3'
                 fill='currentColor'
@@ -20,7 +20,7 @@ const PostCard = ({ title, date, description, author, type, slug }) => {
           </>
         ) : (
           <>
-            <span className='inline-flex items-center rounded bg-gradient-to-r from-cyan-500 to-purple-600 px-2.5 py-0.5 text-xs font-medium text-white'>
+            <span className='inline-flex items-center rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 px-2 py-1 text-xs font-medium text-white'>
               <svg
                 className='mr-1 h-3 w-3'
                 fill='currentColor'

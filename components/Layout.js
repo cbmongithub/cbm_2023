@@ -15,7 +15,7 @@ const variants = {
       duration: 0.5,
       ease: 'easeInOut',
       type: 'spring',
-      stiffness: 100,
+      stiffness: 30,
     },
   },
   in: {
@@ -43,7 +43,7 @@ const Layout = ({ children }) => {
   useEffect(() => {
     const isDarkTheme = localStorage.getItem('theme') === 'dark'
     document.querySelector('html').style.backgroundColor = `${
-      isDarkTheme ? '#0F172A' : '#FAFAFA'
+      isDarkTheme ? '#020617' : '#FAFAFA'
     }`
     router.pathname === '/'
       ? setIsDisabled(true)
@@ -72,9 +72,7 @@ const Layout = ({ children }) => {
 
   return (
     <ThemeProvider attribute='class'>
-      <AnimatePresence
-        initial={false}
-        mode='wait'>
+      <AnimatePresence initial={false}>
         <motion.div
           key={asPath}
           variants={variants}
@@ -85,7 +83,7 @@ const Layout = ({ children }) => {
             <Loader />
           ) : (
             <>
-              <main className='z-0 min-h-screen bg-zinc-50 dark:bg-slate-900'>
+              <main className='z-0 min-h-screen bg-zinc-50 dark:bg-slate-950'>
                 <Navbar />
                 {children}
               </main>

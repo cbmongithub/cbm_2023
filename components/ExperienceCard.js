@@ -9,7 +9,7 @@ const ExperienceCard = ({
   to,
   accomplishments,
 }) => (
-  <div className='rounded-xl bg-white p-5 shadow-2xl dark:bg-slate-800'>
+  <div className='rounded-xl bg-white p-5 shadow-2xl dark:bg-slate-900'>
     <ol className='space-y-4'>
       <li className='flex gap-4'>
         <div className='flex h-10 w-10 items-center justify-center rounded-full'>

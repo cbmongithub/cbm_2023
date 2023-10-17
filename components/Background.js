@@ -42,12 +42,12 @@ const Background = () => {
         },
         particles: {
           color: {
-            value: '#9333EA',
+            value: '271°, 81%, 56%',
           },
           links: {
             color: '#9333EA',
-            distance: 150,
-            enable: true,
+            distance: 75,
+            enable: false,
             opacity: 0.5,
             width: 1,
           },

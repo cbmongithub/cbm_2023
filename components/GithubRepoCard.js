@@ -8,7 +8,7 @@ import { ToolTip } from '../components'
 
 const GithubRepoCard = ({ latestRepo }) => {
   return (
-    <div className='rounded-xl bg-white p-5 shadow-2xl dark:bg-slate-800'>
+    <div className='rounded-xl bg-white p-5 shadow-2xl dark:bg-slate-900'>
       <div className='flex items-stretch justify-between'>
         <h2 className='inline-flex items-center text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50'>
           {latestRepo.name}
@@ -17,7 +17,7 @@ const GithubRepoCard = ({ latestRepo }) => {
           text={`Created ${dayjs(latestRepo.created_at).format('MM/DD/YYYY')}`}
           align='-right-5'
           top='-top-9'>
-          <span className='inline-flex items-center rounded-lg bg-purple-600 px-2.5 pb-2 pt-1.5 text-xs font-medium text-zinc-50 dark:bg-gradient-to-r dark:from-purple-600 dark:to-pink-500'>
+          <span className='inline-flex items-center rounded-xl bg-purple-600 px-2 pb-1.5 pt-1 text-xs font-medium text-zinc-50 dark:bg-gradient-to-r dark:from-purple-600 dark:to-pink-500'>
             <svg
               className='mr-1.5 h-2.5 w-2.5'
               aria-hidden='true'
