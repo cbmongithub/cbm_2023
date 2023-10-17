@@ -79,7 +79,7 @@ const Contact = () => {
           transition={{ type: 'spring', stiffness: 30, delay: 1 }}
           className='container mx-auto mt-52 max-w-2xl md:mt-32 lg:w-2/3'>
           <div className='top:0 container relative px-6 text-slate-800 md:top-20 md:px-12'>
-            <div className='mt-[-100px] block rounded-xl bg-white px-4 py-10 shadow-xl dark:bg-slate-800 md:px-6 md:py-12'>
+            <div className='mt-[-100px] block rounded-xl bg-white px-4 py-10 shadow-xl dark:bg-slate-900 md:px-6 md:py-12'>
               <div className='mx-auto grid max-w-[700px] grid-cols-3'>
                 <div className='mx-auto mb-12 text-center'>
                   <svg
