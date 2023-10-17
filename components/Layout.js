@@ -15,7 +15,7 @@ const variants = {
       duration: 0.5,
       ease: 'easeInOut',
       type: 'spring',
-      stiffness: 30,
+      stiffness: 100,
     },
   },
   in: {
@@ -72,7 +72,9 @@ const Layout = ({ children }) => {
 
   return (
     <ThemeProvider attribute='class'>
-      <AnimatePresence initial={false}>
+      <AnimatePresence
+        initial={false}
+        mode='wait'>
         <motion.div
           key={asPath}
           variants={variants}

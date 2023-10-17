@@ -28,7 +28,6 @@ import {
 
 import { experienceData } from '../constants'
 import {
-  Background,
   SiteHead,
   Heading,
   GithubRepoCard,
@@ -71,7 +70,7 @@ const About = () => {
           initial={{ y: -100, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ type: 'spring', stiffness: 30, delay: 1 }}
-          className='mx-auto mt-52 flex flex-col items-center justify-center px-6 pb-20 lg:w-2/3'>
+          className='relative z-30 mx-auto mt-52 flex flex-col items-center justify-center px-6 pb-20 lg:w-2/3'>
           <div className='flex min-w-0 flex-col break-words rounded-xl bg-white shadow-xl dark:bg-slate-900'>
             <div className='px-6'>
               <Avatar
@@ -134,7 +133,7 @@ const About = () => {
           title='Experience'
           paragraph='Past and present roles'
         />
-        <div className='relative mx-auto max-w-screen-xl px-4 py-8 pb-20 lg:px-6 lg:py-16'>
+        <div className='relative z-30 mx-auto max-w-screen-xl px-4 py-8 pb-20 lg:px-6 lg:py-16'>
           <div className='grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-3'>
             {experienceData.map((experience, i) => (
               <motion.div
@@ -147,8 +146,8 @@ const About = () => {
                 transition={{
                   type: 'spring',
                   stiffness: 30,
-                  duration: 1.5,
-                  delay: 0.5 * i + 0.5,
+                  duration: 0.5,
+                  delay: 0.5 * i,
                 }}>
                 <ExperienceCard
                   src={experience.src}
@@ -168,7 +167,7 @@ const About = () => {
           title='Stack'
           paragraph='Preferred languages and frameworks'
         />
-        <div className='mx-auto mb-40 mt-20 flex max-w-screen-xl flex-row flex-wrap items-center justify-center px-4 py-8 lg:px-6'>
+        <div className='relative z-30 mx-auto mb-40 mt-20 flex max-w-screen-xl flex-row flex-wrap items-center justify-center px-4 py-8 lg:px-6'>
           <ToolTip text='JavaScript'>
             <motion.div
               className='m-3 rounded-full bg-yellow-500 p-2 shadow-xl'
@@ -177,6 +176,7 @@ const About = () => {
               transition={{
                 type: 'spring',
                 stiffness: 30,
+                delay: 0.05,
               }}>
               <IoLogoJavascript className='h-7 w-7 text-white' />
             </motion.div>
@@ -206,7 +206,7 @@ const About = () => {
               transition={{
                 type: 'spring',
                 stiffness: 30,
-                delay: 0.2,
+                delay: 0.15,
               }}>
               <SiTypescript className='h-7 w-7 text-white' />
             </motion.div>
@@ -221,7 +221,7 @@ const About = () => {
               transition={{
                 type: 'spring',
                 stiffness: 30,
-                delay: 0.3,
+                delay: 0.2,
               }}>
               <FaReact className='h-7 w-7 text-sky-400' />
             </motion.div>
@@ -236,7 +236,7 @@ const About = () => {
               transition={{
                 type: 'spring',
                 stiffness: 30,
-                delay: 0.4,
+                delay: 0.25,
               }}>
               <FaBootstrap className='h-7 w-7 text-white' />
             </motion.div>
@@ -251,7 +251,7 @@ const About = () => {
               transition={{
                 type: 'spring',
                 stiffness: 30,
-                delay: 0.5,
+                delay: 0.3,
               }}>
               <FaNodeJs className='h-7 w-7 text-white' />
             </motion.div>
@@ -266,7 +266,7 @@ const About = () => {
               transition={{
                 type: 'spring',
                 stiffness: 30,
-                delay: 0.6,
+                delay: 0.35,
               }}>
               <SiTailwindcss className='h-7 w-7 text-white' />
             </motion.div>
@@ -281,7 +281,7 @@ const About = () => {
               transition={{
                 type: 'spring',
                 stiffness: 30,
-                delay: 0.7,
+                delay: 0.4,
               }}>
               <SiNextdotjs className='h-7 w-7 text-white' />
             </motion.div>
@@ -296,7 +296,7 @@ const About = () => {
               transition={{
                 type: 'spring',
                 stiffness: 30,
-                delay: 0.8,
+                delay: 0.45,
               }}>
               <SiMongodb className='h-7 w-7 text-white' />
             </motion.div>
@@ -309,7 +309,7 @@ const About = () => {
               transition={{
                 type: 'spring',
                 stiffness: 30,
-                delay: 0.9,
+                delay: 0.5,
               }}>
               <SiExpress className='h-7 w-7 text-white' />
             </motion.div>
@@ -320,7 +320,7 @@ const About = () => {
           title='Tools'
           paragraph='Some of the daily tools I use'
         />
-        <div className='mx-auto mb-40 mt-20 flex max-w-screen-xl flex-row flex-wrap items-center justify-center px-4 py-8 lg:px-6'>
+        <div className='relative z-30 mx-auto mb-40 mt-20 flex max-w-screen-xl flex-row flex-wrap items-center justify-center px-4 py-8 lg:px-6'>
           <ToolTip
             text='VSCode'
             align='right-1'>
@@ -331,7 +331,7 @@ const About = () => {
               transition={{
                 type: 'spring',
                 stiffness: 30,
-                delay: 0.9,
+                delay: 0.5,
               }}>
               <SiVisualstudiocode className='h-7 w-7 text-blue-500' />
             </motion.div>
@@ -346,7 +346,7 @@ const About = () => {
               transition={{
                 type: 'spring',
                 stiffness: 30,
-                delay: 0.8,
+                delay: 0.45,
               }}>
               <AiFillGithub className='h-7 w-7 text-white' />
             </motion.div>
@@ -361,7 +361,7 @@ const About = () => {
               transition={{
                 type: 'spring',
                 stiffness: 30,
-                delay: 0.7,
+                delay: 0.4,
               }}>
               <SiMongodb className='h-7 w-7 text-white' />
             </motion.div>
@@ -376,7 +376,7 @@ const About = () => {
               transition={{
                 type: 'spring',
                 stiffness: 30,
-                delay: 0.6,
+                delay: 0.35,
               }}>
               <SiInsomnia className='h-7 w-7 text-white' />
             </motion.div>
@@ -389,7 +389,7 @@ const About = () => {
               transition={{
                 type: 'spring',
                 stiffness: 30,
-                delay: 0.5,
+                delay: 0.3,
               }}>
               <SiAdobeillustrator className='h-7 w-7 text-yellow-600' />
             </motion.div>
@@ -404,7 +404,7 @@ const About = () => {
               transition={{
                 type: 'spring',
                 stiffness: 30,
-                delay: 0.4,
+                delay: 0.25,
               }}>
               <SiAdobephotoshop className='h-7 w-7 text-indigo-800' />
             </motion.div>
@@ -419,7 +419,7 @@ const About = () => {
               transition={{
                 type: 'spring',
                 stiffness: 30,
-                delay: 0.3,
+                delay: 0.2,
               }}>
               <SiZoom className='h-7 w-7 text-white' />
             </motion.div>
@@ -434,7 +434,7 @@ const About = () => {
               transition={{
                 type: 'spring',
                 stiffness: 30,
-                delay: 0.2,
+                delay: 0.15,
               }}>
               <AiFillSlackCircle className='h-7 w-7 text-white' />
             </motion.div>
@@ -464,6 +464,7 @@ const About = () => {
               transition={{
                 type: 'spring',
                 stiffness: 30,
+                delay: 0.05,
               }}>
               <SiHeroku className='h-7 w-7 text-white' />
             </motion.div>
@@ -474,7 +475,7 @@ const About = () => {
           title='Latest Repos'
           paragraph={`View my latest repos on Github`}
         />
-        <div className='mx-auto max-w-screen-xl px-4 py-8 pb-20 lg:px-6 lg:py-16'>
+        <div className='relative z-30 mx-auto max-w-screen-xl px-4 py-8 pb-20 lg:px-6 lg:py-16'>
           <div className='grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-3'>
             {repos &&
               repos.map((latestRepo, i) => (
@@ -488,8 +489,8 @@ const About = () => {
                   transition={{
                     type: 'spring',
                     stiffness: 30,
-                    duration: 1.5,
-                    delay: 0.5 * i + 0.5,
+                    duration: 0.5,
+                    delay: 0.5 * i,
                   }}>
                   <GithubRepoCard
                     latestRepo={latestRepo}
@@ -499,7 +500,6 @@ const About = () => {
               ))}
           </div>
         </div>
-        <Background />
       </section>
     </>
   )

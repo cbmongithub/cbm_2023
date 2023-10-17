@@ -30,7 +30,7 @@ const Blog = ({ posts }) => {
                 transition={{
                   type: 'spring',
                   stiffness: 30,
-                  duration: 1.5,
+                  duration: 0.5,
                   delay: 0.5 * i,
                 }}>
                 <PostCard
