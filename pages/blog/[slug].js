@@ -90,7 +90,7 @@ const Post = ({ data, content, slug }) => {
               <div className='absolute inset-0 mx-auto h-7 w-7 rounded-full bg-purple-600 opacity-25 dark:bg-gradient-to-r dark:from-purple-600 dark:to-pink-500 dark:opacity-35'></div>
             </div>
           </div>
-          <div className='flex w-2/12 justify-start align-middle'>
+          <div className='ml-2 flex w-2/12 justify-start align-middle sm:ml-[-30px] sm:justify-center'>
             <span className='font-medium text-zinc-900 dark:text-zinc-50'>
               {data.author}
             </span>
@@ -176,13 +176,6 @@ const Post = ({ data, content, slug }) => {
               <FaTwitter className='h-4 w-4 text-white' />
             </div>
           </TwitterShareButton>
-          <WhatsappShareButton
-            url={shareUrl}
-            aria-label='Share blog post through whatsapp'>
-            <div className='mx-3 cursor-pointer rounded-full bg-green-500 p-2 shadow-xl hover:bg-green-600'>
-              <FaWhatsapp className='h-4 w-4 text-white' />
-            </div>
-          </WhatsappShareButton>
         </div>
       </section>
     </>

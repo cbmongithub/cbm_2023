@@ -9,8 +9,8 @@ import { ToolTip } from '../components'
 const GithubRepoCard = ({ latestRepo }) => {
   return (
     <div className='rounded-xl bg-white p-5 shadow-2xl dark:bg-slate-900'>
-      <div className='flex items-stretch justify-between'>
-        <h2 className='inline-flex items-center text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50'>
+      <div className='flex justify-between'>
+        <h2 className='inline-flex items-center text-xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-2xl'>
           {latestRepo.name}
         </h2>
         <ToolTip

@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import {
@@ -70,8 +71,8 @@ const About = () => {
           initial={{ y: -100, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ type: 'spring', stiffness: 30, delay: 1 }}
-          className='relative z-30 mx-auto mt-52 flex flex-col items-center justify-center px-6 pb-20 lg:w-2/3'>
-          <div className='flex min-w-0 flex-col break-words rounded-xl bg-white shadow-xl dark:bg-slate-900'>
+          className='relative z-30 mx-auto max-w-screen-md px-4 py-8 pb-20 lg:px-6 lg:py-16'>
+          <div className='flex w-full flex-col break-words rounded-xl bg-white shadow-xl dark:bg-slate-900'>
             <div className='px-6'>
               <Avatar
                 className='relative mt-[-75px]'
@@ -473,7 +474,7 @@ const About = () => {
 
         <Heading
           title='Latest Repos'
-          paragraph={`View my latest repos on Github`}
+          paragraph={`View latest pushes to Github`}
         />
         <div className='relative z-30 mx-auto max-w-screen-xl px-4 py-8 pb-20 lg:px-6 lg:py-16'>
           <div className='grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-3'>

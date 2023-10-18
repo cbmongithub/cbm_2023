@@ -1,7 +1,7 @@
 const experienceData = [
   {
     src: '/img/nglogo.jpg',
-    company: 'Northrop Grumman',
+    company: 'NGC',
     type: 'Full-Time',
     role: 'Technician',
     from: '2021',
