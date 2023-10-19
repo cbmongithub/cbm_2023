@@ -136,24 +136,24 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <div className='hidden h-full w-24 flex-row items-center justify-center md:flex'>
+          <div className='z-50 hidden h-full w-24 flex-row items-center justify-center md:flex'>
             <div
-              className='icon-toggler-container'
-              data-darkmode={isOn}
-              onClick={handleThemeColor}
-              style={{ justifyContent: isOn ? 'flex-end' : 'flex-start' }}>
+              className={`mr-5 flex h-6 w-10 cursor-pointer flex-row items-center ${
+                isOn ? 'justify-end' : 'justify-start'
+              } rounded-3xl bg-purple-600 px-0.5 py-0 transition-all duration-150 dark:bg-gradient-to-r dark:from-purple-600 dark:to-pink-500`}
+              onClick={handleThemeColor}>
               <motion.div
                 layout
-                className='handle'>
+                className='grid h-6 w-6 items-center justify-items-center overflow-hidden'>
                 <motion.i
                   initial={{ y: -30, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: 30, opacity: 0 }}
-                  transition={{ duration: 0.2 }}>
+                  transition={{ duration: 0.1 }}>
                   {currentTheme === 'dark' && loaded ? (
-                    <FaMoon className='toggler-icon' />
+                    <FaMoon className='text-zinc-50' />
                   ) : (
-                    <FaSun className='toggler-icon' />
+                    <FaSun className='text-zinc-50' />
                   )}
                 </motion.i>
               </motion.div>
@@ -162,23 +162,23 @@ const Navbar = () => {
           <div className='z-50 mr-3 flex cursor-pointer flex-row items-center justify-center md:hidden'>
             {!nav && (
               <div
-                className='icon-toggler-container mr-5 p-4'
-                data-darkmode={isOn}
-                onClick={handleThemeColor}
-                style={{ justifyContent: isOn ? 'flex-end' : 'flex-start' }}>
+                className={`mr-5 flex h-6 w-10 cursor-pointer flex-row items-center ${
+                  isOn ? 'justify-end' : 'justify-start'
+                } rounded-3xl bg-purple-600 px-0.5 py-0 transition-all duration-150 dark:bg-gradient-to-r dark:from-purple-600 dark:to-pink-500`}
+                onClick={handleThemeColor}>
                 <motion.div
                   layout
-                  className='handle'>
+                  className='grid h-6 w-6 items-center justify-items-center overflow-hidden'>
                   <AnimatePresence initial={false}>
                     <motion.i
                       initial={{ y: -30, opacity: 0 }}
                       animate={{ y: 0, opacity: 1 }}
                       exit={{ y: 30, opacity: 0 }}
-                      transition={{ duration: 0.2 }}>
+                      transition={{ duration: 0.1 }}>
                       {currentTheme === 'dark' && loaded ? (
-                        <FaMoon className='toggler-icon' />
+                        <FaMoon className='text-zinc-50' />
                       ) : (
-                        <FaSun className='toggler-icon' />
+                        <FaSun className='text-zinc-50' />
                       )}
                     </motion.i>
                   </AnimatePresence>
