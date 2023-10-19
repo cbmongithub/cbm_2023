@@ -15,6 +15,7 @@ import {
   fifthVariant,
   sixthVariant,
   seventhVariant,
+  eighthVariant,
 } from '../constants'
 import Socials from './Socials'
 
@@ -78,67 +79,80 @@ const Navbar = () => {
               </svg>
             </Link>
           </div>
-          <ul className='z-40 hidden md:flex'>
-            <li className='p-4 transition duration-150 ease-in-out hover:text-purple-600'>
-              <Link
-                href='/'
-                aria-label='Christian B Martinez | Home Page'>
-                Home
-              </Link>
-            </li>
-            <li className='p-4 transition duration-150 ease-in-out hover:text-purple-600'>
-              <Link
-                href='/about'
-                aria-label='Christian B Martinez | About Page'>
-                About
-              </Link>
-            </li>
-            <li className='p-4 transition duration-150 ease-in-out hover:text-purple-600'>
-              <Link
-                href='/portfolio'
-                aria-label='Christian B Martinez | Portfolio Page'>
-                Portfolio
-              </Link>
-            </li>
+          <div className='flex flex-row items-center justify-center'>
+            <ul className='z-40 hidden md:flex'>
+              <li className='p-4 transition duration-150 ease-in-out hover:text-purple-600'>
+                <Link
+                  href='/'
+                  aria-label='Christian B Martinez | Home Page'>
+                  Home
+                </Link>
+              </li>
+              <li className='p-4 transition duration-150 ease-in-out hover:text-purple-600'>
+                <Link
+                  href='/about'
+                  aria-label='Christian B Martinez | About Page'>
+                  About
+                </Link>
+              </li>
+              <li className='p-4 transition duration-150 ease-in-out hover:text-purple-600'>
+                <Link
+                  href='/portfolio'
+                  aria-label='Christian B Martinez | Portfolio Page'>
+                  Portfolio
+                </Link>
+              </li>
 
-            <li className='p-4 transition duration-150 ease-in-out hover:text-purple-600'>
-              <Link
-                href='/blog'
-                aria-label='Christian B Martinez | Blog Page'>
-                Blog
-              </Link>
-            </li>
-            <li className='p-4 transition duration-150 ease-in-out hover:text-purple-600'>
-              <Link
-                href='/contact'
-                aria-label='Christian B Martinez | Contact Page'>
-                Contact
-              </Link>
-            </li>
-            <li className='p-4'>
-              <div
-                className='icon-toggler-container'
-                data-darkmode={isOn}
-                onClick={handleThemeColor}
-                style={{ justifyContent: isOn ? 'flex-end' : 'flex-start' }}>
-                <motion.div
-                  layout
-                  className='handle'>
-                  <motion.i
-                    initial={{ y: -30, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: 30, opacity: 0 }}
-                    transition={{ duration: 0.2 }}>
-                    {currentTheme === 'dark' && loaded ? (
-                      <FaMoon className='toggler-icon' />
-                    ) : (
-                      <FaSun className='toggler-icon' />
-                    )}
-                  </motion.i>
-                </motion.div>
-              </div>
-            </li>
-          </ul>
+              <li className='p-4 transition duration-150 ease-in-out hover:text-purple-600'>
+                <Link
+                  href='/blog'
+                  aria-label='Christian B Martinez | Blog Page'>
+                  Blog
+                </Link>
+              </li>
+              <li className='p-4 transition duration-150 ease-in-out hover:text-purple-600'>
+                <Link
+                  href='/contact'
+                  aria-label='Christian B Martinez | Contact Page'>
+                  Contact
+                </Link>
+              </li>
+              <li className='p-4 transition duration-150 ease-in-out hover:text-purple-600'>
+                <Link
+                  href='/christians-resume.pdf'
+                  role='button'
+                  target='_blank'
+                  download
+                  aria-label='Christian B. Martinez | Download Resume'
+                  rel='noopener noreferrer'>
+                  Resume
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className='hidden h-full w-24 flex-row items-center justify-center md:flex'>
+            <div
+              className='icon-toggler-container'
+              data-darkmode={isOn}
+              onClick={handleThemeColor}
+              style={{ justifyContent: isOn ? 'flex-end' : 'flex-start' }}>
+              <motion.div
+                layout
+                className='handle'>
+                <motion.i
+                  initial={{ y: -30, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: 30, opacity: 0 }}
+                  transition={{ duration: 0.2 }}>
+                  {currentTheme === 'dark' && loaded ? (
+                    <FaMoon className='toggler-icon' />
+                  ) : (
+                    <FaSun className='toggler-icon' />
+                  )}
+                </motion.i>
+              </motion.div>
+            </div>
+          </div>
           <div className='z-50 mr-3 flex cursor-pointer flex-row items-center justify-center md:hidden'>
             {!nav && (
               <div
@@ -276,10 +290,26 @@ const Navbar = () => {
                 </Link>
               </motion.div>
             </li>
-            <div className='fixed bottom-20 flex flex-col items-center justify-center p-4'>
+            <li className='w-full p-4 text-center text-2xl text-zinc-900 hover:text-purple-600 dark:text-zinc-200'>
               <motion.div
                 animate={nav ? 'open' : 'closed'}
                 variants={seventhVariant}>
+                <Link
+                  className='font-light transition duration-150 ease-in-out dark:hover:text-purple-600'
+                  href='/christians-resume.pdf'
+                  role='button'
+                  target='_blank'
+                  download
+                  aria-label='Christian B. Martinez | Download Resume'
+                  rel='noopener noreferrer'>
+                  Resume
+                </Link>
+              </motion.div>
+            </li>
+            <div className='fixed bottom-20 flex flex-col items-center justify-center p-4'>
+              <motion.div
+                animate={nav ? 'open' : 'closed'}
+                variants={eighthVariant}>
                 <Socials />
               </motion.div>
             </div>

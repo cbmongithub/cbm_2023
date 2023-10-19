@@ -62,7 +62,7 @@ const firstVariant = {
       type: 'spring',
       ease: 'easeInOut',
       stiffness: 30,
-      delay: 0.07142857142,
+      delay: 0,
     },
   },
   closed: {
@@ -71,6 +71,7 @@ const firstVariant = {
     transition: { type: 'spring', ease: 'easeInOut' },
   },
 }
+
 const secondVariant = {
   open: {
     x: 0,
@@ -79,7 +80,7 @@ const secondVariant = {
       type: 'spring',
       ease: 'easeInOut',
       stiffness: 30,
-      delay: 0.14285714284,
+      delay: 0.07142857142,
     },
   },
   closed: {
@@ -97,7 +98,7 @@ const thirdVariant = {
       type: 'spring',
       ease: 'easeInOut',
       stiffness: 30,
-      delay: 0.21428571426,
+      delay: 0.14285714284,
     },
   },
   closed: {
@@ -115,7 +116,7 @@ const fourthVariant = {
       type: 'spring',
       ease: 'easeInOut',
       stiffness: 30,
-      delay: 0.28571428568,
+      delay: 0.21428571426,
     },
   },
   closed: {
@@ -133,7 +134,7 @@ const fifthVariant = {
       type: 'spring',
       ease: 'easeInOut',
       stiffness: 30,
-      delay: 0.3571428571,
+      delay: 0.28571428568,
     },
   },
   closed: {
@@ -151,7 +152,7 @@ const sixthVariant = {
       type: 'spring',
       ease: 'easeInOut',
       stiffness: 30,
-      delay: 0.42857142852,
+      delay: 0.3571428571,
     },
   },
   closed: {
@@ -162,6 +163,24 @@ const sixthVariant = {
 }
 
 const seventhVariant = {
+  open: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: 'spring',
+      ease: 'easeInOut',
+      stiffness: 30,
+      delay: 0.42857142852,
+    },
+  },
+  closed: {
+    x: -100,
+    opacity: 0,
+    transition: { type: 'spring', ease: 'easeInOut' },
+  },
+}
+
+const eighthVariant = {
   open: {
     x: 0,
     opacity: 1,
@@ -296,4 +315,5 @@ export {
   fifthVariant,
   sixthVariant,
   seventhVariant,
+  eighthVariant,
 }
