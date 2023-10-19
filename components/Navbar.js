@@ -29,17 +29,12 @@ const Navbar = () => {
   const { systemTheme, theme, setTheme } = useTheme()
   const currentTheme = theme === 'system' ? systemTheme : theme
   const router = useRouter()
-  const [isOn, setIsOn] = useState(false)
   const [nav, setNav] = useState(false)
   const [animation, setAnimation] = useState('closed')
   const loaded = useLoaded()
 
   const handleThemeColor = () => {
     currentTheme == 'dark' ? setTheme('light') : setTheme('dark')
-    setIsOn(!isOn)
-    document.querySelector('html').style.backgroundColor = `${
-      currentTheme == 'dark' ? '#FAFAFA' : '#0F172A'
-    }`
   }
 
   const handleNav = () => {
@@ -139,7 +134,9 @@ const Navbar = () => {
           <div className='z-50 hidden h-full w-24 flex-row items-center justify-center md:flex'>
             <div
               className={`mr-5 flex h-6 w-10 cursor-pointer flex-row items-center ${
-                isOn ? 'justify-end' : 'justify-start'
+                currentTheme === 'dark' && loaded
+                  ? 'justify-end'
+                  : 'justify-start'
               } rounded-3xl bg-purple-600 px-0.5 py-0 transition-all duration-150 dark:bg-gradient-to-r dark:from-purple-600 dark:to-pink-500`}
               onClick={handleThemeColor}>
               <motion.div
@@ -163,7 +160,9 @@ const Navbar = () => {
             {!nav && (
               <div
                 className={`mr-5 flex h-6 w-10 cursor-pointer flex-row items-center ${
-                  isOn ? 'justify-end' : 'justify-start'
+                  currentTheme === 'dark' && loaded
+                    ? 'justify-end'
+                    : 'justify-start'
                 } rounded-3xl bg-purple-600 px-0.5 py-0 transition-all duration-150 dark:bg-gradient-to-r dark:from-purple-600 dark:to-pink-500`}
                 onClick={handleThemeColor}>
                 <motion.div
@@ -206,8 +205,8 @@ const Navbar = () => {
           <ul
             className={
               nav
-                ? 'fixed left-0 top-0 z-40 flex h-screen w-full flex-col items-center justify-center bg-zinc-50 duration-500 ease-in-out dark:bg-slate-950'
-                : 'fixed left-[-100%] top-0 z-40 flex h-screen w-full flex-col items-center justify-center bg-zinc-50 duration-500 ease-in-out dark:bg-slate-950'
+                ? 'fixed left-0 top-0 z-40 flex h-screen w-full flex-col items-center justify-center bg-red-500 duration-500 ease-in-out dark:bg-slate-950'
+                : 'fixed left-[-100%] top-0 z-40 flex h-screen w-full flex-col items-center justify-center bg-red-500 duration-500 ease-in-out dark:bg-slate-950'
             }>
             <motion.li
               animate={nav ? 'open' : 'closed'}
