@@ -18,24 +18,6 @@ const Socials = ({ style = 'inline-flex' }) => {
       </li>
       <li className='px-5 text-purple-600 transition duration-150 ease-in-out hover:text-pink-500'>
         <Link
-          href={socialLinks.codepen}
-          target='_blank'
-          rel='noopener noreferrer'
-          aria-label='Christian B Martinez | Codepen Link'>
-          <FaCodepen />
-        </Link>
-      </li>
-      <li className='px-5 text-purple-600 transition duration-150 ease-in-out hover:text-pink-500'>
-        <Link
-          href={socialLinks.tiktok}
-          target='_blank'
-          rel='noopener noreferrer'
-          aria-label='Christian B Martinez | Tiktok Link'>
-          <FaTiktok />
-        </Link>
-      </li>
-      <li className='px-5 text-purple-600 transition duration-150 ease-in-out hover:text-pink-500'>
-        <Link
           href={socialLinks.twitter}
           target='_blank'
           rel='noopener noreferrer'

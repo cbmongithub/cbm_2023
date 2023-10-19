@@ -48,19 +48,19 @@ const PostCard = ({ title, date, description, author, type, slug }) => {
       </p>
       <div className='flex justify-between'>
         <div className='flex w-1/12 justify-start align-middle'>
-          <div className='relative w-7'>
+          <div className='relative h-7 w-7'>
             <Image
-              className='mx-auto h-7 w-7 rounded-full object-cover'
+              className='h-6 w-6 rounded-full object-cover'
               src={`${process.env.NEXT_PUBLIC_BASE_URL}/img/me.webp`}
               alt='Christian Martinez Avatar'
               width={28}
               height={28}
             />
-            <div className='absolute inset-0 mx-auto h-7 w-7 rounded-full bg-purple-600 opacity-25 dark:bg-gradient-to-r dark:from-purple-600 dark:to-pink-500 dark:opacity-35'></div>
+            <div className='absolute inset-0 h-6 w-6 rounded-full bg-purple-600 opacity-25 dark:bg-gradient-to-r dark:from-purple-600 dark:to-pink-500 dark:opacity-35'></div>
           </div>
         </div>
         <div className='flex w-3/12 justify-start align-middle'>
-          <span className='ml-1 font-medium text-zinc-900 dark:text-zinc-50'>
+          <span className='ml-1 font-medium text-zinc-900 dark:text-zinc-50 sm:ml-[-20px] md:ml-0'>
             {author}
           </span>
         </div>

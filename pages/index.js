@@ -27,7 +27,7 @@ const Index = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ type: 'spring', stiffness: 30, delay: 0.5 }}
               />
-              <div className='mt-12 lg:mt-0'>
+              <div className='mt-0'>
                 <motion.div
                   initial={{ y: -100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
@@ -37,14 +37,7 @@ const Index = () => {
                     <br />I build
                     <span className='text-purple-600 transition duration-150 ease-in-out hover:text-pink-500'>
                       <TypeAnimation
-                        sequence={[
-                          'websites',
-                          2000,
-                          'apps',
-                          2000,
-                          'tools',
-                          2000,
-                        ]}
+                        sequence={['sites', 2000, 'apps', 2000, 'tools', 2000]}
                         wrapper='span'
                         cursor={false}
                         repeat={Infinity}
@@ -59,12 +52,11 @@ const Index = () => {
                   transition={{ type: 'spring', stiffness: 30, delay: 0.5 }}>
                   <Link
                     className='mr-2 rounded-xl bg-purple-600 px-7 py-3.5 text-sm font-medium uppercase leading-snug text-zinc-50 shadow-xl transition duration-150 ease-in-out hover:border-pink-500 hover:bg-pink-500 hover:shadow-2xl focus:border-pink-500 focus:bg-pink-500 focus:text-zinc-50 focus:shadow-2xl focus:outline-none focus:ring-0 active:bg-pink-500 active:shadow-2xl'
-                    href='/christians-resume.pdf'
+                    href='/about'
                     role='button'
-                    target='_blank'
-                    aria-label='Resume download button'
+                    aria-label='About link button'
                     rel='noopener noreferrer'>
-                    RESUME
+                    ABOUT
                   </Link>
                   <Link
                     className='mr-2 rounded-xl bg-pink-500 px-7 py-3.5 text-sm font-medium uppercase leading-snug text-zinc-50 shadow-xl transition duration-150 ease-in-out hover:border-purple-600 hover:bg-purple-600 hover:shadow-2xl focus:border-purple-600 focus:bg-purple-600 focus:text-zinc-50 focus:shadow-2xl focus:outline-none focus:ring-0 active:bg-purple-600 active:shadow-2xl'

@@ -15,13 +15,21 @@
   }
 }
 
+html.dark {
+  background-color: rgb(2, 6, 23) !important;
+}
+
+html.light {
+  background-color: rgb(250, 250, 250) !important;
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
-  overflow-x: hidden !important;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;

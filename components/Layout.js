@@ -15,7 +15,7 @@ const variants = {
       duration: 0.5,
       ease: 'easeInOut',
       type: 'spring',
-      stiffness: 100,
+      stiffness: 30,
     },
   },
   in: {

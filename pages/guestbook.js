@@ -133,17 +133,17 @@ const GuestBook = ({ allPosts, gifs }) => {
                           {data.userName}
                         </span>
                       </div>
-                      <span className='font-light  text-zinc-800 dark:text-zinc-300'>
+                      <span className='font-light text-zinc-800 dark:text-zinc-300'>
                         {`${dayjs(data.timestamp).fromNow(true)} ago`}
                       </span>
                     </div>
                     <div
-                      className={`mt-5 flex h-auto w-full flex-col ${
+                      className={`flex h-auto w-full flex-col ${
                         data.format.includes('text-center')
                           ? data.format + ' items-center justify-center'
                           : data.format
-                      } pt-5 text-zinc-900 dark:text-zinc-300`}>
-                      <p className='formatted-text pb-3'>
+                      } text-zinc-900 dark:text-zinc-300`}>
+                      <p className='formatted-text'>
                         {filter.clean(data.formattedText)}
                       </p>
 

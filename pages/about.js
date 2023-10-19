@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import {
@@ -70,11 +71,11 @@ const About = () => {
           initial={{ y: -100, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ type: 'spring', stiffness: 30, delay: 1 }}
-          className='relative z-30 mx-auto mt-52 flex flex-col items-center justify-center px-6 pb-20 lg:w-2/3'>
-          <div className='flex min-w-0 flex-col break-words rounded-xl bg-white shadow-xl dark:bg-slate-900'>
-            <div className='px-6'>
+          className='relative z-30 mx-auto mt-32 max-w-screen-md px-4 py-8 pb-20 lg:px-6 lg:py-16'>
+          <div className='flex w-full flex-col break-words rounded-xl bg-white px-6 text-center shadow-xl dark:bg-slate-900'>
+            <div className='mb-10 mt-[-75px] flex items-center justify-center'>
               <Avatar
-                className='relative mt-[-75px]'
+                className='relative'
                 initial={{ y: -100, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{
@@ -82,47 +83,44 @@ const About = () => {
                   stiffness: 30,
                   delay: 0.25,
                 }}
-                width='w-1/3 sm:w-1/4'
-                height='h-1/3 sm:h-1/4'
+                width='w-32'
+                height='h-32'
               />
-              <div className='mt-12 text-center'>
-                <h3 className='mb-2 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 md:text-4xl'>
-                  Christian B. Martinez
-                </h3>
-                <div className='mb-2 mt-0 inline-flex text-sm font-medium uppercase leading-normal text-zinc-500 dark:text-zinc-400'>
-                  <FaMapPin className='text-md mr-2 text-zinc-400 ' />
-                  Salt Lake City, Utah
-                </div>
-                <div className='mb-2 mt-10 flex flex-row items-center justify-center font-light text-zinc-500 dark:text-zinc-400'>
-                  <FaBriefcase className='text-md mr-2 text-zinc-500 dark:text-zinc-400' />
-                  Full Stack Developer
-                </div>
-                <div className='mb-2 flex flex-row items-center justify-center font-light text-zinc-500 dark:text-zinc-400'>
-                  <FaUniversity className='text-md mr-2 text-zinc-500 dark:text-zinc-400' />
-                  University of Utah
-                </div>
-              </div>
-              <div className='mt-10 border-t border-zinc-300 py-10 text-center dark:border-zinc-600'>
-                <div className='flex flex-wrap justify-center'>
-                  <div className='w-full max-w-[600px]'>
-                    <p className='text-md mb-2 font-light leading-relaxed text-zinc-500 dark:text-zinc-400'>
-                      Hey there, 🖐 I&apos;m Christian, a dedicated Full Stack
-                      Web Developer from Utah. I am actively pursuing a full
-                      time role within the dynamic world of the tech industry. I
-                      recently completed the rigorous 6-month coding bootcamp
-                      program at the prestigious University of Utah, where I
-                      honed my skills by successfully delivering a multitude of
-                      full stack projects. This hands-on experience, alongside
-                      my current role at MMBC, has equipped me with a strong
-                      foundation in full stack web development. My passion for
-                      technology drives me to stay current with emerging trends
-                      and cutting-edge technologies, making me ever-ready to
-                      adapt and excel in this rapidly evolving field. Thanks for
-                      viewing my portfolio site, and I would be eager to
-                      connect!
-                    </p>
-                    <Socials style='list-none inline-flex mt-8' />
-                  </div>
+            </div>
+            <h3 className='mb-2 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 md:text-4xl'>
+              Christian B. Martinez
+            </h3>
+            <div className='mb-2 mt-0 flex flex-row items-center justify-center text-sm font-medium uppercase leading-normal text-zinc-500 dark:text-zinc-400'>
+              <FaMapPin className='text-md mr-2 text-zinc-400' />
+              Salt Lake City, Utah
+            </div>
+            <div className='mb-2 mt-10 flex flex-row items-center justify-center font-light text-zinc-500 dark:text-zinc-400'>
+              <FaBriefcase className='text-md mr-2 text-zinc-500 dark:text-zinc-400' />
+              Full Stack Developer
+            </div>
+            <div className='mb-2 flex flex-row items-center justify-center font-light text-zinc-500 dark:text-zinc-400'>
+              <FaUniversity className='text-md mr-2 text-zinc-500 dark:text-zinc-400' />
+              University of Utah
+            </div>
+            <div className='mt-10 border-t border-zinc-300 py-10 text-center dark:border-zinc-600'>
+              <div className='flex flex-wrap justify-center'>
+                <div className='w-full max-w-[600px]'>
+                  <p className='text-md mb-2 font-light leading-relaxed text-zinc-500 dark:text-zinc-400'>
+                    Hey there, 🖐 I&apos;m Christian, a dedicated Full Stack Web
+                    Developer from Utah. I am actively pursuing a full time role
+                    within the dynamic world of the tech industry. I recently
+                    completed the rigorous 6-month coding bootcamp program at
+                    the prestigious University of Utah, where I honed my skills
+                    by successfully delivering a multitude of full stack
+                    projects. This hands-on experience, alongside my current
+                    role at MMBC, has equipped me with a strong foundation in
+                    full stack web development. My passion for technology drives
+                    me to stay current with emerging trends and cutting-edge
+                    technologies, making me ever-ready to adapt and excel in
+                    this rapidly evolving field. Thanks for viewing my portfolio
+                    site, and I would be eager to connect!
+                  </p>
+                  <Socials style='list-none inline-flex mt-8' />
                 </div>
               </div>
             </div>
@@ -473,7 +471,7 @@ const About = () => {
 
         <Heading
           title='Latest Repos'
-          paragraph={`View my latest repos on Github`}
+          paragraph={`View latest pushes to Github`}
         />
         <div className='relative z-30 mx-auto max-w-screen-xl px-4 py-8 pb-20 lg:px-6 lg:py-16'>
           <div className='grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-3'>
