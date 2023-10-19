@@ -306,7 +306,7 @@ const Navbar = () => {
                 </Link>
               </motion.div>
             </li>
-            <div className='fixed bottom-20 flex flex-col items-center justify-center p-4'>
+            <div className='fixed bottom-10 flex flex-col items-center justify-center p-4'>
               <motion.div
                 animate={nav ? 'open' : 'closed'}
                 variants={eighthVariant}>
