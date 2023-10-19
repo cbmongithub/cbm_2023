@@ -201,9 +201,7 @@ const eighthVariant = {
 const socialLinks = {
   github: 'https://github.com/christianbmartinez',
   linkedin: 'https://www.linkedin.com/in/cmartinez1089/',
-  tiktok: 'https://www.tiktok.com/@coderchris',
   twitter: 'https://twitter.com/_coderchris',
-  codepen: 'https://codepen.io/_coderchris',
 }
 
 const portfolioData = [

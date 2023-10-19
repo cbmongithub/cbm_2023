@@ -73,7 +73,7 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider attribute='class'>
       <AnimatePresence
-        initial={false}
+        initial={true}
         mode='wait'>
         <motion.div
           key={asPath}

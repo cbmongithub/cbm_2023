@@ -9,7 +9,7 @@ const Portfolio = () => {
       <SiteHead
         page='Portfolio'
         title='Portfolio'
-        description={'View my most recent portfolio of projects'}
+        description='View my most recent portfolio of projects'
         keywords={
           'portfolio site, next js portfolio, react, technology, chatgpt'
         }

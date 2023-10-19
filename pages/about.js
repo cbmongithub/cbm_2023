@@ -57,10 +57,10 @@ const About = () => {
   return (
     <>
       <SiteHead
-        page={'About'}
-        title={'About'}
-        description={'A little about me'}
-        keywords={'nextjs, blog, javascript, tech blogs, chatgpt, react js'}
+        page='About'
+        title='About'
+        description='A little about me'
+        keywords='nextjs, blog, javascript, tech blogs, chatgpt, react js'
       />
       <section>
         <Heading

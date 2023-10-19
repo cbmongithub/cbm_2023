@@ -64,6 +64,7 @@ const Navbar = () => {
           <div className='z-40 flex flex-row items-center justify-center p-4'>
             <Link
               href='/'
+              role='link'
               aria-label='Christian B Martinez | Home Page'>
               <svg
                 width='50'
@@ -84,6 +85,7 @@ const Navbar = () => {
               <li className='p-4 transition duration-150 ease-in-out hover:text-purple-600'>
                 <Link
                   href='/'
+                  role='link'
                   aria-label='Christian B Martinez | Home Page'>
                   Home
                 </Link>
@@ -91,6 +93,7 @@ const Navbar = () => {
               <li className='p-4 transition duration-150 ease-in-out hover:text-purple-600'>
                 <Link
                   href='/about'
+                  role='link'
                   aria-label='Christian B Martinez | About Page'>
                   About
                 </Link>
@@ -98,6 +101,7 @@ const Navbar = () => {
               <li className='p-4 transition duration-150 ease-in-out hover:text-purple-600'>
                 <Link
                   href='/portfolio'
+                  role='link'
                   aria-label='Christian B Martinez | Portfolio Page'>
                   Portfolio
                 </Link>
@@ -106,6 +110,7 @@ const Navbar = () => {
               <li className='p-4 transition duration-150 ease-in-out hover:text-purple-600'>
                 <Link
                   href='/blog'
+                  role='link'
                   aria-label='Christian B Martinez | Blog Page'>
                   Blog
                 </Link>
@@ -113,6 +118,7 @@ const Navbar = () => {
               <li className='p-4 transition duration-150 ease-in-out hover:text-purple-600'>
                 <Link
                   href='/contact'
+                  role='link'
                   aria-label='Christian B Martinez | Contact Page'>
                   Contact
                 </Link>
@@ -120,7 +126,7 @@ const Navbar = () => {
               <li className='p-4 transition duration-150 ease-in-out hover:text-purple-600'>
                 <Link
                   href='/christians-resume.pdf'
-                  role='button'
+                  role='link'
                   target='_blank'
                   download
                   aria-label='Christian B. Martinez | Download Resume'
@@ -206,9 +212,10 @@ const Navbar = () => {
             <motion.li
               animate={nav ? 'open' : 'closed'}
               variants={firstVariant}
-              className='fixed top-20 inline-flex p-4'>
+              className='fixed top-20 flex w-full flex-col items-center justify-center p-4'>
               <Link
                 href='/'
+                role='link'
                 aria-label='Christian B Martinez | Home Page'
                 onClick={handleNav}>
                 <svg
@@ -225,94 +232,92 @@ const Navbar = () => {
                 </svg>
               </Link>
             </motion.li>
-            <li className='w-full p-4 text-center text-2xl text-zinc-900 hover:text-purple-600 dark:text-zinc-200'>
-              <motion.div
-                animate={nav ? 'open' : 'closed'}
-                variants={secondVariant}>
-                <Link
-                  className='font-light transition duration-150 ease-in-out dark:hover:text-purple-600'
-                  href='/'
-                  aria-label='Christian B Martinez | Home Page'
-                  onClick={handleNav}>
-                  Home
-                </Link>
-              </motion.div>
-            </li>
-            <li className='w-full p-4 text-center text-2xl text-zinc-900 hover:text-purple-600 dark:text-zinc-200'>
-              <motion.div
-                animate={nav ? 'open' : 'closed'}
-                variants={thirdVariant}>
-                <Link
-                  className='font-light transition duration-150 ease-in-out dark:hover:text-purple-600'
-                  href='/about'
-                  aria-label='Christian B Martinez | About Page'
-                  onClick={handleNav}>
-                  About
-                </Link>
-              </motion.div>
-            </li>
-            <li className='w-full p-4 text-center text-2xl text-zinc-900 hover:text-purple-600 dark:text-zinc-200'>
-              <motion.div
-                animate={nav ? 'open' : 'closed'}
-                variants={fourthVariant}>
-                <Link
-                  className='font-light transition duration-150 ease-in-out dark:hover:text-purple-600'
-                  href='/portfolio'
-                  aria-label='Christian B Martinez | Portfolio Page'
-                  onClick={handleNav}>
-                  Portfolio
-                </Link>
-              </motion.div>
-            </li>
-            <li className='w-full p-4 text-center text-2xl text-zinc-900 hover:text-purple-600 dark:text-zinc-200'>
-              <motion.div
-                animate={nav ? 'open' : 'closed'}
-                variants={fifthVariant}>
-                <Link
-                  className='font-light transition duration-150 ease-in-out dark:hover:text-purple-600'
-                  href='/blog'
-                  onClick={handleNav}
-                  aria-label='Christian B Martinez | Blog Page'>
-                  Blog
-                </Link>
-              </motion.div>
-            </li>
-            <li className='w-full p-4 text-center text-2xl text-zinc-900 hover:text-purple-600 dark:text-zinc-200'>
-              <motion.div
-                animate={nav ? 'open' : 'closed'}
-                variants={sixthVariant}>
-                <Link
-                  className='font-light transition duration-150 ease-in-out dark:hover:text-purple-600'
-                  href='/contact'
-                  aria-label='Christian B Martinez | Contact Page'
-                  onClick={handleNav}>
-                  Contact
-                </Link>
-              </motion.div>
-            </li>
-            <li className='w-full p-4 text-center text-2xl text-zinc-900 hover:text-purple-600 dark:text-zinc-200'>
-              <motion.div
-                animate={nav ? 'open' : 'closed'}
-                variants={seventhVariant}>
-                <Link
-                  className='font-light transition duration-150 ease-in-out dark:hover:text-purple-600'
-                  href='/christians-resume.pdf'
-                  role='button'
-                  target='_blank'
-                  download
-                  aria-label='Christian B. Martinez | Download Resume'
-                  rel='noopener noreferrer'>
-                  Resume
-                </Link>
-              </motion.div>
-            </li>
-            <div className='fixed bottom-10 flex flex-col items-center justify-center p-4'>
-              <motion.div
-                animate={nav ? 'open' : 'closed'}
-                variants={eighthVariant}>
-                <Socials />
-              </motion.div>
-            </div>
+            <motion.li
+              className='w-full p-4 text-center text-2xl text-zinc-900 hover:text-purple-600 dark:text-zinc-200'
+              animate={nav ? 'open' : 'closed'}
+              variants={secondVariant}>
+              <Link
+                className='font-light transition duration-150 ease-in-out dark:hover:text-purple-600'
+                href='/'
+                role='link'
+                aria-label='Christian B Martinez | Home Page'
+                onClick={handleNav}>
+                Home
+              </Link>
+            </motion.li>
+            <motion.li
+              className='w-full p-4 text-center text-2xl text-zinc-900 hover:text-purple-600 dark:text-zinc-200'
+              animate={nav ? 'open' : 'closed'}
+              variants={thirdVariant}>
+              <Link
+                className='font-light transition duration-150 ease-in-out dark:hover:text-purple-600'
+                href='/about'
+                role='link'
+                aria-label='Christian B Martinez | About Page'
+                onClick={handleNav}>
+                About
+              </Link>
+            </motion.li>
+            <motion.li
+              className='w-full p-4 text-center text-2xl text-zinc-900 hover:text-purple-600 dark:text-zinc-200'
+              animate={nav ? 'open' : 'closed'}
+              variants={fourthVariant}>
+              <Link
+                className='font-light transition duration-150 ease-in-out dark:hover:text-purple-600'
+                href='/portfolio'
+                role='link'
+                aria-label='Christian B Martinez | Portfolio Page'
+                onClick={handleNav}>
+                Portfolio
+              </Link>
+            </motion.li>
+            <motion.li
+              className='w-full p-4 text-center text-2xl text-zinc-900 hover:text-purple-600 dark:text-zinc-200'
+              animate={nav ? 'open' : 'closed'}
+              variants={fifthVariant}>
+              <Link
+                className='font-light transition duration-150 ease-in-out dark:hover:text-purple-600'
+                href='/blog'
+                role='link'
+                onClick={handleNav}
+                aria-label='Christian B Martinez | Blog Page'>
+                Blog
+              </Link>
+            </motion.li>
+            <motion.li
+              className='w-full p-4 text-center text-2xl text-zinc-900 hover:text-purple-600 dark:text-zinc-200'
+              animate={nav ? 'open' : 'closed'}
+              variants={sixthVariant}>
+              <Link
+                className='font-light transition duration-150 ease-in-out dark:hover:text-purple-600'
+                href='/contact'
+                role='link'
+                aria-label='Christian B Martinez | Contact Page'
+                onClick={handleNav}>
+                Contact
+              </Link>
+            </motion.li>
+            <motion.li
+              className='w-full p-4 text-center text-2xl text-zinc-900 hover:text-purple-600 dark:text-zinc-200'
+              animate={nav ? 'open' : 'closed'}
+              variants={seventhVariant}>
+              <Link
+                className='font-light transition duration-150 ease-in-out dark:hover:text-purple-600'
+                href='/christians-resume.pdf'
+                role='link'
+                target='_blank'
+                download
+                aria-label='Christian B. Martinez | Download Resume'
+                rel='noopener noreferrer'>
+                Resume
+              </Link>
+            </motion.li>
+            <motion.li
+              className='fixed bottom-20 flex w-full flex-col items-center justify-center p-4'
+              animate={nav ? 'open' : 'closed'}
+              variants={eighthVariant}>
+              <Socials />
+            </motion.li>
           </ul>
         </div>
       </nav>

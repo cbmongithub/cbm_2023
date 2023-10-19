@@ -81,12 +81,10 @@ const GuestBook = ({ allPosts, gifs }) => {
   return (
     <>
       <SiteHead
-        page={'GuestBook'}
-        title={'Guest Book'}
-        description={'A guestbook page for visitors to christianbmartinez.com'}
-        keywords={
-          'nextjs, guestbook, javascript, tech, articles, mongodb, react, js, api'
-        }
+        page='GuestBook'
+        title='Guest Book'
+        description='A guestbook page for visitors to christianbmartinez.com'
+        keywords='nextjs, guestbook, javascript, tech, articles, mongodb, react, js, api'
       />
       {loading ? <div className='form-loading-bar'></div> : ''}
       <section>

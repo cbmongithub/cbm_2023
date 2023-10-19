@@ -62,10 +62,8 @@ const Contact = () => {
       <SiteHead
         page='Contact'
         title='Contact'
-        description={'Questions or comments? Contact me anytime.'}
-        keywords={
-          'nextjs, contact page tailwind css, contact page, christian martinez, contact form, react contact form'
-        }
+        description='Questions or comments? Contact me anytime.'
+        keywords='nextjs, contact page tailwind css, contact page, christian martinez, contact form, react contact form'
       />
       {formData.loading ? <div className='form-loading-bar'></div> : ''}
       <section>

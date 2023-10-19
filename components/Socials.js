@@ -11,6 +11,7 @@ const Socials = ({ style = 'inline-flex' }) => {
         <Link
           href={socialLinks.github}
           target='_blank'
+          role='link'
           rel='noopener noreferrer'
           aria-label='Christian B Martinez | Github Link'>
           <FaGithub />
@@ -20,6 +21,7 @@ const Socials = ({ style = 'inline-flex' }) => {
         <Link
           href={socialLinks.twitter}
           target='_blank'
+          role='link'
           rel='noopener noreferrer'
           aria-label='Christian B Martinez | Twitter Link'>
           <FaSquareXTwitter />
@@ -29,6 +31,7 @@ const Socials = ({ style = 'inline-flex' }) => {
         <Link
           href={socialLinks.linkedin}
           target='_blank'
+          role='link'
           rel='noopener noreferrer'
           aria-label='Christian B Martinez | Github Link'>
           <FaLinkedin />
