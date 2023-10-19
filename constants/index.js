@@ -56,7 +56,7 @@ const svgPathVariant2 = {
 
 const firstVariant = {
   open: {
-    x: 0,
+    y: 0,
     opacity: 1,
     transition: {
       type: 'spring',
@@ -66,7 +66,7 @@ const firstVariant = {
     },
   },
   closed: {
-    x: -100,
+    y: 100,
     opacity: 0,
     transition: { type: 'spring', ease: 'easeInOut' },
   },
@@ -84,7 +84,7 @@ const secondVariant = {
     },
   },
   closed: {
-    x: -100,
+    x: 100,
     opacity: 0,
     transition: { type: 'spring', ease: 'easeInOut' },
   },
@@ -102,7 +102,7 @@ const thirdVariant = {
     },
   },
   closed: {
-    x: -100,
+    x: 100,
     opacity: 0,
     transition: { type: 'spring', ease: 'easeInOut' },
   },
@@ -120,7 +120,7 @@ const fourthVariant = {
     },
   },
   closed: {
-    x: -100,
+    x: 100,
     opacity: 0,
     transition: { type: 'spring', ease: 'easeInOut' },
   },
@@ -138,7 +138,7 @@ const fifthVariant = {
     },
   },
   closed: {
-    x: -100,
+    x: 100,
     opacity: 0,
     transition: { type: 'spring', ease: 'easeInOut' },
   },
@@ -156,7 +156,7 @@ const sixthVariant = {
     },
   },
   closed: {
-    x: -100,
+    x: 100,
     opacity: 0,
     transition: { type: 'spring', ease: 'easeInOut' },
   },
@@ -174,7 +174,7 @@ const seventhVariant = {
     },
   },
   closed: {
-    x: -100,
+    x: 100,
     opacity: 0,
     transition: { type: 'spring', ease: 'easeInOut' },
   },
@@ -192,7 +192,7 @@ const eighthVariant = {
     },
   },
   closed: {
-    x: -100,
+    x: 100,
     opacity: 0,
     transition: { type: 'spring', ease: 'easeInOut' },
   },

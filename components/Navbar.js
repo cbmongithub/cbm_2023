@@ -202,11 +202,11 @@ const Navbar = () => {
               </svg>
             </div>
           </div>
-          <ul
+          <motion.ul
             className={
               nav
-                ? 'fixed left-0 top-0 z-40 flex h-screen w-full flex-col items-center justify-center bg-red-500 duration-500 ease-in-out dark:bg-slate-950'
-                : 'fixed left-[-100%] top-0 z-40 flex h-screen w-full flex-col items-center justify-center bg-red-500 duration-500 ease-in-out dark:bg-slate-950'
+                ? 'fixed right-0 top-0 z-40 flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-zinc-200 duration-500 ease-in-out dark:bg-slate-900'
+                : 'fixed right-12 top-10 z-40 flex h-0 w-0 flex-col items-center justify-center bg-transparent duration-500 ease-in-out dark:bg-slate-900'
             }>
             <motion.li
               animate={nav ? 'open' : 'closed'}
@@ -317,7 +317,7 @@ const Navbar = () => {
               variants={eighthVariant}>
               <Socials />
             </motion.li>
-          </ul>
+          </motion.ul>
         </div>
       </nav>
     </>
