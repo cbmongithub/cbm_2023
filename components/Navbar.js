@@ -40,7 +40,6 @@ const Navbar = () => {
   const handleNav = () => {
     setNav(!nav)
     setAnimation('moving')
-    document.querySelector('body').style.overflowY = nav ? 'auto' : 'hidden'
     setTimeout(() => {
       setAnimation(animation === 'closed' ? 'open' : 'closed')
     }, 500)
@@ -205,8 +204,8 @@ const Navbar = () => {
           <motion.ul
             className={
               nav
-                ? 'fixed right-0 top-0 z-40 flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-zinc-200 duration-500 ease-in-out dark:bg-slate-900'
-                : 'fixed right-12 top-10 z-40 flex h-0 w-0 flex-col items-center justify-center bg-transparent duration-500 ease-in-out dark:bg-slate-900'
+                ? 'fixed right-0 top-0 z-40 flex h-screen w-full flex-col items-center justify-center bg-zinc-50 duration-500 ease-in-out dark:bg-slate-950'
+                : 'fixed right-[-100%] top-0 z-40 flex h-screen w-full flex-col items-center justify-center bg-zinc-50 duration-500 ease-in-out dark:bg-slate-950'
             }>
             <motion.li
               animate={nav ? 'open' : 'closed'}

@@ -43,6 +43,14 @@ const experienceData = [
   },
 ]
 
+const navLinks = [
+  { href: '/', text: 'Home' },
+  { href: '/about', text: 'About' },
+  { href: '/portfolio', text: 'Portfolio' },
+  { href: '/blog', text: 'Blog' },
+  { href: '/contact', text: 'Contact' },
+]
+
 const svgPathVariant1 = {
   open: { d: 'M3.06061 2.99999L21.0606 21' },
   closed: { d: 'M0 8.5L24 8.5' },
@@ -56,7 +64,7 @@ const svgPathVariant2 = {
 
 const firstVariant = {
   open: {
-    y: 0,
+    x: 0,
     opacity: 1,
     transition: {
       type: 'spring',
@@ -66,9 +74,14 @@ const firstVariant = {
     },
   },
   closed: {
-    y: 100,
+    x: 100,
     opacity: 0,
-    transition: { type: 'spring', ease: 'easeInOut' },
+    transition: {
+      type: 'spring',
+      ease: 'easeInOut',
+      stiffness: 30,
+      delay: 0,
+    },
   },
 }
 
@@ -86,7 +99,12 @@ const secondVariant = {
   closed: {
     x: 100,
     opacity: 0,
-    transition: { type: 'spring', ease: 'easeInOut' },
+    transition: {
+      type: 'spring',
+      ease: 'easeInOut',
+      stiffness: 30,
+      delay: 0.07142857142,
+    },
   },
 }
 
@@ -302,6 +320,7 @@ const portfolioData = [
 
 export {
   experienceData,
+  navLinks,
   socialLinks,
   portfolioData,
   svgPathVariant1,

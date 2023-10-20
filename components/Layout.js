@@ -4,7 +4,8 @@ import { useRouter } from 'next/router'
 import { motion, AnimatePresence } from 'framer-motion'
 
 import Loader from './Loader'
-import Navbar from './Navbar'
+//import Navbar from './Navbar'
+import Menu from './Menu'
 import Footer from './Footer'
 import ChatWidget from './ChatWidget'
 
@@ -86,7 +87,7 @@ const Layout = ({ children }) => {
           ) : (
             <>
               <main className='z-0 min-h-screen bg-zinc-50 dark:bg-slate-950'>
-                <Navbar />
+                <Menu />
                 {children}
               </main>
               {isDisabled ? null : <Footer />}
