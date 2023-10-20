@@ -47,7 +47,7 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div className='mx-auto flex h-20 items-center justify-between overflow-hidden px-4 text-zinc-800 dark:text-zinc-50'>
+      <div className='mx-auto flex h-20 max-w-screen-xl items-center justify-between overflow-hidden px-6 text-zinc-800 dark:text-zinc-50'>
         <div className='z-50 flex flex-row items-center justify-center py-4'>
           <Link
             href='/'
@@ -70,9 +70,11 @@ const Navbar = () => {
         <div className='z-40 hidden md:flex'>
           <ul className='flex flex-row items-center justify-center p-4'>
             {navLinks.map(link => (
-              <li
-                key={link.text}
-                className='p-4 transition duration-150 ease-in-out hover:text-purple-600'>
+              <motion.li
+                className='p-4 transition duration-150 ease-in-out hover:text-purple-600'
+                whileHover={{ scale: 0.97 }}
+                whileTap={{ scale: 0.97 }}
+                key={link.text}>
                 <Link
                   href={link.href}
                   role='link'
@@ -81,7 +83,7 @@ const Navbar = () => {
                   aria-label={`Christian B Martinez | ${link.text}`}>
                   {link.text}
                 </Link>
-              </li>
+              </motion.li>
             ))}
           </ul>
         </div>
@@ -113,8 +115,12 @@ const Navbar = () => {
           </div>
           <button
             className='md:hidden'
+            type='button'
+            aria-label='Menu Toggle'
+            role='button'
             onClick={handleNav}>
             <svg
+              aria-hidden='true'
               width='29'
               height='29'
               viewBox='0 0 29 29'>
@@ -132,22 +138,22 @@ const Navbar = () => {
           </button>
         </div>
         <motion.ul
-          variants={ulVariants}
-          animate={nav ? 'open' : 'closed'}
           className={
             nav
               ? 'fixed right-0 top-0 z-40 flex h-screen w-full flex-col items-center justify-center bg-white duration-1000 ease-in-out dark:bg-slate-900'
               : 'fixed right-[-100%] top-0 z-40 flex h-screen w-full flex-col items-center justify-center  bg-zinc-50 duration-1000 ease-in-out dark:bg-slate-950'
-          }>
+          }
+          variants={ulVariants}
+          animate={nav ? 'open' : 'closed'}>
           {navLinks.map((link, i) => (
             <motion.li
+              className='flex flex-row items-center justify-center p-4'
               key={`${link.text}_${i}`}
               variants={liVariants}
               whileHover={{ scale: 0.95 }}
-              whileTap={{ scale: 0.95 }}
-              className='flex flex-row items-center justify-center p-4 text-2xl text-zinc-900 hover:text-purple-600 dark:text-zinc-200'>
+              whileTap={{ scale: 0.95 }}>
               <Link
-                className='font-light transition duration-150 ease-in-out dark:hover:text-purple-600'
+                className='text-2xl font-light text-zinc-900 transition duration-150 ease-in-out hover:text-purple-600 dark:text-zinc-200 dark:hover:text-purple-600'
                 href={link.href}
                 role='link'
                 target={link.text === 'Resume' ? '_blank' : '_self'}
