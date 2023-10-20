@@ -167,9 +167,10 @@ a:focus {
 }
 
 #tsparticles {
+  position: relative;
   width: inherit;
   height: inherit;
-  z-index: -1;
+  z-index: 30;
 }
 
 pre {
