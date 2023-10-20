@@ -8,12 +8,8 @@ const NotFound = () => {
       <SiteHead
         page='404 Page'
         title='404 Page'
-        description={
-          'Portfolio site of full stack web developer Christian B. Martinez'
-        }
-        keywords={
-          'next js, tailwind css, blog, javascript, tech site, portfolio site, chatgpt app, react, 404'
-        }
+        description='Portfolio site of full stack web developer Christian B. Martinez'
+        keywords='next js, tailwind css, blog, javascript, tech site, portfolio site, chatgpt app, react, 404'
       />
       <section>
         <div className='relative z-30 flex h-full w-full items-center justify-center px-16 pt-48 md:px-0'>

@@ -7,8 +7,8 @@ const Avatar = ({
   animate = { x: 0, opacity: 1 },
   whileInView,
   transition = { type: 'spring', stiffness: 30, delay: 1 },
-  width = 'w-1/2 md:w-1/3 lg:w-2/3',
-  height = 'h-1/2 md:w-1/3 lg:h-2/3',
+  width = 'w-1/2 md:w-1/3 lg:w-1/4 xl:w-3/4',
+  height = 'h-1/2 md:h-1/3 lg:h-1/4 xl:h-3/4',
   shadow = 'shadow-2xl',
 }) => (
   <motion.div

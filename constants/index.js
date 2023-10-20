@@ -43,167 +43,82 @@ const experienceData = [
   },
 ]
 
-const svgPathVariant1 = {
+const navLinks = [
+  { href: '/', text: 'Home' },
+  { href: '/about', text: 'About' },
+  { href: '/portfolio', text: 'Portfolio' },
+  { href: '/blog', text: 'Blog' },
+  { href: '/contact', text: 'Contact' },
+  { href: '/christians-resume.pdf', text: 'Resume' },
+]
+
+const svgPathOpen = {
   open: { d: 'M3.06061 2.99999L21.0606 21' },
   closed: { d: 'M0 8.5L24 8.5' },
 }
 
-const svgPathVariant2 = {
+const svgPathClose = {
   open: { d: 'M3.00006 21.0607L21 3.06064' },
   moving: { d: 'M0 14.5L24 14.5' },
   closed: { d: 'M0 14.5L12 14.5' },
 }
 
-const firstVariant = {
+const ulVariants = {
   open: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      type: 'spring',
-      ease: 'easeInOut',
-      stiffness: 30,
-      delay: 0,
-    },
+    transition: { staggerChildren: 0.1, delayChildren: 0.1 },
   },
   closed: {
-    x: -100,
-    opacity: 0,
-    transition: { type: 'spring', ease: 'easeInOut' },
+    transition: { staggerChildren: 0.05, staggerDirection: 1 },
   },
 }
 
-const secondVariant = {
+const liVariants = {
   open: {
     x: 0,
     opacity: 1,
     transition: {
-      type: 'spring',
-      ease: 'easeInOut',
-      stiffness: 30,
-      delay: 0.07142857142,
+      x: { stiffness: 30, type: 'spring', ease: 'easeIn' },
     },
   },
   closed: {
-    x: -100,
+    x: 100,
     opacity: 0,
-    transition: { type: 'spring', ease: 'easeInOut' },
+    transition: {
+      x: { stiffness: 30, type: 'spring', ease: 'easeOut' },
+    },
   },
 }
 
-const thirdVariant = {
-  open: {
-    x: 0,
+const layoutVariants = {
+  inactive: {
     opacity: 1,
     transition: {
-      type: 'spring',
+      duration: 0.5,
       ease: 'easeInOut',
+      type: 'spring',
       stiffness: 30,
-      delay: 0.14285714284,
     },
   },
-  closed: {
-    x: -100,
+  in: {
     opacity: 0,
-    transition: { type: 'spring', ease: 'easeInOut' },
-  },
-}
-
-const fourthVariant = {
-  open: {
-    x: 0,
-    opacity: 1,
     transition: {
-      type: 'spring',
+      duration: 0.5,
       ease: 'easeInOut',
-      stiffness: 30,
-      delay: 0.21428571426,
     },
   },
-  closed: {
-    x: -100,
+  out: {
     opacity: 0,
-    transition: { type: 'spring', ease: 'easeInOut' },
-  },
-}
-
-const fifthVariant = {
-  open: {
-    x: 0,
-    opacity: 1,
     transition: {
-      type: 'spring',
+      duration: 0.5,
       ease: 'easeInOut',
-      stiffness: 30,
-      delay: 0.28571428568,
     },
-  },
-  closed: {
-    x: -100,
-    opacity: 0,
-    transition: { type: 'spring', ease: 'easeInOut' },
-  },
-}
-
-const sixthVariant = {
-  open: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      type: 'spring',
-      ease: 'easeInOut',
-      stiffness: 30,
-      delay: 0.3571428571,
-    },
-  },
-  closed: {
-    x: -100,
-    opacity: 0,
-    transition: { type: 'spring', ease: 'easeInOut' },
-  },
-}
-
-const seventhVariant = {
-  open: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      type: 'spring',
-      ease: 'easeInOut',
-      stiffness: 30,
-      delay: 0.42857142852,
-    },
-  },
-  closed: {
-    x: -100,
-    opacity: 0,
-    transition: { type: 'spring', ease: 'easeInOut' },
-  },
-}
-
-const eighthVariant = {
-  open: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      type: 'spring',
-      ease: 'easeInOut',
-      stiffness: 30,
-      delay: 0.5,
-    },
-  },
-  closed: {
-    x: -100,
-    opacity: 0,
-    transition: { type: 'spring', ease: 'easeInOut' },
   },
 }
 
 const socialLinks = {
   github: 'https://github.com/christianbmartinez',
   linkedin: 'https://www.linkedin.com/in/cmartinez1089/',
-  tiktok: 'https://www.tiktok.com/@coderchris',
   twitter: 'https://twitter.com/_coderchris',
-  codepen: 'https://codepen.io/_coderchris',
 }
 
 const portfolioData = [
@@ -304,16 +219,12 @@ const portfolioData = [
 
 export {
   experienceData,
+  navLinks,
+  svgPathOpen,
+  svgPathClose,
+  ulVariants,
+  liVariants,
+  layoutVariants,
   socialLinks,
   portfolioData,
-  svgPathVariant1,
-  svgPathVariant2,
-  firstVariant,
-  secondVariant,
-  thirdVariant,
-  fourthVariant,
-  fifthVariant,
-  sixthVariant,
-  seventhVariant,
-  eighthVariant,
 }

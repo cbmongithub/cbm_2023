@@ -10,19 +10,15 @@ const Index = () => {
       <SiteHead
         page='Home'
         title='Home'
-        description={
-          'Portfolio site of full stack web developer Christian B. Martinez'
-        }
-        keywords={
-          'next js, tailwind css, blog, javascript, tech site, portfolio site, chatgpt app, react'
-        }
+        description='Portfolio site of full stack web developer Christian B. Martinez'
+        keywords='next js, tailwind css, blog, javascript, tech site, portfolio site, chatgpt app, react'
       />
       <section>
-        <div className='absolute top-0 z-30 flex h-full w-full flex-row items-center justify-center bg-transparent px-6 py-12 text-center md:px-12 lg:text-left'>
-          <div className='container mx-auto xl:px-32'>
-            <div className='grid items-center gap-12 lg:grid-cols-2'>
+        <div className='absolute top-0 z-30 flex h-full w-full flex-row items-center justify-center bg-zinc-50 px-6 py-12 text-center dark:bg-slate-950 md:px-12'>
+          <div className='container max-w-screen-xl'>
+            <div className='grid items-center gap-12 text-center xl:grid-cols-2 xl:text-left'>
               <Avatar
-                className='relative flex-col items-center justify-center lg:hidden'
+                className='relative flex-col items-center justify-center xl:hidden'
                 initial={{ y: -100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ type: 'spring', stiffness: 30, delay: 0.5 }}
@@ -68,7 +64,7 @@ const Index = () => {
                 </motion.div>
               </div>
               <Avatar
-                className='relative mb-0 hidden flex-col items-center justify-center lg:flex'
+                className='relative mr-[-50px] hidden flex-col justify-self-end xl:flex xl:w-3/4'
                 initial={{ x: 100, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ type: 'spring', stiffness: 30, delay: 1 }}

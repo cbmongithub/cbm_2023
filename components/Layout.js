@@ -3,36 +3,12 @@ import { ThemeProvider } from 'next-themes'
 import { useRouter } from 'next/router'
 import { motion, AnimatePresence } from 'framer-motion'
 
+import { layoutVariants } from '../constants'
+
 import Loader from './Loader'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import ChatWidget from './ChatWidget'
-
-const variants = {
-  inactive: {
-    opacity: 1,
-    transition: {
-      duration: 0.5,
-      ease: 'easeInOut',
-      type: 'spring',
-      stiffness: 30,
-    },
-  },
-  in: {
-    opacity: 0,
-    transition: {
-      duration: 0.5,
-      ease: 'easeInOut',
-    },
-  },
-  out: {
-    opacity: 0,
-    transition: {
-      duration: 0.5,
-      ease: 'easeInOut',
-    },
-  },
-}
 
 const Layout = ({ children }) => {
   const router = useRouter()
@@ -73,11 +49,11 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider attribute='class'>
       <AnimatePresence
-        initial={false}
+        initial={true}
         mode='wait'>
         <motion.div
           key={asPath}
-          variants={variants}
+          variants={layoutVariants}
           initial='in'
           animate='inactive'
           exit='out'>

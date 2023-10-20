@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { FaGithub, FaTiktok, FaCodepen, FaLinkedin } from 'react-icons/fa'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { FaSquareXTwitter } from 'react-icons/fa6'
 
 import { socialLinks } from '../constants'
@@ -11,6 +11,7 @@ const Socials = ({ style = 'inline-flex' }) => {
         <Link
           href={socialLinks.github}
           target='_blank'
+          role='link'
           rel='noopener noreferrer'
           aria-label='Christian B Martinez | Github Link'>
           <FaGithub />
@@ -20,6 +21,7 @@ const Socials = ({ style = 'inline-flex' }) => {
         <Link
           href={socialLinks.twitter}
           target='_blank'
+          role='link'
           rel='noopener noreferrer'
           aria-label='Christian B Martinez | Twitter Link'>
           <FaSquareXTwitter />
@@ -29,6 +31,7 @@ const Socials = ({ style = 'inline-flex' }) => {
         <Link
           href={socialLinks.linkedin}
           target='_blank'
+          role='link'
           rel='noopener noreferrer'
           aria-label='Christian B Martinez | Github Link'>
           <FaLinkedin />
