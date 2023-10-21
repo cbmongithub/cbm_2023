@@ -16,11 +16,11 @@
 }
 
 html.dark {
-  background-color: rgb(2, 6, 23) !important;
+  background: rgb(2, 6, 23) !important;
 }
 
 html.light {
-  background-color: rgb(250, 250, 250) !important;
+  background: rgb(250, 250, 250) !important;
 }
 
 html,
@@ -167,10 +167,9 @@ a:focus {
 }
 
 #tsparticles {
-  position: relative;
   width: inherit;
   height: inherit;
-  z-index: 30;
+  z-index: 1;
 }
 
 pre {
