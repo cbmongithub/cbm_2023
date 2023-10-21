@@ -75,7 +75,7 @@ const Contact = () => {
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ type: 'spring', stiffness: 30, delay: 1 }}
-          className='container mx-auto mt-52 max-w-2xl md:mt-32 lg:w-2/3'>
+          className='container mx-auto mt-52 max-w-2xl pb-20 md:mt-32 md:pb-36 lg:w-2/3'>
           <div className='top:0 container relative px-6 text-slate-800 md:top-20 md:px-12'>
             <div className='mt-[-100px] block rounded-xl bg-white px-4 py-10 shadow-xl dark:bg-slate-900 md:px-6 md:py-12'>
               <div className='mx-auto grid max-w-[700px] grid-cols-3'>
@@ -135,7 +135,7 @@ const Contact = () => {
             border-zinc-300
             bg-white
             bg-clip-padding px-3 py-1.5
-            text-base font-normal text-zinc-700 transition
+            text-sm font-normal text-zinc-700 transition
             ease-in-out
             focus:border-purple-600
             focus:bg-white
@@ -162,7 +162,7 @@ const Contact = () => {
             border-zinc-300
             bg-white
             bg-clip-padding px-3 py-1.5
-            text-base font-normal text-zinc-700 transition
+            text-sm font-normal text-zinc-700 transition
             ease-in-out
             focus:border-purple-600
             focus:bg-white
@@ -191,7 +191,7 @@ const Contact = () => {
             border-zinc-300
             bg-white
             bg-clip-padding px-3  py-1.5
-            text-base font-normal text-zinc-700 transition
+            text-sm font-normal text-zinc-700 transition
             ease-in-out
             focus:border-purple-600
             focus:bg-white

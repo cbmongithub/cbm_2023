@@ -13,27 +13,14 @@ import ChatWidget from './ChatWidget'
 const Layout = ({ children }) => {
   const router = useRouter()
   const { asPath } = useRouter()
-  const [isDisabled, setIsDisabled] = useState(false)
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    const isDarkTheme = localStorage.getItem('theme') === 'dark'
-    document.querySelector('html').style.backgroundColor = `${
-      isDarkTheme ? '#020617' : '#FAFAFA'
-    }`
-    router.pathname === '/'
-      ? setIsDisabled(true)
-      : router.pathname === '/404'
-      ? setIsDisabled(true)
-      : setIsDisabled(false)
-  }, [router.pathname, isDisabled])
-
-  useEffect(() => {
-    const handleRouteChange = e => {
+    const handleRouteChange = () => {
       setLoading(true)
     }
 
-    const handleRouteChangeComplete = e => {
+    const handleRouteChangeComplete = () => {
       setLoading(false)
     }
 
@@ -49,9 +36,10 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider attribute='class'>
       <AnimatePresence
-        initial={true}
+        initial='false'
         mode='wait'>
-        <motion.div
+        <motion.main
+          className='z-0 min-h-screen bg-zinc-50 dark:bg-slate-950'
           key={asPath}
           variants={layoutVariants}
           initial='in'
@@ -61,15 +49,13 @@ const Layout = ({ children }) => {
             <Loader />
           ) : (
             <>
-              <main className='z-0 min-h-screen bg-zinc-50 dark:bg-slate-950'>
-                <Navbar />
-                {children}
-              </main>
-              {isDisabled ? null : <Footer />}
+              <Navbar />
+              {children}
+              <ChatWidget />
+              {router.pathname === '/' ? null : <Footer />}
             </>
           )}
-        </motion.div>
-        <ChatWidget />
+        </motion.main>
       </AnimatePresence>
     </ThemeProvider>
   )
