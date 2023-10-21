@@ -14,7 +14,7 @@ const Index = () => {
         keywords='next js, tailwind css, blog, javascript, tech site, portfolio site, chatgpt app, react'
       />
       <section>
-        <div className='absolute top-0 z-30 flex h-full w-full flex-row items-center justify-center bg-zinc-50 px-6 py-12 text-center dark:bg-slate-950 md:px-12'>
+        <div className='absolute top-0 z-30 flex h-full w-full flex-row items-center justify-center px-6 py-12 text-center md:px-12'>
           <div className='container max-w-screen-xl'>
             <div className='grid items-center gap-12 text-center xl:grid-cols-2 xl:text-left'>
               <Avatar
