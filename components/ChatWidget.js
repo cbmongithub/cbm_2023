@@ -103,8 +103,8 @@ const ChatWidget = () => {
               <ScrollableFeed>
                 <div className='flex flex-row justify-between rounded-b-xl bg-zinc-50 dark:bg-slate-900'>
                   <div className='flex flex-col justify-between px-4'>
-                    <div className='mt-5 flex flex-col'>
-                      <div className='mb-4 flex justify-end'>
+                    <div className='mt-5 flex flex-row'>
+                      <div className='mb-4 flex w-full justify-end'>
                         <div className='mr-2 rounded-xl bg-purple-600 px-4 py-3 text-zinc-50'>
                           <p>
                             Welcome! I am Christians chatbot. You can ask me
@@ -177,14 +177,14 @@ const AnswerSection = ({ storedValues }) => {
         .map((data, index) => {
           return (
             <div key={index}>
-              <div className='mb-4 flex justify-start'>
+              <div className='mb-4 flex w-full justify-start'>
                 <div className='rounded-xl bg-slate-400 px-4 py-3 text-zinc-50 dark:bg-slate-600'>
-                  <p>{data.question}</p>
+                  <p className='break-words'>{data.question}</p>
                 </div>
               </div>
-              <div className='mb-4 flex justify-end'>
+              <div className='mb-4 flex w-full justify-end'>
                 <div className='mr-2 rounded-xl bg-purple-600 px-4 py-3 text-zinc-50'>
-                  <p>{data.answer}</p>
+                  <p className='break-words'>{data.answer}</p>
                 </div>
                 <Image
                   src={`${process.env.NEXT_PUBLIC_BASE_URL}/img/bot.webp`}
