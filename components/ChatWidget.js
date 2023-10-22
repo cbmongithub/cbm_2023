@@ -90,8 +90,8 @@ const ChatWidget = () => {
             initial='closed'
             animate='open'
             exit='closed'
-            className='absolute bottom-5 right-6 z-30 mx-auto flex max-h-[30rem] min-h-[22rem] w-3/4 flex-col rounded-xl shadow-2xl md:w-1/2 lg:w-1/3 xl:w-1/5'>
-            <div className='bg-purple flex items-center justify-between rounded-t-xl bg-purple-600 px-4 py-5 align-middle dark:bg-gradient-to-r dark:from-purple-600 dark:to-pink-500'>
+            className='absolute bottom-5 right-6 z-30 mx-auto flex max-h-[30rem] min-h-[22rem] w-3/4 flex-col rounded-xl shadow-2xl md:w-1/2 lg:w-1/3 xl:w-1/4'>
+            <div className='sticky top-0 flex justify-between rounded-t-xl bg-gradient-to-r from-purple-600 to-pink-500 px-4 py-5'>
               <h1 className='text-lg font-semibold text-zinc-50'>Chat</h1>
               <a
                 onClick={setShow}
@@ -99,12 +99,12 @@ const ChatWidget = () => {
                 <AiOutlineClose className='text-xl font-semibold text-zinc-50' />
               </a>
             </div>
-            <div className='flex max-h-[20rem] min-h-[16rem] w-full flex-col bg-zinc-50  dark:bg-slate-900'>
+            <div className='flex max-h-[20rem] min-h-[16rem] w-full flex-col overflow-x-hidden bg-zinc-50 dark:bg-slate-800'>
               <ScrollableFeed>
-                <div className='flex flex-row justify-between rounded-b-xl bg-zinc-50 dark:bg-slate-900'>
+                <div className='flex flex-row justify-between rounded-b-xl bg-zinc-50 dark:bg-slate-800'>
                   <div className='flex flex-col justify-between px-4'>
-                    <div className='mt-5 flex flex-row'>
-                      <div className='mb-4 flex w-full justify-end'>
+                    <div className='mt-5 flex flex-col'>
+                      <div className='mb-4 flex justify-end'>
                         <div className='mr-2 rounded-xl bg-purple-600 px-4 py-3 text-zinc-50'>
                           <p>
                             Welcome! I am Christians chatbot. You can ask me
@@ -123,8 +123,8 @@ const ChatWidget = () => {
                           src={`${process.env.NEXT_PUBLIC_BASE_URL}/img/bot.webp`}
                           className='h-8 w-8 rounded-full object-cover'
                           alt='Chatbot image for Christian B Martinez'
-                          width={75}
-                          height={75}
+                          width={28}
+                          height={28}
                         />
                       </div>
                     </div>
@@ -142,8 +142,8 @@ const ChatWidget = () => {
                           src={`${process.env.NEXT_PUBLIC_BASE_URL}/img/bot.webp`}
                           className='mb-4 ml-2 h-8 w-8 rounded-full object-cover'
                           alt='Chatbot image for Christian B Martinez'
-                          width={75}
-                          height={75}
+                          width={28}
+                          height={28}
                         />
                       </div>
                     )}
@@ -156,15 +156,17 @@ const ChatWidget = () => {
         )}
       </AnimatePresence>
       {!show && (
-        <motion.div
-          variants={variants}
-          className='fixed bottom-5 right-6 z-30 cursor-pointer rounded-full bg-purple-600 p-4 shadow-xl hover:bg-pink-500 dark:bg-gradient-to-r dark:from-purple-600 dark:to-pink-500'
-          initial='closed'
-          animate='open'
-          exit='closed'
-          onClick={setShow}>
-          <FaComment className='h-5 w-5 text-zinc-50' />
-        </motion.div>
+        <AnimatePresence>
+          <motion.div
+            variants={variants}
+            className='fixed bottom-5 right-6 z-30 cursor-pointer rounded-full bg-gradient-to-r from-purple-600 to-pink-500 p-4 shadow-xl hover:bg-pink-500'
+            initial='closed'
+            animate='open'
+            exit='closed'
+            onClick={setShow}>
+            <FaComment className='h-5 w-5 text-zinc-50' />
+          </motion.div>
+        </AnimatePresence>
       )}
     </>
   )
@@ -177,21 +179,21 @@ const AnswerSection = ({ storedValues }) => {
         .map((data, index) => {
           return (
             <div key={index}>
-              <div className='mb-4 flex w-full justify-start'>
+              <div className='mb-4 flex justify-start'>
                 <div className='rounded-xl bg-slate-400 px-4 py-3 text-zinc-50 dark:bg-slate-600'>
-                  <p className='break-words'>{data.question}</p>
+                  <p>{data.question}</p>
                 </div>
               </div>
-              <div className='mb-4 flex w-full justify-end'>
+              <div className='mb-4 flex justify-end'>
                 <div className='mr-2 rounded-xl bg-purple-600 px-4 py-3 text-zinc-50'>
-                  <p className='break-words'>{data.answer}</p>
+                  <p>{data.answer}</p>
                 </div>
                 <Image
                   src={`${process.env.NEXT_PUBLIC_BASE_URL}/img/bot.webp`}
                   className='h-8 w-8 rounded-full object-cover'
                   alt='Chatbot image for Christian B Martinez'
-                  width={75}
-                  height={75}
+                  width={28}
+                  height={28}
                 />
               </div>
             </div>
