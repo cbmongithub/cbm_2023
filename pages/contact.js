@@ -139,9 +139,7 @@ const Contact = () => {
             ease-in-out
             focus:border-purple-600
             focus:bg-white
-            focus:text-zinc-700
-            focus:outline-none dark:border-zinc-500 dark:bg-slate-900 dark:text-zinc-200 dark:focus:border-purple-600'
-                      id='name'
+            focus:text-zinc-700 focus:outline-none dark:border-slate-700 dark:bg-slate-900 dark:text-zinc-200 dark:focus:border-purple-600'
                       name='name'
                       placeholder='Name'
                       value={formData.name || ''}
@@ -165,10 +163,8 @@ const Contact = () => {
             text-sm font-normal text-zinc-700 transition
             ease-in-out
             focus:border-purple-600
-            focus:bg-white
-            focus:text-zinc-700
-            focus:outline-none dark:border-zinc-500 dark:bg-slate-900 dark:text-zinc-200 dark:focus:border-purple-600'
-                      id='email'
+            focus:bg-white            
+            focus:text-zinc-700 focus:outline-none dark:border-slate-700 dark:bg-slate-900 dark:text-zinc-200 dark:focus:border-purple-600'
                       name='email'
                       placeholder='Email'
                       type='email'
@@ -195,10 +191,7 @@ const Contact = () => {
             ease-in-out
             focus:border-purple-600
             focus:bg-white
-            focus:text-zinc-700
-            focus:outline-none dark:border-zinc-500 dark:bg-slate-900 dark:text-zinc-200 dark:focus:border-purple-600
-          '
-                      id='message'
+            focus:text-zinc-700 focus:outline-none dark:border-slate-700 dark:bg-slate-900 dark:text-zinc-200 dark:focus:border-purple-600'
                       name='message'
                       placeholder='Write message...'
                       rows='5'

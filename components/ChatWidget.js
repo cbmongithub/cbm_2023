@@ -7,33 +7,12 @@ import ScrollableFeed from 'react-scrollable-feed'
 import { motion, useCycle, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 
+import { chatWidgetVariants } from '../constants'
+
 const ChatWidget = () => {
   const [show, setShow] = useCycle(false, true)
   const [typing, setIsTyping] = useState(false)
   const [storedValues, setStoredValues] = useLocalStorage('chat', [])
-
-  const variants = {
-    open: {
-      opacity: 1,
-      x: 5,
-      transition: {
-        duration: 0.5,
-        ease: 'easeInOut',
-        type: 'spring',
-        stiffness: 30,
-      },
-    },
-    closed: {
-      x: 300,
-      opacity: 0,
-      transition: {
-        duration: 0.5,
-        ease: 'easeInOut',
-        type: 'spring',
-        stiffness: 30,
-      },
-    },
-  }
 
   const generateResponse = async (newQuestion, setNewQuestion) => {
     setIsTyping(true)
@@ -86,17 +65,17 @@ const ChatWidget = () => {
       <AnimatePresence>
         {show && (
           <motion.div
-            variants={variants}
+            variants={chatWidgetVariants}
             initial='closed'
             animate='open'
             exit='closed'
             className='absolute bottom-5 right-6 z-30 mx-auto flex max-h-[30rem] min-h-[22rem] w-3/4 flex-col rounded-xl shadow-2xl md:w-1/2 lg:w-1/3 xl:w-1/4'>
-            <div className='sticky top-0 flex justify-between rounded-t-xl bg-purple-600 p-4 px-4 py-5 shadow-xl dark:bg-gradient-to-r dark:from-purple-600 dark:to-pink-500'>
+            <div className='sticky top-0 flex items-center justify-between rounded-t-xl bg-purple-600 p-4 px-4 py-5 shadow-xl dark:bg-gradient-to-r dark:from-purple-600 dark:to-pink-500'>
               <h1 className='text-lg font-semibold text-zinc-50'>Chat</h1>
               <a
                 onClick={setShow}
                 className='cursor-pointer'>
-                <AiOutlineClose className='mt-2.5 text-lg font-semibold text-zinc-50' />
+                <AiOutlineClose className='text-lg font-semibold text-zinc-50' />
               </a>
             </div>
             <div className='flex max-h-[20rem] min-h-[16rem] w-full flex-col bg-zinc-50  dark:bg-slate-800'>
@@ -159,8 +138,8 @@ const ChatWidget = () => {
         <>
           <AnimatePresence>
             <motion.div
-              variants={variants}
-              className='fixed bottom-5 right-6 z-30 cursor-pointer rounded-full bg-gradient-to-r from-purple-600 to-pink-500 p-4 shadow-xl hover:bg-pink-500'
+              variants={chatWidgetVariants}
+              className='fixed bottom-5 right-6 z-30 cursor-pointer rounded-full bg-purple-600 p-4 shadow-xl dark:bg-gradient-to-r dark:from-purple-600 dark:to-pink-500'
               initial='closed'
               animate='open'
               exit='closed'
@@ -230,7 +209,7 @@ const FormSection = ({ generateResponse }) => {
             text-slate-700
             transition
             ease-in-out
-              focus:border-purple-600 focus:outline-none dark:border-slate-700 dark:bg-slate-900 dark:text-zinc-200'
+            focus:border-purple-600 focus:outline-none dark:border-slate-700 dark:bg-slate-900 dark:text-zinc-200 dark:focus:border-purple-600'
           placeholder='Ask any question'
           value={newQuestion}
           onChange={e => setNewQuestion(e.target.value)}
@@ -239,7 +218,7 @@ const FormSection = ({ generateResponse }) => {
         <button
           type='submit'
           aria-label='Chat submit button'
-          className='w-auto rounded-xl bg-purple-600 px-7 py-3.5 text-sm font-medium uppercase leading-snug text-zinc-50 shadow-xl transition duration-150 ease-in-out hover:border-pink-500 hover:bg-pink-500 hover:shadow-2xl focus:border-pink-500 focus:bg-pink-500 focus:text-zinc-50 focus:shadow-2xl focus:outline-none focus:ring-0 active:bg-pink-500 active:shadow-2xl'
+          className='ml-2 w-auto rounded-xl bg-purple-600 px-7 py-3.5 text-sm font-medium uppercase leading-snug text-zinc-50 shadow-xl transition duration-150 ease-in-out hover:border-pink-500 hover:bg-pink-500 hover:shadow-2xl focus:border-pink-500 focus:bg-pink-500 focus:text-zinc-50 focus:shadow-2xl focus:outline-none focus:ring-0 active:bg-pink-500 active:shadow-2xl'
           onClick={() => generateResponse(newQuestion, setNewQuestion)}>
           SEND
         </button>
