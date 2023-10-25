@@ -91,15 +91,15 @@ const ChatWidget = () => {
             animate='open'
             exit='closed'
             className='absolute bottom-5 right-6 z-30 mx-auto flex max-h-[30rem] min-h-[22rem] w-3/4 flex-col rounded-xl shadow-2xl md:w-1/2 lg:w-1/3 xl:w-1/4'>
-            <div className='sticky top-0 flex justify-between rounded-t-xl bg-gradient-to-r from-purple-600 to-pink-500 px-4 py-5'>
+            <div className='sticky top-0 flex justify-between rounded-t-xl bg-purple-600 p-4 px-4 py-5 shadow-xl dark:bg-gradient-to-r dark:from-purple-600 dark:to-pink-500'>
               <h1 className='text-lg font-semibold text-zinc-50'>Chat</h1>
               <a
                 onClick={setShow}
                 className='cursor-pointer'>
-                <AiOutlineClose className='text-xl font-semibold text-zinc-50' />
+                <AiOutlineClose className='mt-2.5 text-lg font-semibold text-zinc-50' />
               </a>
             </div>
-            <div className='flex max-h-[20rem] min-h-[16rem] w-full flex-col overflow-x-hidden bg-zinc-50 dark:bg-slate-800'>
+            <div className='flex max-h-[20rem] min-h-[16rem] w-full flex-col bg-zinc-50  dark:bg-slate-800'>
               <ScrollableFeed>
                 <div className='flex flex-row justify-between rounded-b-xl bg-zinc-50 dark:bg-slate-800'>
                   <div className='flex flex-col justify-between px-4'>
@@ -123,8 +123,8 @@ const ChatWidget = () => {
                           src={`${process.env.NEXT_PUBLIC_BASE_URL}/img/bot.webp`}
                           className='h-8 w-8 rounded-full object-cover'
                           alt='Chatbot image for Christian B Martinez'
-                          width={28}
-                          height={28}
+                          width={75}
+                          height={75}
                         />
                       </div>
                     </div>
@@ -142,8 +142,8 @@ const ChatWidget = () => {
                           src={`${process.env.NEXT_PUBLIC_BASE_URL}/img/bot.webp`}
                           className='mb-4 ml-2 h-8 w-8 rounded-full object-cover'
                           alt='Chatbot image for Christian B Martinez'
-                          width={28}
-                          height={28}
+                          width={75}
+                          height={75}
                         />
                       </div>
                     )}
@@ -155,18 +155,22 @@ const ChatWidget = () => {
           </motion.div>
         )}
       </AnimatePresence>
-      {!show && (
-        <AnimatePresence>
-          <motion.div
-            variants={variants}
-            className='fixed bottom-5 right-6 z-30 cursor-pointer rounded-full bg-gradient-to-r from-purple-600 to-pink-500 p-4 shadow-xl hover:bg-pink-500'
-            initial='closed'
-            animate='open'
-            exit='closed'
-            onClick={setShow}>
-            <FaComment className='h-5 w-5 text-zinc-50' />
-          </motion.div>
-        </AnimatePresence>
+      {!show ? (
+        <>
+          <AnimatePresence>
+            <motion.div
+              variants={variants}
+              className='fixed bottom-5 right-6 z-30 cursor-pointer rounded-full bg-gradient-to-r from-purple-600 to-pink-500 p-4 shadow-xl hover:bg-pink-500'
+              initial='closed'
+              animate='open'
+              exit='closed'
+              onClick={setShow}>
+              <FaComment className='h-5 w-5 text-zinc-50' />
+            </motion.div>
+          </AnimatePresence>
+        </>
+      ) : (
+        ''
       )}
     </>
   )
@@ -192,8 +196,8 @@ const AnswerSection = ({ storedValues }) => {
                   src={`${process.env.NEXT_PUBLIC_BASE_URL}/img/bot.webp`}
                   className='h-8 w-8 rounded-full object-cover'
                   alt='Chatbot image for Christian B Martinez'
-                  width={28}
-                  height={28}
+                  width={75}
+                  height={75}
                 />
               </div>
             </div>
@@ -215,32 +219,28 @@ const FormSection = ({ generateResponse }) => {
     <>
       <form
         onSubmit={handleSubmit}
-        className='relative bottom-0 right-0 flex w-full flex-row items-center justify-between rounded-b-xl border-t border-solid border-zinc-300 bg-zinc-50 px-4 pb-4 pt-5 dark:border-zinc-600 dark:bg-slate-900'>
+        className='relative bottom-0 right-0 flex w-full flex-row items-center justify-between rounded-b-xl border-t border-zinc-300 bg-zinc-50 p-4 shadow-inner dark:border-slate-700 dark:bg-slate-900'>
         <input
-          className='
-            m-0
+          className='m-0
             w-3/4
-            rounded-xl border
-            border-solid border-zinc-300 bg-zinc-50
-            bg-clip-padding px-4 py-3 text-base
-            font-normal
-            text-zinc-500
+            rounded-xl
+            border border-solid
+            border-zinc-300 bg-zinc-50 bg-clip-padding
+            p-3 text-base font-normal
+            text-slate-700
             transition
             ease-in-out
-             focus:border-purple-600 focus:outline-none dark:border-zinc-500 dark:bg-slate-900 dark:text-zinc-400 dark:focus:border-purple-600'
+              focus:border-purple-600 focus:outline-none dark:border-slate-700 dark:bg-slate-900 dark:text-zinc-200'
           placeholder='Ask any question'
           value={newQuestion}
           onChange={e => setNewQuestion(e.target.value)}
           type='text'
-          required
         />
         <button
           type='submit'
           aria-label='Chat submit button'
-          className='ml-2 flex w-1/4 flex-col items-center justify-center rounded-xl bg-purple-600 px-7 py-3.5 text-sm font-medium uppercase leading-snug text-zinc-50 shadow-xl transition duration-150 ease-in-out hover:border-pink-500 hover:bg-pink-500 hover:shadow-2xl focus:border-pink-500 focus:bg-pink-500 focus:text-zinc-50 focus:shadow-2xl focus:outline-none focus:ring-0 active:bg-pink-500 active:shadow-2xl'
-          onClick={() =>
-            newQuestion && generateResponse(newQuestion, setNewQuestion)
-          }>
+          className='w-auto rounded-xl bg-purple-600 px-7 py-3.5 text-sm font-medium uppercase leading-snug text-zinc-50 shadow-xl transition duration-150 ease-in-out hover:border-pink-500 hover:bg-pink-500 hover:shadow-2xl focus:border-pink-500 focus:bg-pink-500 focus:text-zinc-50 focus:shadow-2xl focus:outline-none focus:ring-0 active:bg-pink-500 active:shadow-2xl'
+          onClick={() => generateResponse(newQuestion, setNewQuestion)}>
           SEND
         </button>
       </form>
