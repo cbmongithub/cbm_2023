@@ -115,6 +115,29 @@ const layoutVariants = {
   },
 }
 
+const chatWidgetVariants = {
+  open: {
+    opacity: 1,
+    x: 5,
+    transition: {
+      duration: 0.25,
+      ease: 'easeInOut',
+      type: 'spring',
+      stiffness: 30,
+    },
+  },
+  closed: {
+    x: 300,
+    opacity: 0,
+    transition: {
+      duration: 0.25,
+      ease: 'easeInOut',
+      type: 'spring',
+      stiffness: 30,
+    },
+  },
+}
+
 const socialLinks = {
   github: 'https://github.com/christianbmartinez',
   linkedin: 'https://www.linkedin.com/in/cmartinez1089/',
@@ -225,6 +248,7 @@ export {
   ulVariants,
   liVariants,
   layoutVariants,
+  chatWidgetVariants,
   socialLinks,
   portfolioData,
 }
