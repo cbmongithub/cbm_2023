@@ -209,24 +209,26 @@ const portfolioData = [
     tags: ['#EXPRESS', '#MONGODB'],
   },
   {
-    title: 'Codeathon',
+    title: 'Tic Tac Toe',
     imgUrl:
-      'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80',
-    alt: 'Image for christians portfolio codeathon project',
-    description: 'A full stack application that brings coders together',
-    repo: 'https://github.com/JenevaRay/Codeathon',
-    href: 'https://codeathon-1b48b4588e47.herokuapp.com/',
-    tags: ['#REACT', '#GRAPHQL'],
+      'https://images.unsplash.com/photo-1602632003094-0494b73b7c4a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    alt: 'Image for christians portfolio tic tac toe project',
+    description:
+      'A tic tac toe multiplayer game with chat. Built with Next, Socketio, and Express.',
+    repo: 'https://github.com/christianbmartinez/tic-tac-toe',
+    href: 'https://tictactoenextjs.netlify.app/',
+    tags: ['#NEXT', '#SOCKETIO'],
   },
   {
-    title: 'Chattr App',
+    title: 'Create Chattr App',
     imgUrl:
-      'https://images.unsplash.com/photo-1611606063065-ee7946f0787a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80',
-    alt: 'Image for christians portfolio chattr app project',
-    description: 'An anonymous chatting application that uses chatgpt.',
-    repo: 'https://github.com/christianbmartinez/chattrapp',
-    href: 'https://chattrapp.netlify.app/',
-    tags: ['#REACT', '#CHATGPT'],
+      'https://images.unsplash.com/photo-1577563908411-5077b6dc7624?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    alt: 'Image for christians portfolio create-chattr-app project',
+    description:
+      'A Nextjs chatbot boilerplate that uses the chattr library I authored.',
+    repo: 'https://github.com/christianbmartinez/create-chattr-app',
+    href: 'https://githubbox.com/christianbmartinez/create-chattr-app',
+    tags: ['#CHATTR', '#TYPESCRIPT'],
   },
   {
     title: 'Logo Generator',
