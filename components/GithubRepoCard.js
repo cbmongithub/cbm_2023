@@ -1,12 +1,13 @@
-import { FaRegFileCode } from 'react-icons/fa'
-import Link from 'next/link'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
+import Link from 'next/link'
+import { FaRegFileCode } from 'react-icons/fa'
 dayjs.extend(relativeTime)
 
 import { ToolTip } from '../components'
 
 const GithubRepoCard = ({ latestRepo }) => {
+  console.log(latestRepo)
   return (
     <div className='rounded-xl bg-white p-5 shadow-2xl dark:bg-slate-900'>
       <div className='flex justify-between'>

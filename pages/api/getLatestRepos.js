@@ -1,14 +1,14 @@
 const getLatestRepos = async (req, res) => {
   try {
     const response = await fetch(
-      'https://api.github.com/search/repositories?q=user:christianbmartinez&sort=updated&per_page=6',
+      'https://api.github.com/search/repositories?q=user:cbmongithub&sort=updated&per_page=6',
       {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${process.env.GITHUB_AUTH_TOKEN}`,
         },
         cache: 'force-cache',
-        next: { revalidate: 21600 }, // Revalidate every 6 hours
+        next: { revalidate: 43200 },
       }
     )
     const repos = await response.json()

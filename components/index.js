@@ -1,5 +1,4 @@
 import Avatar from './Avatar'
-import Background from './Background'
 import ChatWidget from './ChatWidget'
 import ExperienceCard from './ExperienceCard'
 import Footer from './Footer'
@@ -16,7 +15,6 @@ import ToolTip from './ToolTip'
 
 export {
   Avatar,
-  Background,
   ChatWidget,
   ExperienceCard,
   Footer,
@@ -29,5 +27,6 @@ export {
   PostCard,
   SiteHead,
   Socials,
-  ToolTip,
+  ToolTip
 }
+

@@ -1,7 +1,7 @@
-import { useRouter } from 'next/router'
-import { useEffect } from 'react'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import Script from 'next/script'
+import { useEffect } from 'react'
 
 import * as gtag from '../lib/gtag'
 
@@ -18,21 +18,16 @@ const SiteHead = ({ page, title, description, keywords }) => {
   }, [router.events])
   return (
     <>
-      <Script
-        strategy='afterInteractive'
-        src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
-      />
+      <Script id="gtag" async src="https://www.googletagmanager.com/gtag/js?id=G-M592GMXCBQ" strategy='afterInteractive'/>
       <Script
         id='gtag-init'
         strategy='afterInteractive'
         dangerouslySetInnerHTML={{
           __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${gtag.GA_TRACKING_ID}', {
-              page_path: window.location.pathname,
-            });
+        window.dataLayer ??= [];
+        const gtag = (...args) => dataLayer.push(args);}
+        gtag('js', new Date());
+        gtag('config', 'G-M592GMXCBQ');
           `,
         }}
       />

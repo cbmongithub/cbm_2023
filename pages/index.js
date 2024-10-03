@@ -1,8 +1,7 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { TypeAnimation } from 'react-type-animation'
-
-import { SiteHead, Background, Avatar } from '../components'
+import { Avatar, SiteHead } from '../components'
 
 const Index = () => {
   return (
@@ -72,7 +71,6 @@ const Index = () => {
             </div>
           </div>
         </div>
-        <Background />
       </section>
     </>
   )

@@ -1,11 +1,11 @@
-import { useState } from 'react'
-import useLocalStorage from 'use-local-storage'
-import { FaComment } from 'react-icons/fa'
-import { AiOutlineClose } from 'react-icons/ai'
+import { AnimatePresence, motion, useCycle } from 'framer-motion'
 import Image from 'next/image'
-import ScrollableFeed from 'react-scrollable-feed'
-import { motion, useCycle, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
+import { useState } from 'react'
+import { AiOutlineClose } from 'react-icons/ai'
+import { FaComment } from 'react-icons/fa'
+import ScrollableFeed from 'react-scrollable-feed'
+import useLocalStorage from 'use-local-storage'
 
 import { chatWidgetVariants } from '../constants'
 
@@ -70,7 +70,7 @@ const ChatWidget = () => {
             animate='open'
             exit='closed'
             className='absolute bottom-5 right-6 z-30 mx-auto flex max-h-[30rem] min-h-[22rem] w-3/4 flex-col rounded-xl shadow-2xl md:w-1/2 lg:w-1/3 xl:w-1/4'>
-            <div className='sticky top-0 flex items-center justify-between rounded-t-xl bg-purple-600 p-4 px-4 py-5 shadow-xl dark:bg-gradient-to-r dark:from-purple-600 dark:to-pink-500'>
+            <div className='sticky top-0 flex items-center justify-between rounded-t-xl bg-purple-600 p-4 px-4 py-5 shadow-xl dark:bg-gradient-to-r dark:bg-pink-600'>
               <h1 className='text-lg font-semibold text-zinc-50'>Chat</h1>
               <a
                 onClick={setShow}

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { SiteHead, Background } from '../components'
+import { SiteHead } from '../components'
 
 const NotFound = () => {
   return (
@@ -32,7 +32,6 @@ const NotFound = () => {
             </Link>
           </div>
         </div>
-        <Background />
       </section>
     </>
   )

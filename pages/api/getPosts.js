@@ -1,8 +1,8 @@
-import { clientPromise } from '../../lib'
+import mongoDb from '../../lib'
 
 const getPosts = async (req, res) => {
   try {
-    const client = await clientPromise
+    const client = await mongoDb
     const db = client.db('posts')
 
     const posts = await db

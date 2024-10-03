@@ -139,9 +139,9 @@ const chatWidgetVariants = {
 }
 
 const socialLinks = {
-  github: 'https://github.com/christianbmartinez',
-  linkedin: 'https://www.linkedin.com/in/cmartinez1089/',
-  twitter: 'https://twitter.com/_coderchris',
+  github: 'https://github.com/cbmongithub',
+  linkedin: 'https://www.linkedin.com/in/cbmonlinkedn/',
+  twitter: 'https://x.com/cbmonx',
 }
 
 const portfolioData = [
@@ -243,14 +243,6 @@ const portfolioData = [
 ]
 
 export {
-  experienceData,
-  navLinks,
-  svgPathOpen,
-  svgPathClose,
-  ulVariants,
-  liVariants,
-  layoutVariants,
-  chatWidgetVariants,
-  socialLinks,
-  portfolioData,
+  chatWidgetVariants, experienceData, layoutVariants, liVariants, navLinks, portfolioData, socialLinks, svgPathClose, svgPathOpen, ulVariants
 }
+
