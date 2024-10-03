@@ -2,7 +2,6 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import Script from 'next/script'
 import { useEffect } from 'react'
-
 import * as gtag from '../lib/gtag'
 
 const SiteHead = ({ page, title, description, keywords }) => {
@@ -18,7 +17,11 @@ const SiteHead = ({ page, title, description, keywords }) => {
   }, [router.events])
   return (
     <>
-      <Script id="gtag" async src="https://www.googletagmanager.com/gtag/js?id=G-M592GMXCBQ" strategy='afterInteractive'/>
+      <Script
+        id='gtag'
+        src='https://www.googletagmanager.com/gtag/js?id=G-M592GMXCBQ'
+        strategy='afterInteractive'
+      />
       <Script
         id='gtag-init'
         strategy='afterInteractive'
