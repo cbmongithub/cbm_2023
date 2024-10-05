@@ -1,5 +1,6 @@
 import Avatar from './Avatar'
 import ChatWidget from './ChatWidget'
+import Cookie from './Cookie'
 import ExperienceCard from './ExperienceCard'
 import Footer from './Footer'
 import GithubRepoCard from './GithubRepoCard'
@@ -16,6 +17,7 @@ import ToolTip from './ToolTip'
 export {
   Avatar,
   ChatWidget,
+  Cookie,
   ExperienceCard,
   Footer,
   GithubRepoCard,
@@ -27,6 +29,5 @@ export {
   PostCard,
   SiteHead,
   Socials,
-  ToolTip
+  ToolTip,
 }
-

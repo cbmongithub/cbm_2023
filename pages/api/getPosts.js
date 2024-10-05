@@ -1,24 +1,24 @@
-import mongoDb from '../../lib'
+import mongoDb from "../../lib";
 
 const getPosts = async (req, res) => {
-  try {
-    const client = await mongoDb
-    const db = client.db('posts')
+	try {
+		const client = await mongoDb;
+		const db = client.db("posts");
 
-    const posts = await db
-      .collection('posts')
-      .find({})
-      .sort({ timestamp: -1 })
-      .limit(20)
-      .toArray()
+		const posts = await db
+			.collection("posts")
+			.find({})
+			.sort({ timestamp: -1 })
+			.limit(20)
+			.toArray();
 
-    res.json(posts)
-  } catch (e) {
-    console.error(e)
-    res
-      .status(500)
-      .json({ error: 'An error occurred while trying to fetch posts.', e })
-  }
-}
+		res.json(posts);
+	} catch (e) {
+		console.error(e);
+		res
+			.status(500)
+			.json({ error: "An error occurred while trying to fetch posts.", e });
+	}
+};
 
-export default getPosts
+export default getPosts;

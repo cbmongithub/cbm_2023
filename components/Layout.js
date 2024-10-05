@@ -1,14 +1,15 @@
-import { useEffect, useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
+import Cookie from 'js-cookie'
 import { ThemeProvider } from 'next-themes'
 import { useRouter } from 'next/router'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useEffect, useState } from 'react'
 
 import { layoutVariants } from '../constants'
 
+import ChatWidget from './ChatWidget'
+import Footer from './Footer'
 import Loader from './Loader'
 import Navbar from './Navbar'
-import Footer from './Footer'
-import ChatWidget from './ChatWidget'
 
 const Layout = ({ children }) => {
   const router = useRouter()
@@ -56,6 +57,7 @@ const Layout = ({ children }) => {
             </>
           )}
         </motion.main>
+        <Cookie />
       </AnimatePresence>
     </ThemeProvider>
   )
